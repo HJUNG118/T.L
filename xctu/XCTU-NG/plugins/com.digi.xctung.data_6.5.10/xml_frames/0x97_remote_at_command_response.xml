@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Remote AT Command Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+  </protocols>
+  <frame_type>0x97</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>This is the same value passed in to the request.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>The address of the remote radio returning this response.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to the 16-bit address of the remote device. Set to 'FF FE' if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Command status">
+      <control_type>1</control_type>
+      <description>The status of the AT Command.</description>
+      <items>
+        <item>OK [00]</item>
+        <item>ERROR [01]</item>
+        <item>Invalid Command [02]</item>
+        <item>Invalid Parameter [03]</item>
+        <item>Tx Failure [04]</item>
+        <item>Remote command invalid password [08]</item>
+        <item>Remote command invalid frame [09]</item>
+        <item>Remote command encryption disabled [0A]</item>
+        <item>No Secure Session Connection [0B]</item>
+        <item>Encryption Error [0C]</item>
+        <item>TO Bit Not Set [0D]</item>
+      </items>
+      <default_value>OK [00]</default_value>
+    </parameter>
+    <parameter name="Command data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>Register data in binary format. If the register was set in the AT Command, then this field is not returned.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

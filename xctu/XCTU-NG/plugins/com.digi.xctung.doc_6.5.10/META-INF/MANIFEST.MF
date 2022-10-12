@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.digi.xctung.doc;singleton:=true
+Bundle-Name: %pluginName
+Bundle-Version: 6.5.10
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.help
+Bundle-ManifestVersion: 2
+Bundle-Vendor: %providerName
+
+

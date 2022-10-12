@@ -1,0 +1,75 @@
+
+<!-- Notes on field formatting:
+  - range_min and range_max MUST be hexadecimal
+  - min_chars and max_chars MUST be decimal
+  - default_values are used "as-is" so when numeric are essentially
+    always hexadecimal.
+  - Whitespace in text fields such as 'description' is significant.
+    Newlines and spaces even leading and trailing will be retained.
+-->
+<firmwares>
+  <firmware fw_version= "1140F" >
+    <family>XBEE</family>
+    <product_name><![CDATA[XBXC3]]></product_name>
+    <hw_version>0x4B</hw_version>
+    <compatibility_number>1</compatibility_number>
+    <region>99</region>
+    <config_buffer_loc>0</config_buffer_loc>
+    <flash_page_size>0x0200</flash_page_size>
+    <crc_buffer_len>0</crc_buffer_len>
+    <function><![CDATA[XBC LTE-M/NB-IoT Global]]></function>
+    <update_timeout_ms>90000</update_timeout_ms>
+    <categories>
+      <category name="Installation Warning">
+        <description>This release updates your XBee3 Cellular module to support compressed firmware updates, allowing for larger applications.  Please note the following:
+	
+  • It takes at least 40 seconds to run (longer if you have files in the file system).
+  • It installs release 11410 as part of the update.
+  • Once the update is complete, you will not be able to revert to versions before the 11410 release.
+  • You need to install this firmware before you can install release 11411 or later.
+  • The update reduces your available file system space from 840KB to 428KB.
+  • It backs up and restores as many files as possible, prioritizing the /flash/cert directory.
+  • View the Release Notes for full details.</description>
+      </category>
+      <category name=" ">
+        <visible>false</visible>
+        <description> 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+        </description>
+        <settings>
+          <setting command="BD">
+            <name>(placeholder, please ignore)</name>
+            <description> </description>
+            <default_value>N/A</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+        </settings>
+      </category>
+    </categories>
+    <config_commands>
+      <config_command command="HARDWARE_VERSION">
+        <at_command>HV</at_command>
+        <byte_index>1</byte_index>
+        <bytes_number>1</bytes_number>
+        <bytes_returned>2</bytes_returned>
+      </config_command>
+      <config_command command="SOFTWARE_COMPATABLITY"/>
+    </config_commands>
+  </firmware>
+</firmwares>

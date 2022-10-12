@@ -1,0 +1,2023 @@
+                                    XCTU
+
+                       Release Notes (PN 93009460_AH)
+                               Build 6.5.10.2
+                                May 13, 2022
+
+                  (c) Digi International Inc. 2013-2022
+                           http://www.digi.com
+
+Introduction
+----------------------------------------------------------------------
+This document provides the latest release information for XCTU, the
+configuration and testing tool for Digi International Inc. radio modems.
+
+XCTU 6.5.10, May 2022
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for the new XBee 3 Global LTE Cat 1 and XBee 3 North America
+	  LTE Cat 1 modules.
+    * Other minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.9, February 2022
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for the new XBee S2C Pro NG module.
+    * Added support for the new XBee RR module.
+    * Added support for the new XBee XR module.
+    * Other minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.8, December 2021
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Updated log4j library to fix CVE-2021-44228 vulnerability.
+    * Other minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.7, June 2021
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.6, June 2021
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support to the new XBee 3 Cellular LTE-M/NB-IoT (GNSS/2G) module.
+    * Other minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.5, December 2020
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Updated u-blox EasyFlash to version 12.10.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.4, November 2020
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Updated u-blox EasyFlash to version 12.08.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.3, September 2020
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support to download, install and show regulatory firmware. This
+      feature can be enabled through a new setting in the General Preferences.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.2, August 2020
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.1, April 2020
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support in the Profile Editor tool to update the remote file 
+      system of XBee 3 modules.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.5.0, November 2019
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for XBee 3 Cellular LTE Cat 1 Verizon modules.
+    
+    * Added a way to rate XCTU and collect usage information through a survey.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.4.4, October 2019
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for modem update over USB to XBee 3 Cellular LTE CAT 1 and
+      XBee 3 Cellular LTE-M/NB-IoT modules.
+    
+    * Secure sessions
+      Added support for secure sessions in XCTU. This includes:
+        - New authentication dialog to configure the password of the XBee
+          device when acting as server in a session.
+        - Establish a secure session with a remote XBee device when needed
+          asking for the remote password through an interactive dialog.
+    
+    * Added support to configure pre and post scripts in the Profile Editor
+      tool.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+    * Cellular modem update over USB only works in Windows. In addition, it
+      requires that the appropriate USB drivers are installed on the computer
+      and the usage of either a Digi XBIB-CU-TH development board or own
+      hardware that makes a USB port available to the PC.
+
+
+XCTU 6.4.3, April 2019
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for OTA file system update to latest versions of XBee3 
+      firmware (Zigbee 3.0, DigiMesh 2.4 and 802.15.4).
+    
+    * Profile editor tool
+      This tool allows you to create new profiles or load and edit existing 
+      ones.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.4.2, November 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Created a dialog to configure the authentication in XBee3 devices with
+      Bluetooth Low Energy support.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.4.1, September 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for OTA firmware update to latest versions of XBee3 
+      DigiMesh 2.4 and XBee3 802.15.4 firmware.
+    
+    * Added bootloader update support. Firmware update process is now able 
+      to update the bootloader of the module when necessary.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.4.0, June 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * File System Manager tool
+      This new tool allows you to manage the file system of radio modules 
+      attached to your computer.
+    
+    * UI improvements for high-DPI displays.
+    
+    * New firmware indicator.
+      XCTU displays a new control when a radio module is not running the latest
+      firmware version it can.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64 bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.14, May 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Minor bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.13, April 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for Digi XBee3 DigiMesh modules.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.12, January 2018
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for Digi XBee3 802.15.4 modules.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.11, October 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for XBee Cellular modem firmware updates.
+    
+    * Added support for new XBee Cellular variants.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.10, September 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for XBee NB-IoT modules.
+    
+    * Added support for Digi XBee3 ZigBee 3.0 modules.
+    
+    * Configuration profiles format update
+      Configuration profiles are now saved with the *.xpro extension instead 
+      of *.xml. When saving a profile, XCTU displays a Profile configuration 
+      dialog where you can configure some extra settings related to the 
+      profile.
+    
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.9, July 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.8, May 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for XBee Cellular 3G modules.
+
+    * Added support for 868LP SX modules (beta).
+
+    * Added support for Thread protocol (beta).
+
+    * MicroPython Terminal tool.
+      This new tool allows you to communicate with the MicroPython stack of your
+      radio module through the serial interface.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.7, April 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.6, April 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.5, January 2017
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added a mechanism to force the re-installation of specific radio 
+      firmware versions.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.4, December 2016
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for Cellular protocol.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.3, September 2016
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.2, August 2016
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for the DigiMesh 2.4 protocol in the S2C modules.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.1, March 2016
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Added support for the 802.15.4 protocol in the S2C modules.
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8/10 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.3.0, November 2015
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Command Line Interface (CLI) support
+      Added CLI support to XCTU. A new executable has been added within the 
+      installation path to execute the application in CLI mode without graphic 
+      interface. The following features are supported within CLI mode:
+        - List ports.      A list of serial and USB ports can be retrieved in 
+                           command line mode.
+        - Update firmware. Firmware of any radio device can be updated in this 
+                           mode.
+        - Load profile.    Now it is possible to load profiles to connected 
+                           devices through the CLI of XCTU.
+
+    * Spectrum analyzer tool
+      XCTU includes a new tool used to test and measure the spectrum of the 
+      selected radio band. The analysis reports the noise level of each 
+      channel indicating its best, worst and average measure. 
+
+    * Throughput tool
+      This new tool allows you to measure the maximum transfer ratio from one 
+      radio module to another in the same network. The Throughput tool offers 
+      3 session modes and several payload configuration options to test 
+      different combinations.
+
+    * New Look & Feel and UI changes
+      The UI of XCTU has been modified displaying a plain and simpler look & 
+      feel. None of the controls have been moved or modified, so application 
+      workflow remains the same for every feature and tool.
+
+      XCTU includes now a menu bar to access all the XCTU features, tools and 
+      working modes. All the menu items have a keyboard shortcut associated 
+      for a faster access to the features.
+
+      A new page to configure the XCTU UI has been added to the preferences 
+      section. These settings allow you to configure the following options:
+        - Texts (font) size of the application
+        - Display or hide XCTU menu bar
+        - Display texts in toolbars
+        - Toolbars size
+
+    * Other bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.2.1, June 2015
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Internal release.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.2.0, May 2015
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Linux support
+      Added support to Linux platform. XCTU is now able to be executed in Linux
+      desktop environments running KDE or Gnome.
+
+    * Serial Console tool
+      The Serial Console tool allows you to interact with your radio modules 
+      without having to discover and add them to the list of radio modules.
+
+    * Consoles improvements
+      Performed the following improvements in all the XCTU consoles:
+        - Added a control in the consoles toolbar to see and manage the serial 
+          port flow control lines.
+        - Added a new recording feature to XCTU consoles that allows you to 
+          record all the sent and received data in a log file with CSV format.
+        - Status icon of consoles tabs now changes depending on the status of 
+          the console to display the following actions: connected, 
+          disconnected, sending and receiving data.
+
+    * API Console frames filter
+      Added a new frames filtering option in the API console in order to filter
+      the frames in the table. These are the available options:
+        - Filter received frames
+            - Filter all received frames
+            - Filter frames received from a specific device
+        - Filter sent frames
+            - Filter all sent frames
+            - Filter frames sent to a specific device
+        - Filter by frame type
+
+    * Firmware Release Notes
+      Included a new feature that allows users to explore and read the Release
+      Notes of the released XBee firmwares in all the firmware list controls.
+
+    * Online documentation
+      XCTU documentation has been moved to an online system to keep it up to 
+      date and facilitate its access outside XCTU. A PDF copy has been included
+      in the tool to be able to consult the help while working without internet
+      connection.
+
+    * Lots of bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+    * Linux (32 and 64 bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+    * UNIX-based operating systems allow you to open multiple instances of the 
+      same port. While Windows avoids this scenario, it can produce unexpected 
+      behaviors if you have the same port open simultaneously by different apps 
+      in Linux.
+
+
+XCTU 6.1.3, March 2015
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+   The main purpose of this release is to fix the following issues that will 
+   improve the user experience of the upcoming RF Kits:
+    * Improved the look and feel of the frames interpreter control in the API 
+      Console and Frames Interpreter tool.
+    * IO packets now display more detailed data about digital and analog lines.
+    * Settings without a default value will not be marked as wrong any longer.
+    * Read-only settings are not refreshed now when loading factory default 
+      settings.
+    * DigiMesh 900 radio modules can be configured remotely now.
+    * Hardware version number is displayed in a correct hexadecimal format now.
+    * Sleeping radio modules working in AT mode with a baud rate different 
+      than 9600 can be added and configured in XCTU without problems now.
+    * Fixed some issues in several API frames:
+        - 0x8D - Route Information Packet: Fixed the information provided for 
+                 the source, responder and receiver addresses.
+        - 0xA2 - Device Authenticated Indicator: Removed this frame from the 
+                 ZigBee protocol filter.
+        - 0xA4 - Register Joining Device Status: Removed this frame from the 
+                 ZigBee protocol filter.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+
+XCTU 6.1.2, September 2014
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+   The main purpose of this release is to add support for the XLR PRO Radio 
+   Solution.
+   
+   This release also fixes the following issues that have been detected by 
+   several customers since XCTU was officially released:
+    * Support for ‘API 2 – API Mode With Escapes’ operating mode in ‘Frames 
+      Generator’ and ‘Frames Interpreter’ tools.
+    * Correctly display IP settings of XBee modules when operating in API 1 or 
+      API 2 mode.
+    * ZNet devices working in Transparent (AT) mode are now properly discovered 
+      and added to XCTU.
+    * Discovery of remote devices does not modify the 'NO' setting of the 
+      module.
+    * XBee S5 modules with DP protocol running firmware v1027 or earlier are 
+      now discovered correctly.
+    * Function label of an XBee device will now display the firmware version 
+      when the firmware cannot be found by XCTU.
+    * Sent and received frames with unknown API data in the API console 
+      shouldn't cause exceptions any longer.
+    * Removed GIF, ICO and TIFF formats from the save screenshot dialog in the 
+      Network working mode (they were not working correctly).
+    * Fixed some issues in several API frames:
+        - 0x10 - Transmit Request: Removed the payload size limit.
+        - 0x07 - Remote AT Command (Wi-Fi): 'Remote cmd. options' field is now 
+                 a text box control.
+        - 0x11 - Explicit Addressing Command Frame: Removed the payload size 
+                 limit.
+        - 0x17 - Remote AT Command: 'Remote cmd. options' field is now a text 
+                 box control.
+        - 0x8A - Modem Status: Added missing status codes.
+        - 0x8F - IO Data Sample RX Indicator: Fields 'Digital channel mask' and 
+                 'Analog channel mask' are properly interpreted.
+        - 0x90 - Receive Packet: Removed the payload size limit.
+        - 0x91 - Explicit Rx Indicator: Removed the payload size limit.
+        - 0x92 - IO Data Sample Rx Indicator: Fields 'Digital channel mask' and 
+                 'Analog channel mask' are properly interpreted.
+        - 0x95 - Node Identification: Fixed interpretation of frame and added 
+                 'Device type identifier' field.
+        - 0x98 - Extended Modem Status: Added this new frame supported in new 
+                 ZigBee firmwares.
+        - 0xB0 - RX IPv4: Removed 'Frame ID' field.
+        - 0xFF - Generic: Removed the payload size limit.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU. 
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+    * XLR PRO Radio Solution and programmable XBee radio modules do not support 
+      the recovery feature provided by XCTU.
+
+
+XCTU 6.1.1, January 2014
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+   The main purpose of this release is to fix the following issues that have 
+   been detected by several customers since XCTU was officially released:
+    * Fixed a problem that was causing the tool not to display the available 
+      serial ports in some scenarios.
+    * Numeric firmware settings can now be configured with '0'.
+    * Sleeping DigiMesh and 802.15.4 nodes (working in AT operating mode) can 
+      now be discovered and configured in XCTU.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU.  
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+
+XCTU 6.1.0, December 2013
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+    * Network working mode
+      A new working mode called Network has been implemented in XCTU. In this 
+      new working mode you can see the topology of a local radio module's 
+      network.
+
+      The highlights of the Network working mode include the following 
+      features:
+        - Possibility to discover and represent the network topology of 
+          802.15.4, ZigBee and DigiMesh protocols.
+        - Display the network topology using different built-in profiles.
+        -  Navigate between nodes moving and zooming them.
+        - Represent all the network nodes in a table with details.
+        - Obtain the links between nodes as well as their link quality.
+        - Search for a specific node and highlight it.
+        - Save a picture of the network.
+        - Attach or detach the network view being able to display more than one 
+          network at the same time.
+
+    * Device Cloud working mode
+      Another working mode called Device Cloud has been also added. This new 
+      working mode allows you to learn about Device Cloud by Etherios platform, 
+      create an account and access your personal Device Cloud page.
+
+    * Range Test tool
+      The Range Test tool has been included within the Tools drop-down menu of 
+      the main toolbar. This tool allows you to perform a range test between a 
+      local radio module and any of the remote modules working in the same 
+      network as the local one.
+      
+      The highlights of the Range Test tool include the following features:
+        - The tool is able to perform range tests of 802.15.4, ZigBee and 
+          DigiMesh protocols regardless of the working mode (AT or API) of the 
+          modules.
+        - Chart control displaying the current and historic link qualities 
+          between modules.
+        - Different controls indicating the number of packets sent, lost, etc.
+
+    * Firmware Explorer tool
+      The Firmware Explorer tool allows you to navigate through the firmware 
+      library contained in XCTU displaying the different firmware versions as 
+      well as their settings. It also gives you the possibility to load and 
+      generate firmware profiles. The tool is included within the Tools 
+      drop-down menu of the main toolbar.
+
+    * Remote firmware update
+      The remote firmware update feature has been implemented. Now you are able 
+      to update the firmware of a remote radio module the same way you do with 
+      a local one. In order to perform a remote firmware update, the local 
+      radio module must be configured in API operation mode.
+
+      Remote firmware update functionality is limited to the following radio 
+      modules:
+        - XBee/XBee-PRO ZB
+        - Programmable XBee-PRO ZB
+        - XBee/XBee-PRO ZB SMT
+        - Programmable XBee-PRO ZB SMT
+        - XBee-PRO 900HP
+        - XBee 865LP
+        - XBee 868LP
+
+    * Lots of bug fixes and improvements
+      See the Change log within XCTU for more information.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7/8 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+    * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+    * XCTU includes a mechanism to avoid the computer to go to sleep 
+      automatically in Windows and MacOS systems when it is performing long 
+      duration tasks (i.e.: network discovery, range test, etc.). However, if 
+      you force the computer to sleep while XCTU is performing such tasks, the 
+      USB ports that XCTU was communicating with may become unresponsive after 
+      the system wakes from sleep. Furthermore, if you try to close the 
+      communication with them they could hang and they won't recover even if 
+      you close XCTU.  
+
+      If this happens you must unplug and plug again the USB cable to restore 
+      the communication with the port. You can do this even while XCTU is 
+      running.
+
+    * ZigBee local modules configured as End Devices will not be able to 
+      perform Network discovery in the Network working mode.
+
+XCTU 6.0.0, September 2013
+----------------------------------------------------------------------
+1. Changes with respect to previous version
+   Everything. First public (Beta) release.
+
+   Please, note that this Software is released as Beta and may still contain 
+   defects. We make a version available so you can try the latest features and 
+   contribute with feedback, what help us to improve the experience using the 
+   XCTU Software. We thank you in advance for your contribution.
+
+2. Supported Operating Systems
+   XCTU currently supports the following Operating Systems:
+    * Microsoft Windows XP/Vista/7 (32 and 64 bits)
+    * Mac OS X, 10.6 and higher versions (only 64bits)
+
+      For additional information about the system requirements, refer to the 
+      built-in documentation.
+
+3. Known Issues and Limitations
+   * XCTU is not compatible with the following Digi RF devices:
+        - XStream OEM RF modules family
+        - XCite OEM RF modules family
+
+   * Remote firmware update is not yet implemented.
+
+   * Some computers (mostly laptops) may include a built-in modem. The 
+     discovery process could be corrupted if you try to perform a device 
+     discovery specifying the port used by modem. If that happens, you will 
+     need to restart the application in order to perform a new discovery.
+
+   * Remote discovery in DigiMesh networks is not yet supported.
+
+   * Resetting a module while XCTU is communicating with it (during a 
+     configuration or console session), may cause the module to not respond 
+     during 10-15 seconds.
+

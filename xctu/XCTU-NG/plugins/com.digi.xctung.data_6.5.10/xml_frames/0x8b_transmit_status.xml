@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Transmit Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>802.15.4</protocol>
+  </protocols>
+  <frame_type>0x8B</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame being reported. If the Frame ID in the TX Request is 0, no AT Command Response will be given.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit Network Address the packet was delivered to (if success). If not success, this address matches the Destination Network Address that was provided in the Transmit Request Frame.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Transmit retry count">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The number of application transmission retries that took place.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Delivery status">
+      <control_type>1</control_type>
+      <description>Delivery status indicator.</description>
+      <items>
+        <item>Success [00]</item>
+        <item>An expected MAC acknowledgement never occurred [01]</item>
+        <item>CCA failure [02]</item>
+        <item>Packet was purged without being transmitted [03]</item>
+        <item>Physical error on the interface with the WiFi transceiver [04]</item>
+        <item>No Buffers [18]</item>
+        <item>Expected network acknowledgement never occurred [21]</item>
+        <item>Not joined to network [22]</item>
+        <item>Self-addressed [23]</item>
+        <item>Address not found [24]</item>
+        <item>Route not found [25]</item>
+        <item>Broadcast relay was not heard [26]</item>
+        <item>Invalid Binding Table Index [2B]</item>
+        <item>Invalid Endpoint [2C]</item>
+        <item>Attempted broadcast with APS transmission [2D]</item>
+        <item>Attempted unicast with APS transmission, but EE=0 [2E]</item>
+        <item>A software error occurred [31]</item>
+        <item>Resource Error [32]</item>
+        <item>No Secure Session Connection [34]</item>
+        <item>Encryption Failure [35]</item>
+        <item>Data payload too large [74]</item>
+        <item>Indirect message unrequested [75]</item>
+        <item>Client socket creation attempt failed [76]</item>
+        <item>Binding not bound [A8]</item>
+        <item>Key not authorized [BB]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+    <parameter name="Discovery status">
+      <control_type>1</control_type>
+      <description>Discovery status indicator.</description>
+      <items>
+        <item>No discovery overhead [00]</item>
+        <item>Address discovery [01]</item>
+        <item>Route discovery [02]</item>
+        <item>Address and route [03]</item>
+        <item>Extended timeout discovery [40]</item>
+      </items>
+      <default_value>No discovery overhead [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

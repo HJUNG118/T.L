@@ -1,0 +1,1185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Change log</title>
+
+<link href="../css/digiesp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1 style="text-align:center">
+XCTU - Change log
+</h1>
+
+<h2>
+XCTU 6.5.10 - May 13th, 2022
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for the new XBee 3 Global LTE Cat 1 and XBee 3 North America LTE Cat 1 modules.</li>
+	<li class="change_log_list">Fixed an issue causing the firmware library download not to work in Linux and macOS.</li>
+	<li class="change_log_list">Fixed an issue that was not allowing selecting a folder in the File System Manager tool in macOS.</li>
+	<li class="change_log_list">Other minor changes and bug fixes.</li>
+</ul>
+
+<h2>
+XCTU 6.5.9 - February 1st, 2022
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for the new XBee S2C Pro NG module.</li>
+	<li class="change_log_list">Added support for the new XBee RR module.</li>
+	<li class="change_log_list">Added support for the new XBee XR module.</li>
+	<li class="change_log_list">Fixed some issues in the Networking working mode and console recorder when the device is configured in API 2.</li>
+	<li class="change_log_list">Fixed an issue that was not allowing firmware updates using regulatory firmware versions.</li>
+	<li class="change_log_list">Other minor changes and bug fixes.</li>
+</ul>
+
+<h2>
+XCTU 6.5.8 - December 15th, 2021
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Updated log4j library to fix CVE-2021-44228 vulnerability.</li>
+	<li class="change_log_list">Other minor changes and bug fixes.</li>
+</ul>
+
+<h2>
+XCTU 6.5.7 - June 29th, 2021
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.5.6 - June 23rd, 2021
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support to the new XBee 3 Cellular LTE-M/NB-IoT (GNSS/2G) module.</li>
+	<li class="change_log_list">Added support for multiple dependent module versions when updating the firmware of XBee Cellular devices.</li>
+	<li class="change_log_list">Fixed an issue processing the version of new XBee bootloaders.</li>
+	<li class="change_log_list">XCTU now saves the u-blox modem update logs in case of update failures.</li>
+	<li class="change_log_list">Other minor changes and bug fixes.</li>
+	<li class="change_log_list">Added support for the new GNSS API frames.</li>
+</ul>
+
+<h2>
+XCTU 6.5.5 - December 22nd, 2020
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Updated u-blox EasyFlash to version 12.10.</li>
+</ul>
+
+<h2>
+XCTU 6.5.4 - November 10th, 2020
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Updated u-blox EasyFlash to version 12.08.</li>
+</ul>
+
+<h2>
+XCTU 6.5.3 - September 18th, 2020
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support to download, install and show regulatory firmware. This feature can be enabled
+	through a new setting in the General Preferences.</li>
+</ul>
+
+<h2>
+XCTU 6.5.2 - August 12th, 2020
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Fixed how the OTA image size is calculated for XBee 3 remote firmware updates.</li>
+	<li class="change_log_list">Display the <b>Attach a remote file system image</b> control only when the target firmware supports it in
+	the <b>Profile Editor</b> tool.</li>
+	<li class="change_log_list">Add a new option in the <b>Profile Editor</b> tool to configure the profile to <b>format</b> the file system or not.</li>
+</ul>
+
+<h2>
+XCTU 6.5.1 - April 24th, 2020
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for Profile Editor tool to attach a signed remote file system image.</li>
+	<li class="change_log_list">Added support to determine the maximum payload size for XBee 3 OTA transmissions.</li>
+	<li class="change_log_list">Added support for XBee 3 OTA firmware and file system upgrades with firmware version greater than x00A.</li>
+	<li class="change_log_list">Added new modem statuses in the <b>0x8A - Modem Status</b> API frame.
+		<ul>
+			<li class="change_log_list">Open Join Window [43]</li>
+			<li class="change_log_list">Closed Join Window [44]</li>
+			<li class="change_log_list">Network key rotation initiated [45]</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added new modem statuses in the <b>0x98 - Extended Modem status</b> API frame.
+		<ul>
+			<li class="change_log_list">Key exchange timeout [23]</li>
+			<li class="change_log_list">Key established [24]</li>
+			<li class="change_log_list">Key verified [25]</li>
+			<li class="change_log_list">Need new key [26]</li>
+			<li class="change_log_list">Key join done [27]</li>
+			<li class="change_log_list">Channel verify fail [28]</li>
+			<li class="change_log_list">Link key update fail [29]</li>
+			<li class="change_log_list">Key verify timeout [2A]</li>
+			<li class="change_log_list">Unknown key fail [2B]</li>
+			<li class="change_log_list">Join request [2C]</li>
+			<li class="change_log_list">EUI64 in key table [2D]</li>
+			<li class="change_log_list">Joining allowed state [2E]</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added 0x85 status in <b>0xAE - Secure Session Response</b> frame corresponding to "The requested session does not exist".</li>
+	<li class="change_log_list">Fixed firmware update connection process only to show an error after all retries have been consumed when port is in use.</li>
+	<li class="change_log_list">Fixed an issue with the upgrade time in OTA upgrade responses for XBee 3.</li>
+	<li class="change_log_list">Fixed OTA update process so it does not allow transmissions with a wrong cluster ID.</li>
+</ul>
+
+<h2>
+XCTU 6.5.0 - November 25th, 2019
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for XBee 3 Cellular LTE Cat 1 Verizon modules.</li>
+	<li class="change_log_list">Added a way to rate XCTU and collect usage information through a survey.</li>
+	<li class="change_log_list">Added new statuses to the 0x8A - Modem Status and 0x0B - Delivery Status frames.</li>
+	<li class="change_log_list">Improved the cellular modem update process, allowing the user to select which protocol to use in case the firmware supports both (USB and FOAT).</li>
+	<li class="change_log_list">Improved the auto-reset mechanism and added a preference to disable it.</li>
+	<li class="change_log_list">Added MicroPython as reason for not finding a module.</li>
+	<li class="change_log_list">Fixed an issue with the sequence numbers in ZCL responses.</li>
+	<li class="change_log_list">Fixed an issue that was causing a force reset when configuring any parameter with a value of 5.</li>
+	<li class="change_log_list">Fixed an issue that was causing an S2C Zigbee coordinator not to maintain network settings after a firmware update.</li>
+</ul>
+
+<h2>
+XCTU 6.4.4 - October 4th, 2019
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for for modem update over USB to XBee 3 Cellular LTE CAT 1 and XBee 3 Cellular LTE-M/NB-IoT modules.</li>
+	<li class="change_log_list">Added support to configure XBee Multi Programmer pre and post scripts in the configuration profiles using the 
+	<b>Profile Editor</b> tool. These scripts are executed by the XBee Multi Programmer application before and after programming each XBee module.</li>
+	<li class="change_log_list">Added support for <b>Socket</b> frames:
+		<ul>
+			<li class="change_log_list">0x40 - Socket Create</li>
+			<li class="change_log_list">0x41 - Socket Option Request</li>
+			<li class="change_log_list">0x42 - Socket Connect</li>
+			<li class="change_log_list">0x43 - Socket Close</li>
+			<li class="change_log_list">0x44 - Socket Send (Transmit)</li>
+			<li class="change_log_list">0x45 - Socket SendTo (Transmit Explicit Data): IPv4</li>
+			<li class="change_log_list">0x46 - Socket Bind/Listen</li>
+			<li class="change_log_list">0xC0 - Socket Create Response</li>
+			<li class="change_log_list">0xC1 - Socket Option Response</li>
+			<li class="change_log_list">0xC2 - Socket Connect Response</li>
+			<li class="change_log_list">0xC3 - Socket Close Response</li>
+			<li class="change_log_list">0xC6 - Socket Listen Response</li>
+			<li class="change_log_list">0xCC - Socket New IPv4 Client</li>
+			<li class="change_log_list">0xCD - Socket Receive</li>
+			<li class="change_log_list">0xCE - Socket Receive From: IPv4</li>
+			<li class="change_log_list">0xCF - Socket State</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added support for <b>Bluetooth unlock</b> frames:
+		<ul>
+			<li class="change_log_list">0x2C - Bluetooth Unlock</li>
+			<li class="change_log_list">0xAC - Bluetooth Unlock Response</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added a new setting to use the alternative serial library instead of the standard one.</li>
+	<li class="change_log_list">Analog mask is now parsed correctly in IO sample frames.</li>
+	<li class="change_log_list">Added support to open firmware release notes that are released as PDF documents.</li>
+	<li class="change_log_list">Hide the 'Force the Cellular modem update' checkbox of the Update Firmware dialog if the target XBee Cellular 
+	device does not have a modem firmware image to update.</li>
+	<li class="change_log_list">Added new statuses to the 0x8A - Modem Status and 0x98 - Extended Modem Status frames.</li>
+	<li class="change_log_list">Profile Editor tool is now able to load legacy profiles (*.pro and *.xml) correctly.</li>
+	<li class="change_log_list">Fixed an issue that was causing the headless version of XCTU to occasionally display a stack trace error when 
+	the execution of any command ended. Notice that the error printed was not causing any issue to the execution of the command.</li>
+	<li class="change_log_list">Throughput test is now executed correctly in encrypted networks.</li>
+	<li class="change_log_list">Fixed some graphic errors that appear when performing 2 simultaneous network scans of the same network.</li>
+	<li class="change_log_list">Improved the behavior of the auto-reset feature.</li>
+	<li class="change_log_list">Computer's serial port parameters are updated automatically now if they do not match the parameters read from 
+	the	XBee device.</li>
+	<li class="change_log_list">Added a new option to safely shut down an XBee Cellular device (firmware definition must include this setting).</li>
+	<li class="change_log_list">Other minor fixes and improvements.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Secure Sessions
+</h3>
+
+<p class="change_log_text">A <b>secure session</b> is a password-secured connection between two XBee nodes of a network (server and a client) where 
+the pair can send and receive encrypted data that only they can decrypt to protect against external man-in-the middle attacks.</p>
+
+<p class="change_log_text">XCTU includes support to configure the password of the server XBee device through a new <b>Secure Session authentication</b> 
+dialog accessible from the configuration settings of the XBee device. Also, XCTU detects automatically when a secure session needs to be established 
+with a remote XBee device in order to configure or communicate with it. When this happens, XCTU displays a dialog to enter the password of the remote 
+XBee device (server) to authenticate with.</p>
+
+<h2>
+XCTU 6.4.3 - April 8th, 2019
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for OTA file system update to latest versions of XBee3 firmware (Zigbee 3.0, DigiMesh 2.4 and 802.15.4).</li>
+	<li class="change_log_list">Added flow control options into the MicroPython console tool. Updated the icon of the tool.</li>
+	<li class="change_log_list">Added auto-reset feature (Windows Only). Now, instead of prompting the user to reset the device manually when required, 
+	XCTU will attempt to do the reset programmatically. If the process cannot be completed, the user will be prompted to reset the device manually. 
+	Note that this feature does not apply to S2/S2B devices.</li>
+	<li class="change_log_list">Improvements in the Frames Generator tool:
+		<ul>
+			<li class="change_log_list">Added Zigbee 3.0 as selectable protocol. By default, the tool shows information for 'Zigbee 3.0' 
+			instead of 'Zigbee' legacy when the protocol 'All' is selected.</li>
+			<li class="change_log_list">Frame '0x24 - Register Joining Device' displays different values depending on the selected protocol
+			('All'/'Zigbee 3.0' or 'Zigbee')</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Fixed an issue when opening the connection in devices working in MicroPython REPL mode that was causing 
+	the REPL to stop responding.</li>
+	<li class="change_log_list">Changes related to profiles:
+		<ul>
+			<li class="change_log_list">Profiles cannot be saved or loaded from the <b>Firmware Explorer tool</b> any longer. They can be 
+			managed from the 'Profile Editor tool' or the 'Configuration working mode view':
+				<ul>
+					<li class="change_log_list"><b>Profile Editor tool</b>. Use this tool to create, inspect and edit profiles.</li>
+					<li class="change_log_list"><b>Configuration working mode view</b>. From the <b>Profile</b> menu of this view 
+					you can, either <b>create</b> a new profile based on the configuration of the selected radio module, or <b>apply</b>
+					a previously generated profile to that module, instead.</li>
+				</ul>
+			</li>
+			<li class="change_log_list">When loading a profile from the <b>Configuration working mode view</b>, it will be automatically
+			applied to the selected radio module. This includes firmware, settings and file system.</li>
+			<li class="change_log_list">If the profile to apply has file system attached, the file system of the radio module will be 
+			formatted prior to flashing the new one.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Extended the synchronization timeout with the remote radio module during a remote firmware update.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Profile Editor tool
+</h3>
+
+<p class="change_log_text">This tool allows you to create new profiles or load and edit existing ones. The main features provided by this tool include:</p>
+
+<ul>
+	<li class="change_log_list">Create XBee profiles using the new <b>Create profile wizard</b>. This wizard can be also accessed through 
+	the <b>Profile</b> menu of the <b>Configuration working mode view</b>.</li>
+	<li class="change_log_list">Load, inspect and edit existing XBee profiles.</li>
+</ul>
+
+<h2>
+XCTU 6.4.2 - November 7th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Created a dialog to configure the authentication in XBee3 devices with Bluetooth Low Energy support.</li>
+	<li class="change_log_list">Added support for User Data Relay frames:
+		<ul>
+			<li class="change_log_list">0x2D - User Data Relay</li>
+			<li class="change_log_list">0xAD - User Data Relay Output</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Applied extended error handling in Zigbee OTA firmware updates.</li>
+</ul>
+
+<h2>
+XCTU 6.4.1 - September 24th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Firmware update process is now able to update the bootloader of the module too. If XCTU detects 
+	that a bootloader update is necessary, it notifies the user about that when performing the firmware update of the module.</li>
+	<li class="change_log_list">Added support for OTA firmware update to latest versions of XBee3 DigiMesh 2.4 and XBee3 802.15.4 firmware.</li>
+	<li class="change_log_list">RX16 and RX64 IO packets now support multiple IO samples in the same packet.</li>
+	<li class="change_log_list">Fixed the console status indicator of the Consoles view tabs.</li>
+	<li class="change_log_list">Added support for XBee3 802.15.4 in the Spectrum Analyzer tool.</li>
+	<li class="change_log_list">Added new modem statuses in the <b>0x8A - Modem Status</b> API frame.
+		<ul>
+			<li class="change_log_list">BLE Connect [32]</li>
+			<li class="change_log_list">BLE Disconnect [33]</li>
+			<li class="change_log_list">Bandmask Configuration Failed [34]</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Serial port is now closed when the XBee USB device is detached from the computer and the port was open.</li>
+	<li class="change_log_list">Fixed an issue (introduced in version 6.4.0 of XCTU) that was preventing the output of XCTU's CLI to be displayed in Windows.</li>
+	<li class="change_log_list">Display 'N/A' instead of '0x19' when hardware version cannot be taken from bootloader during a firmware update process.</li>
+	<li class="change_log_list">Fixed some issues when executing the XCTU installer in unattended mode.</li>
+</ul>
+
+<h2>
+XCTU 6.4.0 - June 15th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for remote configuration through Secured Remote AT Command.</li>
+	<li class="change_log_list">Added support for TLS in XBee Cellular.</li>
+	<li class="change_log_list">Added an extra step in the XCTU installer to install the USB RF drivers.</li>
+	<li class="change_log_list">Removed the legacy firmware from the installer and added a way to download it when required.</li>
+	<li class="change_log_list">Changed how bypass mode is set (aggressive bypass).</li>
+	<li class="change_log_list">Fixed an issue when saving a profile of XBee Cellular 3G modules.</li>
+	<li class="change_log_list">Fixed a communication problem with the email server when sending feedback.</li>
+	<li class="change_log_list">Added support for <b>802.15.4</b> protocol in the <b>0x8B - Transmit Status</b> API frame.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+File System Manager tool
+</h3>
+
+<p class="change_log_text">This new tool allows you to manage the file system of radio modules attached to your computer. The main features provided by this tool include:</p>
+
+<ul>
+	<li class="change_log_list">List folders and navigate through the file system of the radio module.</li>
+	<li class="change_log_list">Transfer and download files from the radio module.</li>
+	<li class="change_log_list">Rename, move and remove files and folders from the radio module.</li>
+	<li class="change_log_list">Get SHA256 hash of a file from the radio module and compare it with a local file.</li>
+	<li class="change_log_list">Re-format the file system of the radio module.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+UI improvements for high-DPI displays
+</h3>
+
+<p class="change_log_text">Windows machines with high-DPI displays are usually configured to scale the text and programs in order to make them more usable. This new version of XCTU improves the UI appearance and behavior of the tool for those systems.</p>
+
+<p class="change_log_text">The feature uses a different JRE (Java Runtime Environment), so this update cannot be installed using the automatic update feature of XCTU. Instead, a new installation from scratch is required.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+New firmware indicator
+</h3>
+
+<p class="change_log_text">When a radio module is not running the latest firmware version it can, a new control is displayed next to the name label of its information panel. If you click it, the Update firmware dialog is automatically opened for that radio module listing all the available firmware versions for it.</p>
+
+<h2>
+XCTU 6.3.14 - May 8th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Fixed an issue that was preventing a radio module to be recovered when it was configured in MycroPython mode.</li>
+	<li class="change_log_list">Fixed the XBee Cellular modem firmware update process in MacOS.</li>
+	<li class="change_log_list">Improved the Serial Console and MicroPython Terminal tools to inherit the serial settings from the selected XBee module (if any).</li>
+	<li class="change_log_list">Added support for <b>802.15.4</b> protocol in the following API frames:
+		<ul>
+			<li class="change_log_list">0x10 - Transmit Request</li>
+			<li class="change_log_list">0x11 - Explicit Addressing Command Frame</li>
+			<li class="change_log_list">0x90 - Receive Packet</li>
+			<li class="change_log_list">0x91 - Explicit Rx Indicator</li>
+			<li class="change_log_list">0x92 - IO Data Sample Rx Indicator</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.3.13 - April 4th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for Digi XBee3 DigiMesh modules.</li>
+	<li class="change_log_list">Added an option to reset the device settings when applying a profile.</li>
+	<li class="change_log_list">Improved the cellular modem firmware update when the modem version cannot be read.</li>
+	<li class="change_log_list">Fixed some issues in the ZB3 OTA update when working with encrypted networks.</li>
+</ul>
+
+<h2>
+XCTU 6.3.12 - January 25th, 2018
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for Digi XBee3 802.15.4 modules.</li>
+	<li class="change_log_list">Fixed some issues related to the Cellular modem firmware updates:
+		<ul>
+			<li class="change_log_list">The Cellular modem firmware is also updated when recovering a radio module.</li>
+			<li class="change_log_list">The Cellular mode (airplane, direct USB or bypass) is temporarily disabled when updating the firmware in order to read the modem version.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Disabled the RTS button in the serial console when the flow control is hardware.</li>
+	<li class="change_log_list">Fixed a problem causing the spectrum analyzer to fail with 802.15.4 modules in AT.</li>
+</ul>
+
+<h2>
+XCTU 6.3.11 - October 17th, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for XBee Cellular modem firmware updates.</li>
+	<li class="change_log_list">Added support for new XBee Cellular variants.</li>
+	<li class="change_log_list">Updated the default profile configuration values when saving profiles.
+		<ul>
+			<li class="change_log_list">Radio firmware flash action: Flash if firmware is different</li>
+			<li class="change_log_list">Attach Cellular modem firmware: Checked by default</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.3.10 - September 28th, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for XBee NB-IoT modules.</li>
+	<li class="change_log_list">Added support for Digi XBee3 Zigbee 3.0 modules.</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x21 - Route command options field is now enabled and the default number of addresses is now 1.</li>
+			<li class="change_log_list">0x24 - Removed some deprecated documentation.</li>
+			<li class="change_log_list">0x8A - Added new Zigbee modem statuses.</li>
+			<li class="change_log_list">0xA1 - Default number of addresses is now 1.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">XCTU now verifies that the fields 'Number of addresses' and 'Addresses' match for frames 0x21 and 0xA1.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Configuration profiles format update
+</h3>
+
+<p class="change_log_text">Configuration profiles are now saved with the <b>*.xpro</b> extension instead of <b>*.xml</b>. When saving a profile, XCTU displays a 
+<b>Profile configuration</b> dialog where you can configure some extra settings related to the profile:</p>
+
+<ul>
+	<li class="change_log_list"><b>Description</b>: Include a little description about the profile that could help to identify it and its purpose.</li>
+	<li class="change_log_list"><b>Radio firmware</b>: Allows you to configure some settings related to the radio firmware of the profile:
+		<ul>
+			<li class="change_log_list"><b>Radio firmware flash actions</b>: You can set the action to perform with the radio firmware of the profile. This action is used later by XCTU and other applications when loading the profile.
+				<ul>
+					<li class="change_log_list"><b>Flash always</b>. Radio firmware configured in the profile is always flashed in the radio module, it does not matter if the module already has the same radio firmware version flashed.</li>
+					<li class="change_log_list"><b>Flash if firmware is different</b>. Radio firmware configured in the profile is flashed in the radio module only if the radio firmware version of the module is different than the one configured in the profile.</li>
+					<li class="change_log_list"><b>Do not flash firmware</b>. Only settings configured in the profile are written in the radio module.</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="change_log_list"><b>Cellular firmware</b>: For cellular devices, the profile configuration dialog allows you to attach the modem firmware to the profile.</li>
+</ul>
+
+<p class="change_log_text"><b>Note</b>: XCTU 6.3.10 maintains compatibility with the previous <b>*.xml</b> profile format.</p>
+
+<h2>
+XCTU 6.3.9 - July 31st, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.3.8 - May 18th, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for XBee Cellular 3G modules.</li>
+	<li class="change_log_list">Added support for 868LP SX modules (beta).</li>
+	<li class="change_log_list">Added support for Thread protocol (beta).</li>
+	<li class="change_log_list">Added the following Thread specific API frames:
+		<ul>
+			<li class="change_log_list">0x1A - IPv6 Tx Request.</li>
+			<li class="change_log_list">0x1B - IPv6 Remote AT Command.</li>
+			<li class="change_log_list">0x1C - CoAP Tx Request.</li>
+			<li class="change_log_list">0x1D - CoAP Passthru Tx Response.</li>
+			<li class="change_log_list">0x1E - CoAP Passthru Tx Request.</li>
+			<li class="change_log_list">0x9A - IPv6 Rx Response.</li>
+			<li class="change_log_list">0x9B - IPv6 Remote AT Command Response.</li>
+			<li class="change_log_list">0x9C - CoAP Rx Response.</li>
+			<li class="change_log_list">0x9D - CoAP Passthru Rx Request.</li>
+			<li class="change_log_list">0x9E - CoAP Passthru Rx Response.</li>
+			<li class="change_log_list">0xA7 - IPv6 IO Data Sample Rx Indictaor.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added a new control type in the Frames generator tool to configure IPv4 and IPv6 parameters.</li>
+	<li class="change_log_list">Added a new preference and option in the transparent/serial consoles to insert CR/LF, CR or LF.</li>
+	<li class="change_log_list">Fixed a bug when parsing the RB parameter in XT09 firmware.</li>
+	<li class="change_log_list">Improved the scrolling behavior when using the mouse wheel in the Configuration working mode.</li>
+	<li class="change_log_list">Fixed the payload length calculation in the Frames generator tool to include the null byte (0x00).</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x89 - Fixed Frame ID description.</li>
+			<li class="change_log_list">0x8A - Updated some statuses.</li>
+			<li class="change_log_list">0x95 - Added RSSI field.</li>
+		</ul>
+	</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+MicroPython Terminal tool
+</h3>
+
+<p class="change_log_text">This new tool allows you to communicate with the MicroPython stack of your radio module through the serial interface.</p>
+
+<h2>
+XCTU 6.3.7 - April 27th, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.3.6 - April 25th, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.3.5 - January 31st, 2017
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added a mechanism to force the re-installation of specific radio firmware versions.</li>
+</ul>
+
+<h2>
+XCTU 6.3.4 - December 7th, 2016
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for Cellular protocol.</li>
+	<li class="change_log_list">Signal strength setting (DB) of Cellular radio modules has been complemented with a signal bars icon.</li>
+	<li class="change_log_list">Calculator tool of Numeric bitfield settings supports up to 32 bytes now.</li>
+	<li class="change_log_list">Added a new General page within XCTU preferences to configure the guard time and command mode character. These values are used to enter command mode when the radio module operates in transparent (AT) mode.</li>
+	<li class="change_log_list">Added support for Singapore region firmware.</li>
+	<li class="change_log_list">Updated the structure of some Wi-Fi protocol frames to be aligned with the documentation:
+		<ul>
+			<li class="change_log_list">0x28 - Renamed to 'Send Data Request' and updated some frame fields.</li>
+			<li class="change_log_list">0xB8 - Renamed to 'Send Data Response' and updated some frame fields.</li>
+			<li class="change_log_list">0xB9 - Updated some frame fields.</li>
+			<li class="change_log_list">0xBA - Changed the Status text setting by a combo setting.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.3.3 - September 5th, 2016
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.3.2 - August 19th, 2016
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for the DigiMesh 2.4 protocol in the S2C modules.</li>
+	<li class="change_log_list">Fixed a bug that was reseting the flow control configuration of a radio module to 'None' when the 'Action required' dialog was displayed.</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x28 - Fixed frame length calculation.</li>
+			<li class="change_log_list">0x89 - Fixed 'Delivery status' field name.</li>
+			<li class="change_log_list">0x8D - Updated the name of a duplicated 'Length' field.</li>
+			<li class="change_log_list">0xB9 - Fixed frame length calculation.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added support for New Zealand region firmware.</li>
+	<li class="change_log_list">Port configuration dialog within the Serial console tool is now resizable.</li>
+	<li class="change_log_list">Add and Discover devices wizards dialogs are now blocked when the discovery process is started.</li>
+</ul>
+
+<h2>
+XCTU 6.3.1 - March 18th, 2016
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for the 802.15.4 protocol in the S2C modules.</li>
+	<li class="change_log_list">Fixed a bug that was causing the API Console to stop parsing frames after receiving a 'Many to one Indicator' frame.</li>
+	<li class="change_log_list">Improvements in the Frames Generator tool:
+		<ul>
+			<li class="change_log_list">Updated the list of supported frames in the XTend (DigiMesh) protocol.</li>
+			<li class="change_log_list">Protocols are sorted alphabetically now.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Fixed a bug that was avoiding XCTU to execute the recovery process correctly during a remote firmware update.</li>
+	<li class="change_log_list">Performed some improvements to adjust XCTU controls based on the size of the texts:
+		<ul>
+			<li class="change_log_list">Most XCTU controls now fit the size of the texts they contain.</li>
+			<li class="change_log_list">Some dialogs within XCTU are now resizable.</li>
+			<li class="change_log_list">Added sashforms and scrolls to several tool dialogs.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.3.0 - November 6th, 2015
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Command Line Interface (CLI) support
+</h3>
+
+<p class="change_log_text">Added CLI support to XCTU. A new executable has been added within the 
+installation path to execute the application in CLI mode without graphic interface. The following 
+features are supported within CLI mode:</p>
+<ul>
+	<li class="change_log_list"><b>List ports.</b> A list of serial and USB ports can be retrieved in command line mode.</li>
+	<li class="change_log_list"><b>Update firmware.</b> Firmware of any radio device can be updated in this mode.</li>
+	<li class="change_log_list"><b>Load profile.</b> Now it is possible to load profiles to connected devices through the CLI of XCTU.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Spectrum analyzer tool
+</h3>
+
+<p class="change_log_text">XCTU includes a new tool used to test and measure the spectrum of the selected radio band. The analysis 
+reports the noise level of each channel indicating its best, worst and average measure.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Throughput tool
+</h3>
+
+<p class="change_log_text">This new tool allows you to measure the maximum transfer ratio from one radio module to 
+another in the same network. The Throughput tool offers 3 session modes and several payload configuration options to 
+test different combinations.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+New Look & Feel and UI changes
+</h3>
+
+<p class="change_log_text">The UI of XCTU has been modified displaying a plain and simpler look & feel. None of the controls have been 
+moved or modified, so application workflow remains the same for every feature and tool.</p>
+
+<p class="change_log_text">XCTU includes now a menu bar to access all the XCTU features, tools and working modes. All the menu items have a 
+keyboard shortcut associated for a faster access to the features.</p>
+
+<p class="change_log_text">A new page to configure the XCTU UI has been added to the preferences section. These settings allow you to 
+configure the following options:</p>
+<ul>
+	<li class="change_log_list">Texts (font) size of the application</li>
+	<li class="change_log_list">Display or hide XCTU menu bar</li>
+	<li class="change_log_list">Display texts in toolbars</li>
+	<li class="change_log_list">Toolbars size</li>
+	
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support to the following new radio modules:
+		<ul>
+			<li class="change_log_list">XLR Module</li>
+			<li class="change_log_list">XTR</li>
+			<li class="change_log_list">SX</li>
+			<li class="change_log_list">SX PRO</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added a search box in the Radio Modules view that allows you to look for specific radio modules by MAC, name and other fields.</li>
+	<li class="change_log_list">Some numeric settings now include a value calculator helper control accessible through a button next to the units field.</li>
+	<li class="change_log_list">Remote radio modules are also sorted when sorting devices in the Radio Modules view. They can be moved up and down too.</li>
+	<li class="change_log_list">Serial ports combo box from XBee recovery tool can be edited in Linux and MacOS now.</li>
+	<li class="change_log_list">Added a new preference to initialize remote nodes discovered after a Network scan.</li>
+	<li class="change_log_list">Added support for reading and writing settings to programmable devices after reseting them.</li>
+	<li class="change_log_list">Fixed the logged date of AT data packets when saving an AT console session.</li>
+	<li class="change_log_list">Flow control is correctly configured in the local serial port when any serial setting  is changed in the radio module.</li>
+	<li class="change_log_list">Fixed a problem that was causing Range Test tool to be displayed as a blank window in some screen resolutions.</li>
+	<li class="change_log_list">Discover SSIDs button of Wi-Fi radio modules is enabled now.</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x21 - Fixed frame length.</li>
+			<li class="change_log_list">0x2A - Added reserved bit field.</li>
+			<li class="change_log_list">0xA1 - Fixed frame length.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added support to Hardware version 0x30.</li>
+	<li class="change_log_list">AT and Serial consoles are now able to write packets greater than 1 KByte without problems.</li>
+	<li class="change_log_list">XCTU consoles do not hang any longer when the module/port is configured with Hardware flow control.</li>
+	<li class="change_log_list">XBee API Console is now able to display invalid frames (filter must be configured accordingly).</li>
+	<li class="change_log_list">Firmware update button has been disabled for remote 802.15.4 radio modules.</li>
+	<li class="change_log_list">Added a mechanism to force settings writing when there are no changes in the Configuration working mode.</li>
+	<li class="change_log_list">ttyACM ports are now displayed in the device discovery processes under Linux.</li>
+	<li class="change_log_list">The status bar of the application is now hidden automatically when there is not any process in progress.</li>
+	<li class="change_log_list">Added an extra step in the firmware update process of some modules to modify the baud rate and increase the transfer speed.</li>
+	<li class="change_log_list">Implemented a region check process before performing a firmware update or recovery of a radio module.</li>
+	<li class="change_log_list">Removed the information panel from all the XCTU consoles.</li>
+</ul>
+
+<h2>
+XCTU 6.2.1 - June 16th, 2015
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Internal release
+</h3>
+
+<h2>
+XCTU 6.2.0 - May 8th, 2015
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Linux support
+</h3>
+
+<p class="change_log_text">Added support to Linux platform. XCTU is now able to be executed in Linux desktop environments running KDE or Gnome.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Serial Console tool
+</h3>
+
+<p class="change_log_text">The <b>Serial Console</b> tool has been included within the Tools drop-down menu of the main toolbar. 
+This tool allows you to interact with your radio modules without having to discover and add them to the list of radio modules.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Consoles improvements
+</h3>
+
+<p class="change_log_text">Performed the following improvements in all the XCTU consoles:</p>
+
+<ul>
+	<li class="change_log_list">Added a control in the consoles toolbar to see and manage the serial port flow control lines.</li>
+	<li class="change_log_list">Added a new recording feature to XCTU consoles that allows you to record all the sent and 
+	received data in a log file with CSV format.</li>
+	<li class="change_log_list">Status icon of consoles tabs now changes depending on the status of the console to display 
+	the following actions: connected, disconnected, sending and receiving data.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+API Console frames filter
+</h3>
+
+<p class="change_log_text">Added a new frames filtering option in the API console in order to filter the frames of the table. These 
+are the available options:</p>
+
+<ul>
+	<li class="change_log_list">Filter received frames
+		<ul>
+			<li class="change_log_list">Filter all received frames</li>
+			<li class="change_log_list">Filter frames received from a specific device</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Filter sent frames
+		<ul>
+			<li class="change_log_list">Filter all sent frames</li>
+			<li class="change_log_list">Filter frames sent to a specific device</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Filter by frame type</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Firmware Release Notes Viewer
+</h3>
+
+<p class="change_log_text">Included a new feature that allows users to explore and read the Release Notes of the released XBee firmwares
+in all the firmware list controls.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Online documentation
+</h3>
+
+<p class="change_log_text">XCTU documentation has been moved to an <b>online system</b> to keep it up to date and facilitate its access outside XCTU. 
+A PDF copy has been included in the tool to be able to access the documentation while working without internet connection.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Fixed an issue causing Firmware Update window to fail to select current flashed firmware is some cases.</li>
+	<li class="change_log_list">Added a connection filtering option in the Network working mode toolbar to show/hide connections based on their quality.</li>
+	<li class="change_log_list">Improved the tooltip behavior of the Show HEX button in AT packets viewer.</li>
+	<li class="change_log_list">Cancel and Finish buttons are now displayed when adding devices in MacOS.</li>
+	<li class="change_log_list">Release Notes format is now txt.</li>
+	<li class="change_log_list">Radio modules within the radio modules list can be sorted and moved using the new sorting option of the view.</li>
+	<li class="change_log_list">Added a button in the radio modules view to clear the list of modules (remove all).</li>
+	<li class="change_log_list">Removed the Device Cloud working mode from the application.</li>
+	<li class="change_log_list">Fixed an issue while configuring NT time in Node Discovery for local devices in AT mode.</li>
+	<li class="change_log_list">Allow transmit interval to be reduced to lower values than 100ms in the consoles.</li>
+	<li class="change_log_list">Added a text to display maximum estimated discovering time while discovering devices.</li>
+	<li class="change_log_list">Added a new security checker when updating the firmware of a module that verifies the file size.</li>
+	<li class="change_log_list">Updated the texts of the info pop-up that appears when trying to write settings without any change made.</li>
+	<li class="change_log_list">XCTU now configures the Number Base (CF) setting of XTend modules when reading and writing parameters.</li>
+	<li class="change_log_list">Hardware version field is considered when updating the firmware file of a module.</li>
+	<li class="change_log_list">Added 3 new graphics for the XLR, XTend Legacy and XTend DM radio modules.</li>
+	<li class="change_log_list">Last used configuration is saved and loaded the next time any of these operations in performed:
+		<ul>
+			<li class="change_log_list">Add a device</li>
+			<li class="change_log_list">Discover devices</li>
+			<li class="change_log_list">Configure serial console</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Fixed several issues with the device type label and tooltip.</li>
+	<li class="change_log_list">Changed the loading settings layout message to a more appropriate one.</li>
+	<li class="change_log_list">Double-clicking a port in the Add device wizard will finish the process now.</li>
+	<li class="change_log_list">When a console is disconnected it stops the periodic data write process if it was being executed.</li>
+	<li class="change_log_list">Added a warning before updating firmware if the new firmware does not have serial settings.</li>
+	<li class="change_log_list">Fixed an issue causing API console not to log the complete frame in some cases.</li>
+	<li class="change_log_list">When the console is recording, the console info icon changes to indicate it.</li>
+	<li class="change_log_list">Added the possibility to specify serial port manually when adding a new device.</li>
+	<li class="change_log_list">Added the possibility to specify the baud rate manually when adding a new device in Windows OS.</li>
+	<li class="change_log_list">AT console scrolls correctly now when the sent/received text does not have line breaks.</li>
+	<li class="change_log_list">Improved the speed at which settings are read in AT or transparent mode.</li>
+	<li class="change_log_list">Added a byte count field to the 'Add data packet' dialogs of the AT and API consoles.</li>
+	<li class="change_log_list">Fixed an issue that was causing port information label to display wrong data in a local device when its name (NI) was changed remotely.</li>
+	<li class="change_log_list">Remote parameters are no longer applied automatically when configuring remote devices.</li>
+	<li class="change_log_list">Feedback form displays now a warning before closing the dialog if you made any change.</li>
+	<li class="change_log_list">The NO parameter is now changed and restored later while scanning DigiMesh networks.</li>
+	<li class="change_log_list">Added the total number of bytes to the Frames Generator and, to the text fields, the current number of used bytes next to the maximum.</li>
+	<li class="change_log_list">XCTU is now able to determine if the firmware of a device or its Node Identifier changed by other applications.</li>
+	<li class="change_log_list">When installing a firmware using a local file a question dialog is displayed to confirm the process. When it finishes the summary dialog lists the firmware over-written</li>
+	<li class="change_log_list">Improved the behavior of the send buttons of the AT and API consoles.</li>
+	<li class="change_log_list">Fixed an issue when obtaining the AT command status in the API frames viewer.</li>
+	<li class="change_log_list">Devices with a firmware version of more than 2 bytes can be configured remotely now.</li>
+	<li class="change_log_list">Modified the text of the Finish button from the update dialog to 'Update'.</li>
+	<li class="change_log_list">Fixed error message when the length of a string parameter is longer than the maximum allowed.</li>
+	<li class="change_log_list">Added a new preferences page to configure the Over-The-Air (OTA) firmware update timeout.</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x00 - Tx64 Transmit: Added this frame to the XLR protocol filter.</li>
+			<li class="change_log_list">0x11 - Explicit Addressing Command: Extended the information of Transmit Options field and added Digi default values.</li>
+			<li class="change_log_list">0x80 - Rx64 Receive: Added this frame to the XLR protocol filter.</li>
+			<li class="change_log_list">0xA1 - Route Record Indicator: Removed the minimum required bytes of the addresses field.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Updated the Frames Generator, Frames Interpreter, Recovery and Load Console Session tools icons.</li>
+	<li class="change_log_list">Changed the order of the HEX/ASCII tabs controls displaying the ASCII tab in first place.</li>
+	<li class="change_log_list">Sleeping devices from the XBP24ZB7 family with baud rates different than 9600 can be added to XCTU now.</li>
+	<li class="change_log_list">Firmware update process of XLR devices with baud rates different than 9600 finishes successfully now.</li>
+	<li class="change_log_list">Range Test tool improvements:
+		<ul>
+			<li class="change_log_list">Reduced the minimum height of the dialog so that it is displayed correctly in low resolution displays.</li>
+			<li class="change_log_list">Range Test tool is now compatible with Point-to-multipoint, XTend and XSC protocols.</li>
+			<li class="change_log_list">Added the possibility to choose between doing a range test using the cluster 0x12 or serial loopback.</li>
+			<li class="change_log_list">Reduced the size of the module selection control.</li>
+			<li class="change_log_list">Added the possibility to specify the 16-bit address of the remote radio module.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Fixed the scrollbar behavior of the Frames Interpreter control.</li>
+	<li class="change_log_list">Consoles are not closed when removing remote devices now.</li>
+	<li class="change_log_list">Update firmware process shouldn't hang any longer when reseting the module.</li>
+	<li class="change_log_list">XCTU verifies now that the firmware to flash exits before starting the update firmware process.</li>
+</ul>
+
+<h2>
+XCTU 6.1.3 - March 18th, 2015
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Improved the look and feel of the frames interpreter control in the API Console and Frames Interpreter tool.</li>
+	<li class="change_log_list">IO packets now display more detailed data about digital and analog lines.</li>
+	<li class="change_log_list">Settings without a default value will not be marked as wrong any longer.</li>
+	<li class="change_log_list">Read-only settings are not refreshed now when loading factory default settings.</li>
+	<li class="change_log_list">DigiMesh 900 radio modules can be configured remotely now.</li>
+	<li class="change_log_list">Hardware version number is displayed in a correct hexadecimal format now.</li>
+	<li class="change_log_list">Sleeping radio modules working in AT mode with a baud rate different than 9600 can be added and configured in XCTU without problems now.</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x8D - Route Information Packet: Fixed the information provided for the source, responder and receiver addresses.</li>
+			<li class="change_log_list">0xA2 - Device Authenticated Indicator: Removed this frame from the Zigbee protocol filter.</li>
+			<li class="change_log_list">0xA4 - Register Joining Device Status: Removed this frame from the Zigbee protocol filter.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.1.2 - September 16th, 2014
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Support for new devices
+</h3>
+
+<ul>
+	<li class="change_log_list">Added support for <b>XLR PRO Radio Solution</b>.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Support for 'API 2 - API Mode With Escapes' operating mode in 'Frames Generator' and 'Frames Interpreter' tools.</li>
+	<li class="change_log_list">Correctly display IP settings of XBee modules when operating in API 1 or API 2 mode.</li>
+	<li class="change_log_list">Discovery of remote devices does not modify the 'NO' setting of the module.</li>
+	<li class="change_log_list">ZNet devices working in Transparent (AT) mode are now properly discovered and added to XCTU.</li>
+	<li class="change_log_list">XBee S5 modules with DP protocol running firmware v1027 or earlier are now discovered correctly.</li>
+	<li class="change_log_list">Function label of an XBee device will now display the firmware version when the firmware cannot be found by XCTU.</li>
+	<li class="change_log_list">Sent and received frames with unknown API data in the API console shouldn't cause exceptions any longer.</li>
+	<li class="change_log_list">Removed GIF, ICO and TIFF formats from the save screenshot dialog in the 'Network' working mode (they were not working correctly).</li>
+	<li class="change_log_list">Fixed some issues in several API frames:
+		<ul>
+			<li class="change_log_list">0x10 - Transmit Request: Removed the payload size limit.</li>
+			<li class="change_log_list">0x07 - Remote AT Command (Wi-Fi): 'Remote cmd. options' field is now a text box control.</li>
+			<li class="change_log_list">0x11 - Explicit Addressing Command Frame: Removed the payload size limit.</li>
+			<li class="change_log_list">0x17 - Remote AT Command: 'Remote cmd. options' field is now a text box control.</li>
+			<li class="change_log_list">0x8A - Modem Status: Added missing status codes.</li>
+			<li class="change_log_list">0x8F - IO Data Sample RX Indicator: Fields 'Digital channel mask' and 'Analog channel mask' are properly interpreted.</li>
+			<li class="change_log_list">0x90 - Receive Packet: Removed the payload size limit.</li>
+			<li class="change_log_list">0x91 - Explicit Rx Indicator: Removed the payload size limit.</li>
+			<li class="change_log_list">0x92 - IO Data Sample Rx Indicator: Fields 'Digital channel mask' and 'Analog channel mask' are properly interpreted.</li>
+			<li class="change_log_list">0x95 - Node Identification: Fixed interpretation of frame and added 'Device type identifier' field.</li>
+			<li class="change_log_list">0x98 - Extended Modem Status: Added this new frame supported in new Zigbee firmwares.</li>
+			<li class="change_log_list">0xB0 - RX IPv4: Removed 'Frame ID' field.</li>
+			<li class="change_log_list">0xFF - Generic: Removed the payload size limit.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2>
+XCTU 6.1.1 - January 29th, 2014
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Fixed a problem that was causing the tool not to display the available serial ports in 
+	some scenarios.</li>
+	<li class="change_log_list">Numeric firmware settings can now be configured with '0'.</li>
+	<li class="change_log_list">Sleeping DigiMesh and 802.15.4 nodes (working in AT operating mode) can now be discovered 
+	and configured in XCTU.</li>
+	<li class="change_log_list">Log file is now sent by default when reporting an issue using the built-in feedback tool.</li>
+</ul>
+
+<h2>
+XCTU 6.1.0 - December 13th, 2013
+</h2>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Network working mode
+</h3>
+
+<p class="change_log_text">A new working mode called <b>Network</b> has been implemented in XCTU. In this new working mode you  
+can see the topology of a local radio module's network.</p>
+
+<p class="change_log_text">The highlights of the Network working mode include the following features:</p>
+
+<ul>
+	<li class="change_log_list">Possibility to discover and represent the network topology of 802.15.4, Zigbee and DigiMesh protocols.</li>
+	<li class="change_log_list">Display the network topology using different built-in profiles.</li>
+	<li class="change_log_list">Navigate between nodes moving and zooming them.</li>
+	<li class="change_log_list">Represent all the network nodes in a table with details.</li>
+	<li class="change_log_list">Obtain the links between nodes as well as their link quality.</li>
+	<li class="change_log_list">Search for a specific node and highlight it.</li>
+	<li class="change_log_list">Save a picture of the network.</li>
+	<li class="change_log_list">Attach or detach the network view being able to display more than one network at the same time.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Device Cloud working mode
+</h3>
+
+<p class="change_log_text">Another working mode called <b>Device Cloud</b> has been also added. This new working mode allows you to learn about 
+Device Cloud by Etherios platform, create an account and access your personal Device Cloud page.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Range Test tool
+</h3>
+
+<p class="change_log_text">The <b>Range Test</b> tool has been included within the Tools drop-down menu of the main toolbar. 
+This tool allows you to perform a range test between a local radio module and any of the remote modules working in the 
+same network as the local one.</p>
+
+<p class="change_log_text">The highlights of the Range Test tool include the following features:</p>
+
+<ul>
+	<li class="change_log_list">The tool is able to perform range tests of 802.15.4, Zigbee and DigiMesh protocols 
+	regardless of the working mode (AT or API) of the modules.</li>
+	<li class="change_log_list">Chart control displaying the current and historic link qualities between modules.</li>
+	<li class="change_log_list">Different controls indicating the number of packets sent, lost, etc.</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Firmware Explorer tool
+</h3>
+<p class="change_log_text">The <b>Firmware Explorer</b> tool allows you to navigate through the firmware library contained in 
+XCTU displaying the different firmware versions as well as their settings. It also gives you the possibility to load and 
+generate firmware profiles. The tool is included within the Tools drop-down menu of the main toolbar.</p>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+Remote firmware update
+</h3>
+<p class="change_log_text">The remote firmware update feature has been implemented. Now you are able to update the firmware of a 
+remote radio module the same way you do with a local one. In order to perform a remote firmware update, the local radio module 
+must be configured in API operation mode.</p>
+
+<p class="change_log_text">Remote firmware update functionality is limited to the following radio modules:</p>
+
+<ul>
+	<li class="change_log_list">XBee/XBee-PRO ZB</li>
+	<li class="change_log_list">Programmable XBee-PRO ZB</li>
+	<li class="change_log_list">XBee/XBee-PRO ZB SMT</li>
+	<li class="change_log_list">Programmable XBee-PRO ZB SMT</li>
+	<li class="change_log_list">XBee-PRO 900HP</li>
+	<li class="change_log_list">Programmable XBee-PRO 900HP</li>
+	<li class="change_log_list">XBee 865LP</li>
+	<li class="change_log_list">Programmable XBee 865LP</li>
+	<li class="change_log_list">XBee 868LP</li>
+	<li class="change_log_list">Programmable XBee 868LP</li>
+</ul>
+
+<h3 style="padding-top: 0px; padding-bottom: 0px;">
+General changes and bug fixes
+</h3>
+
+<ul>
+	<li class="change_log_list">Remote node discovery improvements.
+		<ul>
+			<li class="change_log_list">Now the process does not modify the NT time configured in the module, it reads its value and 
+			waits for answers.</li>
+			<li class="change_log_list">Added an information bar above the list of remote nodes.</li>
+			<li class="change_log_list">The discovery dialog now displays the remote modules as they are found and allows you to 
+			stop the process at any time.</li>
+			<li class="change_log_list">The process allows you to clear or maintain the current list of remote modules adding only 
+			those new discovered ones.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Now when selecting a radio module that could not be initialized XCTU gives you the possibility to 
+	try to initialize it again.</li>
+	<li class="change_log_list">Added a change log dialog that is displayed every time that the application is installed or updated.
+	The dialog is also accessible from the Help menu of the main toolbar.</li>
+	<li class="change_log_list">Added support for XTend modules with legacy firmware.</li>
+	<li class="change_log_list">Now it shouldn't be necessary to restart XCTU after installing new firmware from a file.</li>
+	<li class="change_log_list">Added an Action Required dialog in some XCTU operations that forces the communication with the device 
+	when the operation to be performed fails.</li>
+	<li class="change_log_list">The time to add or discover a local device has been reduced in 4 seconds.</li>
+	<li class="change_log_list">Added an icon in the image of local and remote devices stating the device type (coordinator, router or 
+	end device).</li>
+	<li class="change_log_list">It is no longer possible to enter invalid frames in the API console.</li>
+	<li class="change_log_list">Now when the port cannot be open in the Recovery tool the process does not continue.</li>
+	<li class="change_log_list">Added the number of sent and received frames and bytes in the consoles.</li>
+	<li class="change_log_list">AT console improvements:
+		<ul>
+			<li class="change_log_list">In a synchronized communication, received packets shouldn't be displayed before the sent ones 
+			any longer.</li>
+			<li class="change_log_list">Performed a slightly improvement of the AT console performance.</li>
+			<li class="change_log_list">Removed some scroll and color glitches.</li>
+			<li class="change_log_list">Fixed a bug that was causing to lose data in an AT console packet when editing it.</li>
+		</ul>
+	</li>
+	<li class="change_log_list">Added new verifications for the KY setting avoiding unexpected validation errors.</li>
+	<li class="change_log_list">Added port information when selecting a port in the Add and Discover radio modules processes.</li>
+	<li class="change_log_list">Updated some definitions of the XBee API frames in the Frames Generator tool.</li>
+	<li class="change_log_list">Information box of a setting is automatically scrolled and displayed when opened.</li>
+	<li class="change_log_list">Add and discover local devices processes now checks for existing devices and ports allowing you to 
+	replace them.</li>
+	<li class="change_log_list">Settings sections in the Configuration working mode now saves their status (expanded/collapsed).</li>
+	<li class="change_log_list">Combo settings are now validated correctly after writing them in the Configuration working mode.</li>
+	<li class="change_log_list">Read and write settings processes from the Configuration working mode are now cancellable.</li>
+	<li class="change_log_list">A couple of buttons have been included in the local and remote discovery dialogs to select or 
+	deselect all the devices found.</li>
+	<li class="change_log_list">Added a context menu to the local and remote device buttons to copy information about them.</li>
+	<li class="change_log_list">Included a new documentation section: Troubleshooting.</li>
+	<li class="change_log_list">Lots of minor bug fixes and improvements.</li>
+</ul>
+
+<h2>
+XCTU 6.0.0 (Beta) - September 20th, 2013
+</h2>
+
+<ul>
+	<li class="change_log_list">First release of XCTU.</li>
+</ul>
+
+</body>
+</html>

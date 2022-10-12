@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Bluetooth Unlock">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Zigbee 3.0</protocol>
+  </protocols>
+  <frame_type>0x2C</frame_type>
+  <parameters>
+    <parameter name="SRP step">
+      <control_type>1</control_type>
+      <description>Indicates the phase of authentication and interpretation of payload data.</description>
+      <items>
+        <item>Client presents A value [01]</item>
+        <item>Client present M1 session key validation value [03]</item>
+      </items>
+      <default_value>Client presents A value [01]</default_value>
+    </parameter>
+    <parameter name="Payload">
+      <control_type>2</control_type>
+      <bytes_min>32</bytes_min>
+      <bytes_max>128</bytes_max>
+      <description>Payload structure varies by Step value. See documentation for more information.</description>
+    </parameter>
+  </parameters>
+</frame>

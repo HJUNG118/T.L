@@ -1,0 +1,308 @@
+XBee 865/868LP
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2018, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the 10k and 80k firmware on the 
+XBee 865/868LP radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-868lp)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-868lp#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=5508)
+
+### Compatible Hardware:
+
+* XBee S8
+	* XB8-DM
+	* XB8-DP
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8076 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2018-Sep-12
+
+### New Features:
+
+* none
+
+### Bug Fixes:
+
+* Synchronously sleeping nodes with poor RF connections were locking up. 
+* Synchronously sleeping nodes not associated to a network were staying awake longer then expected if there sleep time was increased locally. 
+
+### Known Issues / Errata:
+
+* The serial port is non-responsive for approximately 70ms after a baud rate (ATBR) change is 
+  applied either by the ATAC command or by exiting command mode. To work around this issue the user 
+  should insert a 100ms delay after applying a baud rate change.
+* ATED command does not utilize the duration parameter.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1074 - XBee 865/868LP 10k
+* 8074 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2014-Dec-02
+
+### New Features:
+
+* Performance enhancements made to sleeping routers
+
+### Bug Fixes:
+
+* Synchronized sleeping router nodes were locking up due to buffer depletions. The serial port 
+  wouldn't accept input.
+
+* Sleep synchronization messages were not prioritized over data packets
+
+* With route discoveries disabled, routes were being deleted. This should not happen because the 
+  whole point is to use previously learned routes.
+
+* MISO pin would not go high when configured as an output high
+
+* ED command issued in API mode was returning transparent data
+
+* RO setting of 0 would not allow transmissions to occur in transparent mode
+
+* Associate LED was not blinking at the right interval. Now, it only blinks in sleeping router mode.
+
+* Serial port was locking up when receiving data in API mode 2 at a high rate with CTS flow control 
+  ignored or not used.
+
+* Buffer resource efficiency was improved to only use the buffer size needed for a given 
+  transmission in API mode. This increases module data capacity
+
+* ATCB1 issued to a remote node was causing a watchdog reset
+
+* Fixed remote IS and ED commands when sent with a frame ID of 0
+
+* Test Link response contained some invalid fields
+
+### Known Issues / Errata:
+
+* The serial port is non-responsive for approximately 70ms after a baud rate (ATBR) change is 
+  applied either by the ATAC command or by exiting command mode. To work around this issue the user 
+  should insert a 100ms delay after applying a baud rate change.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1073 - XBee 865/868LP 10k
+* 8073 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2014-Sep-10
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed a problem where SPI was not operational.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+* When the ATRO parameter is set to 0, occasionally data will not be sent over-the-air until more 
+  characters are received serially. This setting should not be used.
+
+* The serial port is non-responsive for approximately 70ms after a baud rate (ATBR) change is 
+  applied either by the ATAC command or by exiting command mode. To work around this issue the user 
+  should insert a 100ms delay after applying a baud rate change.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1072 - XBee 865/868LP 10k
+* 8072 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2014-May-29
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* LBT DigiMesh fixes.
+
+* Fixed an issue with the Associate LED which was off during a 30 second wakeup initiated by a 
+  single commissioning button press.
+
+* Fixed an issue that caused the node to lock up when directed broadcasts were forwarded.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+* When the ATRO parameter is set to 0, occasionally data will not be sent over-the-air until more 
+  characters are received serially. This setting should not be used.
+
+* The serial port is non-responsive for approximately 70ms after a baud rate (ATBR) change is 
+  applied either by the ATAC command or by exiting command mode. To work around this issue the user 
+  should insert a 100ms delay after applying a baud rate change.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1070 - XBee 865/868LP 10k
+* 8070 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2014-Mar-19
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Some DigiMesh features were erroneously enabled on the 10k build.
+
+* ATST was changing on power cycle.
+
+* Fixed a problem with voltage and temperature reading. This could potentially affect RF 
+  performance as well as the AT%V and ATTP commands.
+
+* Fixed an encryption bug, where under heavy load the incorrect key was used.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 106B - XBee 865/868LP 10k
+* 806B - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2014-Jan-16
+
+### New Features:
+
+* Added the ATN? command which returns the timeout for the Network Discovery (ND) and Discover Node 
+  (DN) commands.
+
+### Bug Fixes:
+
+* Fixed bug where ST was being changed on power cycle when in SM = 7.
+
+* The Associate LED was off during ATCB1 - 30 second wake from synchronous sleep.
+
+* Synchronous Sleep: Associate LED erroneously blinked when the network was asleep.
+
+* Directed broadcasts which were forwarded by an intermediate node could cause the intermediate 
+  node to lock up.
+
+* SPI/UART: The Uart Data Present Indicator did not work
+
+* SPI/UART: Holding DOUT low while resetting did not cause module to enter SPI mode
+
+* Fixed reliability issue with the Indirect Message Unrequested Tx Status 
+
+* Fixed bug where the default for the ST parameter was smaller than needed.
+
+* Fixed bug where the packetization didn't work correctly when RO=0 and BD<4.
+
+* Fixed bug where GPM erase commands caused a reset.
+
+* Fixed bug where the ED command only worked in command mode, but not API or remotely.
+
+* Fixed bug where buad rates 9600 and below had inaccurate bit timing (although the overall baud 
+  rate was usually pretty accurate).
+
+* Fixed SleepingRouter bug where sync messages were unreliably relayed when BH=0.
+
+* Fixed issue with receiving OTA data with SPI associated pin sleep.
+
+* Fixed bug where a module with a full TxBuffer (held off by RTS) would not go to sleep.
+
+* Fixed bug where Aggregate Addressing (AG) command was not working properly.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1069 - XBee 865/868LP 10k
+* 8069 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2012-Dec-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where the packetization didn't work correctly when RO=0 and BD<4.
+
+* Fixed bug where GPM erase commands caused a watchdog reset.
+
+* Fixed bug where the ED command only worked in command mode, but not API or remotely.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while a ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1059 - XBee 865/868LP 10k
+* 8059 - XBee 865/868LP 80k
+
+### Release Date: 
+
+* 2012-Jan-13
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Setting the ATIR parameter to sample faster than the module can transmit the samples will cause 
+  the module to not sleep when using ATSM4.
+
+* When sending a directed broadcast (0x80 on tx option), the transmit status frame will always 
+  indicate that a route discovery has taken place, (discovery status byte = 0x02).

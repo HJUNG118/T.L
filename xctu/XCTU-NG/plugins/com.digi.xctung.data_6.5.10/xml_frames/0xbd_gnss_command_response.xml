@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="GNSS Command Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xBD</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reference identifier used to match status responses.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Type">
+      <control_type>1</control_type>
+      <description>Command type the response refers to. Matches 'Type' field of request frame.</description>
+      <items>
+        <item>Start Get Position (One shot with GNSS Priority) [00]</item>
+        <item>Start Get Position (One shot with Cellular Priority) [01]</item>
+        <item>Start Get Position (Continuous with GNSS Priority) [02]</item>
+        <item>Start Get Position (Continuous with Cellular Priority) [03]</item>
+        <item>Cancel Get Position [04]</item>
+        <item>Start Raw NMEA [05]</item>
+        <item>Stop Raw NMEA [06]</item>
+      </items>
+      <default_value>Start Get Position (One shot with GNSS Priority) [00]</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Status code.</description>
+      <items>
+        <item>Request was Successful [00]</item>
+        <item>Request was Unsuccessful [01]</item>
+      </items>
+      <default_value>Request was Successful [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

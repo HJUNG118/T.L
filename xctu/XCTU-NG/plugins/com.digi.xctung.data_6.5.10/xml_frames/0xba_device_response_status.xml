@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Device Response Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0xBA</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the frame for which status is being reported. Corresponds to the frame ID in the device response.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Response status.</description>
+      <items>
+        <item>Success [00]</item>
+        <item>Device Request canceled by user [20]</item>
+        <item>Session timed out [21]</item>
+        <item>Unknown error [40]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.digi.xctung.uicomponents.preferences.AppearancePreferencesPage"
+            id="com.digi.xctung.uicomponents.preferencepages.appearance"
+            name="Appearance">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.digi.xctung.uicomponents.preferences.PreferencesInitializer">
+      </initializer>
+   </extension>
+
+</plugin>

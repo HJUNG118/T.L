@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Secure Session Control">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+  </protocols>
+  <frame_type>0x2e</frame_type>
+  <parameters>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>The 64-bit address of the destination device.\n\nBroadcast transmissions are not allowed.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield of supported options that alter the session behavior.\n\n
+      Bit 0 - Client-side control:\n
+      - 0: Login. Log in to a server as a client. The local device will act as a client and initiate SRP authentication with the target server.\n
+      - 1: Logout. Log out of an existing session as a client. The local device will attempt to end an existing client-side session with the target server. When set, all other options and the timeout field will be ignored. No password should be provided when this bit is set.\n\n
+      
+      Bit 1 - Server-side control:\n
+      - 1: Allows server to terminate a session in progress.\n\n
+      
+      Bit 2 - Timeout type:\n
+      - 0: Fixed. For fixed interval timeouts, the session terminates after the timeout period has elapsed.\n
+      - 1: Inter-packet. An inter-packet timeout is refreshed every time a secure transmission occurs between client and server.\n\n
+      
+      Note: Bits 0 and 1 are mutually exclusive, you will receive an error if both are set.
+      </description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Timeout">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Timeout value for the secure session in units of 1/10th second. Accepts up to 0x4650 (30 minutes).\n\nA timeout of 00 00 will keep the session established indefinitely, but the server will yield this session to newer login requests if there are more than 4 concurrent sessions.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Password">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <description>The password set on the remote node.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

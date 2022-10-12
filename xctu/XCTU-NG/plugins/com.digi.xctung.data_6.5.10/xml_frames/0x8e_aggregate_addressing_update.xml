@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Aggregate Addressing Update">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <!-- TODO add the XLR when DigiMesh is enabled in the firmware -->
+    <!--<protocol>XLR</protocol>-->
+  </protocols>
+  <frame_type>0x8E</frame_type>
+  <parameters>
+    <parameter name="Format ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Byte reserved to indicate format of additional packet information which may be added in future firmware revisions. In the current firmware revision, 0x00 is returned in this field.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="New address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address to which DH and DL are being set.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Old address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address to which DH and DL were previously set.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

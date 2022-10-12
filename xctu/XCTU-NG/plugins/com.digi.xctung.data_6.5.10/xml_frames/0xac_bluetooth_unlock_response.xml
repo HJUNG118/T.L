@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Bluetooth Unlock Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Zigbee 3.0</protocol>
+  </protocols>
+  <frame_type>0xAC</frame_type>
+  <parameters>
+    <parameter name="SRP step">
+      <control_type>1</control_type>
+      <description>Indicates the phase of authentication and interpretation of payload data. Step values greater than 0x80 indicate error conditions.</description>
+      <items>
+        <item>Server presents B and salt [02]</item>
+        <item>Server presents M2 session key validation value and two 12-byte nonces [04]</item>
+        <item>Unable to offer B (cryptographic error with content, usually due to A mod N == 0) [80]</item>
+        <item>Incorrect payload length [81]</item>
+        <item>Bad proof of key [82]</item>
+        <item>Resource allocation error [83]</item>
+        <item>Request contained a step not in the correct sequence [84]</item>
+      </items>
+      <default_value>Server presents B and salt [02]</default_value>
+    </parameter>
+    <parameter name="Payload">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>132</bytes_max>
+      <description>Payload structure varies by Step value. See documentation for more information.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

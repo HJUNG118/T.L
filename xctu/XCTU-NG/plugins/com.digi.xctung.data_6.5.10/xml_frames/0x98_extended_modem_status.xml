@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Extended Modem Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+  </protocols>
+  <frame_type>0x98</frame_type>
+  <parameters>
+    <parameter name="Status Code">
+      <control_type>1</control_type>
+      <description>Association status code.</description>
+      <items>
+        <item>Rejoin [00]</item>
+        <item>Stack Status [01]</item>
+        <item>Joining [02]</item>
+        <item>Network formed/Joined to network [03]</item>
+        <item>Beacon Response [04]</item>
+        <item>Reject ZS [05]</item>
+        <item>Reject ID [06]</item>
+        <item>Reject NJ [07]</item>
+        <item>PAN ID Match [08]</item>
+        <item>Reject LQIRSSI [09]</item>
+        <item>Beacon saved [0A]</item>
+        <item>AI value changed [0B]</item>
+        <item>Permit Join duration changed [0C]</item>
+        <item>Active scanning has begun [0D]</item>
+        <item>Error occurred during active scan [0E]</item>
+        <item>High level request for a form/join [0F]</item>
+        <item>Reject because LQI is worse than an already saved beacon [10]</item>
+        <item>Rejected because RSSI is worse than an already saved beacon [11]</item>
+        <item>Rejected because it matches the last associated network [12]</item>
+        <item>Rejected because it matches an already saved beacon response [13]</item>
+        <item>During first/best phase, response is weaker than an already saved beacon response [14]</item>
+        <item>With DC80 enabled, reset if no joinable beacon responses are received within 60s of joining [16]</item>
+        <item>Scanning on Channel [18]</item>
+        <item>Shows phase of Ordered Association [19]</item>
+        <item>Starting a scan [1A]</item>
+        <item>Starting energy scan [1D]</item>
+        <item>Channel Energies observed [1E]</item>
+        <item>Pan ID Scan starting on channel [1F]</item>
+        <item>Forming a network [20]</item>
+        <item>Looking for Key Establishment Endpoint [21]</item>
+        <item>Found Key Establishment Endpoint [22]</item>
+        <item>Key exchange timeout [23]</item>
+        <item>Key established [24]</item>
+        <item>Key verified [25]</item>
+        <item>Need new key [26]</item>
+        <item>Key join done [27]</item>
+        <item>Channel verify fail [28]</item>
+        <item>Link key update fail [29]</item>
+        <item>Key verify timeout [2A]</item>
+        <item>Unknown key fail [2B]</item>
+        <item>Join request [2C]</item>
+        <item>EUI64 in key table [2D]</item>
+        <item>Joining allowed state [2E]</item>
+        <item>A Secure Session was established with this node [3B]</item>
+        <item>A Secure Session ended [3C]</item>
+        <item>A Secure Session authentication attempt failed [3D]</item>
+      </items>  
+      <default_value>Network formed/Joined to network [03]</default_value>
+    </parameter>
+    <parameter name="Status Data">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>32</bytes_max>
+      <description>The value of this field depends on the Status Code. See the documentation for more information about it.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

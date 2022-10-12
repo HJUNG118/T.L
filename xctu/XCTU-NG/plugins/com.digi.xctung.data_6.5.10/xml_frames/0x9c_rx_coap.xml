@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="CoAP Rx Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x9C</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="IPv6 dest. address">
+      <control_type>7</control_type>
+      <bytes_min>16</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>IPv6 address of the destination device.</description>
+      <default_value>0000:0000:0000:0000:0000:0000:0000:0000</default_value>
+    </parameter>
+    <parameter name="IPv6 source address">
+      <control_type>7</control_type>
+      <bytes_min>16</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>IPv6 address of the source device.</description>
+      <default_value>0000:0000:0000:0000:0000:0000:0000:0000</default_value>
+    </parameter>
+    <parameter name="Destination port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>UDP or TCP destination's port number.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Source port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>UDP or TCP source's port number.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Protocol">
+      <control_type>1</control_type>
+      <description>Protocol to use for the transmitted data.</description>
+      <items>
+        <item>Reserved [00]</item>
+        <item>Reserved [01]</item>
+        <item>Reserved [02]</item>
+        <item>CoAP [03]</item>
+      </items>
+      <default_value>CoAP [03]</default_value>
+    </parameter>
+    <parameter name="RESTful Response Code">
+      <control_type>1</control_type>
+      <bytes_length>2</bytes_length>
+      <description>RESTful status value:\n
+      - 0x02## - Okay\n
+      - 0x04## - Client request error\n
+      - 0x05## - Server error (client may retry)\n\n
+      Successful responses:\n
+      - 201 - XB/TX PUT\n
+      - 205 - XB/AT GET\n
+      - 204 - XB/AT PUT
+      </description>
+      <items>
+        <item>Success [0200]</item>
+        <item>Success: Created [0201]</item>
+        <item>Success: Accepted [0202]</item>
+        <item>Success: Non-Authoritative Information [0203]</item>
+        <item>Success: No Content [0204]</item>
+        <item>Success: Reset Content [0205]</item>
+        <item>Client Error: Bad request [0400]</item>
+        <item>Client Error: Unauthorized [0401]</item>
+        <item>Client Error: Bad option [0402]</item>
+        <item>Client Error: Forbidden [0403]</item>
+        <item>Client Error: Not found [0404]</item>
+        <item>Client Error: Method not allowed [0405]</item>
+        <item>Client Error: Not accepted [0406]</item>
+        <item>Client Error: Precondition failed [0412]</item>
+        <item>Client Error: Request entity too large [0413]</item>
+        <item>Client Error: Unsupported content format [0415]</item>
+        <item>Server Error [0500]</item>
+        <item>Server Error: Bad gateway [0502]</item>
+        <item>Server Error: Service unavailable [0503]</item>
+        <item>Server Error: Gateway timeout [0504]</item>
+        <item>Server Error: Proxying not supported [0505]</item>
+      </items>
+      <default_value>Success [0200]</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1200</bytes_max>
+      <description>Up to 1200 bytes of payload.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,158 @@
+XTC and 9XTend vB - Hopping
+===========================
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2019, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the 9XTend vB Hopping and XTC Hopping firmware.
+
+### Compatible Hardware:
+
+* XTend vB
+	* XTP9B
+* XBee-PRO SX
+	* XBP9XT
+* XBee SX
+	* XB9XT
+
+### Links:
+
+[Product Information](https://www.digi.com/products/xbee-rf-solutions/embedded-rf-modules-modems/xtend-module)<br/>
+[Documentation](https://www.digi.com/support/productdetail?pid=5612&type=documentation)<br/>
+[Support](https://www.digi.com/support/productdetail?pid=5612)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2006 (USA)
+* 2206 (Australia)
+
+### Release Date:
+
+* 2019-May-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* 197 - Resolved an issue that could cause unexpected serial data loss while streaming data.
+
+* 219 - Several perameter ranges in the MXI configuration file have been updated to match what the
+  radio firmware will allow. Also corrected some out-of-bounds parameter ranges:
+  * AT/BT could be set to values larger than the documented limit of 6000 ms
+  * PK could be set to the invalid value 0.
+
+### Known Issues / Errata:
+
+* There is some bit jitter at low serial data rates (9600 baud and below) which may be incompatible
+  with some host UARTs. If serial data loss is encountered, increasing the baud rate of the radio
+  and host to 19200 baud or higher will provide a more stable interface.
+
+* Using X-CTU version 5.2.8.10 and older will inadvertently restore defaults if parameters are read
+  from the radio from the Modem Configuration tab. It's recommended to use XCTU version 6.4 or 
+  higher to avoid losing configuration.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2004 (USA)
+* 2204 (Australia)
+
+### Release Date:
+
+* 2016-Dec-15
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Minor stability improvement to the RF tranciever.
+* Resolved an issue where RTS could be ignored if the radio is actively transmitting data.
+
+### Known Issues / Errata:
+
+* There is some bit jitter at low serial data rates (9600 baud and below) which may be incompatible
+  with some host UARTs. If serial data loss is encountered, increasing the baud rate of the radio
+  and host to 19200 baud or higher will provide a more stable interface.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2003 (USA)
+* 2203 (Australia)
+
+### Release Date:
+
+* 2016-Jun-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Hardware compatibility was improperly set, causing firmware updates to fail.
+* MXI File Changes
+	* HP command has updated name and description
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2002 (USA)
+* 2202 (Australia)
+
+### Release Date:
+
+* 2016-January-18
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Resolved issue where the RSSI pin would output high upon startup.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2001
+
+### Release Date:
+
+* 2015-November-20
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

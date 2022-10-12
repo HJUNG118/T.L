@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.digi.serialio.linux.x86_64
+Bundle-Name: %fragmentName
+Bundle-Version: 1.0.0
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
+Bundle-Vendor: %providerName
+Fragment-Host: com.digi.serialio;bundle-version="1.0.0"
+
+

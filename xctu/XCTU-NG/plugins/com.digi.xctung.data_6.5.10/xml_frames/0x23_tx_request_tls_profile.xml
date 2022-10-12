@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="TX Request with TLS Profile">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0x23</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Set to a value that will be passed back in the Tx Status frame. 0 disables the Tx Status frame.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="IPv4 dest. address">
+      <control_type>6</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Use '255.255.255.255' for broadcast when protocol is UDP.</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="16-bit dest. port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>UDP or TCP port number.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="16-bit source port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>UDP or TCP port number.\nTo send a UDP packet, this must match the port number of the listening port as specified by C0.\nTo send a TCP packet on a new connection, this must be 0.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="TLS profile">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Zero indexed number that indicates the profile.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Protocol">
+      <control_type>1</control_type>
+      <description>Protocol to use for the transmitted data.</description>
+      <items>
+        <item>UDP [00]</item>
+      </items>
+      <default_value>UDP [00]</default_value>
+      <applies_to>
+        <hw_version>0x48</hw_version>
+      </applies_to>
+    </parameter>
+    <parameter name="Transmit options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bit field: BIT 1 =\n1 - Terminate socket after tx complete.\n0 - Leave socket open (use TCP timeout).\n\nIgnore bit for UDP packets.\n\nAll other bits are reserved and should be 0. </description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1400</bytes_max>
+      <description>Up to 1400 bytes of data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

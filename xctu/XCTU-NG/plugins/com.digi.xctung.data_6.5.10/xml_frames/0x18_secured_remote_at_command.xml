@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Secured Remote AT Command">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+  </protocols>
+  <frame_type>0x18</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Password length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length in bytes of the Password string.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Password">
+      <control_type>2</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>Password. A printable string.\n\n
+      Every Secured Remote AT Command message must have a valid Password string in this field.
+      The value of the Password Length field must match the number of bytes of this field.
+      </description>
+      <default_value></default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Set to the 64-bit address of the destination device. The following addresses are also supported:\n\n00 00 00 00 00 00 00 00 - Reserver 64-bit address for coordinator.\n\n00 00 00 00 00 00 FF FF - Broadcast address.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to the 16-bit address of the destination device, if known. Set to FF FE if the address is unknown, or if sending a broadcast.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Remote cmd. options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield to enable various remote command options.\n\n
+      
+      If 'Apply changes' is not set, AC command must be sent before changes will take effect.\n\n
+      
+      Setting the 'Extended' timeout will cause the stack to set the extended transmission timeout for the destination address.\n\n
+      
+      Bitfield values:\n
+      - Bit 0: Disable ACK\n
+      - Bit 1: Apply changes\n
+      - Bit 6: Extended timeout\n\n
+      
+      All unused and unsupported bits must be set to 0.
+      </description>
+      <default_value>02</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Parameter value">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>If present, indicates the requested parameter value to set the given register.\n\nIf no characters are present, get the value of the register.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

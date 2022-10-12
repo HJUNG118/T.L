@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Device Authenticated Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA2</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Extended 64-bit address of the authenticated device.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the authenticated device.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Always 00 - Success.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+  </parameters>
+</frame>

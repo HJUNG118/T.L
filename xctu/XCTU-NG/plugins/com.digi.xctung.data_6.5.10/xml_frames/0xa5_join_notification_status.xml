@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Join Notification Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA5</frame_type>
+  <parameters>
+    <parameter name="16-bit parent address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the parent device.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="16-bit new node address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Proposed 16-bit address for the joining device.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="64-bit new node address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit MAC address of the joining device.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Join notification status.</description>
+      <items>
+        <item>Standard Security Secured Rejoin [00]</item>
+        <item>Standard Security Unsecured Join [01]</item>
+        <item>Device Left [02]</item>
+        <item>Standard Security Unsecured Rejoin [03]</item>
+        <item>High Security Secured Rejoin [04]</item>
+        <item>High Security Unsecured Join [05]</item>
+        <item>High Security Unsecured Rejoin [07]</item>
+      </items>
+      <default_value>Standard Security Secured Rejoin [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

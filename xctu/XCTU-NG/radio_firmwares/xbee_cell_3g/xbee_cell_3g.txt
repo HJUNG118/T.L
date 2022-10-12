@@ -1,0 +1,301 @@
+![Digi logo](https://www.digi.com/digi/media/nav/logo-digi.png "Digi International Inc.")  
+**DIGI INTERNATIONAL**  
+9350 Excelsior Blvd, Suite 700  
+Hopkins, MN 55343, USA  
++1 (952) 912-3444 | +1 (877) 912-3444  
+[www.digi.com](https://www.digi.com)  
+
+Digi XBee Cellular 3G Global Release Notes
+==========================================
+### Digi XBee Cellular 3G Global
+### Version 11315 (February 19, 2020)
+
+---
+
+INTRODUCTION
+------------
+These are the release notes for Digi XBee Cellular 3G Global.
+
+SUPPORTED PRODUCTS
+------------------
+* [Digi XBee Cellular 3G Global](https://www.digi.com/products/embedded-systems/cellular-modems/digi-xbee-cellular-3g)
+
+KNOWN ISSUES
+------------
+1. By-pass mode is now deprecated and is not recommended for new designs.
+2. Intermittent failure to go to sleep or wake up when using pin sleep
+   with the SPI_nSSEL line while in SPI mode. [XBCELL-3100]
+3. Transparent mode connections that are closed by timeout (TM value) will
+   sometimes show different then expected CI values.
+4. Receiving large UDP datagrams (> 1024 bytes) can cause the
+   frame to be split into multiple API frames on the serial interface,
+   with the second portion delayed. [XBCELL-3257]
+5. If upgrading to version 11310 or later from a firmware prior to the
+   11310 release, you will need to reformat the file system using the
+   `ATFS FORMAT CONFIRM` command or by calling `os.format()` from the
+   MicroPython REPL.
+6. Versions of XCTU earlier than 6.4.2 will error out at the end of a
+   firmware update, due to the 35 second delay on first boot.  Fix:
+   Update to the latest version of XCTU.
+7. It is not possible to interrupt the MicroPython autostart if the application
+   performs a soft reset very quickly. Workaround: delay the soft reset by
+   a second using time.sleep(1). [XBPY-796]
+
+UPDATE BEST PRACTICES
+---------------------
+Digi recommends the following best practices:
+
+1. Test the new release in a controlled environment with your
+   application before you update production devices.
+2. Unless otherwise noted, apply updates in the following order:
+    1. Device firmware
+    2. Modem/Module firmware
+    3. Configuration
+    4. Application
+
+Digi recommends Digi Remote Manager for automated device updates. For
+more information, go to
+[https://www.digi.com/products/iot-platform/digi-remote-manager](https://www.digi.com/products/iot-platform/digi-remote-manager).
+
+If you prefer manually updating one device at a time, follow these steps:
+
+1. [Update to latest firmware from XCTU](https://www.digi.com/resources/documentation/Digidocs/90001541/#tasks/t_update_fw.htm%3FTocPath%3DGet%2520started%2520with%2520the%2520XBee%2520Cellular%2520Modem%2520Development%2520Kit%7CConfigure%2520the%2520device%2520using%2520XCTU%7C_____3)
+
+TECHNICAL SUPPORT
+-----------------
+
+Get the help you need via our Technical Support team and online
+resources. Digi offers multiple support levels and professional
+services to meet your needs. All Digi customers have access to product
+documentation, firmware, drivers, knowledge base and peer-to-peer
+support forums.
+
+Visit us at [https://www.digi.com/support](https://www.digi.com/support) to find out more.
+
+---
+
+CHANGE LOG
+==========
+
+## 11315 (February 19, 2020)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. Added support for closing all open sockets when using the API Close Socket
+      frame.
+2. Add support for various line ending conventions in TLS/SSL certificates
+      and keys.
+3. The Reboot command in Digi Remote Manager will now cleanly shut down
+   the cellular radio before rebooting device.
+4. Added Cellular.shutdown command in MicroPython.
+5. Added Clean Shutdown button (ATSD command) to XCTU firmware definition file.
+6. Added username (ATCU) and password (ATCW) settings that are needed by some
+   cellular carriers to authenticate and connect to the network.
+7. Added PIN (ATPN) and PUK (ATPK) settings that are needed when using a locked SIM.
+8. The ATSD (Shutdown) command now takes an optional parameter to reboot the XBee
+   after shutting down.
+9. The ATDB command now can take an optional parameter to get an uncached RSSI
+   signal value.
+10. In MicroPython, slice-assignment to arrays and bytearrays is now supported.
+11. MicroPython has had the 'uselect' module added. This will allow
+    cleaner asynchronous socket operations.
+
+### BUG FIXES
+
+  1. Fixed issue with ATDT reporting a time value that was far into the
+     future/incorrect.
+  2. ATPY^ now correctly interrupts a MicroPython script which has disabled
+     keyboard interrupts using `micropython.kbd_intr(-1)`. [XBPY-446]
+  3. The MicroPython REPL no longer continuously prints "soft reboot" if
+     autostart is disabled after the script starts and the script performs
+     a soft reset. [XBPY-795]
+
+---
+
+## 11313 (August 7, 2019)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. A new family of socket operation API frames (Create, Connect, Close,
+   Socket Status) have been added to increase the level of control and
+   visibility into network connection creation and management.
+2. The ATSD (Shutdown) command was added. You should use the ATSD command
+   to safely shut down a device before removing power.
+3. Over-The-Air (OTA) update notifications will be sent out as modem statuses.
+   This applies to OTA XBee firmware updates.
+4. The ATII command was added, which reads the IMSI (International Mobile
+   Subscriber Identity) from the SIM.
+
+### BUG FIXES
+
+  1. Increase space available for phone numbers to accomodate full
+     length international numbers including country code. [XBCELL-5110]
+  2. Extended blocking module entering sleep when performing
+     Over-the-Air update to include the image download phase. [XBCELL-5322]
+
+---
+
+## 11311 (April 12, 2019)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. Cellular Network Time command (ATDT)
+    * Reports the local time of the XBee device, if time has been
+      synchronized with the network.
+    * Read the number of seconds since Jan 1 2000 00:00:00 UTC,
+      or an ISO 8601-formatted timestamp.
+2. Enhanced support for Digi Remote Manager
+    * Filesystem support
+        * Upload, download, list and delete files remotely using the
+          SCI File System service or File Management UI in Digi Remote Manager.
+    * SM/UDP connection management
+        * In order to minimize data charges for an inactive connection,
+          the XBee will no longer maintain an active TCP connection to DRM.
+          DRM will periodically be polled through Digi's SM/UDP protocol on an
+          interval determined by the DF AT value (default of once per day).
+          Requests to bring up and terminate a full-featured TCP connection
+          can be made from DRM over SM/UDP.
+        * The previous constantly connected behavior may be regained by
+          setting bit-0 of the MO AT command.
+        * See the documentation for additional details.
+    * Configuration and status reporting
+        * Read current settings, configure the XBee device, and read the
+          XBee device's current status remotely.
+3. Active Scan command (ATAS)
+    * Scans for mobile cells in the vicinity and returns information
+      about the cells in the service area of the XBee.
+
+### BUG FIXES
+
+1. When SPI operation has been forced by holding DOUT/DIO13 pin 2
+   low while resetting the XBee, data arriving at the configured
+   listening socket would be dropped. [XBCELL-4691]
+2. Keyboard interrupt at the MicroPython REPL only works when the
+   interrupt byte appears first in a block of input. [XBCELL-4853]
+3. The RO parameter (packetization timeout) no longer applies
+   when at the MicroPython REPL (AP = 4). [XBCELL-4853]
+
+---
+
+## 11310 (November 2018)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. User Data Relay Frame
+    * Relay custom user data to and from MicroPython and the local interface.
+2. MicroPython Features:
+    * Flash upload mode now compiles and stores the code in the file system at
+      /flash/lib/main.mpy.
+    * Cross compilation support using mpy-cross on a PC and uploading them to
+      the file system.
+    * The XBee adds an os.compile() method to compile .py files into .mpy files
+      on the device itself.
+    * The XBee adds an os.bundle() method to freeze multiple .mpy files into
+      the device flash for execution in place to reduce heap usage.
+
+### BUG FIXES
+
+1. Unable to delete mpy files from the file system after failing to
+   import them. [XBCELL-219]
+2. Server certificates programmed previously on the system may still
+   be used to authenticate servers despite configuration change or
+   being removed from the file system. [XBCELL-3736]
+
+---
+
+## 1130C (September 2018)
+This is a recommended release.
+
+### BUG FIXES
+
+1. Fixed issues with a memory leak when using TLS mutual
+   authentication and additional sockets cannot be
+   opened. [XBCELL-3861]
+2. Sequence to initially connect to cellular network
+   improved. [XBCELL-4091]
+
+---
+
+## 1130B (June 2018)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. File system support
+    * ATFS command to access through Command Mode
+    * MicroPython file interfaces for programmatic access
+    * Provides MicroPython module import support
+    * Allows storage of TLS certificates for authentication
+    * Secure encrypted file storage to protect MicroPython code and
+      TLS private keys
+
+2. TLS Authentication
+    * Accessed in MicroPython with the ussl.wrap_socket method
+    * Configurable with the $0/$1/$2 commands
+    * Uses certificates stored on the filesystem
+    * New API frame 0x23 to access multiple authentication profiles
+
+---
+
+## 11309 (October 9, 2017)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. Feature Highlights
+    * MicroPython XBee Sleep Control.
+    * Better integration between MicroPython and XBee Sleep modes.
+    * API for entering low power modes.
+    * MicroPython Secondary UART.
+        * Configure DIO Lines to use as a second UART usable by
+          MicroPython.
+    * I2C Master Support.
+        * Pin 7 and 19 on the XBee can be used as an I2C Master bus by
+          MicroPython.
+    * Incoming TCP/UDP connections.
+    * Incoming connections can be used with API, Transparent and MicroPython.
+    * PWM0/RSSI support.
+    * SPI.
+       * The XBee can be configured as a SPI Slave device.
+
+
+### BUG FIXES
+
+1. Failed socket attempts will no longer cause the modem to leave then rejoin
+   the network. [XBCELL-3]
+
+---
+
+## 11308 (June 8, 2017)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. Initial release
+2. Feature Highlights
+    * MicroPython!
+        * On-device programmability to add local intelligence.
+        * Many examples in the Digi MicroPython Programmer Guide.
+        * AT commands for managing run-time behavior.
+    * Digital I/O support.
+    * Analog Input support.
+    * API & Transparent mode
+    * AT command mode
+    * Bypass to raw cellular modem
+    * SMS
+    * TCP/UDP (up to 7 sockets)
+    * TLS/TCP (up to 4 sockets)
+    * Deep sleep mode.
+    * Pin sleep support.
+    * Cyclic sleep support.
+    * Airplane mode sleep support.
+    * DNS lookup command (ATLA).
+    * Domain names now supported in DL command.
+    * Operating Destination Address (ATOD) support.
+    * SMS UTF-16/UCS-2 encoding support.
+
+*Release Notes Part Number: 93000814

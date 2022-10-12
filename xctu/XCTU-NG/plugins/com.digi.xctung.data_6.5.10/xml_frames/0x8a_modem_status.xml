@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Modem Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>Wi-Fi</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>XTend (Legacy)</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x8a</frame_type>
+  <parameters>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>The status of the AT Command.</description>
+      <items>
+        <item>Hardware reset [00]</item>
+        <item>Watchdog reset [01]</item>
+        <item>Device associated [02]</item>
+        <item>Device disassociated [03]</item>
+        <item>Configuration error/synchronization lost [04]</item>
+        <item>Coordinator realignment [05]</item>
+        <item>Coordinator started [06]</item>
+        <item>Network security key updated [07]</item>
+        <item>Reserved, see twiki [08]</item>
+        <item>Reserved, see twiki [09]</item>
+        <item>Reserved, see twiki [0A]</item>
+        <item>Network Woke Up [0B]</item>
+        <item>Network Went To Sleep [0C]</item>
+        <item>Overvoltage [0D]</item>
+        <item>Device Cloud connected [0E]</item>
+        <item>Device Cloud disconnected [0F]</item>
+        <item>Modem key established [10]</item>
+        <item>Modem configuration changed while join in progress [11]</item>
+        <item>Access fault [12]</item>
+        <item>Fatal stack error [13]</item>
+        <item>PLKE table initiated [14]</item>
+        <item>PLKE table success [15]</item>
+        <item>PLKE table is full [16]</item>
+        <item>PLKE Not authorized [17]</item>
+        <item>PLKE Invalid Trust Center Request [18]</item>
+        <item>PLKE Trust Center update fail [19]</item>
+        <item>PLKE Bad EUI address [1A]</item>
+        <item>PLKE Link Key rejected [1B]</item>
+        <item>PLKE update occurred [1C]</item>
+        <item>PLKE Link Key table clear [1D]</item>
+        <item>Zigbee Frequency agility has requested channel change [1E]</item>
+        <item>Zigbee special case execute ATFR when there's no joinable beacon responses after 60 seconds [1F]</item>
+        <item>Zigbee tokens space recovered [20]</item>
+        <item>Zigbee tokens space unrecoverable [21]</item>
+        <item>Zigbee tokens space corrupted [22]</item>
+        <item>Zigbee Dual Mode metaframe error [30]</item>
+        <item>BLE Connect [32]</item>
+        <item>BLE Disconnect [33]</item>
+        <item>Bandmask Configuration Failed [34]</item>
+        <item>The cell component has started updating [35]</item>
+        <item>The cell component update has failed [36]</item>
+        <item>The cell component update has succeeded [37]</item>
+        <item>The XBee firmware has started updating [38]</item>
+        <item>The XBee firmware has failed to update [39]</item>
+        <item>The XBee will reset to apply the firmware update [3A]</item>
+        <item>A Secure Session has been successfully established [3B]</item>
+        <item>A Secure Session has been terminated [3C]</item>
+        <item>A Secure Session attempt has failed [3D]</item>
+        <item>Coordinator detected a PAN ID conflict but because CR=0, no action will be taken [3E]</item>
+        <item>Coordinator changed PAN ID due to a conflict [3F]</item>
+        <item>Router PAN ID was changed by coordinator due to a conflict [40]</item>
+        <item>Open Join Window [43]</item>
+        <item>Closed Join Window [44]</item>
+        <item>Network key rotation initiated [45]</item>
+        <item>Stack reset [80]</item>
+        <item>FIB Bootloader reset [81]</item>
+        <item>Send/join command issued without connecting from AP [82]</item>
+        <item>Access point not found [83]</item>
+        <item>PSK not configured [84]</item>
+        <item>SSID not found [87]</item>
+        <item>Failed to join with security enabled [88]</item>
+        <item>Core lockup or crystal failure reset [89]</item>
+        <item>Invalid channel [8A]</item>
+        <item>Low Vcc reset [8B]</item>
+        <item>Failed to join access point [8E]</item>
+      </items>
+      <default_value>Coordinator started [06]</default_value>
+    </parameter>
+  </parameters>
+</frame>

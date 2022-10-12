@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket State">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xCF</frame_type>
+  <parameters>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Socket ID for status reported</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="State">
+      <control_type>1</control_type>
+      <description>Status code.</description>
+      <items>
+        <item>Connected [00]</item>
+        <item>Failed DNS lookup [01]</item>
+        <item>Connection refused [02]</item>
+        <item>Transport closed [03]</item>
+        <item>Timed out [04]</item>
+        <item>Internal error [05]</item>
+        <item>Host unreachable [06]</item>
+        <item>Connection lost [07]</item>
+        <item>Unknown error [08]</item>
+        <item>Unknown server [09]</item>
+        <item>Resource error [0A]</item>
+        <item>Listener closed [0B]</item>
+      </items>
+      <default_value>Connected [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

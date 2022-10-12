@@ -1,0 +1,142 @@
+XBee-PRO 900
+------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the Point-to-Multipoint firmware on the XBee-PRO 900.
+
+### Links:
+
+[Documentation](http://www.digi.com/support/productdetail?pid=3541&type=documentation)  
+[Support](http://www.digi.com/support/productdetail?pid=3541)
+
+### Compatible Hardware:
+
+* XBee-PRO S4
+	* XBP09-DP
+	* XBP09-DM
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1067 - XBee-PRO 900
+* 1167 - XBee-PRO 900, RS232 Adapter
+* 21067 - XBee-PRO 900 (Australia)
+
+### Release Date: 
+
+* 2012-May-04
+
+### New Features:
+
+* The UART data present indicator function now exists on DIO1 ATD16.
+
+### Bug Fixes:
+
+* Fixed bug where polling messages would get output as API frames.
+
+* Resolved a small timing window where RTS was not tracked correctly. This would cause the radio to 
+  deassert CTS, since it would not output data, and the buffer would fill up.
+
+### Known Issues / Errata:
+
+* The %V command does not work. It seems to be consistently off from reading to reading (off by 
+  more than a volt in some cases). The error seems to vary from module to module. (this may be a factory calibration issue)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1061 - XBee-PRO 900
+* 1161 - XBee-PRO 900, RS232 Adapter
+* 1361 - XBee-PRO 900, RS485 Adapter
+* 1461 - XBee-PRO 900, USB Adapter
+* 1661 - XBee-PRO 900, Analog I/O Adapter
+* 1761 - XBee-PRO 900, Digital I/O Adapter
+* 21061 - XBee-PRO 900 (Australia)
+* 21161 - XBee-PRO 900 (Australia), RS232 Adapter
+* 21361 - XBee-PRO 900 (Australia), RS485 Adapter
+* 21461 - XBee-PRO 900 (Australia), USB Adapter
+* 21661 - XBee-PRO 900 (Australia), Analog I/O Adapter
+* 21761 - XBee-PRO 900 (Australia), Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-May-28
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where the pullup on DIN was not getting properly set.
+
+* Fixed bug where no response was received for a failed RMT AT CMD Request transmission.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1051 - XBee-PRO 900
+* 1151 - XBee-PRO 900, RS232 Adapter
+* 1351 - XBee-PRO 900, RS485 Adapter
+* 1451 - XBee-PRO 900, USB Adapter
+* 1651 - XBee-PRO 900, Analog I/O Adapter
+* 1751 - XBee-PRO 900, Digital I/O Adapter
+* 21051 - XBee-PRO 900 (Australia)
+* 21151 - XBee-PRO 900 (Australia), RS232 Adapter
+* 21351 - XBee-PRO 900 (Australia), RS485 Adapter
+* 21451 - XBee-PRO 900 (Australia), USB Adapter
+* 21651 - XBee-PRO 900 (Australia), Analog I/O Adapter
+* 21751 - XBee-PRO 900 (Australia), Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Mar-5
+
+### New Features:
+
+* Added asynchronous sleep modes.
+
+### Bug Fixes:
+
+* Fixed bug where a module in RS485 mode (D7=7) would erroneously set the D7 line high when going 
+  to sleep.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+### Release Version:
+
+* 1002 - XBee-PRO 900
+
+### Release Date: 
+
+* 2008-Mar-13
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

@@ -1,0 +1,108 @@
+![Digi logo](https://www.digi.com/digi/media/nav/logo-digi.png "Digi International Inc.")  
+**DIGI INTERNATIONAL**  
+9350 Excelsior Blvd, Suite 700  
+Hopkins, MN 55343, USA  
++1 (952) 912-3444 | +1 (877) 912-3444  
+[www.digi.com](https://www.digi.com)  
+
+Digi XBee 3 Cellular LTE Cat 1 Verizon Release Notes
+=============================================
+## Digi XBee 3 Cellular LTE Cat 1 Verizon
+## Version 1514 (October 15, 2019)
+
+---
+
+INTRODUCTION
+------------
+
+These are the release notes for Digi XBee 3 Cellular LTE Cat 1 Verizon / XBee Cellular.
+
+SUPPORTED PRODUCTS
+------------------
+
+* [Digi XBee 3 Cellular LTE Cat 1 Verizon](https://www.digi.com/products/embedded-systems/digi-xbee/cellular-modems/xbee3-cellular-lte-cat-1)
+
+KNOWN ISSUES
+------------
+1. By-pass mode is deprecated and is not recommended for new
+   designs. XBee 3 Cellular products support direct USB. Direct access
+   to the cellular module is not recommended or supported on the XBee 3
+   Cellular Cat 1 Verizon.
+3. Module with SPI mode enabled and pending Status frames to send to
+   the SPI Master will not go to sleep.
+4. Closing a TLS session and then immediately opening a new one may
+   result in failure. To workaround, insert a small delay
+   (~5s). [XBCELL-3732]
+5. Intermittent failure to go to sleep or wake up when using pin sleep
+   with the SPI_nSSEL line while in SPI mode. [XBCELL-3100]
+
+UPDATE BEST PRACTICES
+---------------------
+Digi recommends the following best practices:
+
+1. Test the new release in a controlled environment with your application before
+   you update production devices.
+2. Unless otherwise noted, apply updates in the following order:
+    1. Device firmware
+    2. Modem/Module firmware
+    3. Configuration
+    4. Application
+
+Digi recommends Digi Remote Manager for automated device updates. For
+more information, go to
+[https://www.digi.com/products/iot-platform/digi-remote-manager](https://www.digi.com/products/iot-platform/digi-remote-manager).
+
+If you prefer manually updating one device at a time, follow these steps:
+1. [Update to latest firmware from XCTU](https://www.digi.com/resources/documentation/digidocs/90002253/default.htm#Tasks/t_update_fw.htm%3FTocPath%3DGet%2520started%2520with%2520the%2520XBee%2520Smart%2520Modem%2520Development%2520Kit%7CConfigure%2520the%2520device%2520using%2520XCTU%7C_____3)
+
+TECHNICAL SUPPORT
+-----------------
+
+Get the help you need via our Technical Support team and online
+resources. Digi offers multiple support levels and professional
+services to meet your needs. All Digi customers have access to product
+documentation, firmware, drivers, knowledge base and peer-to-peer
+support forums.
+
+Visit us at [https://www.digi.com/support](https://www.digi.com/support) to find
+out more.
+
+---
+
+CHANGE LOG
+----------
+
+## 1514 (October 15, 2019)
+This is a recommended release.
+
+### NEW FEATURES
+
+1. Initial release
+2. Key Features:
+    * Digital I/O support.
+    * Analog Input support.
+    * API & Transparent mode
+    * AT command mode
+    * SMS
+    * TCP/UDP
+    * TLS/TCP
+    * Incoming connections
+    * MicroPython
+        * On-device programmability to add local intelligence.
+        * Many examples in the Digi MicroPython Programmer Guide.
+    * Digi Remote Manager
+    * Bluetooth Low Energy (BLE)
+        * Send a subset of API frames to the XBee through the encrypted BLE API
+          Service
+        * Configure the XBee 3 Cellular using the Digi XBee Mobile app for Android
+          and iOS.
+    * Low power modes
+        * Deep sleep mode.
+        * Pin sleep support.
+        * Cyclic sleep support.
+        * Airplane mode sleep support.
+    * Direct USB
+    * SMS UTF-16/UCS-2 encoding support.
+
+
+*Release Notes Part Number: 93001333

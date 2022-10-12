@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket Receive From">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xCE</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>This field allows for solicited reads to be in the future.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The ID of the socket that the data has been received on.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Source address">
+      <control_type>6</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Source address</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="Source port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Source port</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Payload Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1500</bytes_max>
+      <description>Data received form the destination. It may be up to 1500 bytes.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

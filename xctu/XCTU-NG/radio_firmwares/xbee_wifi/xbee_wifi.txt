@@ -1,0 +1,296 @@
+XBee Wi-Fi S6B
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the firmware on the XBee Wi-Fi S6B radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-wi-fi)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-wi-fi#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=5585)
+
+### Compatible Hardware:
+
+* XBee S6B
+	* XB2B-WF
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2026 - XBee Wi-Fi
+* 2026 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2015-Apr-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Upon wakeup from deep sleep when associated to WPA2 Access Point, a TCP packet 
+  takes about 50 seconds to transmit. This problem was resolved by adding 
+  sleep option (SO) bit 9 to disassociate from AP before sleeping. Association 
+  after wakeup takes about 2-3 seconds with this option, but it allows a TCP 
+  transmission much faster than would be allowed without the option. Please note 
+  that this option is unnecessary if not using WPA or WPA2 security and it is 
+  also unnecessary if not doing TCP transmissions immediately after wakeup. 
+  (UDP transmissions are always immediately possible upon wakeup.)
+
+* GPM read commands sometimes fail. Although the problem is not consistent, it 
+  is manifested by alternating between a local GPM read and a remote GPM read 
+  of the same memory on the same module. In other words, module A reads block 1 
+  on its own GPM memory. Then module B does a remote GPM read of block 1 on 
+  module A. The problem is manifested either by no response or by a response  
+  to the module that didn't make the request.
+  
+* When the '+++' sequence is typed for entry into command mode within a second 
+  of command mode expiration, the '+++' is either ignored or it is transmitted 
+  to another module. This is unexpected behavior because '+++' sequence (with 
+  proper guard times) should always allow entry into command mode, regardless 
+  of the timing.
+  
+* Code erroneously included support for P2 and M2 commands, even though it was 
+  not documented. This support was removed.
+  
+* Default value for Device Cloud server was changed from login.etherios.com 
+  to devicecloud.digi.com.
+  
+
+### Known Issues / Errata:
+
+* The IE 8 browser does not successfully apply changes in soft AP mode. IE 10, Firefox, Chrome, and 
+  other browsers work fine in Soft AP mode.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2025 - XBee Wi-Fi
+* 2025 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2015-Jan-09
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Watchdog resets when using SPI with valid API frames being read and written simultaneously
+
+* Single byte TCP transmissions are often delayed by about 6 or 7 seconds. This is seen when using 
+  a keyboard in the terminal window of X-CTU to send data between two XBee modules if the 
+  destination module is also connected to Device Cloud.
+  
+* Using an SMT module, when setting [D2] and [D3] to 2 (for ADC) they do not read the voltage on 
+  the pin. Instead they just report the max, 2500. These same analog lines work fine on the through 
+  hole module.
+
+### Known Issues / Errata:
+
+* The IE 8 browser does not successfully apply changes in soft AP mode. IE 10, Firefox, Chrome, and 
+  other browsers work fine in Soft AP mode.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2024 - XBee Wi-Fi
+* 2024 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2014-Dec-04
+
+### New Features:
+
+* Added support for new ETSI standards in Europe
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Single byte TCP transmissions are often delayed by about 6 or 7 seconds. This is seen when using 
+  a keyboard in the terminal window of X-CTU to send data between two XBee modules if the 
+  destination module is also connected to Device Cloud.
+
+* The IE 8 browser does not successfully apply changes in soft AP mode. IE 10, Firefox, Chrome, and 
+  other browsers work fine in Soft AP mode.
+
+* Using an SMT module, when setting [D2] and [D3] to 2 (for ADC) they do not read the voltage on 
+  the pin. Instead they just report the max, 2500. These same analog lines work fine on the through 
+  hole module.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2023 - XBee Wi-Fi
+* 2023 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2014-Jul-08
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* IO command didn't stay in effect after applying any other parameter that affects the I/O 
+  configuration.
+
+* Fixed issue with consuming HTTP data in Soft AP mode (when CE=1) rather than sending it out the 
+  serial port for processing by external HTTP server 
+
+* Fixed issue with sleep cycles longer than about 8 minutes. Sleep cycles can now be up to 24 
+  hours.
+
+* Fixed issue with remote commands after setting up node to operate in TCP mode
+
+* Fixed issue with receiving HTTP GET, POST, and HEAD commands on the serial port when not using 
+  SoftAP provisioning mode.
+
+### Known Issues / Errata:
+
+* Single byte TCP transmissions are often delayed by about 6 or 7 seconds. This is seen when using 
+  a keyboard in the terminal window of X-CTU to send data between two XBee modules if the 
+  destination module is also connected to Device Cloud.
+
+* The IE 8 browser does not successfully apply changes in soft AP mode. IE 10, Firefox, Chrome, and 
+  other browsers work fine in Soft AP mode.
+  
+* Using an SMT module, when setting [D2] and [D3] to 2 (for ADC) they do not read the voltage on 
+  the pin. Instead they just report the max, 2500. These same analog lines work fine on the through 
+  hole module.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2021 - XBee Wi-Fi
+* 2021 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2013-Sep-27
+
+### New Features:
+
+* Device Cloud support. (See product manual for a full description.)
+
+* Soft AP support in two presentation modes:
+	* Provisioning mode presents a web page to a Wi-Fi STA device for initial configuration. This 
+	  mode is only available when the SSID is not configured. This mode can be forced by pressing 
+	  the commissioning button four times in succession.
+	* Point to point mode where the module does normal TCP transmissions and receptions with a STA 
+	  device. This provides a nice alternative to Ad-hoc mode. This mode is enabled by the CE 1 
+	  command.
+
+* Added support for binary IP addresses in AT commands in API mode.
+
+* Self-addresssed MAC addresses may be used in API frames. For frames destined to another module, 
+  IP addresses must continue to be used.
+
+* Ability to toggle output pins without changing configuration using IO command. This command can 
+  be used to toggle output lines on a remote module from the Device Cloud.
+
+* Added support for RSSI PWM.
+
+* WPS support is available by pressing commissioning button twice.
+
+* With P2 set to 6, DIO12 now indicates if a TCP connection is established while operating in 
+  transparent mode.
+
+* The DI command is now used to indicate the status of the connection to the Device Cloud.
+
+### Bug Fixes:
+
+* TCP transmissions and receptions have been stabilized to support continuous traffic over a long 
+  period of time without data loss.
+
+* TCP socket closures work properly whether done with a FIN/ACK procedure or by receiving a socket 
+  reset command.
+
+* AdHoc mode successfully sends and receives data between two modules.
+
+### Known Issues / Errata:
+
+* Single byte TCP transmissions are often delayed by about 6 or 7 seconds. This is seen when using 
+  a keyboard in the terminal window of X-CTU to send data between two XBee modules if the 
+  destination module is also connected to Device Cloud.
+  
+* The IE 8 browser does not successfully apply changes in soft AP mode. IE 10, Firefox, Chrome, and 
+  other browsers work fine in Soft AP mode.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2004 - XBee Wi-Fi
+* 2004 - XBee Wi-Fi SMT
+
+### Release Date: 
+
+* 2012-Nov-29
+
+### New Features:
+
+* Initial release
+
+* Notable Differences from XB24-WF (S6) module:
+	* Supports OTA firmware updates.
+	* OTA frames to and from 0x0BEE port are not compatible between S6 and S6B.
+	* Max transmission frame size is 1392 bytes rather than 1398 bytes on port 0x0BEE.
+	* Wakeup time from deep sleep is instantaneous such that frames can be sent as soon as the 
+	  serial port is up rather than waiting for a new association to access point. Also, the 
+	  module will not output modem status messages on each sleep/wake cycle like it did on S6.
+	* In associated cyclic sleep mode, the sleep time is determined by SP rather than by the DTIM 
+	  interval.
+	* Minimum baud rate is 2400 baud rather than 1200 baud. (BD0 is disabled.)
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Single byte TCP transmissions are often delayed by about 6 or 7 seconds. This is seen when using 
+  a keyboard in the terminal window of X-CTU to send data between two XBee modules connected to the 
+  same access point.
+
+* Streaming large TCP packets can result in one of these problems:
+	* Partial duplicate packets. (The full packet will be received followed by a portion of the 
+	  same packet repeated.)
+	* Sometimes the data is dropped for no apparent reason without sending the data. This can 
+	  happen even though the status reports success.
+
+* TCP transmission attempts often fail with resource errors due to a lack of available TCP sockets. 
+  This is because the XBee module in API mode cannot support more than one TCP connection at a 
+  time. (To alleviate this problem, it is recommended that the ATTM parameter be configured to be 
+  long enough to not timeout and close the socket between transmissions. After a timeout, it 
+  usually takes ten seconds before a new socket connection can be made for the next connection.)
+
+* Sometimes a TCP socket does not close properly such that all transmissions fail with resource 
+  errors. When this condition occurs a watch dog reset is forced so that the module can be 
+  recovered without manual intervention.
+
+* AdHoc mode allows association between two modules, but does not allow transmissions.

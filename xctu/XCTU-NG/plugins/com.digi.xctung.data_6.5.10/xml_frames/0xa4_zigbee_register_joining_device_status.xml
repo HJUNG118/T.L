@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Register Joining Device Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA4</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Registration request status:\nVersion 3x19\n00 - Success\nB3 - Invalid Address\nFF - Key not found\n\nVersion 3x1A+\n00 - Success\n01 - Key too long\nB1 - Address not found in the key table\nB2 - Key value is invalid (0x00 and 0xFF are reserved values)\nB4 - Key table is already full</description>
+      <items>
+        <item>Success [00]</item>
+        <item>Key too long [01]</item>
+        <item>Address not found in the key table [B1]</item>
+        <item>Key value is invalid (00 and FF are reserved values) [B2]</item>
+        <item>Invalid Address [B3]</item>
+        <item>Key table is already full [B4]</item>
+        <item>Install Code is invalid [BD]</item>
+        <item>Key not found [FF]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

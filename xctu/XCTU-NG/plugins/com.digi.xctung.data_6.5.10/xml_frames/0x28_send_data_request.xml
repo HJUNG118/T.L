@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Send Data Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0x28</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the frame for put response. If 0, then no send data response status will be received.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Path Length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of path and filename.</description>
+      <default_value>0D</default_value>
+    </parameter>
+    <parameter name="Path">
+      <control_type>2</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>255</bytes_max>
+      <description>Path and file name.</description>
+      <default_value>70 61 74 68 2F 66 69 6C 65 6E 61 6D 65</default_value>
+    </parameter>
+    <parameter name="Content type length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of content type.</description>
+      <default_value>0A</default_value>
+    </parameter>
+    <parameter name="Content type">
+      <control_type>2</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>255</bytes_max>
+      <description>Indicates file type, e.g. text/plain, text/xml, or application/json.</description>
+      <default_value>74 65 78 74 2F 70 6C 61 69 6E</default_value>
+    </parameter>
+    <parameter name="Transport">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Must be 0 to indicate TCP.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Options">
+      <control_type>1</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Action when uploading the file.</description>
+      <items>
+        <item>Overwrite [00]</item>
+        <item>Archive [01]</item>
+        <item>Append [02]</item>
+        <item>Transient data (do not store) [03]</item>
+      </items>
+      <default_value>Overwrite [00]</default_value>
+    </parameter>
+    <parameter name="Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1400</bytes_max>
+      <description>Request data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

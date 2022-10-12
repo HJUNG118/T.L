@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Tx (Transmit) Status">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Wi-Fi</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>XTend (Legacy)</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x89</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame being reported. If the Frame ID = 0 in the TX Request, no TX Status frame is given.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Delivery status">
+      <control_type>1</control_type>
+      <description>Bitfield to indicating the transmit status.</description>
+      <items>
+        <item>Success [00]</item>
+        <item>An expected MAC acknowledgement never occurred [01]</item>
+        <item>CCA failure [02]</item>
+        <item>Packet was purged without being transmitted [03]</item>
+        <item>Physical error on the interface with the WiFi transceiver [04]</item>
+        <item>No Buffers [18]</item>
+        <item>Expected network acknowledgement never occurred [21]</item>
+        <item>Not joined to network [22]</item>
+        <item>Self-addressed [23]</item>
+        <item>Address not found [24]</item>
+        <item>Route not found [25]</item>
+        <item>Broadcast relay was not heard [26]</item>
+        <item>Invalid Binding Table Index [2B]</item>
+        <item>Invalid Endpoint [2C]</item>
+        <item>A software error occurred [31]</item>
+        <item>Resource Error [32]</item>
+        <item>CoAP message URI requires a nonzero length URI string terminated with a zero byte [40]</item>
+        <item>Unrecognized Digi API Frame type [41]</item>
+        <item>Client made a badly formed CoAP request [42]</item>
+        <item>Server failed to handle CoAP request, perhaps due to a lack of internal resources.  The client may try again [43]</item>
+        <item>CoAP Invalid Status [44]</item>
+        <item>CoAP Message Timeout, Server did not respond within the expected time [45]</item>
+        <item>CoAP Message Reset [46]</item>
+        <item>Data payload too large [74]</item>
+        <item>Indirect message unrequested [75]</item>
+        <item>Client socket creation attempt failed [76]</item>
+        <item>Connection does not exist [77]</item>
+        <item>Invalid UDP port [78]</item>
+        <item>Invalid TCP port [79]</item>
+        <item>Invalid host [7A]</item>
+        <item>Invalid data mode [7B]</item>
+        <item>Invalid interface [7C]</item>
+        <item>Interface not accepting frames [7D]</item>
+        <item>Connection refused [80]</item>
+        <item>Connection lost [81]</item>
+        <item>No server [82]</item>
+        <item>Socket closed [83]</item>
+        <item>Unknown server [84]</item>
+        <item>Unknown error [85]</item>
+        <item>Invalid TLS configuration [86]</item>
+        <item>Key not authorized [BB]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	Stub XML for XBRR-24 100F.
+	
+	This firmware is deprecated and not supported by XCTU.
+	The purpose of this file is to provide XCTU with enough 
+	information to be able to update a module with version 
+	100F to a later version.
+-->
+<firmwares>
+  <firmware fw_version="100F">
+    <family>XBee3</family>
+    <product_name>XBRR-24</product_name>
+    <hw_version>0x52</hw_version>
+	<!-- 
+		The compatibility number for this firmware is 2,
+		but we set it to 1 here so that this firmware won't 
+		show up as available to install for any RR modules 
+		(all RR modules have %C of at least 2).
+	-->
+    <compatibility_number>1</compatibility_number>
+    <bootloader_version>1.11.5</bootloader_version>
+    <min_xctu_version>6.5.9</min_xctu_version>
+    <region>99</region>
+    <config_buffer_loc>0</config_buffer_loc>
+    <flash_page_size>0x80</flash_page_size>
+    <crc_buffer_len>0</crc_buffer_len>
+    <function>Digi XBee RR Zigbee 3.0</function>
+    <update_timeout_ms>30000</update_timeout_ms>
+    <categories>
+	  <category name="Deprecated Firmware">
+		<description>This firmware version is not supported by XCTU. Please update to a newer version.</description>
+	  </category>
+      <category name="Diagnostics - Firmware/Hardware Information">
+        <description>Information about the XBee hardware and firmware</description>
+        <settings>
+          <setting command="VR">
+            <name>Firmware Version</name>
+            <description>Read modem firmware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="VH">
+            <name>Bootloader Version</name>
+            <description>Display the Bootloader version</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="HV">
+            <name>Hardware Version</name>
+            <description>Read modem hardware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="%C">
+            <name>Hardware/Firmware Compatibility</name>
+            <description>Specifies what firmware is compatible with this radio. Firmware with a compatibility value lower than the value returned by %C cannot be loaded onto the board.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="R?">
+            <name>Power Variant</name>
+            <description>Specifies if the radio is a PRO or Non-PRO variant.
+    0 = PRO, 1 = Non-PRO</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="%V">
+            <name>Supply Voltage</name>
+            <description>Read the supply voltage of the module in mV units.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="TP">
+            <name>Temperature</name>
+            <description>Read power compensation temperature sensor in units of Celsius degrees.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CK">
+            <name>Configuration Checksum</name>
+            <description>The CRC of the current settings. The purpose of this command is to allow the detection of an unexpected configuration change on a device. After a firmware update this command may return a different value.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+    </categories>
+  </firmware>
+</firmwares>

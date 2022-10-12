@@ -1,0 +1,120 @@
+XTC and 9XTend vB - DigiMesh
+============================
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2016, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the 9XTend vB DigiMesh and XTC DigiMesh firmware.
+
+### Compatible Hardware:
+
+* XTR - XTend Replacement
+	* XTP9B
+* XBee-PRO SX
+	* XBP9XT
+* XBee SX
+	* XB9XT
+
+### Links:
+
+[Product Information](https://www.digi.com/products/xbee-rf-solutions/embedded-rf-modules-modems/xtend-module)  
+[Documentation](https://www.digi.com/support/productdetail?pid=5612&type=documentation)  
+[Support](https://www.digi.com/support/productdetail?pid=5612)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8203 (Australia) - XTend vB only
+
+### Release Date:
+
+* 2016-May-24
+
+### New Features:
+
+* Initial release of XTend vB DigiMesh for Australia.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* There is some bit jitter at low serial data rates (9600 baud and below) which may be incompatible
+  with some host UARTs. If serial data loss is encountered, increasing the baud rate of the radio
+  and host to 19200 baud or higher will provide a more stable interface.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8003
+
+### Release Date:
+
+* 2016-Jun-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Hardware compatibility was improperly set, causing firmware updates to fail.
+
+### Known Issues / Errata:
+
+* Routable DigiMesh packets that are sent to an invalid address will generate a status frame with 
+  0x21 (ACK failure) instead of 0x25 (route not found).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8002
+
+### Release Date:
+
+* 2015-December-11
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Resolved issue where the RSSI pin would output high upon startup.
+
+### Known Issues / Errata:
+
+* Routable DigiMesh packets that are sent to an invalid address will generate a status frame with 
+  0x21 (ACK failure) instead of 0x25 (route not found).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8001
+
+### Release Date:
+
+* 2015-November-20
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

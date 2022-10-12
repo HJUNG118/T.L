@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.digi.serialio.feature"
+      label="%featureName"
+      version="1.0.0"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      (c) Copyright Digi International 2013-2019. All rights reserved.
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="com.digi.serialio" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="com.digi.serialio"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.digi.serialio.win32.x86"
+         os="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="com.digi.serialio.linux.x86"
+         os="linux"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="com.digi.serialio.linux.x86_64"
+         os="linux"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="com.digi.serialio.macosx.x86"
+         os="macosx"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="com.digi.serialio.macosx.x86_64"
+         os="macosx"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="com.digi.serialio.win32.x86_64"
+         os="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+</feature>

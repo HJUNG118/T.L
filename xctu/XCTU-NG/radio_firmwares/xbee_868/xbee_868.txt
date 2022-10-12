@@ -1,0 +1,219 @@
+﻿XBee-PRO 868
+------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the firmware on the XBee-PRO 868.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-868)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-868#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3553)
+
+### Compatible Hardware:
+
+* XBee-PRO S5
+	* XBP08-DP
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1061 - XBee-PRO 868
+* 1161 - XBee-PRO 868, RS232 Adapter
+* 1361 - XBee-PRO 868, RS485 Adapter
+* 1461 - XBee-PRO 868, USB Adapter
+* 1661 - XBee-PRO 868, Analog I/O Adapter
+* 1761 - XBee-PRO 868, Digital I/O Adapter
+
+### Release Date: 
+
+* 2011-Jan-06
+
+### New Features:
+
+* Added asynchronous sleep modes and support for indirect messaging.
+
+### Bug Fixes:
+
+* Increased the time that a node will wait to receive a network discovery response to account for 
+  the time it takes for the request to propagate.
+
+* Fixed bug where no status was returned for a failed RMT AT CMD Request transmission.
+
+* Fixed a bug where the PWM-RSSI output was not correct.
+
+* Fixed a problem where DIN/DOUT were not configured correctly for AIO/DIO adapters.
+
+* Changes to the ATCT (command mode timeout) would not be applied until after command mode was 
+  exited (even if an ATAC was done). This has been fixed.
+
+* Fixed bug where an incomplete API frame would corrupt the next API packet in API mode 2.
+
+* Fixed bug where the pullup on DIN was not getting properly set.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1027 - XBee-PRO 868
+* 1127 - XBee-PRO 868, RS232 Adapter
+* 1327 - XBee-PRO 868, RS485 Adapter
+* 1427 - XBee-PRO 868, USB Adapter
+* 1627 - XBee-PRO 868, Analog I/O Adapter
+* 1727 - XBee-PRO 868, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-May-21
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Updated the .mxi file with ATIC, ATIR, ATLT, ATSB, ATD9, ATCK commands.
+
+* NI strings maintain case now.
+
+* ATM0, ATM1 are set when command mode exits or AC. ATM0, ATM1 can also be read.
+
+* Code changes made to improve manufacturing yields.
+
+### Known Issues / Errata:
+
+* If the receiving module is streaming data out the UART and a ‘+++’ is sent to the module it will 
+  not enter command mode until after there is a break in the data.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1026 - XBee-PRO 868
+
+### Release Date: 
+
+* 2009-Feb-13
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed a problem where DIN/DOUT were not configured correctly for AIO/DIO adapters.
+
+### Known Issues / Errata:
+
+* If the receiving module is streaming data out the UART and a ‘+++’ is sent to the module it will 
+  not enter command mode until after there is a break in the data.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1030 - XBee-PRO 868
+
+### Release Date: 
+
+* 20xx-Xxx-xx
+
+### New Features:
+
+* Note: This is a special interim release.
+
+### Bug Fixes:
+
+* Fixed PWM RSSI Default - ATRP to 0x28.
+
+### Known Issues / Errata:
+
+* If the receiving module is streaming data out the UART and a ‘+++’ is sent to the module it will 
+  not enter command mode until after there is a break in the data.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1025 - XBee-PRO 868
+
+### Release Date: 
+
+* 2009-Jan-12
+
+### New Features:
+
+* ATIS, ATIC and ATIR commands added for AIO and DIO support.
+
+* ATLT command added to set the power LED blink rate.
+
+* ATCK diagnostic command was added to hash the current user configuration.
+
+### Bug Fixes:
+
+* Fixed a problem with unshipped production units where PL=2 was outputting too much power.
+
+* Fixed a problem where ack's failed because the ack duty cycle was incorrectly limited to 1% 
+  rather then 10%.
+
+### Known Issues / Errata:
+
+* If the receiving module is streaming data out the UART and a ‘+++’ is sent to the module it will 
+  not enter command mode until after there is a break in the data.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1023 - XBee-PRO 868
+
+### Release Date: 
+
+* 2008-Nov-07
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed problem with loopback, where the endpoints were not getting swapped.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1022 - XBee-PRO 868
+
+### Release Date: 
+
+* 2008-Oct-15
+
+### New Features:
+
+* Initial release.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

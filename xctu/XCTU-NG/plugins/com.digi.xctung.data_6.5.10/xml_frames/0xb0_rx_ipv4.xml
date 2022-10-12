@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="RX IPv4">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xB0</frame_type>
+  <parameters>
+    <parameter name="IPv4 source address">
+      <control_type>6</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>When protocol is UDP, '255.255.255.255' means broadcast.</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="16-bit dest. port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Destination's UDP or TCP port number.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="16-bit source port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Source's UDP or TCP port number.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Protocol">
+      <control_type>1</control_type>
+      <description>Protocol used for the transmitted data.\nProtocol TCP SSL [04] only applies to Cellular modules.</description>
+      <items>
+        <item>UDP [00]</item>
+        <item>TCP [01]</item>
+        <item>TCP SSL [04]</item>
+      </items>
+      <default_value>UDP [00]</default_value>
+    </parameter>
+    <parameter name="Protocol">
+      <control_type>1</control_type>
+      <description>Protocol to use for the transmitted data.</description>
+      <items>
+        <item>UDP [00]</item>
+      </items>
+      <default_value>UDP [00]</default_value>
+      <applies_to>
+        <hw_version>0x48</hw_version>
+      </applies_to>
+    </parameter>
+    <parameter name="Status">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved. </description>
+      <default_value>00</default_value>
+      <enabled>00</enabled>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1400</bytes_max>
+      <description>Up to 1400 bytes of data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

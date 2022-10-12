@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="RX SMS">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <exclusions>
+    <hw_version>0x48</hw_version>
+  </exclusions>
+  <frame_type>0x9F</frame_type>
+  <parameters>
+    <parameter name="Phone Number">
+      <control_type>5</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>20</bytes_max>
+      <description>String representation of phone number.</description>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <description>Body of the received SMS message.</description>
+    </parameter>
+  </parameters>
+</frame>

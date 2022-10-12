@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Many-to-One Route Request Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA3</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the device that sent the many-to-one route request.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the device that initiated the many-to-one route request.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Reserved">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved byte, set to 0.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+  </parameters>
+</frame>

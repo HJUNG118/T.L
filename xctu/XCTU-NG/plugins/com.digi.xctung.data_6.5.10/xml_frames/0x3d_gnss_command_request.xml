@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="GNSS Command Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0x3D</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reference identifier used to match status responses. Using a frame ID of 0 is valid but not recommended.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Type">
+      <control_type>1</control_type>
+      <description>Command to start or stop a Raw NMEA session, or start or stop a Get Position request.</description>
+      <items>
+        <item>Start Get Position (One shot with GNSS Priority) [00]</item>
+        <item>Start Get Position (One shot with Cellular Priority) [01]</item>
+        <item>Start Get Position (Continuous with GNSS Priority) [02]</item>
+        <item>Start Get Position (Continuous with Cellular Priority) [03]</item>
+        <item>Cancel Get Position [04]</item>
+        <item>Start Raw NMEA [05]</item>
+        <item>Stop Raw NMEA [06]</item>
+      </items>
+      <default_value>Start Get Position (One shot with GNSS Priority) [00]</default_value>
+    </parameter>
+    <parameter name="Timeout">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Timeout in seconds (Only used for Get Position.  0 = Return Cached value, Otherwise 1 - 65535 in seconds).</description>
+      <default_value>00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

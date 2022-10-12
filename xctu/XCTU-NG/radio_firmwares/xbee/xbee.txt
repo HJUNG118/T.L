@@ -1,0 +1,1421 @@
+XBee 802.15.4
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the 802.15.4 firmware on the XBee S1 and XBee-Pro S1.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-series1-module)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-series1-module#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3257)
+
+### Compatible Hardware:
+
+* XBee S1
+	* XB24
+	* XB24-DM
+* XBee-Pro S1
+	* XBP24
+	* XBP24-DM
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10EF - XBee 802.15.4
+* 11EF - XBee 802.15.4, RS232 Adapter
+* 13EF - XBee 802.15.4, RS485 Adapter
+* 14EF - XBee 802.15.4, USB Adapter
+* 16EF - XBee 802.15.4, Analog I/O Adapter
+* 17EF - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2015-Jan-16
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed firmware downloads with new XCTU-NG
+
+* Made corrections to MXI file for DD and P1 parameters
+
+* Fixed issue with setting IT above 1 when no I/O lines are selected for sampling.
+
+* Fixed problem with I/O samples being generated due to changes on lines not configured for I/O sampling.
+
+### Known Issues / Errata:
+
+* On the standard build, D7 can be set to 6 and 7 (which are RS485 settings).
+
+* If a module with encryption enabled receives packets addressed to it (either broadcast, 16-bit 
+  unicast, or 64-bit unicast) from a radio using a different encryption key the garbage data in the 
+  packet will be interpreted as valid data. This can cause erroneous transmissions, resets, 
+  lockups, etc.
+
+* Watchdog resets occur when a radio is receiving a lot of RF data and then attempts to transmit.
+ 
+* Transmitting uart data using the wrong baud rate can cause the uart to lock up.
+
+* IO samples may occasionally output 0x80 packets.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10EE - XBee 802.15.4
+* 11EE - XBee 802.15.4, RS232 Adapter
+* 13EE - XBee 802.15.4, RS485 Adapter
+* 14EE - XBee 802.15.4, USB Adapter
+* 16EE - XBee 802.15.4, Analog I/O Adapter
+* 17EE - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2014-Oct-28
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* I/O line passing was not working for DIO5 during sleep cycles on remote module.
+
+* Consecutive transmissions to a short address with encryption enabled were delayed.
+
+### Known Issues / Errata:
+
+* On the standard build, D7 can be set to 6 and 7 (which are RS485 settings).
+
+* If a module with encryption enabled receives packets addressed to it (either broadcast, 16-bit 
+  unicast, or 64-bit unicast) from a radio using a different encryption key the garbage data in the 
+  packet will be interpreted as valid data. This can cause erroneous transmissions, resets, 
+  lockups, etc.
+
+* Watchdog resets occur when a radio is receiving a lot of RF data and then attempts to transmit.
+ 
+* Transmitting uart data using the wrong baud rate can cause the uart to lock up.
+
+* IO samples may occasionally output 0x80 packets.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10ED - XBee 802.15.4
+* 11ED - XBee 802.15.4, RS232 Adapter
+* 13ED - XBee 802.15.4, RS485 Adapter
+* 14ED - XBee 802.15.4, USB Adapter
+* 16ED - XBee 802.15.4, Analog I/O Adapter
+* 17ED - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2011-Jul-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Reduced the probability that lockups/resets/etc. will occur when data is received from a radio 
+  using a different encryption key.
+
+* Fixed the format of IO samples (via the IR or IC command) when encryption is enabled. Before this 
+  fix, the modem command header was being output.
+
+### Known Issues / Errata:
+
+* On the standard build, D7 can be set to 6 and 7 (which are RS485 settings).
+
+* If a module with encryption enabled receives packets addressed to it (either broadcast, 16-bit 
+  unicast, or 64-bit unicast) from a radio using a different encryption key the garbage data in the 
+  packet will be interpreted as valid data. This can cause erroneous transmissions, resets, 
+  lockups, etc.
+
+* Watchdog resets occur when a radio is receiving a lot of RF data and then attempts to transmit.
+
+* Transmitting UART data using the wrong baud rate can cause the UART to lock up.
+
+* IO samples may occasionally output 0x80 packets.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10EC - XBee 802.15.4
+* 11EC - XBee 802.15.4, RS232 Adapter
+* 13EC - XBee 802.15.4, RS485 Adapter
+* 14EC - XBee 802.15.4, USB Adapter
+* 16EC - XBee 802.15.4, Analog I/O Adapter
+* 17EC - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2011-Feb-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Module would get stuck waiting for the tranciever to de-assert the out-of-idle indicator. This 
+  was causing an occasional watchdog reset.
+
+### Known Issues / Errata:
+
+* On the standard build, D7 can be set to 6 and 7 (which are RS485 settings).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10EB - XBee 802.15.4
+* 11EB - XBee 802.15.4, RS232 Adapter
+* 13EB - XBee 802.15.4, RS485 Adapter
+* 14EB - XBee 802.15.4, USB Adapter
+* 16EB - XBee 802.15.4, Analog I/O Adapter
+* 17EB - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Nov-23
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Defaults for the RS232 adapter were wrong (causing high current draw).
+
+* The DD parameter was wrong on some adapter builds.
+
+* Fixed some bugs in the .mxi file on the adapter builds.
+
+### Known Issues / Errata:
+
+* On the standard build, D7 can be set to 6 and 7 (which are RS485 settings).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10EA - XBee 802.15.4
+* 11EA - XBee 802.15.4, RS232 Adapter
+* 13EA - XBee 802.15.4, RS485 Adapter
+* 14EA - XBee 802.15.4, USB Adapter
+* 16EA - XBee 802.15.4, Analog I/O Adapter
+* 17EA - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Nov-11
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Added a second stop case for the FLL to fix WDR from the frequency not locking correctly on 
+  certain hardware (MC13213 TP566501 CTEB1017).
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E9 - XBee 802.15.4
+* 11E9 - XBee 802.15.4, RS232 Adapter
+* 13E9 - XBee 802.15.4, RS485 Adapter
+* 14E9 - XBee 802.15.4, USB Adapter
+* 16E9 - XBee 802.15.4, Analog I/O Adapter
+* 17E9 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 20xx-Xxx-xx
+
+### New Features:
+
+* Added an AT command for use by manufacturing.
+
+### Bug Fixes:
+
+* Fixed bug which caused poor sensitivity on modules with a chipID of 0x6800. (Errata 3).
+
+* Put the VL command back in the firmware...turns out having it gone was messing up some customers.
+
+* Fixed bug where the wakeup times from pin sleep were very long (~18msec in some cases). This would 
+  occasionally cause watchdog resets.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E8 - XBee 802.15.4
+* 11E8 - XBee 802.15.4, RS232 Adapter
+* 13E8 - XBee 802.15.4, RS485 Adapter
+* 14E8 - XBee 802.15.4, USB Adapter
+* 16E8 - XBee 802.15.4, Analog I/O Adapter
+* 17E8 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Jun-10
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed defaults in the code for the PR command on AIO and DIO Adapter builds.
+
+* Fixed defaults in the .mxi files for the PR command on the 232 and 485 builds.
+
+* Fixed bug where the encryption key would get set to 0 if a ATKY was issued without a parameter.
+
+* The MAC was resetting when the allow association bit of ATA2 was changed.
+
+* The guard time before +++ was enforced on powerup.
+
+* Modules in SM5 mode would always stay awake for the ST time when ON_SLEEP was deasserted.
+
+* The IS parameter would accept a parameter, which it didn't use.
+
+### Known Issues / Errata:
+
+* The KY command will accepts strings greater than 32 characters in length. Truncation of the input 
+  is not taking place properly.
+
+* The ATDP command can be set to 0. 1 is the actual minimum entry.
+
+* The ATIT command can be set to 0. 1 is the actual minimum entry.
+
+* The ATGT command can be set to 1. 2 is the actual minimum entry.
+
+* The ATGT parameter can be set smaller than a character time at certain baud rates. At this 
+  setting the user would be unable to enter command mode. This behavior should be documented in the 
+  user manual to warn the user.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E7 - XBee 802.15.4
+* 11E7 - XBee 802.15.4, RS232 Adapter
+* 13E7 - XBee 802.15.4, RS485 Adapter
+* 14E7 - XBee 802.15.4, USB Adapter
+* 16E7 - XBee 802.15.4, Analog I/O Adapter
+* 17E7 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Dec-21
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Removed defaults for the DD parameter in the .mxi files. Having a default messes up the XCTU 
+  parameter read for the USB and 232 adapters.
+
+* Fixed bug where an AIO sample would be inaccurate on a SIP PRO module because inadequate time was 
+  given after the voltage reference switch was toggled.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E6 - XBee 802.15.4
+* 11E6 - XBee 802.15.4, RS232 Adapter
+* 12E6 - XBee 802.15.4, 1-Wire Sensor Adapter
+* 13E6 - XBee 802.15.4, RS485 Adapter
+* 14E6 - XBee 802.15.4, USB Adapter
+* 16E6 - XBee 802.15.4, Analog I/O Adapter
+* 17E6 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 20xx-Xxx-xx
+
+### New Features:
+
+* Created new builds for RS232, RS485, and USB Interfaces with default values set correctly for DD 
+  and for D7 in the case of RS485
+
+### Bug Fixes:
+
+* Fixed problem with SM5 mode not sending poll requests to the coordinator when enabled to do so. 
+  The fix looks at SO, bit 0 to know whether or not to send a poll request if the radio has a 
+  cyclic sleep wake up. If the radio has a pin wakeup, A1, bit 3 determines whether or not to send 
+  a poll request to get data from the coordinator.
+
+* Fixed program loads to work like DigiMesh 2.4 so that a CTU load can work with an RS485 adapter.
+
+### Known Issues / Errata:
+
+* An extra byte of data may be observed during OTA data transmissions.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E5 - XBee 802.15.4
+* 16E5 - XBee 802.15.4, Analog I/O Adapter
+* 17E5 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Mar-05
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed problem with duplicate packets being displayed on UART when the sender is expecting an ACK. 
+  The reduced packet tracker timeout on release 10e2 made it possible to track more packets, but it 
+  introduced this bug. Fixed the problem by increasing the packet tracker timeout on received 
+  frames that request an ACK.
+  
+* Fixed a problem with not sending an ACK on a duplicate packet. If the sender missed the ACK the 
+  first time the packet was received, then it needs an ACK on subsequent retries, even though the 
+  destination node discards the packet because it was previously output to the UART.
+
+### Known Issues / Errata:
+
+* An extra byte of data may be observed during OTA data transmissions.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E4 - XBee 802.15.4
+* 16E4 - XBee 802.15.4, Analog I/O Adapter
+* 17E4 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Feb-24
+
+### New Features:
+
+* Added CK command to report the checksum of the configuration in RAM. This helps to determine if 
+  the configuration has changed.
+
+* Imposed a limit on CT command to be no more than ten minutes to be consistent with other 
+  platforms.
+
+### Bug Fixes:
+
+* Fixed bug to recover a global boolean variable after an RE command. If MM is 1 or 2 before RE 
+  command, RR can still be set after RR command.
+  
+* Fixed bug by rearranging the MXI files to include MM before RR. This allows an error to occur if 
+  RR is set with MM set to 1 or 2.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E3 - XBee 802.15.4
+* 16E3 - XBee 802.15.4, Analog I/O Adapter
+* 17E3 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Feb-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Occasional failures of firmware loads through CTU. Delayed radio reset with FR command by 100ms 
+  so that even the slowest PC's would be ready to load the software immediately following reset.
+  
+* Misc bug fixes.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E2 - XBee 802.15.4
+* 16E2 - XBee 802.15.4, Analog I/O Adapter
+* 17E2 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Dec-10
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fix bug when using sleep mode. The receiving module would not always send RX date out the UART 
+  from the transmitting module that was being reset/power cycled between transmissions.
+	* This was caused by the packet ID being set to the same number on the transmitting module 
+	  after each reset and the receiving module not timing out packet tracking entries because the 
+	  timer does not run during sleep.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E1 - XBee 802.15.4
+* 16E1 - XBee 802.15.4, Analog I/O Adapter
+* 17E1 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Nov-17
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed problems with RTS flow control. When RTS was asserted, data received before would not be 
+  sent out UART until more data was received when using pin sleep modes.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10E0 - XBee 802.15.4
+* 16E0 - XBee 802.15.4, Analog I/O Adapter
+* 17E0 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Sep-11
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* A receive radio in API mode causes a loss of data. This problem was introduce in release 10A3 
+  when the blocking UART writes were removed.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10CF - XBee 802.15.4
+* 15CF - XBee 802.15.4, Power Harvester
+* 16CF - XBee 802.15.4, Analog I/O Adapter
+* 17CF - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Jun-06
+
+### New Features:
+
+* Added the !C command to support changing channels immediately, or at least more quickly than the 
+  CH command does.
+
+* Allowed the PRO module to use all 16 available channels, including channel 0x0B.
+
+* Added the P3 command on the DIO and AIO adapter builds.
+
+* Added the P2 command to the PH build.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10CE - XBee 802.15.4
+* 15CE - XBee 802.15.4, Power Harvester
+* 16CE - XBee 802.15.4, Analog I/O Adapter
+* 17CE - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-May-29
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug which prevented SIP modules to work when loaded with AIO/DIO/PH firmware.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+### Release Version:
+
+* 10CD - XBee 802.15.4
+* 15CD - XBee 802.15.4, Power Harvester
+* 16CD - XBee 802.15.4, Analog I/O Adapter
+* 17CD - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-May-09
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* The P0 parameter was erroneously disabled on the DIO/AIO adapters.
+
+* The assoc. led was erroneously on during the initial sleep.
+
+* Tx Status API packets were erroneously output for network acks.
+
+* Fixed a bug on the Power Harvester. The hardware was not correctly detecting when the serial 
+  cable was disconnected. This was fixed by changing the state of the 3 serial output lines when 
+  entering sleep mode.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10CC - XBee 802.15.4
+* 15CC - XBee 802.15.4, Power Harvester
+* 16CC - XBee 802.15.4, Analog I/O Adapter
+* 17CC - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Apr-10
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* When the power level was less than the maximum (PL<4) the radio would transmit the first few 
+  packets after a MAC change (ID, CH, etc) at max-power. This has been fixed.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C9 - XBee 802.15.4
+* 12C9 - XBee 802.15.4, 1-Wire Sensor Adapter
+* 15C9 - XBee 802.15.4, Power Harvester
+* 16C9 - XBee 802.15.4, Analog I/O Adapter
+* 17C9 - XBee 802.15.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Mar-24
+
+### New Features:
+
+* Support has been added for the XBee 802.15.4 Power Harvester Board (version 15C9).
+
+* Support has been added for the XBee 802.15.4 Analog Adapter Board  (version 16C9).
+
+* Support has been added for the XBee 802.15.4 Digital Adapter Board (version 17C9).
+
+* Commissioning button support has been added to the PH, AIO, and DIO builds. 10C9 does not 
+  currently support the commissioning button.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* The VL command has been removed.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C8 - XBee 802.15.4
+* 12C8 - XBee 802.15.4, 1-Wire Sensor Adapter
+
+### Release Date: 
+
+* 2007-Dec-21
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed a bug which caused the D0-D7 parameters to be set to the defaults on power up. This 
+  condition would persist until the user entered and exited cmd mode. This bug has been fixed.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C7 - XBee 802.15.4
+* 12C7 - XBee 802.15.4, 1-Wire Sensor Adapter
+
+### Release Date: 
+
+* 2007-Dec-06
+
+### New Features:
+
+* \#D was eliminated from this release
+
+* DD was changed - all 32 bits can be read and written, it can be saved with WR, and is still 
+  programmed with the same defaults. It is unaffected by RE.
+
+### Bug Fixes:
+
+* EP transmit bug - if a radio went from promiscuous mode enabled to disabled transmitting would 
+  break. This has been fixed.
+
+* Frame ID bug - Frame IDs would be incorrectly reported if an invalid command was issued while a 
+  node discover was in process.
+
+* Addressing when EE=1 - addressing could be incorrectly reported as 16bit addressing if an 
+  encrypted packet was sent to a radio with MY=FFFE.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C6 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Nov-16
+
+### New Features:
+
+* UH/UL - the ability for the user to create a custom MAC address has been added.
+
+* EP - the ability to promiscuously sniff all or some of the traffic on the channel has been added.
+
+* MM3 - a new MM mode has been added, a maxstream mode without acks.
+
+* SO - a sleep options command has been added. When enabled, no poll request is sent on cyclic wake 
+  up, and the cyclic wake time was shortened.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* If the EP command is enabled and then disabled, transmissions will lock up the radio.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C5 - XBee 802.15.4
+* 12C5 - XBee 802.15.4, 1-Wire Sensor Adapter
+
+### Release Date: 
+
+* 2007-Oct-31
+
+### New Features:
+
+* DD - The Device Designator command has been added.
+
+* \#D - The Device Designator Default command has been added.
+
+* NO - The Node Discover Options Command has been added.
+
+### Bug Fixes:
+
+* The IA command and ADC/DIO packets had problems when EE=1.
+
+* The encryption key (KY) was always set to zero regardless of what the user set it to.
+
+* The oneWire release would not set the addresses correctly in the API OTA response frame for 
+  1wire samples.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C4 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Oct-23
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* ADC/DIO passing did not work when MM != 0. ADC/DIO data will not work when not in MM=0. If a user 
+  attempts to set a Dx line to a ADC/DIO setting when not in MM=0 an error will occur. ADC/DIO is 
+  disabled when not in MM=0.
+
+* An OTA AI command would cause a response to go out the UART of the remote, not the radio which 
+  sent the OTA command. This has been fixed in this version.
+
+* If an OTA command was sent to an invalid address, extra data was returned in the error frame, 
+  this has been fixed in this version.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C3 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Oct-11
+
+### New Features:
+
+* The OTA API Frames have been changed to the ZigBee OTA frames.
+
+### Bug Fixes:
+
+* Bugfixes were made to the following commands: 
+	* NI:
+		* Made case-sensitive to match previous firmware releases.
+		* Fixed bug which caused error when over 20 characters were entered in cmd mode.
+		
+	* ND:
+		* Fixed various problems to get the API response correct.
+		* Fixed problems with ND+NI in cmd and api modes.
+		* Made case-sensitive to match previous firmware releases.
+
+	* DN:
+		* Fixed bug which caused DN to not exit cmd mode on success.
+		* Made case-sensitive to match previous firmware releases.
+
+	* AS:
+		* Fixed bug which caused the most significant nibble of the coord. address to be omitted 
+		  and the most significant byte of the API response to be 0x30.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C2 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Sep-26
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* XBee module with SM5 enabled does not remain awake for ST time after a pin wake.
+
+* The API packet for the AI command was not formatted correctly, this was fixed.
+
+* If a 32-bit parameter was set in API mode and then after which a shorter parameter was set or
+  queried an error status of 3 was returned, Param was not getting reset correctly. This problem 
+  has been fixed.
+  
+* API response packets for the ND and AS commands were not formatted correctly. A temporary fix was 
+  put in place to fix these problems.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C1 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Sep-11
+
+### New Features:
+
+* Custom Source Addresses (UH/UL). Two new AT commands have been added UH and UL. If the user 
+  changes either of these to a value other than the default (0xffffffff) then the values of UH and 
+  UL will be used in place of SH and SL in all circumstances except when SH or SL are directly 
+  queried.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10C0 - XBee 802.15.4
+* 12C0 - XBee 802.15.4, 1-Wire Sensor Adapter
+
+### Release Date: 
+
+* 2007-Jun-29
+
+### New Features:
+
+* Over-the-air commands (OTA commands). New API frames for sending command and receiving the 
+  response. Not all commands are supported for this release. The following commands are not 
+  supported and will return error:
+	* ATND – Network Discover
+	* ATED – Energy Detect
+	* ATDN – Discover Node 
+	* ATAS – Active Scan
+	* ATVL – Long Version.
+	
+* 12C0 firmware supports select Watchport sensors using a special interface board. OTA commands 
+  must be used to setup the radio as the radio’s serial port is used to communicate with the 
+  sensors.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* API Mode. When setting a parameter with AT API and OTA command frames, if the command name field 
+  contains a space character (0x20), subsequent 1 and 2 byte commands when queried will always 
+  return error. Radio will need to be reset to clear this state.
+
+* 12C0 firmware: ATMY default was incorrectly set to 0xFFFF for this release.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10A4 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Apr-16
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* The DIO line passing doesn't work when IA=0xFFFF
+
+* With Multiple DI Lines enabled on multiple radios the DO module incorrectly sets DO
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10A3 - XBee 802.15.4
+
+### Release Date: 
+
+* 2007-Mar-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* When in MM=1 or MM=2 the XBee receives incorrect packets.
+
+* The API RX_Packet reports a source address of 0xFFFE when the transmitting module uses 16-bit 
+  addressing & MM=1 or MM=2.
+
+* The RSSI PWM output stays on when the module is put into pin sleep.
+
+* The option byte is not being set correctly for an Address Broadcast (bit 1).
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10A2 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Nov-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Sleep current is now consistent. This problem was due to internal floating I/O lines.
+
+* The AI register is incorrectly reported as 0x30 instead of 0x00 via the API.
+
+* Asserting RTS does not send information from XBee buffer.
+
+### Known Issues / Errata:
+
+* Unable to read module after sleep when using API.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10A1 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Sep-25
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* ATRR - ACKs were not recognized when sending data to a modem using its 64 bit address when 
+  ATMY<0. The source address of the ACK was being transmitted using the 16-bit address where as the 
+  transmitting modem was expecting the ACK source address to be the 64-bit address.
+
+* ATND - When issuing an API AT cmd for ATND, the responses were not being sent out the UART.
+
+* I/O line passing - PWM were not being updated with the correct data when DIO and ADC lines were 
+  defined in the received I/O line data.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 10A0 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Sep-13
+
+### New Features:
+
+* Modified ATIC, ATIR and ATIS so that digital outputs will be sampled and sent with I/O line data.
+
+* Modified ATIC so that digital outputs will be monitored for changes.
+
+* Modified association behavior: 
+	* Coordinator - Updated Association request limit to 1.
+	* Coordinator - Limited number of outstanding Association request to 5 at a time.
+	* End device - Added random delay up to 255 msec between association request.
+	
+* Added Broadcast retries with ATRR set.
+
+* Added support for ADC and DIO.
+
+* Added support for ATRR (XBEE retries).
+
+* Added support for CCA retries.
+
+* Added automatic retries for ATND.
+
+* Modified ATNT units.
+
+* Added support for encryption: ATEE and ATKY
+
+* Added ATNT which allows for the ATND time to be modified.
+
+* ATND uses 64-bit addresses when sending and responding to a ATND request.
+
+* Added support for baud rates up to 115200.
+
+### Bug Fixes:
+
+* Operation when RP set to FF.
+
+* Pin sleep was not going to sleep reliably.
+
+* ATDN was getting incorrect address from end node when its address was set to 0xFFFE.
+
+* Misc bug fixes.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1083 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-May-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* ATCE was not resetting the radio properly when changed from 1 to 0. This has been fixed.
+
+* The internal pull-up was not being enabled on the SLEEP_RQ line when ATPR was set to its default 
+  value. I/O lines are now being properly initialized when ATPR is set to default.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1082 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Apr-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* ATSM = 6 was removed in 107X. This caused problems for certain customer who have already shipped 
+  with firmware version 106X and were using ATSM=6. ATSM has been added back into this version of 
+  firmware. It is not recommended to use ATSM=6 for new designs. Setting SM=6 causes ATCE to be set 
+  to 1. When changing from SM=6 to any other SM value will cause ATCE to be set to 0. This behavior 
+  for SM6 is consistent with 106X.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1081 - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Mar-31
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Reset will now cause radio to update configuration from flash.
+
+### Known Issues / Errata:
+
+* Unable to reliably stream data at UART baud rates above 19200.
+
+* Sleep coordinator seen to reset occasionally when purging packets from the MAC.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 107F - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Feb-08
+
+### New Features:
+
+1. Renamed AT commands:
+	* ATMI to ATNI
+	* ATMD to ATND
+	* ATDM to ATDN
+	* ATPE to ATPR
+	* AT%V to ATVL
+
+* Added new API frame command: 0x09 AT Command Queue Parameter value. This command will only set 
+  the register value. It will not reinitialize the modem to the new value. To reinitialize the 
+  modem using API use either ATAC or AT Command ID 0x08.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* ATND has changed and is no longer compatible with previous firmware versions.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 107E - XBee 802.15.4
+
+### Release Date: 
+
+* 2006-Jan-09
+
+### New Features:
+
+* Added AT command ATMM (Mac Mode).  
+  Options are 0- Maxstream, 1- 802.15.4 no acks, 2- 802.15.4 with acks.
+
+* Enlarged time for ATMD command to 2.5 seconds.
+
+* AT commands ATMD and ATDM a not compatible with previous versions.
+
+* For API mode enabled TX64 and TX16. Option 0x1 no acks, and 0x4 transmit with global pan.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 107D - XBee 802.15.4
+
+### Release Date: 
+
+* 2005-Nov-30
+
+### New Features:
+
+* Added code to work around MAC/MC13192 problem which affected Pin Sleep. App ensures MC13192 is 
+  sleeping (no clock) before going into stop mode.
+  
+* Fixed problems with SM5 and A1 = 0. Coordinator address was not being set which cause addition 
+  poll (sent by MAC) to be set to wrong address.
+  
+* Enlarged MAC memory pool.
+
+* Fixed API going to sleep while receiving a frame.
+
+* Using NBND MAC library for this release.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 107C - XBee 802.15.4
+
+### Release Date: 
+
+* 2005-Oct-26
+
+### New Features:
+
+* Modified API.
+
+* Shortened UART TX buffer to 255.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 107B - XBee 802.15.4
+
+### Release Date: 
+
+* 20-Oct-12
+
+### New Features:
+
+* SM5 Pin Wake no longer polls data from Coordinator unless A1 bit 3 set.
+
+### Bug Fixes:
+
+* Cyclic sleep Coordinator will lock up when receiving more than 2 TX request with no cyclic sleep 
+  end nodes. Frame will now purge properly.
+
+* Due to changes made to API framing code cyclic sleep end nodes would not return to sleep after 
+  sending it a UART data frame. End nodes will now return to sleep after receiving a UART data frame.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1061 - XBee 802.15.4
+
+### Release Date: 
+
+* 2005-Sep-08
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Baud rate were not as accurate as possible affecting all baud rates except 115200.
+
+* SM4 current draw was too high.
+
+* Cyclic sleep coordinator (SM6) could be locked out of transmitting if received ACK or CCA failure 
+  when sending indirect messages.
+
+* Module could go to sleep with data in UART buffers.
+
+* Modem checks receive packets for 0 length buffers. MAC under certain circumstances will send a 0 
+  length packet when running the modem in cyclic sleep.
+
+* Multiple commands on a line in command mode didn't work.
+
+* ATWR could cause the module to hang occasionally.
+
+### Known Issues / Errata:
+
+* Streaming is currently limited to 19200 serial interface rate.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1060 - XBee 802.15.4
+
+### Release Date: 
+
+* 2005-Sep-08
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Streaming is currently limited to 19200 serial interface rate.

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="TX SMS">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <exclusions>
+    <hw_version>0x48</hw_version>
+  </exclusions>
+  <frame_type>0x1F</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reference Identifier used to match status responses. 0 disables Status frame.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved for future use.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Phone Number">
+      <control_type>5</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>20</bytes_max>
+      <description>String representation of phone number. Only numbers and plus sign '+' prefix allowed.</description>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>160</bytes_max>
+      <description>Data to send as body of the SMS message.</description>
+    </parameter>
+  </parameters>
+</frame>

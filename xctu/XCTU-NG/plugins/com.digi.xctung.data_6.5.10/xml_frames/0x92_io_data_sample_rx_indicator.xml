@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="IO Data Sample Rx Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>802.15.4</protocol>
+  </protocols>
+  <frame_type>0x92</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the sender device.\n\nSet to 'FF FF FF FF FF FF FF FF' (unknown 64-bit address) if the sender's 64-bit address is unknown.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the sender device, if known.\n\nSet to FF FE if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Receive options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>01 - Packet Acknowledged\n02 - Packet was a broadcast packet\n20 - Packet encrypted with APS encryption\n40 - Packet was sent from an end device (if known)\n\nOption values can be combined. For example, a 40 and a 01 will show as a 41.\nOther possible values: 21, 22, 41, 42, 60, 61, 62.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Number of samples">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Number of sample sets included in the payload. (Always set to 1).</description>
+      <default_value>01</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Digital channel mask">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Bitmask field that indicates which digital IO lines on the remote have sampling enabled (if any).\nNA | NA | NA | CD/DIO 12 | PWM/DI O11 | RSSI/DI O10 | NA | NA | CTS/DI O7 | RTS/DI O6 | ASSOC DIO5 | DIO4 | AD3/DI O3 | AD2/DI O2 | AD1/DI O1 | AD0/DI O0</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Analog channel mask">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitmask field that indicates which analog IO lines on the remote have sampling enabled (if any).\nSupply Voltage | NA | NA | NA | AD3 | AD2 | AD1 | AD0</description>
+    </parameter>
+    <parameter name="Digital samples">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>If the sample set includes any digital IO lines (Digital Channel Mask > 0 ), these two bytes contain samples for all enabled digital IO lines.\nDIO lines that do not have sampling enabled return 0.\nBits in these 2 bytes map the same as they do in the Digital Channels Mask field.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="Analog samples">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>If the sample set includes any analog input lines (Analog Channel Mask > 0 ), each enabled analog input returns a 2-byte value indicating the A/D measurement of that input.\nAnalog samples are ordered sequentially from AD0/DIO0 to AD3/DIO3, to the supply voltage.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,178 @@
+![Digi logo](https://www.digi.com/digi/media/nav/logo-digi.png "Digi International Inc.")<br>
+**DIGI INTERNATIONAL**<br>
+9350 Excelsior Blvd, Suite 700<br>
+Hopkins, MN 55343, USA<br>
++1 (952) 912-3444 | +1 (877) 912-3444<br>
+[www.digi.com](https://www.digi.com)<br>
+
+XBee S2C 802.15.4 Release Notes
+===============================
+### XBee S2C 802.15.4
+### Version 2003 - Aug 30, 2019
+
+---
+
+INTRODUCTION
+------------
+These release notes document changes made to the 802.15.4 firmware on the XBee S2C RF modules.<br>
+
+* [Product Information](https://www.digi.com/products/embedded-systems/rf-modules/2-4-ghz-modules/xbee-802-15-4)
+* [Documentation](https://www.digi.com/support/productdetail?pid=5616&type=documentation)
+* [Support](https://www.digi.com/support/productdetail?pid=5616)
+
+<br>SUPPORTED PRODUCTS
+----------------------
+
+* XB24C - XBee S2C 2.4 GHz radio module
+	* Surface Mount (SMT)
+	* Through Hole (THT)
+* XBP24C - XBee-PRO S2C 2.4 GHz radio module
+	* Surface Mount (SMT) *[Hardware Rev L and newer]*
+	* Through Hole (THT)
+
+<br>KNOWN ISSUES
+----------------
+1. If a remote radio's buffer is full due to RTS holding off incoming data, any remote AT command
+   to this node will fail to generate a remote AT Command response. *[XBS1B-449]*
+
+2. The **ED** command cannot be issued remotely, attempting to do so might cause the remote node to
+   become unresponsive. *[XBS1B-425]*
+
+<br>UPDATE CONSIDERATIONS
+-------------------------
+XCTU (XBee Configuration and Test Utility) is recommended for updating the firmware of your radio
+module to the latest firmware version:[www.digi.com/xctu](http://www.digi.com/xctu)<br>
+
+<br>The following files are included in this release:
+
+* Firmware
+	* EBL:  Firmware image for gateways and OEM serial updates
+	* EHX:  Encrypted firmware for Legacy X-CTU
+	* EHX2: Encrypted firmware for XCTU-NG
+* Configuration
+	* MXI:  X-CTU configuration file
+
+<br>TECHNICAL SUPPORT
+-----------------
+Get the help you need via our Technical Support team and online resources. Digi offers multiple
+support levels and professional services to meet your needs. All Digi customers have access to
+product documentation. firmware, drivers, knowledge base and peer-to-peer support forums.
+
+Visit us at [https://www.digi.com/support](https://www.digi.com/support) to find out more.
+
+---
+
+CHANGE LOG
+==========
+
+2003 XBee S2C 802.15.4 (Aug 30, 2019)
+--------------------------------------
+This is an optional release.
+
+### NEW FEATURES
+* N/A
+
+### ENHANCEMENTS
+* N/A
+
+### SECURITY FIXES
+* N/A
+
+### BUG FIXES
+1. Resolved an issue where an interrupt-driven event that occurs while entering sleep could cause
+   unexpected behavior. *[XBS1B-454]*
+
+---
+
+2002 XBee S2C 802.15.4 (July 12, 2019)
+--------------------------------------
+This is an optional release.
+
+### NEW FEATURES
+1. Support for RS-485 communication using an RS-485 adapter added. *[XBS1B-430]*
+	* This is configured through the **D7** command.
+
+### ENHANCEMENTS
+1. The **NP** command has been added for getting the maximum packet payload length. *[XBS1B-433]*
+	* **NP** assumes long addressing will always be used when calculating maximum payload size.
+
+2. The maximum value for **SP** and **DP** has increased from 0x68B0 to 15F900.
+
+### BUG FIXES
+1. Fixed an issue where DTR I/O line would cause the module to draw higher current due to
+   automatically enabling a pulldown resistor. *[XBS1B-389]*
+
+2. Fixed an issue where RTS I/O line would cause the module to draw higher current if RTS is
+   asserted low. *[XBS1B-415]*
+
+3. Resolved an issue that could cause an ADC measurement to underflow and produce an incorrect
+   value at 0VDC. *[XBS1B-421]*
+
+4. Resolved an issue on the thru-hole variant where holding DOUT low was preventing the application
+   from running instead of entering SPI mode and no AT command response for setting I/O lines.
+   *[XBS1B-438]*
+
+5. Applying changes with **AC** will no longer interrupt incoming UART traffic. *[XBS1B-344]*
+
+6. Enabling cyclic sleep while using the default **SP** value of 0 would cause the device to go
+   into a 0.25s cyclic sleep period. The device will now stay awake until a non-zero **SP** value
+   is provided. *[XBS1B-431]*
+
+7. Resolved an issue where **PR** and **PD** would not pull some IO pins correctly on the thru-hole
+   variant. *[XBS1B-381]*
+
+8. Added debounce code to resolve an issue where toggling DTR would sometimes not wake the module
+   from sleep. *[XBS1B-428]*
+
+9. Resolved an issue where the RSSI PWM signal did not accurately represent the RF packet RSSI
+   value. *[XBS1B-401]*
+
+---
+
+2001 XBee S2C 802.15.4 (April 15, 2016)
+---------------------------------------
+
+### ENHANCEMENTS
+The following enhancements have been made to the S2C platform compared to the S1:
+
+* Much lower sleep current (Less than 1 uA vs 10 uA on XBee S1)
+
+* Lower current consumption for RX (31 mA vs 50 mA on XBee S1)
+
+* Lower current consumption for TX on PRO (120 mA vs. 250 mA on XBee S1)
+
+* Same current consumption for TX on non-PRO (45 mA), but greater output power (8 dBm)
+
+* Higher throughput capacity (83kbps on XBee S2C compared with 60kbps on XBee S1)
+
+* Addition of SMT form factor
+
+* Addition of OTA Firmware updates
+
+* Addition of SPI support
+
+* UART can handle a baud rate of up to 250 kbps compared with 111 kbps on XBee S1
+
+* Coordinator can simultaneously buffer up to 5 indirect messages for sleeping end devices compared
+  with 2 on XBee S1
+
+Limitations due to switching to from XBee S1 hardware to XBee S2C hardware:
+
+* SM2 is supported, but the XBee S2C hardware does not support the fast wakeup time available on
+  XBee S1 hardware. For comparison, in SM1 mode, XBee S1 awakens in 10.5 ms, but it awakens in 2.5
+  ms in SM2 mode. By contrast, SM1 and SM2 both awaken in 6.3 ms on XBee S2C. Therefore, SM2
+  provides no advantages over SM1 and is being deprecated.
+
+* ADC is supported but the XBee S2C hardware only supports 4 ADC lines compared with 6 on the XBee
+  S1 hardware.
+
+* Space parity on the UART is not supported by the XBee S2C hardware.
+
+### BUG FIXES
+* Encrypted transmissions from XBee S2C to XBee S1 now work without dropping data, regardless of
+  baud rate. This depends on setting bit 0 of **C8** command. **C8** command implements a duty
+  cycle on encrypted frames so that XBee S2C cannot overrun XBee S1.
+
+---
+
+*Release Notes Part Number: 93000804*

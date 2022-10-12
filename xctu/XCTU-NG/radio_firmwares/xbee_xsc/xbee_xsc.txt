@@ -1,0 +1,83 @@
+XBee-PRO XSC
+------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the XSC firmware on the XBee-PRO XSC (S3B) radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-xsc)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-xsc#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3421)
+
+### Compatible Hardware:
+
+* XBee-PRO S3
+	* XBP09-XSC
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1022 - XBee-PRO XSC 9600
+
+### Release Date:
+
+* 2010-Nov-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+ - Fixed an RTS flow control bug.
+
+### Known Issues / Errata:
+
+* When using pin sleep, if the SLEEP line is asserted shortly after serial data is received but 
+  before a packetization (RO) timeout occurs then the module may go to sleep before sending the 
+  outstanding characters. The outstanding characters will be lost. To workaround this problem 
+  ensure that greater than the RO time is observed after the last serial character is sent to the 
+  module before SLEEP is asserted.
+
+* Custom baud rate settings between 0xF424 and 0xFFFF do not work correctly.
+
+* Custom baud rates actually set with (ATBD) will vary from those set on the XStream.
+
+* Serial Port Sleep Mode (ATSM2) is not supported for hardware reasons.
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1020 - XBee-PRO XSC 9600
+
+### Release Date:
+
+* 2008-Jan-16
+
+### New Features:
+
+* Initial release of the XStream 42B5 compatible firmware.
+
+### Bug Fixes:
+
+ * None
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported for hardware reasons.
+
+* Custom baud rates actually set with (ATBD) will vary from the XStream.

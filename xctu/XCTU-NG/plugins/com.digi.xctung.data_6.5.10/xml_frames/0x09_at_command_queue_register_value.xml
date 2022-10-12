@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="AT Command Queue Register Value">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>Wi-Fi</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x09</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Parameter value">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>If present, indicates the requested parameter value to set the given register.\n\nIf no characters are present, get the value of the register.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="CoAP Passthru Rx Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x9D</frame_type>
+  <parameters>
+    <parameter name="Token length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of Token field.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Token">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Used by client and server to match requests with responses.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="Method">
+      <control_type>1</control_type>
+      <description>The RESTful Method used for the CoAP transmission.</description>
+      <items>
+        <item>EMPTY [00]</item>
+        <item>GET [01]</item>
+        <item>POST [02]</item>
+        <item>PUT [03]</item>
+        <item>DELETE [04]</item>
+      </items>
+      <default_value>GET [01]</default_value>
+    </parameter>
+    <parameter name="URI length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of URI string. Should not include a count for a terminating zero byte.</description>
+      <default_value>08</default_value>
+    </parameter>
+    <parameter name="URI">
+      <control_type>2</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>31</bytes_max>
+      <description>Uniform Resource Identifier. A printable string.\n\n
+      Every CoAP message must have a valid URI string in this field and must meet the following criteria. All built-in XBee CoAP functions use a fixed URI string:\n
+      - "XB/TX" for data transmissions (PUT)\n
+      - "XB/AT" for AT Command operation (PUT or GET)
+      </description>
+      <default_value>58 42 2F 41 54 2F 4E 49</default_value>
+    </parameter>
+    <parameter name="Options length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of TLV options, zero or more.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_min>255</bytes_min>
+      <description>List of TLVs.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="Payload">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1200</bytes_max>
+      <description>Frame payload.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

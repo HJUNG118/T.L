@@ -1,0 +1,103 @@
+#========================================================
+# General Settings
+#========================================================
+# Product name (Without blank spaces)
+application_name=XCTU
+
+#========================================================
+# User Interface
+#========================================================
+small_toolbars=false
+toolbars_texts=true
+show_menu=true
+fonts_size=100
+devices_toolbar=false
+
+#========================================================
+# Working Modes
+#========================================================
+enable_configuration_perspective=true
+enable_consoles_perspective=true
+enable_network_perspective=true
+
+#========================================================
+# Secondary toolbar (tools, preferences, etc.)
+#========================================================
+# Tools
+enable_tools=true
+enable_tool_frames_generator=true
+enable_tool_frames_interpreter=true
+enable_tool_xbee_recovery=true
+enable_tool_load_console_session=true
+enable_tool_range_test=true
+enable_tool_firmware_explorer=true
+enable_tool_serial_console=true
+enable_tool_spectrum_analyzer=true
+enable_tool_throughput=true
+enable_tool_micropython_console=true
+
+# Preferences
+enable_preferences=true
+
+# Feedback
+enable_feedback=true
+
+# Help
+enable_help=true
+enable_help_help_contents=true
+help_page=http://www.digi.com/resources/documentation/digidocs/html/xctu_ug.htm
+enable_help_change_log=true
+enable_help_update_radio_firmware=true
+enable_help_update_tool=true
+enable_help_about=true
+about_text='XCTU\n\
+\n\
+Version: {1}\n\
+Build ID: {0}\n\
+\n\
+You can provide feedback or report bugs using the built-in\n\
+feedback tool of XCTU.\
+\n\
+\n\
+Digi Support: http://www.digi.com/support\n\
+\n\
+© Copyright Digi International 2013-2022\n\'
+
+#========================================================
+# Colors
+#========================================================
+# General application colors
+color_application_background=#36a8d5
+color_application_tabs=#ffffff
+color_application_panels_back=#d4d4d4
+color_application_panels_front=#b1b1b1
+
+# Colors on devices list at the left
+color_device=#d4d4d4
+color_device_texts_panel=#e9e9e9
+color_device_selected=#36a8d5
+color_device_selected_texts_panel=#acdbee
+color_device_highlight=#fab156
+color_device_highlight_texts_panel=#fadfbd
+
+# Colors on settings
+color_setting=#d4d4d4
+color_setting_not_default=#36a8d5
+color_setting_not_default_not_written=#84c361
+color_setting_error=#ff7777
+color_setting_highlight=#fab156
+color_setting_description=#ebebeb
+color_setting_error_description=#ffcdcd
+
+#========================================================
+# Installers
+#========================================================
+# Short company name (Without blank spaces)
+company_name_short=Digi
+# Full company name (If the text has blank spaces set it between simple quotes)
+company_name_full='Digi International Inc.'
+
+# Company info (If the texts have blank spaces set them between simple quotes)
+company_web_page=http://www.digiembedded.com
+company_support_page=http://www.digi.com/support/eservice/login.jsp?p=true
+company_support_phone='+1 (952) 912-3444'

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket Close">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0x43</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>A reference identifier used to match status responses. If set to 0, the device does not send a response.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>ID of the socket to be closed.</description>
+      <default_value>00</default_value>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,673 @@
+XBee ZigBee Smart Energy
+------------------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the ZigBee Smart Energy firmware on the XBee S2 and 
+XBee-Pro S2B radio.
+
+### Compatible Hardware:
+
+* XBee S2
+	* XB24-ZB
+	* XB24-SE
+	* XB24-B
+* XBee-Pro S2
+	* XBP24-ZB
+	* XBP24-SE
+	* XBP24-B
+* XBee-Pro S2B
+	* XBP24BZ7
+	* XBP24BSE
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module#docs)  
+[XBee ZigBee Smart Energy Product Manual](http://www.digi.com/support/getasset?fn=90033931&tp=3)  
+[Smart Energy information](http://www.digi.com/standards/smart-energy/)  
+[Support](http://www.digi.com/support/productdetail?pid=4549)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3132 - ZigBee Smart Energy Coordinator API
+* 3332 - ZigBee Smart Energy Router API
+* 3932 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2012-Mar-19
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed flash corruption issue triggered by sending a packet to a device that had left the network.
+
+* Increased API command buffer size to correctly handle an ATZU API command response.
+
+* Addressed APS extended retry timeout issue when sending fragmented packets causing a device to 
+  lockup.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3130 - ZigBee Smart Energy Coordinator API
+* 3330 - ZigBee Smart Energy Router API
+* 3930 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2011-Jun-16
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Default value for SN was extended from 0x01 to 0xF0 to increase the time tolerance for a parent 
+  to wait for sleeping end devices to poll before timing out and forcing the child off the network.
+
+* Issues which were causing some Tx Status 0x32 (no resources) messages have been addressed.
+
+* Recent changes to the SE 1.1 certification test suite concerning Key Establishment error and 
+  termination handling have been addressed.
+
+* A problem where partner link key exchange was failing due to reversed endpoints in the response 
+  message has been fixed.
+
+* CB1 is disabled while Authentication is in progress.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3128 - ZigBee Smart Energy Coordinator API
+* 3328 - ZigBee Smart Energy Router API
+* 3928 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2011-Feb-24
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* A router/end device's link key table will be reset when a joined device leaves a network.
+
+* The configured value of KY will be preserved even if a RE command is given.
+
+* SC mask range is increased to 0xFFFF to support use of Channel 26 on the XBee Pro Plus. The 
+  default value remains 0x7FFF. However, if Channel 26 (0x8000) is present in the SC mask, then 
+  transmit power for all channels is capped at 3 dBm.
+
+* ZU (Certificate public key) is now read/write.
+
+* Setting AO to 0x07 enables passthru for all ZDO traffic, whether supported or unsupported by the 
+  stack.
+  
+* New DO (Device Options) command has been added to control a bitmask of options:
+	* DO bit 0x01 enables the temperature compensation option on the XBee S2B. By default it is 
+	  enabled. This option appears in all SE and ZB builds for the XBee S2B. Disabling temperature 
+	  compensation reduces wake time overhead for sleeping end devices from 13 ms to 2 ms, but then 
+	  transmit power may vary by as much as 8 dBm as a function of temperature.
+	* DO bit 0x02 enables the join notification message option on the SE Coordinator. By default it 
+	  is disabled. This option appears in the SE Coordinator builds.
+	* DO bit 0x04 enables best response option during joining. By default it is disabled, which 
+	  selects the First Response option. First response will cause the node to join with the first 
+	  network to send a beacon response.  
+	  A change from the prior release is that the node will continue to dwell on the first response 
+	  channel in an attempt to receive beacon responses from all neighbors on that same network as 
+	  reported in the first beacon response. Best response will cause the node to search all 
+	  channels in the SC mask before selecting a network to join.
+	* The other 6 bits of DO are held in reserve to support future boolean command options.
+
+* The NH limit was reduced from 30 to 11 to comply with the SE 1.x specification.
+
+* DO, ZT, ZU, ZV have been added to the mxi files.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* TX Status message will sometimes show a 16 bit address other than 0xFFFE.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3126 - ZigBee Smart Energy Coordinator API
+* 3326 - ZigBee Smart Energy Router API
+* 3426 - ZigBee Smart Energy, Range Extender
+* 3926 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2010-Jul-08
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* The Range Extender will try to join a network 3 times at 1 second intervals, then at 1 minute 
+  intervals for 15 minutes, and thereafter at 1 hour intervals.  
+  As before, Coordinator, Router, and End Devices will try to join a network 3 times at 1 second 
+  intervals before giving up.
+
+* Corrected bug introduced in 3x25 where CB2 with NJ=0x00 or 0xFF would send zero or 0xFF instead 
+  of 60 seconds.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3125 - ZigBee Smart Energy Coordinator API
+* 3325 - ZigBee Smart Energy Router API
+* 3425 - ZigBee Smart Energy, Range Extender
+* 3925 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2010-Jul-06
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* NJ can now be set to 0xFF, which allows permit join to persist indefinitely. The default value of 
+  0xFE is unchanged.
+
+### Bug Fixes:
+
+* Fixes a bug in the code which checks for EO==8 and a lack of an authorized trust center link key 
+  before launching KE endpoint discovery and authentication.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3124 - ZigBee Smart Energy Coordinator API
+* 3324 - ZigBee Smart Energy Router API
+* 3424 - ZigBee Smart Energy, Range Extender
+* 3924 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2010-Jul-02
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* If authentication is enabled (EO==8), and authentication is interrupted or fails, the device will 
+  leave the network and retry join/authentication. A device with EO==8 may not remain associated 
+  and unauthenticated.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3123 - ZigBee Smart Energy Coordinator API
+* 3323 - ZigBee Smart Energy Router API
+* 3423 - ZigBee Smart Energy, Range Extender
+* 3923 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2010-May-29
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.0 ZigBee-PRO stack
+
+### New Features:
+
+* Change to Range Extender's Assoc LED blinking function:
+	* Assoc LED state   Meaning
+	* Steady Light		Node is joined and connection to Coordinator is verified
+	* 3000 msec blink	Node is not joined, AI will indicate why
+	* 1000 msec blink	Node is trying to join
+	*  250 msec blink	Node is joined but connection to Coordinator is not working  
+	  Note the state of the LED1 on development boards is the reverse of the Assoc LED. When the 
+	  Assoc LED is on, LED1 is off; when the Assoc LED is off, LED1 is on.  
+	  Once the node has joined, the status of the connection to the Coordinator is checked at 30 
+	  second intervals.
+
+* Default setting for NK on the Coordinator has been changed from 1 to 0. This means the 
+  Coordinator will generate a random network key when the network is formed, instead of using a 
+  network key value of '1'.
+
+* Default setting for KY on the Coordinator has been changed from 1 to 0. This means the 
+  Coordinator will generate a random global initial link key when the network is formed, instead 
+  of using a global initial link key value of '1'.
+
+* Default setting for EO on the Router and End Device has been changed from 0 to 8. Now that 
+  production certificates are integrated into the manufacturing processes, it makes more sense to 
+  enable authentication by default.
+
+### Bug Fixes:
+
+* Quickly sending two fragmented messages was hanging the XBee. Now the first message will 
+  transmit, the second will fail with a TxStatus of 0x32 returned.
+
+* The Coordinator was sometimes not responding to KE Init requests with KE Init responses, it does 
+  now.
+
+* Failure of KE endpoint discovery will cause the device to leave and try to join again, provided 
+  there are untried join attempts remaining.
+
+* Fixed a bug where accumulated KE endpoint discoveries were causing a R/E/RExt to leave the 
+  network needlessly after associating.
+
+* Code now handles a redundant request to start joining while a join is already in progress. 
+  Depending on when the second join request occurs, the device will either restart the join, or 
+  leave the network and attempt to join again. A new modem status message is generated if this 
+  occurs (MODEM_CONFIG_CHANGED=0x11).
+
+* An attempt to broadcast with APS encryption enabled in the TxOptions will fail and generate a 
+  TxStatus code of TX_STATUS_APS_BCAST=0x2D. An attempt to broadcast with APS encryption enabled in 
+  the TxOptions with EE=0 will fail and generate a TxStatus code of TX_STATUS_APS_NO_EE=0x2E.
+
+### Known Issues / Errata:
+
+* Quickly sending two fragmentable messages to the same destination will hang the XBee. The 
+  workaround is to wait for the TxStatus response from the first message before sending the second.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3420 - ZigBee Smart Energy, Range Extender
+
+### Release Date:
+
+* 2010-Mar-03
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.1 ZigBee-PRO stack
+
+### New Features:
+
+* Range Extender added as a 34xx variant.  
+  Differences which are specific to the Range Extender:
+	* PRO file sets SC to 3FFF at Silver Springs Networks request
+	* CB4 does NR instead of RE
+	* EO default is 0x08 (Authentication enabled)
+
+### Bug Fixes:
+
+* Fixed bug in TransmitQueue where symptom was RF transmission stops while UART communications 
+  continue.
+
+* Fixed bug in Range Extender where an APS encrypted request returned a non-encrypted default 
+  response.
+
+* Fixed bug in Range Extender where a non-encrypted request sent to a secure cluster wasn't 
+  returning a 0x01 ZCL_FAILURE default response status code.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 311B - ZigBee Smart Energy Coordinator API
+* 331B - ZigBee Smart Energy Router API
+* 391B - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2010-Mar-08
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.1 ZigBee-PRO stack
+
+### New Features:
+
+* Support for XBee-Pro PLus: 
+	* SC range of 0-7FFF
+	* Temperature compensation
+	* overvoltage protection
+
+* SC defaults to 7FFF
+
+* New AT commands:
+	* TP command for XBee-Pro Plus, returns temperature in Celsius
+	* %V command, returns supply voltage in units of mV
+
+### Bug Fixes:
+
+* DB command fixed.
+
+* After a Mgmt_Leave_req, rejoining failed until an NR or NR0 occurred.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3119 - ZigBee Smart Energy Coordinator API
+* 3319 - ZigBee Smart Energy Router API
+* 3919 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-Jun-23
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.0 ZigBee-PRO stack
+
+### New Features:
+
+* New source addresses are added to the address table to facilitate subsequent acceptance of APS 
+  encrypted packets.
+
+* New AT commands:
+	* NR, NR0 command added to disassociate local node from the network
+	* PO command added to set polling rate on end devices; zero value invokes 100 msec delay, range 
+	  is 1..x1770 in units of 10 msec (10msec:60sec), default is 0x09 (maps to 100 msec).
+
+### Bug Fixes:
+
+* End Devices leave the network after polls are not answered AND 5 seconds have elapsed without 
+  polls being answered.
+  
+* End Devices wake completely upon receiving a fragment.
+
+* Broadcast messages which are too big to process no longer hang the coordinator and now return a 
+  0x74 Tx Status message.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3118 - ZigBee Smart Energy Coordinator API
+* 3318 - ZigBee Smart Energy Router API
+* 3918 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-Jun-04
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.0 ZigBee-PRO stack
+
+### New Features:
+
+* A new transmit status (0x26) for a non-failure status where an expected relay of a broadcast 
+  packet by a node's neighbors was not detected.
+
+* A new receive option bit (0x40) was added which indicates if the packet came from an end device.
+
+* Two speed end device polling. 7.5 seconds is the slow rate, which switches to the fast rate to 
+  transact with the parent, and back to slow when it is done.
+
+* In the transmit queue, getpendingtx gets the oldest entry instead of the next entry.
+
+* If a node discovers it has been orphaned by its parent, it now leaves and attempts to rejoin the 
+  net.
+
+* CTS is deasserted during authentication.
+
+* A new command "PO" which sets the slow polling rate on the end device.
+
+### Bug Fixes:
+
+* Fixed a bug in packet tracking.
+
+* If the extended timeout option is enabled, then it is used because end devices need more time 
+  than routers to ack their packets.
+
+* A watchdog reset has been fixed which occurred when a source-route was used inappropriately.
+
+* A router/end device with no certificate no longer attempts to discover the key establishment 
+  cluster.
+
+* A coordinator now uses the correct destination endpoint value when responding to SE cluster 
+  requests.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3117 - ZigBee Smart Energy Coordinator API
+* 3317 - ZigBee Smart Energy Router API
+* 3917 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-Jun-02
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.0 ZigBee-PRO stack
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* APS Encryption and Fragmentation supports payloads of 1 to 128 bytes.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3116 - ZigBee Smart Energy Coordinator API
+* 3316 - ZigBee Smart Energy Router API
+* 3916 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-Jun-02
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.0 ZigBee-PRO stack
+
+### New Features:
+
+* Changed Modem descriptor from XB24-ZB, XBP24-ZB to XB24-SE, XBP24-SE respectively.
+
+* Using production release of Ember Stack 3.4.0.
+
+### Bug Fixes:
+
+* A power reset no longer resets the Coordinator's Key Table.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3115 - ZigBee Smart Energy Coordinator API
+* 3315 - ZigBee Smart Energy Router API
+* 3915 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-May-27
+
+### ZigBee Stack:
+
+* EmberZNet 3.4 (beta 3) ZigBee-PRO stack
+
+### New Features:
+
+* Key Establishment is now disabled on routers and end devices by default. To enable, set EO=8. KE 
+  is always enabled on Coordinators, EO=2. This was done to improve the "out-of-the-box" experience 
+  for developers who lack test or production certificates for their modems.
+
+* To enable KE, set EO to 8: "7e 00 05 08 01 45 4f 08 5a".
+
+* To disable KE, Set EO to 0: "7e 00 05 08 01 45 4f 00 62".
+
+### Bug Fixes:
+
+* Corrected problem which generated a 0x74 status code (payload too big) when APS encryption was 
+  invoked for RF data payloads of 58-66 bytes.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3114 - ZigBee Smart Energy Coordinator API
+* 3314 - ZigBee Smart Energy Router API
+* 3914 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-May-15
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.12 (beta 2) ZigBee-PRO stack
+
+### New Features:
+
+* End Devices are supported in this release
+
+### Bug Fixes:
+
+* End Device was unable to join the network as a child of the Coordinator.
+
+* Hardcoded endpoint value (instead of correct source endpoint value) was being used in generating 
+  KE responses.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3113 - ZigBee Smart Energy Coordinator API
+* 3313 - ZigBee Smart Energy Router API
+* 3913 - ZigBee Smart Energy End Device API
+
+### Release Date:
+
+* 2009-Apr-01
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.0 (beta 1) ZigBee-PRO stack
+
+### New Features:
+
+* Fragmentation has been added. The maximum payload size is 128 bytes, supported by the 
+  transmission of up to three fragment packets.
+
+* SC mask default value has been changed to 0x3FFF.
+
+* Ability to disable authentication. For routers and end devices, change the EO setting from 8 
+  (enables authentication) to 0 (disable authentication).
+
+* New AT Command: 
+	* VC: Verify certificate. Read-only. 1 = certificate present, 0 = no certificate present.
+
+### Bug Fixes:
+
+* Power cycling a router no longer causes it to perform key establishment.
+
+### Known Issues / Errata:
+
+* The Ember ZigBee stack occasionally writes information to non-volatile memory. These writes may 
+  require performing a flash page erase which can block up to 20ms (worst case). The EM250 has a 
+  4-byte FIFO to collect incoming serial data. However, if serial UART interrupts are disabled for 
+  20ms, it is possible for incoming serial data to be dropped once the 4-byte FIFO filles. ZB 
+  firmware de-asserts CTS about 40 microseconds before an erase operation begins. The application 
+  should observe CTS flow control as quickly as possible to prevent data loss.  
+  Note that PCs often make use of a FIFO buffer where serial data can be buffered prior to 
+  transmission to the serial port. If FIFO buffers are used, PC applications will not be 
+  immediately responsive to CTS and may experience rare data loss.

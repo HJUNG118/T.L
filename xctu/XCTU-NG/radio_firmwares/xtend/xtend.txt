@@ -1,0 +1,872 @@
+﻿XTend
+-----
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2016, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the firmware on the XTend radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xtend-module)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xtend-module#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3157)
+
+### Compatible Hardware:
+
+* XTend
+	* XT09
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 206F - 9XTEND 9600/115K HOPPING
+* 226F - 9XTEND Australia
+
+### Release Date:
+
+* 2016-Dec-06
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Resolved an issue where out of band spurious transmissions were occuring.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 206E - 9XTEND 9600/115K HOPPING
+* 226E - 9XTEND Australia
+
+### Release Date:
+
+* 2008-Jun-05
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* A problem with extra garbage being sent out the serial port of the receiving radio when the 
+  sending radio is set for SM=1 and MT=3 and data is sent after wakeup. This was caused by two 
+  things:
+	* The sending radio was clearing the payload of a retransmission upon wakeup causing the 
+	  transmission of a MAC header without data.
+	* The second problem was that the receiving radio improperly handled the 0 length reception and 
+	  assumed a minimal length. When the minimal length was decremented, it became 0xffff causing a 
+	  large stream of garbage data to be output the serial port. 
+
+* A problem with an extended response time to a binary command following wakeup. It was taking 
+  around 65ms rather than the normal 400us. This was caused by asserting CTS too early. Fix was to 
+  wait until power settled before asserting CTS.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 206D - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2008-May-07
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* FH command when entered in binary command mode. This command did not work in binary mode prior to 
+  this release. FH forces a long preamble header on transmissions.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 206C - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2008-Feb-05
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Problem with CTS being asserted during transmissions when operating in RS-485 mode.
+
+* Problem with receiving a successful TX_STATUS message on the sending node when the receiving node 
+  did not output the transmission to its serial port. This occurred because the sending radio 
+  toggled power between each transmission and the initial frame ID is random for the first 
+  transmission following reset. The receiving node, not knowing anything about the reset of the 
+  sender would occasionally receive the same random frame ID twice in a row and discard the second 
+  packet as a duplicate. Problem was fixed by adding a timeout on the receiving end. If one second 
+  expires between receptions, the second frame is output, even if the frame ID and source address 
+  are the same as the previous frame received.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 206B - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2007-Dec-14
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Channel hopping was not occurring when transmissions and receptions occurred alternately (i.e. a 
+  transmission between each reception as would happen in a loopback test). In this case, all 
+  transmissions were erroneously occurring on the same channel.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2069 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2007-Oct
+
+### New Features:
+
+* Support for controlling long headers through the TX16 command.
+	* Bit 1 (0x02) forces a long header to precede the packet
+	* Bit 2 (0x04) Disables the long header from being sent, even if HT is expired.
+		* If bits 1 and 2 are both set, a long header will be sent.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2268 - 9XTEND Australia
+
+### Release Date:
+
+* 2007-Jun-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Allows the correct use of 128 bit Encryption on Australia version firmware.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2067 - 9XTEND 9600/115K HOPPING
+* 2267 - 9XTEND Australia
+
+### Release Date:
+
+* 2007-May-30
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* HT timer expired immediately causing a long header to be sent on every frame.
+
+* Occasional dropped frames caused by taking too long to scan all the channels. This problem was 
+  introduced in release 2065.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2065 - 9XTEND 9600/115K HOPPING
+* 2265 - 9XTEND Australia
+
+### Release Date:
+
+* 2007-May-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* An issue with the XTend getting into a state where it stops transmitting and receiving 
+  consistently after 5 to 30 days of continuous testing.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2064 - 9XTEND 9600/115K HOPPING
+* 2264 - 9XTEND Australia
+
+### Release Date:
+
+* 2007-Mar-28
+
+### New Features:
+
+* When doing both API Frames and Repeater Mode, the maximum API frame size is now 256 bytes.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2061 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2007-Jan-08
+
+### New Features:
+
+* 128 bit encryption for foreign radios
+
+### Bug Fixes:
+
+* Flow control with packets of 7000 bytes or more and serial baud rate at 115K some data can be 
+  lost.
+
+* Loss of data appears when sending from multiple radios using repeater mode.
+
+### Known Issues / Errata:
+
+* HT cannot be set to a value above 0x53e2, which is about 35 minutes.
+
+* Spurious false under-voltage warnings at power-up. 
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly. 
+
+* VID cannot be set with a binary command.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2060 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2006-Oct-20
+
+### New Features:
+
+* Support for the new PKG-R with no ATTINY26 on XTIB-R, this allows 2060 to read the DIP’s off of 
+  new XTIB-R (rev 10 or newer) and older boards (rev 9 or older).
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* HT cannot be set to a value above 0x53e2, which is about 35 minutes.
+
+* Spurious false under-voltage warnings at power-up. 
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly. 
+
+* VID cannot be set with a binary command.
+
+* Loss of data appears when sending from multiple radios using repeater mode.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2040 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2006-Aug-16
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Allows the user configuration to be maintained after a watch dog reset.
+
+* Allows RSSI indicators to work, even when the user configuration is written within RP time of a 
+  data reception.
+
+* Allows broadcasts to be sent RR+1 times when MT is 0.
+
+* VID cannot be set with binary commands.
+
+### Known Issues / Errata:
+
+* Allows the user configuration to be maintained after a watch dog reset.
+
+* Allows RSSI indicators to work, even when the user configuration is written within RP time of a 
+  data reception.
+
+* Allows broadcasts to be sent RR+1 times when MT is 0.
+
+* VID cannot be set with binary commands.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2020 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2006-Feb-27
+
+### New Features:
+
+* packet mode API (Application Programmers Interface).
+
+* Polling and Repeater modes.
+
+* support for using an encryption key of all zeroes.
+
+* custom baud rate for serial port using the BD command. Previous values in the 0-8 range select 
+  standard rates as before. Values from 09 through 0x38 are invalid. Values from 0x39 through 
+  0x1C9C38 select the corresponding baud rates in decimal (57bps through 1,875,000bps).
+
+* Sniffer mode operation when MK=0.
+
+* two retries to the ATWR command.
+
+* CD=4 prevents CD assertion unless packet is for that radio.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* VID cannot be written in Binary Command Mode.
+
+* A watchdog reset can occur if data is received on the wrong channel.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* HT values cannot be set for longer than 35 minutes. (HT>0x53E2)
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns. 
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2001 - 9XTEND 9600/115K HOPPING
+* 2201 - 9XTEND Australia
+
+### Release Date:
+
+* 2005-Oct-03
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Reports version (ATVR) as 0x200 instead of 0x2000 as per new convention, always reports all 4 
+  digits.
+
+### Known Issues / Errata:
+
+* RTS flow control disabled to fix problem with TX_Enable in RS485 2-wire operation.
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2000 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2005-Sep-25
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Failure to enter AT command mode with a valid command sequence ~1 of 200 attempts.
+
+* Support for factory set VID (ATID).
+
+### Known Issues / Errata:
+
+* Reports version (ATVR) as 0x200 instead of 0x2000 as per new convention.
+
+* RTS flow control disabled to fix problem with TX_Enable in RS485 2-wire operation.
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1243 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2005-Mar-17
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+* Periodic frequency reprogramming to prevent receiver lockup.
+
+* Support for factory set VID.
+
+### Known Issues / Errata:
+
+* RTS flow control disabled to fix problem with TX_Enable in RS485 2-wire operation.
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 124 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2005-Jan-05
+
+### New Features:
+
+* Cyclic sleep time now factory calibrated.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1233 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2005-Feb-18
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Problems with cyclic sleep mode - ATFH not working properly.
+
+* Note - This release does not contain the watchdog trim algorithm in 1.2.4.
+
+### Known Issues / Errata:
+
+* ATHT still resets on command mode exit, should only reset with RF activity.
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1232 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2005-Feb-16
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Problem with retries working w/ ATMD3 in v1231.
+
+* Incorrect re-initialization of polling system.
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1231 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Dec-02
+
+### New Features:
+
+* Repeater command ATMR allows modem to act as destination and/or broadcast repeater.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 123 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Nov-08
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Note: Based on 1.2.2 code (does not include features of 1.2.2.1)
+
+* Drive SPI lines to prevent possible receiver lock up.
+
+* Possible failure to enter AT command mode because of ATBT problem.
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+* Problems with cyclic sleep mode - ATFH and ATHT not working properly.
+
+* TX_Enable may get stuck in asserted state in 2-wire RS485 systems.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1221 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Nov-03
+
+### New Features:
+
+* Polling mode commands ATMD, ATPD, ATPE, ATPB to configure a base radio (MD=3) to poll remotes 
+  (MD=4) in the address range from PB to PE at intervals defined by PD.
+
+* Data out frame mode command ATHM to append source address, length, and RSSI information to 
+  outgoing serial data.
+
+* Added warning 11 ("One or more parameters overridden due to conflict").
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 
+  on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART 
+  buffer overruns.
+
+* Problem with factory set VID.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 122 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Oct-13
+
+### New Features:
+
+* BR1 datarate increased from 120k to 125k. RF communications not backwards compatible.
+
+* ATR1 command restores compiled-in defaults (ignores factory custom configuration).
+
+* Support for factory set VID.
+
+* CTS is deasserted and/or XOFF is sent during ATWR to indicate that the user should not continue 
+  to input characters.
+
+* Larger data out buffer to allow streaming with BR=1, RB=2048, RO=3, BD=7 and 4k byte packets.
+
+### Bug Fixes:
+
+* RSSI PWM output is configured as an input during sleep to save power.
+ 
+* ATDT now truncates extra parameter characters.
+
+### Known Issues / Errata:
+
+* PK allows setting to zero causing undefined operation.
+
+* Long values for CT timeout (i.e. 0xFFFF - should be > 1 hour) appear to expire too quickly.
+
+* Reports of receivers locking up, particularly in environments with 2 or more receivers and RR > 0 on the transmitter.
+
+* Spurious false under-voltage warnings at power-up.
+
+* Streaming 115k data packets of >8k bytes requires flow control or lower PK setting to avoid UART buffer overruns.
+
+* Problem with factory set VID.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 121 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Sep-14
+
+### New Features:
+
+* Bootloader for field firmware upgrades.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* After ATWR execution only first 16 bytes of UART buffer will be retained, other queued up bytes 
+  will be purged.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 120 - 9XTEND 9600/115K HOPPING
+
+### Release Date:
+
+* 2004-Aug-25
+
+### New Features:
+
+* Initial beta release.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Firmware is not field updateable.
+
+* PK allows setting to zero causing undefined operation.

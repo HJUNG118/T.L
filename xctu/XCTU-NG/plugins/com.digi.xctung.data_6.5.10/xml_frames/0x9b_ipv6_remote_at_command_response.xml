@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="IPv6 Remote AT Command Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x9B</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The same value which is passed in the request.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="IPv6 source address">
+      <control_type>7</control_type>
+      <bytes_min>16</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>IPv6 address of the source device.</description>
+      <default_value>0000:0000:0000:0000:0000:0000:0000:0000</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Command status">
+      <control_type>1</control_type>
+      <description>The status of the AT Command.</description>
+      <items>
+        <item>OK [00]</item>
+        <item>ERROR [01]</item>
+        <item>Invalid command [02]</item>
+        <item>Tx Failure [03]</item>
+      </items>
+      <default_value>OK [00]</default_value>
+    </parameter>
+    <parameter name="Command data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>Register data in binary format. If the register was set in the AT Command, then this field is not returned.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

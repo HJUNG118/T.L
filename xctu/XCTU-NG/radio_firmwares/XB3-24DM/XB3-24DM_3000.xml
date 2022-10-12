@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<firmwares>
+  <firmware fw_version= "3000" >
+    <family>XBEE</family>
+    <product_name>XB3-24</product_name>
+    <hw_version>0x41</hw_version>
+    <compatibility_number>1</compatibility_number>
+    <region>99</region>
+    <config_buffer_loc>0</config_buffer_loc>
+    <flash_page_size>0x80</flash_page_size>
+    <crc_buffer_len>0</crc_buffer_len>
+    <function>Digi XBee3 DigiMesh 2.4</function>
+    <categories>
+      <category name="Networking">
+        <description>Any applied changes to this section will cause the node to reinitialize its network connection.</description>
+        <settings>
+          <setting command="ID">
+            <name>Network ID</name>
+            <description>The network ID. Only modules with matching IDs can communicate with each other.</description>
+            <default_value>0x7FFF</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="NI">
+            <name>Node Identifier</name>
+            <description>The node identifier string for this module. This can be up to 20 ASCII characters. This value is returned in a ND query and can be used to easily identify modules.</description>
+            <default_value>0x20</default_value>
+            <control_type>text</control_type>
+            <max_chars>20</max_chars>
+            <min_chars>1</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="NT">
+            <name>Network Discovery Back-off</name>
+            <description>The network discovery back-off parameter for this module. This sets the maximum value for the random delay used for network discovery responses to be sent.(Used for ND, DN, and FN commands.)</description>
+            <default_value>0x82</default_value>
+            <control_type>number</control_type>
+            <range_max>0x2ee0</range_max>
+            <range_min>0x20</range_min>
+            <units>* 100 ms</units>
+          </setting>
+          <setting command="NO">
+            <name>Network Discovery Options</name>
+            <description>Bit field of network discovery options for this module. Options include Bit 0 - Append DD value to end of network discovery, Bit 1 - Return devices own ND response first, Bit 2 - Include RSSI information in response.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x7</range_max>
+            <range_min>0x0</range_min>
+            <units>Bitfield</units>
+          </setting>
+          <setting command="NP">
+            <name>Maximum Packet Payload Bytes</name>
+            <description>The maximum number of payload bytes that can be sent in a RF transmission.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CE">
+            <name>Device Role</name>
+            <description>The routing mode of the module. A routing module will forward broadcasts and route discoveries for unicasts. A non-routing module will do neither.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Standard Router</item>
+              <item>NA</item>
+              <item>Non-Routing Module</item>
+            </items>
+          </setting>
+          <setting command="DM">
+            <name>DigiMesh Options</name>
+            <description>Bitmask of options for DigiMesh behavior. Bit 0 - Disable aggregator update. When enabled the module will neither issue nor respond to ATAG requests. Bit 1 - Disable Trace Route and NACK responses. When enabled the module will neither generate nor respond to Trace Route or NACK requests.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x3</range_max>
+            <range_min>0x0</range_min>
+            <units>Bitfield</units>
+          </setting>
+        </settings>
+        <categories>
+          <category name="MAC Diagnostics">
+            <description>MAC diagnostic parameters</description>
+            <settings>
+              <setting command="BC">
+                <name>Bytes Transmitted</name>
+                <description>The number of RF bytes transmitted. Every byte of every packet is counted, including MAC/PHY headers and trailers.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="GD">
+                <name>Good Packets Received</name>
+                <description>The number of RF Packets successfully received.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="EA">
+                <name>MAC ACK Failure Count</name>
+                <description>The number of unicast transmissions that timed out awaiting a MAC ACK (Can be up to RR+1 timeouts per unicast when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="EC">
+                <name>CCA Failure Count</name>
+                <description>The number of transmissions that failed to transmit due to energy detected above the CCA threshold or due to detecting an RX in progress.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="TR">
+                <name>Transmission Failure Count</name>
+                <description>The number of unicast transmissions where retries expired with no ACK received (when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="UA">
+                <name>Unicasts Attempted Count</name>
+                <description>The number of unicast transmissions expecting an acknowledgement (when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+            </settings>
+          </category>
+        </categories>
+      </category>
+      <category name="Security">
+        <description>Change Security Parameters</description>
+        <settings>
+          <setting command="EE">
+            <name>Encryption Enable</name>
+            <description>Enable or disable 128-bit or 256 bit AES encryption depending on ATC8 option.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+          <setting command="KY">
+            <name>AES Encryption Key</name>
+            <description>The Link Key used for encryption and decryption. If ATC8 bit 2 is cleared encryption/decryption uses the 256 bits of the KY value (All 64 ASCII chars of the KY value). ATC8 bit 2 is set encryption/decryption uses the last 32 ASCII chars of the 256 bit KY value entered. This parameter cannot be read.</description>
+            <default_value></default_value>
+            <control_type>text</control_type>
+            <max_chars>64</max_chars>
+            <min_chars>1</min_chars>
+            <format>HEX</format>
+            <exception></exception>
+          </setting>
+        </settings>
+      </category>
+      <category name="Addressing">
+        <description>Change Addressing Settings</description>
+        <settings>
+          <setting command="SH">
+            <name>Serial Number High</name>
+            <description>The upper 32 bits of the unique IEEE 64-bit Extended Address assigned to this module.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="SL">
+            <name>Serial Number Low</name>
+            <description>The lower 32 bits of the unique IEEE 64-bit Extended Address assigned to this module.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="DH">
+            <name>Destination Address High</name>
+            <description>The upper 32 bits of the 64 bit destination address. 0x000000000000FFFF is the broadcast address.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="DL">
+            <name>Destination Address Low</name>
+            <description>The lower 32 bits of the 64 bit destination address. 0x000000000000FFFF is the broadcast address.</description>
+            <default_value>0xFFFF</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="RR">
+            <name>Unicast Retries</name>
+            <description>The maximum number of MAC RF packet delivery attempts of unicasts. If RR is non-zero then packets sent from the radio will request an acknowledgement and can be resent up to RR times if no acknowledgements are received.</description>
+            <default_value>0xA</default_value>
+            <control_type>number</control_type>
+            <range_max>0xF</range_max>
+            <range_min>0x0</range_min>
+            <units>Retries</units>
+          </setting>
+          <setting command="MT">
+            <name>Broadcast Multi-Transmits</name>
+            <description>The number of additional broadcast retransmissions. All broadcast packets are transmitted MT+1 times to ensure it is received.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0xF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="BH">
+            <name>Broadcast Hops</name>
+            <description>The maximum transmission hops for broadcast data transmissions. Set the value to 0 for maximum hops. If BH is set greater than NH then the value of NH is used.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x20</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="NH">
+            <name>Network Hops</name>
+            <description>The maximum number of hops across the network. This number limits the number of hops and it is used to calculate maximum network traversal time. This value must be set to the same value on all nodes in the network.</description>
+            <default_value>0x7</default_value>
+            <control_type>number</control_type>
+            <range_max>0x20</range_max>
+            <range_min>0x1</range_min>
+            <units>Hops</units>
+          </setting>
+          <setting command="MR">
+            <name>Mesh Unicast Retries</name>
+            <description>The maximum number of network packet delivery attempts. If MR is non-zero, packets sent will request a network acknowledgement, and can be resent up to MR times if no acknowledgements are received. Changing this value will dramatically change how long a route request takes. We recommend this value be 1.</description>
+            <default_value>0x1</default_value>
+            <control_type>number</control_type>
+            <range_max>0x7</range_max>
+            <range_min>0x0</range_min>
+            <units>Mesh Unicast Retries</units>
+          </setting>
+          <setting command="NN">
+            <name>Network Delay Slots</name>
+            <description>The maximum number of delay slots before rebroadcasting a network packet.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0x0a</range_max>
+            <range_min>0x1</range_min>
+            <units>Network Delay Slots</units>
+          </setting>
+          <setting command="TO">
+            <name>Transmit Options</name>
+            <description>The module's transmit options. These options are used for all transmissions (API transmissions can override this using the TxOptions field of the API frame). Bit0 - Disable ACK. Bit1 - Disable Route Discovery. Bit2 - Enable NACK. Bit3 - Enable Trace Route. Bits6,7 - Delivery Method: b'00=Invalid Option, b'01=Point to Point/Multipoint(0x40), b'10=Repeater/Directed-Broadcast(0x80), b'11=DigiMesh(0xC0). See the product manual for further details on this command.</description>
+            <default_value>0xC0</default_value>
+            <control_type>number</control_type>
+            <range_max>0xDF</range_max>
+            <range_min>0x40</range_min>
+            <units>Bitfield</units>
+          </setting>
+          <setting command="C8">
+            <name>Compatibility Options</name>
+            <description>Set/read compatibility options:
+Bitfield options:
+    Bit 0 - Reserved
+    Bit 1 - Reserved
+    Bit 2 - Enable 128bit AES Encryption
+All other bits must be set to 0</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x4</range_max>
+            <range_min>0x0</range_min>
+            <units>Bitfield</units>
+          </setting>
+          <setting command="CI">
+            <name>Cluster ID</name>
+            <description>The default cluster identifier value used for serial data transmissions. If this value is set to 0x12 then the destination will echo any transmitted packet back to this module. The default value is 0x11.</description>
+            <default_value>0x11</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFF</range_max>
+            <range_min>0x00</range_min>
+          </setting>
+        </settings>
+        <categories>
+          <category name="Diagnostic - Addressing Timeouts">
+            <description>Diagnostic parameters for transmission timeouts</description>
+            <settings>
+              <setting command="%H">
+                <name>MAC Unicast One Hop Time</name>
+                <description>The MAC unicast one hop time timeout in milliseconds.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="%8">
+                <name>MAC Broadcast One Hop Time</name>
+                <description>The MAC broadcast one hop time timeout in milliseconds.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="N?">
+                <name>Network Discovery Timeout</name>
+                <description>The maximum response time, in milliseconds, for network discovery (ATND) responses and discover node (ATDN) responses. The timeout is based on the network discovery back-off time (ATNT) and the network propagation time.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+            </settings>
+          </category>
+        </categories>
+      </category>
+      <category name="RF Interfacing">
+        <description>Change RF interface options</description>
+        <settings>
+          <setting command="CH">
+            <name>Channel</name>
+            <description>Set/read the operating channel number (Uses 802.15.4 channel numbers).</description>
+            <default_value>0xC</default_value>
+            <control_type>number</control_type>
+            <range_max>0x1A</range_max>
+            <range_min>0x0B</range_min>
+          </setting>
+          <setting command="PL">
+            <name>TX Power Level</name>
+            <description>The transmitter output power level.</description>
+            <default_value>0x4</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Lowest</item>
+              <item>Low</item>
+              <item>Medium</item>
+              <item>High</item>
+              <item>Highest</item>
+            </items>
+          </setting>
+          <setting command="PP">
+            <name>Output power in dBm</name>
+            <description>Read the output power in dBm. Negative values will be represented in two's compliment.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CA">
+            <name>CCA Threshold</name>
+            <description>Set/read the Clear Channel Assessment (CCA) threshold. If the modem detects energy above the CCA Threshold, it will not transmit. The CCA parameter is measured in units of -dBm. Setting the parameter to 0x00 will disable CCA, otherwise the valid range is 0x28-0x64.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x64</range_max>
+            <range_min>0x00</range_min>
+            <units>-dBm</units>
+          </setting>
+          <setting command="DB">
+            <name>Last Packet RSSI</name>
+            <description>The RSSI of the last received packet in -dB. The received signal strength indication (RSSI) is acquired when a packet is being received by this module. In a mesh network the RSSI of the last hop is reported.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+      <category name="UART Interface">
+        <description>Configuration options for UART</description>
+        <settings>
+          <setting command="BD">
+            <name>Baud Rate</name>
+            <description>The serial interface baud rate for communication between the serial port of the module and the host. Request non-standard baud rates with values above 0x80 using a terminal window and then read the BD parameter to find actual baud rate achieved.</description>
+            <default_value>0x3</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>1200</item>
+              <item>2400</item>
+              <item>4800</item>
+              <item>9600</item>
+              <item>19200</item>
+              <item>38400</item>
+              <item>57600</item>
+              <item>115200</item>
+              <item>230400</item>
+              <item>460800</item>
+              <item>921600</item>
+            </items>
+          </setting>
+          <setting command="NB">
+            <name>Parity</name>
+            <description>The parity for the UART.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>No Parity</item>
+              <item>Even Parity</item>
+              <item>Odd Parity</item>
+            </items>
+          </setting>
+          <setting command="SB">
+            <name>Stop Bits</name>
+            <description>Configure the number of stop bits that the UART will output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>One stop bit</item>
+              <item>Two stop bits</item>
+            </items>
+          </setting>
+          <setting command="AP">
+            <name>API Enable</name>
+            <description>The API mode setting. RF Packets received can be formatted into API frames to be sent out the serial port. When API is enabled the serial data must be formatted as API frames as transparent mode is disabled.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Transparent Mode</item>
+              <item>API Mode Without Escapes</item>
+              <item>API Mode With Escapes</item>
+            </items>
+          </setting>
+          <setting command="AO">
+            <name>API Options</name>
+            <description>The API data frame type output format for received frames.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>API Rx Indicator - 0x90</item>
+              <item>API Explicit Rx Indicator - 0x91</item>
+            </items>
+          </setting>
+          <setting command="RO">
+            <name>Packetization Timeout</name>
+            <description>The number of character times of inter-character delay required before transmission begins. Set to zero to transmit characters as they arrive instead of buffering them into one RF packet.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFF</range_max>
+            <range_min>0x0</range_min>
+            <units>* character times</units>
+          </setting>
+          <setting command="FT">
+            <name>Flow Control Threshold</name>
+            <description>The flow control threshold. De-assert CTS when FT bytes are in the UART receive buffer.</description>
+            <default_value>0x51</default_value>
+            <control_type>number</control_type>
+            <range_max>0x66</range_max>
+            <range_min>0x7</range_min>
+            <units>Bytes</units>
+          </setting>
+          <setting command="D6">
+            <name>DIO6 Configuration</name>
+            <description>Configure options for the DIO6 line of the module. Options include: RTS flow control, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>RTS flow control</item>
+            </items>
+          </setting>
+          <setting command="D7">
+            <name>DIO7 Configuration</name>
+            <description>Configure options for the DIO7 line of the module. Options include: CTS flow control, Digital Input and Output, or RS-485 enable control.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>CTS flow control</item>
+            </items>
+          </setting>
+        </settings>
+      </category>
+      <category name="AT Command Options">
+        <description>Change AT Command Mode Behavior</description>
+        <settings>
+          <setting command="CC">
+            <name>Command Sequence Character</name>
+            <description>The character value used to enter command mode. The default value (0x2B) is the ASCII code for the plus ('+') character. It must be entered three times within the guard time to enter command mode.</description>
+            <default_value>0x2B</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFF</range_max>
+            <range_min>0x0</range_min>
+            <units>Recommended: 0x20-0x7F (ASCII)</units>
+          </setting>
+          <setting command="CT">
+            <name>Command Mode Timeout</name>
+            <description>The command mode timeout parameter. If no valid commands have been received within this time period, module returns to Idle Mode from AT Command Mode.</description>
+            <default_value>0x64</default_value>
+            <control_type>number</control_type>
+            <range_max>0x1770</range_max>
+            <range_min>0x2</range_min>
+            <units>* 100ms</units>
+          </setting>
+          <setting command="GT">
+            <name>Guard Times</name>
+            <description>The required period of silence before, after, and between the Command Mode Characters of the Command Mode Sequence (GT + CC + GT). The period of silence is used to prevent inadvertent entrance into AT Command Mode.</description>
+            <default_value>0x3E8</default_value>
+            <control_type>number</control_type>
+            <range_max>0x6D3</range_max>
+            <range_min>0x2</range_min>
+            <units>* 1ms</units>
+          </setting>
+        </settings>
+      </category>
+      <category name="Diagnostics - Firmware/Hardware Information">
+        <description>Access Firmware Version/Information</description>
+        <settings>
+          <setting command="VR">
+            <name>Firmware Version</name>
+            <description>The module firmware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="HV">
+            <name>Hardware Version</name>
+            <description>The module hardware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="DD">
+            <name>Device Type Identifier</name>
+            <description>The Digi device type identifier value. This can be used to differentiate multiple XBee-based products.</description>
+            <default_value>0x140000</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="CK">
+            <name>Configuration CRC</name>
+            <description>The CRC of the current settings. The purpose of this command is to allow the detection of an unexpected configuration change on a device. After a firmware update this command may return a different value.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+    </categories>
+  </firmware>
+</firmwares>

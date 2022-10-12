@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="CoAP Tx Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x1C</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Transmit options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>0x02 = Apply changes on remote if the URI is XB/AT. If you do not set this, you must send an AC command separately for the changes to take effect. Set all other bits to 0.</description>
+      <default_value>02</default_value>
+    </parameter>
+    <parameter name="Method">
+      <control_type>1</control_type>
+      <description>The RESTful Method used for the CoAP transmission.</description>
+      <items>
+        <item>EMPTY [00]</item>
+        <item>GET [01]</item>
+        <item>POST [02]</item>
+        <item>PUT [03]</item>
+        <item>DELETE [04]</item>
+      </items>
+      <default_value>GET [01]</default_value>
+    </parameter>
+    <parameter name="IPv6 dest. address">
+      <control_type>7</control_type>
+      <bytes_min>16</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>IPv6 address of the destination device.</description>
+      <default_value>0000:0000:0000:0000:0000:0000:0000:0000</default_value>
+    </parameter>
+    <parameter name="URI length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of URI string. Should not include a count for a terminating zero byte.</description>
+      <default_value>08</default_value>
+    </parameter>
+    <parameter name="URI">
+      <control_type>2</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>31</bytes_max>
+      <description>Uniform Resource Identifier. A printable string.\n\n
+      Every CoAP message must have a valid URI string in this field and must meet the following criteria. All built-in XBee CoAP functions use a fixed URI string:\n
+      - "XB/TX" for data transmissions (PUT)\n
+      - "XB/AT" for AT Command operation (PUT or GET)
+      </description>
+      <default_value>58 42 2F 41 54 2F 4E 49</default_value>
+    </parameter>
+    <parameter name="Payload">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1200</bytes_max>
+      <description>Optional.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

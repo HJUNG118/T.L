@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Remote AT Command (Wi-Fi)">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0x07</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>6</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>IPv4 address of the destination device.\nThe lenght of this parameter is 8 bytes, being the IP address aligned to low 32 - bits of the field.</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="Remote cmd. options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield to enable various remote command options.\n\n
+      
+      If 'Apply changes' is not set, AC command must be sent before changes will take effect.\n\n
+      
+      Setting the 'Extended' timeout will cause the stack to set the extended transmission timeout for the destination address.\n\n
+      
+      Bitfield values:\n
+      - Bit 0: Disable ACK\n
+      - Bit 1: Apply changes\n
+      - Bit 6: Extended timeout\n\n
+      
+      All unused and unsupported bits must be set to 0.
+      </description>
+      <default_value>02</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Parameter value">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>If present, indicates the requested parameter value to set the given register.\n\nIf no characters are present, get the value of the register.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

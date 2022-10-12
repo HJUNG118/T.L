@@ -1,0 +1,306 @@
+XBee-PRO 900 DigiMesh
+---------------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the DigiMesh firmware on the XBee-PRO 900.
+
+### Links:
+
+[Documentation](http://www.digi.com/support/productdetail?pid=3518&type=documentation)  
+[Support](http://www.digi.com/support/productdetail?pid=3518)
+
+### Compatible Hardware:
+
+* XBee-PRO S4
+	* XBP09-DP
+	* XBP09-DM
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8062 - XBee-PRO DigiMesh 900
+* 8162 - XBee-PRO DigiMesh 900, RS232 Adapter
+* 8362 - XBee-PRO DigiMesh 900, RS485 Adapter
+* 8462 - XBee-PRO DigiMesh 900, USB Adapter
+* 8662 - XBee-PRO DigiMesh 900, Analog I/O Adapter
+* 8762 - XBee-PRO DigiMesh 900, Digital I/O Adapter
+* 28062 - XBee-PRO DigiMesh 900 (Australia)
+* 28162 - XBee-PRO DigiMesh 900 (Australia), RS232 Adapter
+* 28362 - XBee-PRO DigiMesh 900 (Australia), RS485 Adapter
+* 28462 - XBee-PRO DigiMesh 900 (Australia), USB Adapter
+* 28662 - XBee-PRO DigiMesh 900 (Australia), Analog I/O Adapter
+* 28762 - XBee-PRO DigiMesh 900 (Australia), Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Mar-24
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where the pullup on the DIN line was not getting properly set.
+
+* Fixed bug where the CB command would not wake up an end device like a real button press would.
+
+* Fixed bug where no response was received for a failed RMT AT CMD Request transmission.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8045 - XBee-PRO DigiMesh 900
+* 8145 - XBee-PRO DigiMesh 900, RS232 Adapter
+* 8345 - XBee-PRO DigiMesh 900, RS485 Adapter
+* 8445 - XBee-PRO DigiMesh 900, USB Adapter
+* 8645 - XBee-PRO DigiMesh 900, Analog I/O Adapter
+* 8745 - XBee-PRO DigiMesh 900, Digital I/O Adapter
+* 28045 - XBee-PRO DigiMesh 900 (Australia)
+* 28145 - XBee-PRO DigiMesh 900 (Australia), RS232 Adapter
+* 28345 - XBee-PRO DigiMesh 900 (Australia), RS485 Adapter
+* 28445 - XBee-PRO DigiMesh 900 (Australia), USB Adapter
+* 28645 - XBee-PRO DigiMesh 900 (Australia), Analog I/O Adapter
+* 28745 - XBee-PRO DigiMesh 900 (Australia), Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Sep-24
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where a module in RS485 mode (D7=7) would erroneously set the D7 line high when going 
+  to sleep.
+
+### Known Issues / Errata:
+
+* Asserting a serial break for 5 seconds does not cause the module to reset.
+
+* The synch messages seem to propagate across ce=2 nodes.
+
+* The synch message isn't limited by NH/BH.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8044 - XBee-PRO DigiMesh 900
+* 8144 - XBee-PRO DigiMesh 900, RS232 Adapter
+* 8344 - XBee-PRO DigiMesh 900, RS485 Adapter
+* 8444 - XBee-PRO DigiMesh 900, USB Adapter
+* 8644 - XBee-PRO DigiMesh 900, Analog I/O Adapter
+* 8744 - XBee-PRO DigiMesh 900, Digital I/O Adapter
+* 28044 - XBee-PRO DigiMesh 900 (Australia)
+* 28144 - XBee-PRO DigiMesh 900 (Australia), RS232 Adapter
+* 28344 - XBee-PRO DigiMesh 900 (Australia), RS485 Adapter
+* 28444 - XBee-PRO DigiMesh 900 (Australia), USB Adapter
+* 28644 - XBee-PRO DigiMesh 900 (Australia), Analog I/O Adapter
+* 28744 - XBee-PRO DigiMesh 900 (Australia), Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Aug-25
+
+### New Features:
+
+* Added a recovery mode for mains powered nodes in a sleeping router network which are reset. A 
+  coordinator will now repeatedly send a sync message when it first powers on. When it hears the 
+  sync echoed by a neighbor then it commences its normal cycle. Changes to how the nomination 
+  process was implemented allows an existing network to detect and override a newly powered on 
+  coordinator.
+
+* Added a sleep option which disables the coordinator from repeatedly sending a sync message during 
+  deployment.
+
+* Revised the sync structure (breaking compatibility with previous versions) to better support 
+  future compatibility.
+
+* Sleeping Router polls are now sent in the transmit state rather than in the holdoff state to make 
+  use of the randomization provided by the holdoff state.
+
+* Added a new sleep status bit indicating when the node is in deployment mode.
+
+* To increase the chances of a node receiving a sync, the originator will listen for a sync after 
+  sending the first one. If a sync relay doesn't happen, another one will be sent.
+
+* Added a new sleep option bit. When this bit is enabled the election process does NOT take into 
+  consideration the node type (SM7 or SM8).
+
+* Added ability to disable route discoveries through the API. This is done by setting option bit 1 
+  (0x02).
+
+* Added the MS command (cycles without synch)
+
+* Added the ATSS (Sleep Status) command.
+
+### Bug Fixes:
+
+* Fixed bug which would cause the module to lock up under rare conditions.  
+  (If a NWK ACK arrives just prior to a MAC ACK multiple times)
+
+* Fixed a bug which caused the DB command to return a 16-bit value rather than 8-bit.
+
+* Fixed a bug which caused the ST parameter to not get adjusted after a change of NH,NN,MT, or RN.
+
+* Fixed bug where a broadcast sent shortly after a unicast could cause packet tracking to not work 
+  on the broadcast resulting in duplicate copies of the same packet output. 
+
+* Fixed bug which caused Node Discoveries in a sleeping router network to be unreliable.
+
+* Fixed bug which caused the DN or ND+NI responses to be delayed.
+
+* Fixed bug which caused the ND responses to poorly utilize the available response time.
+
+* Fixed bug which caused multiple route discoveries to be initiated even when a route discovery to 
+  the same destination is already in progress.
+
+* Fixed a bug where changes to the SP/ST on a non-sleep coordinator would not take effect.
+
+* The .mxi file on the International builds listed the wrong range for the HP command.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8042 - XBee-PRO DigiMesh 900
+* 8342 - XBee-PRO DigiMesh 900, RS485 Adapter
+* 8642 - XBee-PRO DigiMesh 900, Analog I/O Adapter
+* 8742 - XBee-PRO DigiMesh 900, Digital I/O Adapter
+* 28042 - XBee-PRO DigiMesh 900 (Australia)
+
+### Release Date: 
+
+* 2009-Apr-16
+
+### New Features:
+
+* Added module IO support:
+	* Analog Inputs
+	* Digital Inputs and Outputs
+	* PWM outputs
+	* IR, IS, IC, and IF commands added for IO sampling.
+	
+* Major rework of sleeping router implementation:
+	* Redefined the sleep modes set by the SM command.
+	* Sleeping clock drift rate has been reduced. This reduces the minimum wake time needed.
+	* Changed defaults of the SP and ST commands.
+	* Added the Sleep Status (SS) command.
+	* Added the OS and OW commands. These commands allow the user to query the operational sleep 
+	  parameters.
+	* A number of options have been added to the sleep option (SO) command.
+	* Added the MS and SQ sleep diagnostic commands.
+	* Added the Wake Host command.
+	* Changes made to sleep parameters now take effect sooner.
+	* Added an automatic early wakeup feature to prevent lost synch.
+	* Added some API status messages related to sleep.
+	* General enhancements improving reliability have been made.
+	
+* Functionality for the Associate LED has been added which integrates its behavior with the modules 
+  sleep behavior.
+
+* Commissioning Button support has been added.
+
+* Added the CE command which allows nodes to be designated as non-routers.
+
+* Added the CK command
+
+* Added support for Australia frequencies. Changed version numbering to support a country prefix.
+
+* Removed the NQ command.
+
+* A new TX Option: suppress route discovery
+
+* RTS flow control added.
+
+### Bug Fixes:
+
+* Some fixes to explicit frames were made.
+
+* Some bugs in the ND/DN code were fixed.
+
+* Fixed a bug which caused modules to occasionally reset.
+
+* Added code so that we don't go to sleep immediately after de-asserting CTS. We now wait for the 
+  host to stop sending data before going to sleep.
+
+* Made it so an ND response will report the device type of the module.
+
+* There was not a minimum check on ST in place, it has been added.
+
+* Added fix for NH limiting RREQ broadcasts.
+
+* Fixed problem where a TX packet that was too big would not return a TxStatus failure.
+
+* Added the SB (stop bits) command.
+
+* Bounds checking added to the GT and NT commands
+
+* Made NI strings case sensitive in all places.
+
+* Fixed problem where transparent data would occasionally get sent as 2 packets when only one was 
+  necessary.
+
+* Fixed bug where a DN with an unknown string wouldn't return an error in API mode.
+
+* Fixed bug where a txRequest packet with 0 payload would return a response.
+
+* The version number was not reported correctly on the DIO and AIO adapters.
+
+* Fixed bug where resets or strange behavior would occur when multiple ND requests were made on a 
+  node set to self-respond to ND requests.
+
+### Known Issues / Errata:
+
+* The current version of sleep code is not compatible with previous versions.
+
+* Changes to SP or ST on an unsynchronized radio will not take effect.
+
+* IO lines configured as digital inputs with the pullup enabled the voltage of the IO line will 
+  stabilize somewhere between (Vcc-.65V) and (Vcc-.45V). This can cause leakage of up to 45uA per 
+  pin.
+  
+* RSSI reporting is only accurate when the signal strength is less than (approximately) -85dBm.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1820 - XBee-PRO DigiMesh 900
+
+### Release Date: 
+
+* 2008-Apr-22
+
+### New Features:
+
+* Initial release.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

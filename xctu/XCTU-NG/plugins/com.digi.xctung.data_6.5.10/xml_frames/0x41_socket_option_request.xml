@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket Option Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0x41</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>A reference identifier used to match status responses. Requests made with Frame ID 0 will not send a response.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The socket ID to modify.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Option ID">
+      <control_type>1</control_type>
+      <description>Identifier of the parameter to change.</description>
+      <items>
+        <item>TLS Profile [00]</item>
+      </items>
+      <default_value>TLS Profile [00]</default_value>
+    </parameter>
+    <parameter name="Option Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1500</bytes_max>
+      <description>Variable length field based on option type. If zero length, the current effective value will be returned in the response frame.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Get Position Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xBF</frame_type>
+  <parameters>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Status code.</description>
+      <items>
+        <item>Valid [00]</item>
+        <item>Invalid [01]</item>
+        <item>Timeout [02]</item>
+        <item>Cancelled [03]</item>
+      </items>
+      <default_value>Valid [00]</default_value>
+    </parameter>
+    <parameter name="Lock Time">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Lock Time in seconds, from midnight, Jan-1-2000.</description>
+      <default_value>00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Latitude">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Latitude in decimal degrees, multiplied by 10 million.  Positive Values are North of the Equator, Negative values are South of the Equator.</description>
+      <default_value>00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Longitude">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Longitude in decimal degrees, multiplied by 10 million.  Positive Values are East of the Prime Meridian, Negative values are West of the Prime Meridian.</description>
+      <default_value>00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Altitude">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Altitude in millimeters.</description>
+      <default_value>00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Satellites">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Total number of satellites in use.</description>
+      <default_value>00</default_value>
+    </parameter>
+  </parameters>
+</frame>

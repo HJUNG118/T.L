@@ -1,0 +1,133 @@
+XTend DigiMesh
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the DigiMesh firmware on the XTend radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xtend-module)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xtend-module#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3157)
+
+### Compatible Hardware:
+
+* XTend
+	* XT09
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8064 - 9XTEND 115K HOPPING (DigiMesh)
+* 28064 - 9XTEND 115K HOPPING (DigiMesh - Australia)
+
+### Release Date:
+
+* 2012-Jul-26
+
+### New Features:
+
+* In addition to DigiMesh packets, Directed Broadcast/Repeater and Point-Multipoint packets are now 
+  supported. See the ATTO command or API TxOptions for more information.
+
+* Holding the DIN line low on powerup will cause the module to automatically enter command mode.
+
+* Added the ATBC (Byte Count) command.
+
+* Added new DigiMesh diagnostics: Test Link, Trace Route, NACK, Aggregator and Node Replacement, 
+  Find Neighbor, and Diagnostic Counts.
+
+* Reformatted and re-ordered the .mxi file.
+
+### Bug Fixes:
+
+* RS-485 TX_EN (nCTS) is correctly set based on dev board dip switches allowing 485 four wire to 
+  function.
+
+### Known Issues / Errata:
+
+* The ATAG command does not form complete routes for two way communications (like DigiMesh 
+  unicasts). It does work well for one way communications to the originator of the ATAG broadcast 
+  (for example, the command is very useful to form routes prior to sending a Network Discovery)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8062 - 9XTEND 115K HOPPING (DigiMesh)
+* 28062 - 9XTEND 115K HOPPING (DigiMesh - Australia)
+
+### Release Date:
+
+* 2011-Jun-07
+
+### New Features:
+
+* Now supports payload of 256 bytes.
+
+* Added an API option to prevent route discoveries on a transmission attempt.
+	* To disable route discoveries on a packet, set bit 1 (0x02) of the options byte of the TX_64 
+	  (0x00) frame type. The options byte is the byte just before the data.
+
+* Route request broadcasts are limited to the ATNH setting.
+
+* MT option was added it is the number of repeated broadcasts in the mesh. The default of 3. 
+  Previous versions used RR for broadcasts. Now RR only refers to the number of retries on a 
+  unicast packet. 
+
+* RR now defaults to 10.
+
+* BH option was added for broadcast radius.
+
+* CE was added defaults to 0. If set to 2 then the node won't route or echo broadcasts.
+
+### Bug Fixes:
+
+* CTS_EN is correctly set based on dev board dip switches allowing 485 four wire to function.
+
+* Fixed ability to disable network ACKs through the API.
+
+* Broadcast Radius (ATBH) is always limited to ATNH.
+
+* RM command now does energy scans for a desired time interval. Before it ignored its parameter and 
+  always did an instantaneous scan
+
+* The api frame options byte bit 0 tells if a network ack was requested by the source node, and bit 
+  1 tells if the destination address was the broadcast address. Before the options byte was a 
+  constant 1 value.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8021 - 9XTEND 115K HOPPING (DigiMesh)
+* 8221 - 9XTEND 115K HOPPING (DigiMesh - Australia)
+
+### Release Date:
+
+* 2008-Mar-31
+
+### New Features:
+
+* Changed default Destination address to the broadcast address (00000000 0000FFFF)
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* None

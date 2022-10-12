@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Route Information Packet">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <!-- TODO add the XLR when DigiMesh is enabled in the firmware -->
+    <!--<protocol>XLR</protocol>-->
+  </protocols>
+  <frame_type>0x8D</frame_type>
+  <parameters>
+    <parameter name="Source event">
+      <control_type>1</control_type>
+      <description>Source event indicator.</description>
+      <items>
+        <item>NACK [11]</item>
+        <item>Trace Route [12]</item>
+      </items>
+      <default_value>NACK [11]</default_value>
+    </parameter>
+    <parameter name="Data length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Number of bytes that follow (excluding checksum). If length increases, then new items have been added to the end of the list (for future revisions).</description>
+      <default_value>27</default_value>
+    </parameter>
+    <parameter name="Timestamp">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>System timer value on the node when generating the Route Information Packet.</description>
+      <default_value>00 00 00 00</default_value>
+    </parameter>
+    <parameter name="ACK timeout count">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The number of MAC ACK timeouts that occurred.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Reserved">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Reserved">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Destination address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address of the final destination node of this network level transmission.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address of the source node of this network level transmission.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Responder address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address of the node that generated this Route Information Packet after sending (or attempting to send) the packet to the next hop (the Reciever Node)</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Receiver address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Address of the node to which the data packet was just sent (or attempted to be sent to)</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

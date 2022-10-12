@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Device Request">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0xB9</frame_type>
+  <parameters>
+    <parameter name="Device request ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the device request. (0 has no special meaning).</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Transport">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Flags">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved.</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Target length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of target string.</description>
+      <default_value>06</default_value>
+    </parameter>
+    <parameter name="Target string">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>255</bytes_max>
+      <description>String required by the host side, e.g. a file name.</description>
+      <default_value>74 61 72 67 65 74</default_value>
+    </parameter>
+    <parameter name="Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1400</bytes_max>
+      <description>The device request message.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

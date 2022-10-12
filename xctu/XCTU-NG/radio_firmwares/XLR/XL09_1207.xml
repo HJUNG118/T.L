@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<firmwares>
+  <firmware fw_version="1207">
+    <family>XLR PRO</family>
+    <product_name>XL09</product_name>
+    <hw_version>0x2B</hw_version>
+    <compatibility_number>2</compatibility_number>
+    <region>2</region>
+    <config_buffer_loc>0</config_buffer_loc>
+    <flash_page_size>0x0200</flash_page_size>
+    <crc_buffer_len>0</crc_buffer_len>
+    <function>XLR PRO International</function>
+    <categories>
+      <category name="RF MAC/PHY">
+        <description>Change RF MAC/PHY Settings</description>
+        <settings>
+          <setting command="ID">
+            <name>Network ID</name>
+            <description>The network ID. Only radios with matching IDs can communicate with each other. If using OEM network IDs, 0xFFFF will use the factory value.</description>
+            <default_value>0x7FFF</default_value>
+            <control_type>number</control_type>
+            <range_max>0x7FFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="BR">
+            <name>RF Data Rate</name>
+            <description>The RF data rate to use for RF transmission. BR does not need to match on the receiving radio.</description>
+            <default_value>0x4</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>9.38 kbps</item>
+              <item>28.14 kbps</item>
+              <item>65.66 kbps</item>
+              <item>140.7 kbps</item>
+              <item>290.8 kbps</item>
+              <item>590.9 kbps</item>
+              <item>1.191 Mbps</item>
+              <item>2.392 Mbps</item>
+              <item>3.189 Mbps</item>
+            </items>
+          </setting>
+          <setting command="PL">
+            <name>TX Power Level</name>
+            <description>The transmitter output power level. Approximate power levels are: 0dBm, +10dBm, +20dBm, +27dBm, and +30dBm.</description>
+            <default_value>0x4</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Lowest</item>
+              <item>Low</item>
+              <item>Medium</item>
+              <item>High</item>
+              <item>Highest</item>
+            </items>
+          </setting>
+          <setting command="RR">
+            <name>Unicast Retries</name>
+            <description>The maximum number of MAC RF packet delivery attempts of unicast packets. If RR is non-zero then unicast packets sent from the radio will request an acknowledgement and can be resent up to RR times if no acknowledgements are received.</description>
+            <default_value>0xA</default_value>
+            <control_type>number</control_type>
+            <range_max>0xF</range_max>
+            <range_min>0x0</range_min>
+            <units>Retries</units>
+          </setting>
+          <setting command="MT">
+            <name>Broadcast Multi-Transmits</name>
+            <description>The number of additional broadcast retransmissions. All broadcast packets are transmitted MT+1 times to ensure the packet is received.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0x8</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+        </settings>
+        <categories>
+          <category name="Diagnostic - RF MAC Statistics and Timeouts">
+            <description>RF MAC Statistics and Timeouts.</description>
+            <settings>
+              <setting command="DB">
+                <name>Last Packet RSSI</name>
+                <description>The RSSI of the last received packet in -dB. The received signal strength indication (RSSI) is acquired when a packet is received by this radio. In a repeater configuration, only the RSSI of the last hop is reported.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="EA">
+                <name>MAC ACK Failure Count</name>
+                <description>The number of unicast transmissions that timed out awaiting a MAC ACK (Can be up to RR+1 timeouts per unicast when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="ER">
+                <name>Receive Error Count</name>
+                <description>The number of RF Packets rejected because of bit errors in packet. Note that occasionally random noise can cause this value to increment.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="GD">
+                <name>Good Packets Received</name>
+                <description>The number of RF Packets successfully received.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="TR">
+                <name>Transmission Failure Count</name>
+                <description>The number of unicast transmissions where retries expired with no ACK received (when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="UA">
+                <name>Unicasts Attempted Count</name>
+                <description>The number of unicast transmissions expecting an acknowledgement (when RR&gt;0).</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="%H">
+                <name>MAC Unicast One Hop Time</name>
+                <description>The MAC unicast one hop time timeout in milliseconds.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="%8">
+                <name>MAC Broadcast One Hop Time</name>
+                <description>The MAC broadcast one hop time timeout in milliseconds.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="N?">
+                <name>Network Discovery Timeout</name>
+                <description>The maximum response time, in milliseconds, for network discovery (ATND) responses and discover node (ATDN) responses. The timeout is based on the network discovery back-off time (ATNT) and the network propagation time.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+            </settings>
+          </category>
+        </categories>
+      </category>
+      <category name="RF Network">
+        <description>Change RF Network Settings</description>
+        <settings>
+          <setting command="CE">
+            <name>Routing/Messaging Mode</name>
+            <description>The routing and messaging mode of the radio. Nodes can be configured to route, or not route, multi-hop packets if TO is set for Repeater/Directed Broadcast.</description>
+            <default_value>0x2</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Standard Router</item>
+              <item>n/a</item>
+              <item>Non-Routing Node</item>
+            </items>
+          </setting>
+          <setting command="BH">
+            <name>Broadcast Hops</name>
+            <description>The maximum transmission hops for broadcast data transmissions. Set the value to 0 for maximum hops. If BH is set greater than NH then the value of NH is used.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x4</range_max>
+            <range_min>0x0</range_min>
+            <units>Hops</units>
+          </setting>
+          <setting command="NH">
+            <name>Network Hops</name>
+            <description>The maximum number of hops across the network. This number limits the number of hops and it is used to calculate maximum network traversal time. This value must be set to the same value on all nodes in the network.</description>
+            <default_value>0x4</default_value>
+            <control_type>number</control_type>
+            <range_max>0x4</range_max>
+            <range_min>0x1</range_min>
+            <units>Hops</units>
+          </setting>
+          <setting command="NN">
+            <name>Network Delay Slots</name>
+            <description>The maximum number of delay slots before rebroadcasting a Directed Broadcast packet.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0x8</range_max>
+            <range_min>0x1</range_min>
+            <units>Network Delay Slots</units>
+          </setting>
+        </settings>
+      </category>
+      <category name="RF Addressing">
+        <description>Change RF Addressing Settings</description>
+        <settings>
+          <setting command="SH">
+            <name>Serial Number High</name>
+            <description>The upper 32 bits of the unique IEEE 64-bit RF extended address assigned to this radio.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="SL">
+            <name>Serial Number Low</name>
+            <description>The lower 32 bits of the unique IEEE 64-bit RF extended address assigned to this radio.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="DH">
+            <name>Destination Address High</name>
+            <description>The upper 32 bits of the 64 bit RF destination address used when operating in transparent mode. 0x000000000000FFFF is the broadcast address.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="DL">
+            <name>Destination Address Low</name>
+            <description>The lower 32 bits of the 64 bit RF destination address used when operating in transparent mode. 0x000000000000FFFF is the broadcast address.</description>
+            <default_value>0xFFFF</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="TO">
+            <name>Transmit Options</name>
+            <description>Only 0x40, 0x41, 0x80, 0x81 are valid. The radio's transmit options. These options are used for all serial transmissions (API transmissions can override this using the TxOptions field of the API frame). 0x40 = Point to Point/Multipoint, 0x80 = Repeater/Directed-Broadcast. 0x41 = Point to Point/Multipoint with Ack Disabled, 0x81 = Repeater/Directed-Broadcast with Ack Disabled. See the product manual for further details on this command.</description>
+            <default_value>0x40</default_value>
+            <control_type>number</control_type>
+            <range_max>0x81</range_max>
+            <range_min>0x40</range_min>
+          </setting>
+          <setting command="NI">
+            <name>Node Identifier</name>
+            <description>The node identifier string for this radio. This can be up to 20 ASCII characters. This value is returned in a ND query and can be used to easily identify different devices on the network.</description>
+            <default_value>0x20</default_value>
+            <control_type>text</control_type>
+            <max_chars>20</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="NT">
+            <name>Network Discovery Back-off</name>
+            <description>The network discovery back-off parameter for this radio. This sets the maximum value for the random delay used for network discovery responses to be sent.(Used for ND, DN, and FN commands.)</description>
+            <default_value>0x82</default_value>
+            <control_type>number</control_type>
+            <range_max>0x2ee0</range_max>
+            <range_min>0x20</range_min>
+            <units>* 100 ms</units>
+          </setting>
+          <setting command="NO">
+            <name>Network Discovery Options</name>
+            <description>Bit field of network discovery options for this radio. Options include Bit 0 - Append DD value to end of network discovery, Bit 1 - Return devices own ND response first, Bit 2 - Include RSSI information in response.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <range_max>0x7</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="CI">
+            <name>Cluster ID</name>
+            <description>The default Cluster Identifier value used for serial data transmissions. If this value is set to 0x12 then the destination will echo any transmitted packet back to this radio. The default value is 0x11.</description>
+            <default_value>0x11</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+        </settings>
+      </category>
+      <category name="RF Security">
+        <description>Change RF Security Parameters</description>
+        <settings>
+          <setting command="KY">
+            <name>AES Encryption Key</name>
+            <description>The 128-bit key used for encryption and decryption of RF packets. This parameter cannot be read.</description>
+            <default_value></default_value>
+            <control_type>text</control_type>
+            <max_chars>32</max_chars>
+            <min_chars>0</min_chars>
+            <format>HEX</format>
+            <exception></exception>
+          </setting>
+        </settings>
+      </category>
+      <category name="Serial Interfacing">
+        <description>Change radio interfacing options for the serial port</description>
+        <settings>
+          <setting command="BD">
+            <name>Serial Baud Rate</name>
+            <description>The serial interface baud rate for the XLR PRO. Request non-standard baud rates with values above 0x5B9 using a terminal window or Web Configuration and then read the BD parameter to find actual baud rate achieved.</description>
+            <default_value>0x3</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>N/A</item>
+              <item>2400</item>
+              <item>4800</item>
+              <item>9600</item>
+              <item>19200</item>
+              <item>38400</item>
+              <item>57600</item>
+              <item>115200</item>
+              <item>230400</item>
+              <item>460800</item>
+              <item>921600</item>
+            </items>
+          </setting>
+          <setting command="NB">
+            <name>Parity</name>
+            <description>The parity for the serial interface.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>No Parity</item>
+              <item>Even Parity</item>
+              <item>Odd Parity</item>
+            </items>
+          </setting>
+          <setting command="SB">
+            <name>Stop Bits</name>
+            <description>The number of stop bits for the serial interface.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>One stop bit</item>
+              <item>Two stop bits</item>
+            </items>
+          </setting>
+          <setting command="RO">
+            <name>Packetization Timeout</name>
+            <description>The number of character times of inter-character delay required before transmission begins. Set to zero to transmit characters as they arrive instead of buffering them into one RF packet.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFF</range_max>
+            <range_min>0x0</range_min>
+            <units>* character times</units>
+          </setting>
+          <setting command="FT">
+            <name>Flow Control Threshold</name>
+            <description>The flow control threshold. The XLR PRO will de-assert CTS when FT bytes are in the serial receive buffer.</description>
+            <default_value>0x91F</default_value>
+            <control_type>number</control_type>
+            <range_max>0x94F</range_max>
+            <range_min>0x11</range_min>
+            <units>Bytes</units>
+          </setting>
+          <setting command="AP">
+            <name>API Enable</name>
+            <description>The API mode setting. RF Packets received can be formatted into API frames to be sent out of the XLR PRO. When API is enabled, data must be formatted as API frames as transparent mode is disabled.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Transparent Mode</item>
+              <item>API Mode Without Escapes</item>
+              <item>API Mode With Escapes</item>
+            </items>
+          </setting>
+          <setting command="AO">
+            <name>API Options</name>
+            <description>The API data frame type output format for received data frames.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>API Rx Indicator - 0x90</item>
+              <item>API Explicit Rx Indicator - 0x91</item>
+              <item>API Rx64 Indicator</item>
+            </items>
+          </setting>
+          <setting command="D6">
+            <name>RTS Flow Control</name>
+            <description>RTS flow control configuration.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disable</item>
+              <item>Enable</item>
+            </items>
+          </setting>
+          <setting command="D7">
+            <name>CTS Flow Control</name>
+            <description>CTS flow control configuration.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disable</item>
+              <item>Enable</item>
+            </items>
+          </setting>
+          <setting command="4E">
+            <name>Serial Protocol</name>
+            <description>Serial port protocol configuration.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>RS232</item>
+              <item>RS485</item>
+            </items>
+          </setting>
+          <setting command="4D">
+            <name>RS485 Duplex</name>
+            <description>RS485 duplex configuration.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>2-Wire (Half Duplex)</item>
+              <item>4-Wire (Full Duplex)</item>
+            </items>
+          </setting>
+          <setting command="4T">
+            <name>RS485 Termination</name>
+            <description>RS485 termination configuration. When enabled, a 120 ohm termination resistor will be activated on the RS-485/422 data lines.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>No Termination</item>
+              <item>Terminated</item>
+            </items>
+          </setting>
+        </settings>
+        <categories>
+          <category name="Hardware Diagnostics">
+            <description>Read Hardware Diagnostics.</description>
+            <settings>
+              <setting command="TP">
+                <name>Temperature</name>
+                <description>The temperature of the XLR RF module in degrees Celsius in 8-bit two's-complement format. For example 0x1A = 26C, and 0xF6 = -10C. Note that the the radio will naturally produce heat so this reading will usually be above the ambient air temperature.</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+              <setting command="RP">
+                <name>RSSI Timer</name>
+                <description>The amount of time that the RSSI LEDs will be active after a valid RF packet is received.</description>
+                <default_value>0x28</default_value>
+                <control_type>number</control_type>
+                <range_max>0xFF</range_max>
+                <range_min>0x0</range_min>
+                <units>* 100 ms</units>
+              </setting>
+            </settings>
+          </category>
+        </categories>
+      </category>
+      <category name="Ethernet and IP Options">
+        <description>Change options related to Ethernet and IP</description>
+        <settings>
+          <setting command="ES">
+            <name>IP Socket Mode Enable</name>
+            <description>Enable or disable IP Socket Mode.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+          <setting command="IB">
+            <name>IP Socket Mode Baud Rate</name>
+            <description>Baud rate used when in IP Socket Mode. Also, this is the actual baud rate used in the USB serial console. If entering a non-standard baud rate, read the IB parameter after the value is written to find the actual baud rate achieved.</description>
+            <default_value>0x70800</default_value>
+            <control_type>number</control_type>
+            <range_max>0x70800</range_max>
+            <range_min>0x5B9</range_min>
+            <units>baud</units>
+          </setting>
+          <setting command="IP">
+            <name>IP Socket Mode Protocol</name>
+            <description>IP protocol to be used for client and server socket connections in IP Socket Mode.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>UDP</item>
+              <item>TCP</item>
+            </items>
+          </setting>
+          <setting command="DX">
+            <name>Destination IP Address</name>
+            <description>The destination IPv4 address for outgoing IP Socket Mode data. 255.255.255.255 is the broadcast address.</description>
+            <default_value>0.0.0.0</default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>IPV4</format>
+            <exception></exception>
+          </setting>
+          <setting command="C0">
+            <name>Source Port</name>
+            <description>The listening IP port number for incoming TCP or UDP IP Socket Mode traffic. (Port number is in hexadecimal.)</description>
+            <default_value>0x2616</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="DY">
+            <name>Destination Port</name>
+            <description>The destination IP port number for outgoing TCP or UDP IP Socket Mode traffic. (Port number is in hexadecimal.)</description>
+            <default_value>0x2616</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="TM">
+            <name>TCP Client Connection Timeout</name>
+            <description>The timeout for outgoing TCP socket connections. The connection will be closed if no activity is seen during this timeout. When set to 0, the connection is closed immediately after data is sent. Maximum timeout is 1 day.</description>
+            <default_value>0x3C</default_value>
+            <control_type>number</control_type>
+            <range_max>0x15180</range_max>
+            <range_min>0x0</range_min>
+            <units>* 1 sec</units>
+          </setting>
+          <setting command="TS">
+            <name>TCP Server Connection Timeout</name>
+            <description>The timeout for incoming TCP socket connections. The connection will be closed if no activity is seen during this timeout. When set to 0, the connection is closed immediately after data is sent. Maximum timeout is 1 day.</description>
+            <default_value>0x3C</default_value>
+            <control_type>number</control_type>
+            <range_max>0x15180</range_max>
+            <range_min>0x0</range_min>
+            <units>* 1 sec</units>
+          </setting>
+          <setting command="MA">
+            <name>IP Addressing Mode</name>
+            <description>The IP addressing mode. If configured for DHCP and no DHCP server is on the network, Auto-IP will be used instead.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>DHCP</item>
+              <item>Static</item>
+            </items>
+          </setting>
+          <setting command="MY">
+            <name>IP Address</name>
+            <description>The IP address of the XLR PRO. This command will be read-only if the XLR PRO is configured for DHCP; if there is no DHCP server on the network, the XLR PRO's IP Address will be 169.254.xxx.yyy where xxx.yyy are the last two bytes of the Ethernet MAC Address.</description>
+            <default_value></default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>IPV4</format>
+            <exception></exception>
+          </setting>
+          <setting command="MK">
+            <name>Subnet Mask</name>
+            <description>The subnet mask of the XLR PRO. This command will be read-only if the XLR PRO is configured for DHCP.</description>
+            <default_value></default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>IPV4</format>
+            <exception></exception>
+          </setting>
+          <setting command="GW">
+            <name>Gateway Address</name>
+            <description>The IP address of the network gateway. This command will be read-only if the XLR PRO is configured for DHCP.</description>
+            <default_value></default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>IPV4</format>
+            <exception></exception>
+          </setting>
+          <setting command="NS">
+            <name>DNS Address</name>
+            <description>IPv4 address of the domain name server.</description>
+            <default_value>0.0.0.0</default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>IPV4</format>
+            <exception></exception>
+          </setting>
+          <setting command="%M">
+            <name>Ethernet MAC Address</name>
+            <description>The Ethernet MAC address of the XLR PRO.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+      <category name="Device Cloud Options">
+        <description>Change options related to Device Cloud by Etherios</description>
+        <settings>
+          <setting command="DO">
+            <name>Device Cloud Enable</name>
+            <description>Enable or disable Device Cloud support for this XLR PRO.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Diabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+          <setting command="KP">
+            <name>Device Description</name>
+            <description>Description of the XLR PRO that is displayed on Device Cloud and Web Configuration page.</description>
+            <default_value>0x20</default_value>
+            <control_type>text</control_type>
+            <max_chars>31</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="KC">
+            <name>Device Contact</name>
+            <description>Contact information for the XLR PRO that is displayed on Device Cloud and Web Configuration page.</description>
+            <default_value>0x20</default_value>
+            <control_type>text</control_type>
+            <max_chars>31</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="KL">
+            <name>Device Location</name>
+            <description>The physical location of the XLR PRO that is displayed on Device Cloud and Web Configuration page.</description>
+            <default_value>0x20</default_value>
+            <control_type>text</control_type>
+            <max_chars>31</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="LX">
+            <name>Latitude</name>
+            <description>User-defined GPS latitude coordinates of the XLR PRO that is displayed on Device Cloud and Web Configuration page.</description>
+            <default_value>00.000</default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="LY">
+            <name>Longitude</name>
+            <description>User-defined GPS longitude coordinates of the XLR PRO that is displayed on Device Cloud and Web Configuration page.</description>
+            <default_value>-000.000</default_value>
+            <control_type>text</control_type>
+            <max_chars>15</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="EQ">
+            <name>Device Cloud FQDN</name>
+            <description>Fully Qualified Domain Name of the Device Cloud server.</description>
+            <default_value>devicecloud.digi.com</default_value>
+            <control_type>text</control_type>
+            <max_chars>63</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="DI">
+            <name>Device Cloud Indicator</name>
+            <description>Monitor Device Cloud connectivity. 0=Connected, 1=Device Cloud not accessible, 2=Device Cloud connection in progress, 3=Disconnecting from Device Cloud, 4=Not configured for Device Cloud, 5=No DHCP server</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+      <category name="Web Configuration Options">
+        <description>Change options related to Web Configuration settings</description>
+        <settings>
+          <setting command="HE">
+            <name>Web Configuration Enable</name>
+            <description>Enable or disable the HTTP Web Configuration interface for the XLR PRO. Device configuration can still be performed through Device Cloud and the Serial/Socket interface if Web Configuration is disabled.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+          <setting command="HU">
+            <name>Web Configuration User Name</name>
+            <description>User name used to access the Web Configuration page. Can be up to 63 characters in length.</description>
+            <default_value>admin</default_value>
+            <control_type>text</control_type>
+            <max_chars>63</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="HW">
+            <name>Web Configuration Password</name>
+            <description>Password used to access the Web Configuration page. Can be up to 63 characters in length. This parameter cannot be read.</description>
+            <default_value>password</default_value>
+            <control_type>text</control_type>
+            <max_chars>63</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+        </settings>
+      </category>
+      <category name="Ethernet RF Bridging">
+        <description>Change options related to Ethernet RF Bridging settings</description>
+        <settings>
+          <setting command="BE">
+            <name>Ethernet RF Bridging Enable</name>
+            <description>Enables Ethernet RF Bridging. When enabled, Ethernet traffic can be passed between XLR PROs on the network.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+          <setting command="BA">
+            <name>Bridge Destination MAC</name>
+            <description>Destination RF MAC address to use for Ethernet RF Bridging. 0xFFFF is used for broadcast.</description>
+            <default_value>0xFFFF</default_value>
+            <control_type>number</control_type>
+            <range_max>0x0013A2FFFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+        </settings>
+      </category>
+      <category name="AT Command Options">
+        <description>Change AT Command Mode Behavior</description>
+        <settings>
+          <setting command="CC">
+            <name>Command Sequence Character</name>
+            <description>The character value used to enter command mode. The default value (0x2B) is the ASCII code for the plus ('+') character. It must be entered three times within the guard time to enter command mode.</description>
+            <default_value>0x2B</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFF</range_max>
+            <range_min>0x0</range_min>
+            <units>Recommended: 0x20-0x7F (ASCII)</units>
+          </setting>
+          <setting command="CT">
+            <name>Command Mode Timeout</name>
+            <description>The command mode timeout parameter. If no valid commands have been received within this time period, the XLR PRO returns to Idle Mode from AT Command Mode.</description>
+            <default_value>0x64</default_value>
+            <control_type>number</control_type>
+            <range_max>0x1770</range_max>
+            <range_min>0x2</range_min>
+            <units>* 100ms</units>
+          </setting>
+          <setting command="GT">
+            <name>Guard Times</name>
+            <description>The required period of silence before and after the Command Mode Characters of the Command Mode Sequence (GT + CC + GT). The period of silence is used to prevent inadvertent entrance into AT Command Mode.</description>
+            <default_value>0x3E8</default_value>
+            <control_type>number</control_type>
+            <range_max>0x576</range_max>
+            <range_min>0x2</range_min>
+            <units>* 1ms</units>
+          </setting>
+        </settings>
+      </category>
+      <category name="Firmware Version/Information">
+        <description>Access Firmware Version/Information</description>
+        <settings>
+          <setting command="VB">
+            <name>XLR PRO Firmware Version</name>
+            <description>The firmware version that is running on the XLR PRO.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="HV">
+            <name>XLR RF Module Hardware Version</name>
+            <description>Hardware version number of the XLR RF module.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="VH">
+            <name>XLR Baseboard Hardware Version</name>
+            <description>Hardware version number of the XLR baseboard.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="*C">
+            <name>Compatibility</name>
+            <description>The XLR PRO hardware compatibility number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="DD">
+            <name>Device Type Identifier</name>
+            <description>The Digi device type identifier value. This can be used to differentiate between multiple Digi products.</description>
+            <default_value>0xE001C</default_value>
+            <control_type>number</control_type>
+            <range_max>0xFFFFFFFF</range_max>
+            <range_min>0x0</range_min>
+          </setting>
+          <setting command="PN">
+            <name>Part Number</name>
+            <description>Manufacturing part number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="NP">
+            <name>Maximum Packet Payload Bytes</name>
+            <description>The maximum number of payload bytes that can be sent in an RF transmission at the current RF data rate.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CK">
+            <name>Configuration CRC</name>
+            <description>The CRC of the current settings. The purpose of this command is to allow the detection of an unexpected configuration change on a device. After a firmware update this command may return a different value.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+    </categories>
+    <config_commands>
+      <config_command command="HARDWARE_VERSION">
+        <at_command>HV</at_command>
+        <byte_index>1</byte_index>
+        <bytes_number>1</bytes_number>
+        <bytes_returned>2</bytes_returned>
+      </config_command>
+      <config_command command="SOFTWARE_COMPATABLITY"/>
+    </config_commands>
+  </firmware>
+</firmwares>

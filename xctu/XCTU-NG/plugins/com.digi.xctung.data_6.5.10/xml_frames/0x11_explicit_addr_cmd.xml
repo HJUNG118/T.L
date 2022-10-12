@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Explicit Addressing Command Frame">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>802.15.4</protocol>
+  </protocols>
+  <frame_type>0x11</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Set to the 64-bit address of the destination device. The following addresses are also supported:\n\n00 00 00 00 00 00 00 00 - Reserver 64-bit address for coordinator.\n\n00 00 00 00 00 00 FF FF - Broadcast address.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to the 16-bit address of the destination device, if known.\n\nSet to 'FF FE' if the address is unknown, or if sending a broadcast.\n\nOther reserved addresses:\nFF FC - broadcast to all routers\nFF FD - broadcast to all non-sleepy devices\nFF FF - broadcast to all devices including sleepy ED</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Source endpoint">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Source endpoint for the transmission.</description>
+      <default_value>E8</default_value>
+    </parameter>
+    <parameter name="Destination endpoint">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Destination endpoint for the transmission.\n\n 00 - ZDO</description>
+      <default_value>E8</default_value>
+    </parameter>
+    <parameter name="Cluster ID">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Cluster ID used in the transmission.</description>
+      <default_value>00 11</default_value>
+    </parameter>
+    <parameter name="Profile ID">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Profile ID used in the transmission.\n\n 00 00 - ZDO\n\n 01 04 - Home Automation\n\n 01 09 - Smart Energy</description>
+      <default_value>C1 05</default_value>
+    </parameter>
+    <parameter name="Broadcast radius">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Set the maximum number of hops a broadcast transmission can occur.\n\nIf set to 0, the broadcast radius will be set to the maximum hops value.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield of supported transmission options.\n\n
+      Zigbee:\n
+      - Bit 0: Disable ACK [0x01]\n
+      - Bit 2: Indirect binding transmission request [0x04]\n
+      - Bit 3: Multicast [0x08]\n
+      - Bit 4: Encrypt payload for Secure Session [0x10]\n
+      - Bit 5: Enable APS encryption [0x20]\n
+      - Bit 6: Use extended timeout [0x40]\n\n
+      
+      Enabling the 'APS encryption' decreases the maximum number of RF payload bytes by 4 (below the value reported by NP).\n
+      Setting the 'Extended timeout' will cause the stack to set the extended transmission timeout for the destination address.\n\n
+      
+      DigiMesh:\n
+      - Bit 0: Disable ACK [0x01]\n
+      - Bit 1: Disable mesh Route Discovery [0x02]\n
+      - Bit 2: Enable unicast NACK [0x04]\n
+      - Bit 3: Enable unicast Trace Route [0x08]\n
+      - Bit 4: Encrypt payload for Secure Session [0x10]\n
+      - Bits 6-7:\n
+      &#160;&#160;&#160;&#160;· 01: Point-Multipoint [0x40]\n
+      &#160;&#160;&#160;&#160;· 10: Directed Broadcast (repeater) [0x80]\n
+      &#160;&#160;&#160;&#160;· 11: DigiMesh [0xC0]\n\n
+      
+      802.15.4:\n
+      - Bit 0: Disable ACK [0x01]\n
+      - Bit 2: PAN Broadcast [0x02]\n
+      - Bit 4: Encrypt payload for Secure Session [0x10]\n\n
+      
+      All unused or unsupported bits should be set to 0.\n
+      Enabling bits 4 and/or 5 will reduce the maximum payload size by 4 bytes each.\n
+      If the transmit options field is set to 00, the parameter value set by the TO command will be used instead.
+      </description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Data payload">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <!--  Do not limit the size of the RF data -->
+      <!-- <bytes_max>256</bytes_max> -->
+      <description>Data that is sent to the destination device.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

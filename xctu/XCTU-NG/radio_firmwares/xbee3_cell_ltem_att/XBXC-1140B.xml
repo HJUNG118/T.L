@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<firmwares>
+  <firmware fw_version="1140B">
+    <family>XBEE</family>
+    <product_name>XBXC3</product_name>
+    <hw_version>0x4B</hw_version>
+    <compatibility_number>1</compatibility_number>
+    <region>99</region>
+    <config_buffer_loc>0</config_buffer_loc>
+    <flash_page_size>0x0200</flash_page_size>
+    <crc_buffer_len>0</crc_buffer_len>
+    <function>XBC LTE-M/NB-IoT Global</function>
+    <categories>
+      <category name="Cellular">
+        <description>Cellular configuration and data</description>
+        <settings>
+          <setting command="PH">
+            <name>Phone Number</name>
+            <description>Read the SIM card phone number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="S#">
+            <name>ICCID</name>
+            <description>Read the ICCID (Integrated Circuit Card Identifier) of the inserted SIM.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="IM">
+            <name>IMEI</name>
+            <description>Read the module IMEI (International Mobile Equipment Identity).</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="MN">
+            <name>Operator</name>
+            <description>Read the network operator on which the module is registered.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="MV">
+            <name>Modem Firmware Version</name>
+            <description>Read the firmware version string of the cellular modem.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="DB">
+            <name>Cellular Signal Strength</name>
+            <description>Read the absolute value of the current signal strength to the nearest cell tower in dB</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="AN">
+            <name>Access Point Name (APN)</name>
+            <description>Specifies the packet data network that the modem will use for Internet connectivity. This information is provided by your cellular network operator. Hyphen (-) means no APN specified. Asterisk (*) is the wildcard APN. See documentation for more information.</description>
+            <default_value>-</default_value>
+            <control_type>text</control_type>
+            <max_chars>100</max_chars>
+            <min_chars>1</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="CP">
+            <name>Carrier Profile</name>
+            <description>Configures the cellular component to select network operator settings (RF bands, packet data config) for various networks. Changes to the value will only take effect on boot. 0 - Autodetect from inserted ICCID(SIM), 2 - AT&amp;T, 3 - Verizon</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Auto-detect</item>
+              <item>Reserved</item>
+              <item>AT&amp;T</item>
+              <item>Verizon</item>
+            </items>
+          </setting>
+          <setting command="AM">
+            <name>Airplane Mode</name>
+            <description>When set, the cellular component of the XBee is fully turned off and no access to the cellular network is performed or possible</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Normal Operation</item>
+              <item>Airplane Mode</item>
+            </items>
+          </setting>
+        </settings>
+      </category>
+      <category name="Network">
+        <description>Change Network Settings</description>
+        <settings>
+          <setting command="IP">
+            <name>IP Protocol</name>
+            <description>The protocol used for the listening port (ATC0) while the module is in Transparent mode (ATAP = 0). 0 - UDP Communication, 1 - TCP Communication, 2 - SMS Communication, 3 - Reserved, 4 - SSL over TCP Communication</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>UDP</item>
+              <item>TCP</item>
+              <item>SMS</item>
+              <item>Reserved</item>
+              <item>TCPSSL</item>
+            </items>
+          </setting>
+          <setting command="TL">
+            <name>SSL/TLS Protocol Version</name>
+            <description>The SSL/TLS Protocol Version used for the SSL socket. 0 - SSLv3, 1 - TLSv1.0, 2 - TLSv1.1, 3 - TLSv1.2</description>
+            <default_value>0x3</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>SSLv3</item>
+              <item>TLSv1.0</item>
+              <item>TLSv1.1</item>
+              <item>TLSv1.2</item>
+            </items>
+          </setting>
+          <setting command="$0">
+            <name>SSL/TLS Profile 0</name>
+            <description>Specifies the SSL/TLS certificate(s) to use in transparent mode (when IP=4) or API mode (frame type 0x20, or frame type 0x23 with profile set to 0). Format: server_cert;client_cert;client_key</description>
+            <default_value>;;</default_value>
+            <control_type>text</control_type>
+            <max_chars>127</max_chars>
+            <min_chars>1</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="$1">
+            <name>SSL/TLS Profile 1</name>
+            <description>Specifies the SSL/TLS certificate(s) to use for API frame type 0x23 transmissions with profile set to 1. Format: server_cert;client_cert;client_key</description>
+            <default_value>;;</default_value>
+            <control_type>text</control_type>
+            <max_chars>127</max_chars>
+            <min_chars>1</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="$2">
+            <name>SSL/TLS Profile 2</name>
+            <description>Specifies the SSL/TLS certificate(s) to use for API frame type 0x23 transmissions with profile set to 2. Format: server_cert;client_cert;client_key</description>
+            <default_value>;;</default_value>
+            <control_type>text</control_type>
+            <max_chars>127</max_chars>
+            <min_chars>1</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="TM">
+            <name>IP Client Connection Timeout</name>
+            <description>The IP client connection timeout. If no activity for this timeout then the connection is closed. When set to 0 the connection is closed immediately after data is sent.</description>
+            <default_value>0xbb8</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFFFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>* 100 ms</units>
+          </setting>
+          <setting command="TS">
+            <name>TCP Server Connection Timeout</name>
+            <description>The TCP server connection timeout. If no activity for this timeout then the connection is closed. When set to 0 the connection is closed immediately after data is sent.</description>
+            <default_value>0xbb8</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFFFF</range_max>
+                <range_min>0xa</range_min>
+              </range>
+            </ranges>
+            <units>* 100 ms</units>
+          </setting>
+          <setting command="DO">
+            <name>Device Options</name>
+            <description>Device Options Bit field. Bit 0 - Enable Remote Manager. Bit 2 - VBUS On (for USB direct mode). Bit 3 - Use LTE PSM (Power Saving Mode). Other bits are reserved and must be 0.</description>
+            <default_value>0x1</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xf</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>bitfield</units>
+          </setting>
+          <setting command="EQ">
+            <name>Remote Manager FQDN</name>
+            <description>Fully Qualified Domain name of Remote Manager Server.</description>
+            <default_value>my.devicecloud.com</default_value>
+            <control_type>text</control_type>
+            <max_chars>63</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+        </settings>
+      </category>
+      <category name="Addressing">
+        <description>Change Addressing Settings</description>
+        <settings>
+          <setting command="SH">
+            <name>Serial Number High</name>
+            <description>The upper digits of the unique IMEI assigned to this module.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="SL">
+            <name>Serial Number Low</name>
+            <description>The lower digits of the unique IMEI assigned to this module.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="MY">
+            <name>Module IP Address</name>
+            <description>The IP address of the module. This command is Read Only and is assigned by the mobile network.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>IPV4</format>
+          </setting>
+          <setting command="P#">
+            <name>Destination Phone Number</name>
+            <description>The destination phone number (used for SMS when ATIP = 2). Phone numbers must be numeric or prefixed with '+' for international dialing, 7 to 20 characters)</description>
+            <default_value>0000000</default_value>
+            <control_type>text</control_type>
+            <max_chars>20</max_chars>
+            <min_chars>7</min_chars>
+            <format>PHONE</format>
+            <exception></exception>
+          </setting>
+          <setting command="N1">
+            <name>Primary DNS Address</name>
+            <description>IPv4 address of the primary domain name server.</description>
+            <default_value>0x0.0.0.0</default_value>
+            <control_type>none</control_type>
+            <format>IPV4</format>
+          </setting>
+          <setting command="N2">
+            <name>Secondary DNS Address</name>
+            <description>IPv4 address of the secondary domain name server.</description>
+            <default_value>0x0.0.0.0</default_value>
+            <control_type>none</control_type>
+            <format>IPV4</format>
+          </setting>
+          <setting command="DL">
+            <name>Destination Address</name>
+            <description>The destination IPv4 address (e.g. XXX.XXX.XXX.XXX) or fully qualified domain name (e.g. example.com)</description>
+            <default_value>0.0.0.0</default_value>
+            <control_type>text</control_type>
+            <max_chars>128</max_chars>
+            <min_chars>0</min_chars>
+            <format>ASCII</format>
+            <exception></exception>
+          </setting>
+          <setting command="OD">
+            <name>Operating Destination Address</name>
+            <description>The destination IPv4 address currently in use by transparent mode.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>IPV4</format>
+          </setting>
+          <setting command="DE">
+            <name>Destination Port</name>
+            <description>The destination IP port number.</description>
+            <default_value>0x2616</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFFFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+          </setting>
+          <setting command="C0">
+            <name>Listening Source Port</name>
+            <description>The listening IP port number for UDP and TCP operations</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFFFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+          </setting>
+        </settings>
+      </category>
+      <category name="Serial Interfacing">
+        <description>Change module interfacing options</description>
+        <settings>
+          <setting command="BD">
+            <name>Baud Rate</name>
+            <description>The serial interface baud rate for communication between the serial port of the module and the host. Request non-standard baud rates with values above 0x80 using a terminal window and then read the BD parameter to find actual baud rate achieved.</description>
+            <default_value>0x3</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>1200</item>
+              <item>2400</item>
+              <item>4800</item>
+              <item>9600</item>
+              <item>19200</item>
+              <item>38400</item>
+              <item>57600</item>
+              <item>115200</item>
+              <item>230400</item>
+            </items>
+          </setting>
+          <setting command="NB">
+            <name>Parity</name>
+            <description>The parity for the UART.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>No Parity</item>
+              <item>Even Parity</item>
+              <item>Odd Parity</item>
+            </items>
+          </setting>
+          <setting command="SB">
+            <name>Stop Bits</name>
+            <description>The number of stop bits for the UART.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>One stop bit</item>
+              <item>Two stop bits</item>
+            </items>
+          </setting>
+          <setting command="RO">
+            <name>Packetization Timeout</name>
+            <description>The number of character times of inter-character delay required before transmission begins. Set to zero to transmit characters as they arrive instead of buffering them into one RF packet.</description>
+            <default_value>0x3</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>* character times</units>
+          </setting>
+          <setting command="TD">
+            <name>Text Delimiter</name>
+            <description>The text delimiter to be used for transparent mode. Set to zero to disable text delimiter checking</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+          </setting>
+          <setting command="FT">
+            <name>Flow Control Threshold</name>
+            <description>The flow control threshold. De-assert CTS when FT bytes are in the UART receive buffer.</description>
+            <default_value>0x681</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x82d</range_max>
+                <range_min>0x9d</range_min>
+              </range>
+            </ranges>
+            <units>Bytes</units>
+          </setting>
+          <setting command="AP">
+            <name>API Enable</name>
+            <description>The API mode setting. RF Packets received can be formatted into API frames to be sent out the UART. When API is enabled the UART data must be formatted as API frames as transparent mode is disabled.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Transparent Mode</item>
+              <item>API Mode Without Escapes</item>
+              <item>API Mode With Escapes</item>
+              <item>N/A</item>
+              <item>MicroPython REPL</item>
+              <item>Bypass Mode</item>
+            </items>
+          </setting>
+        </settings>
+      </category>
+      <category name="I/O Settings">
+        <description>Modify DIO and ADC Options</description>
+        <settings>
+          <setting command="D0">
+            <name>DIO0/AD0</name>
+            <description>The DIO0/AD0 pin configuration. Options include: Analog to Digital converter, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>N/A</item>
+              <item>ADC</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="D1">
+            <name>DIO1/AD1/SPI_ATTN</name>
+            <description>The DIO1/AD1/SPI_ATTN pin configuration. Options include: SPI_ATTN, Analog to Digital converter, I2C SCL and Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>SPI_ATTN</item>
+              <item>ADC</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>I2C SCL</item>
+            </items>
+          </setting>
+          <setting command="D2">
+            <name>DIO2/AD2/SPI_SCLK</name>
+            <description>The DIO2/AD2/SPI_SCLK pin configuration. Options include: SPI_SCLK, Analog to Digital converter, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>SPI_SCLK</item>
+              <item>ADC</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>N/A</item>
+              <item>MicroPython UART1 RTS</item>
+            </items>
+          </setting>
+          <setting command="D3">
+            <name>DIO3/AD3/SPI_SSEL</name>
+            <description>The DIO3/AD3/SPI_SSEL pin configuration. Options include: SPI Slave Select, Analog to Digital converter, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>SPI Slave Select</item>
+              <item>ADC</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>N/A</item>
+              <item>MicroPython UART1 CTS</item>
+            </items>
+          </setting>
+          <setting command="D4">
+            <name>DIO4/SPI_MOSI</name>
+            <description>The DIO4/SPI_MOSI pin configuration. Options include: SPI Slave MOSI, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>SPI MOSI</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>N/A</item>
+              <item>MicroPython UART1 TX</item>
+            </items>
+          </setting>
+          <setting command="D5">
+            <name>DIO5/ASSOCIATED_INDICATOR</name>
+            <description>The DIO5/ASSOCIATED_INDICATOR pin configuration. Options include: Associated LED indicator (blinks when associated), Digital Input and Output.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Assoc. Indicator</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="D6">
+            <name>DIO6/RTS</name>
+            <description>The DIO6/RTS pin configuration. Options include: RTS flow control input, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disable</item>
+              <item>RTS flow control</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="D7">
+            <name>DIO7/CTS</name>
+            <description>The DIO7/CTS pin configuration. Options include: CTS flow control output, Digital Input and Output.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disable</item>
+              <item>CTS flow control</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="D8">
+            <name>DIO8/SLEEP_REQUEST</name>
+            <description>The DIO8/SLEEP_REQUEST pin configuration. Options include: Sleep Request input, Digital Input and Output.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Sleep Request</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="D9">
+            <name>DIO9/ON_SLEEP</name>
+            <description>The DIO9/ON_SLEEP pin configuration. Options include: ON/SLEEP Output, Digital Input and Output.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>ON/SLEEP Output</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+            </items>
+          </setting>
+          <setting command="P0">
+            <name>DIO10</name>
+            <description>The DIO10/PWM0 pin configuration. Options include: RSSI PWM Output, PWM0 Output, Digital Input, and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>RSSI PWM0 Output</item>
+              <item>PWM0 Output</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>USB VBUS</item>
+            </items>
+          </setting>
+          <setting command="P1">
+            <name>DIO11</name>
+            <description>The DIO11 pin configuration. Options include: Fan Enable, I2C SDA, Digital Input, and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Temperature Fan Enable</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>I2C SDA</item>
+              <item>USB direct</item>
+            </items>
+          </setting>
+          <setting command="P2">
+            <name>DIO12/SPI_MISO</name>
+            <description>The DIO12/SPI_MISO pin configuration. Options include: SPI Slave MISO, Digital Input and Output.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>SPI MISO</item>
+              <item>N/A</item>
+              <item>Digital Input</item>
+              <item>Digital Out, Low</item>
+              <item>Digital Out, High</item>
+              <item>N/A</item>
+              <item>MicroPython UART1 RX</item>
+            </items>
+          </setting>
+          <setting command="P3">
+            <name>DIO13/DOUT</name>
+            <description>The DIO13/DOUT pin configuration. Options include: Disabled, UART DOUT enabled.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>UART DOUT</item>
+            </items>
+          </setting>
+          <setting command="P4">
+            <name>DIO14/DIN</name>
+            <description>The DIO14/DIN pin configuration. Options include: Disabled, UART DIN enabled.</description>
+            <default_value>0x1</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>UART DIN</item>
+            </items>
+          </setting>
+          <setting command="PD">
+            <name>Pull Direction</name>
+            <description>The resistor pull direction (1=pullup, 0=pull-down) for corresponding I/O lines that are set in PR command.</description>
+            <default_value>0x7FFF</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x7FFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>bitfield</units>
+          </setting>
+          <setting command="PR">
+            <name>Pull-up/down Resistor Enable</name>
+            <description>The bit field used to configure internal pull-up/down resistors status for I/O lines. 1=internal pull-up/down enabled, 0=no internal pull-up/down. Bit field map: (14)-DIO13/DOUT, (13)-DIO7/CTS, (12)-DIO11, (11)-DIO10, (10)-DIO12, (9)-DIO9/On/nSleep, (8)-DIO5/Assoc., (7)-DIO14/DIN, (6)-DIO8/Sleep_Request, (5)-DIO6/RTS, (4)-DIO0/AD0, (3)-DIO1/AD1, (2)-DIO2/AD2, (1)-DIO3/AD3, (0)-DIO4</description>
+            <default_value>0x7FFF</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x7FFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>bitfield</units>
+          </setting>
+          <setting command="M0">
+            <name>PWM0 Duty Cycle</name>
+            <description>The duty cycle of PWM0.</description>
+            <default_value>0x0</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x3FF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+          </setting>
+        </settings>
+        <categories>
+          <category name="I/O Sampling">
+            <description>Configure I/O Sampling Parameters. Click on + to expand the list of parameters.</description>
+            <settings>
+              <setting command="TP">
+                <name>Temperature</name>
+                <description>The current module temperature in degrees Celsius in 8-bit two's-complement format. For example 0x1A = 26C, and 0xF6 = -10C</description>
+                <default_value>0x</default_value>
+                <control_type>none</control_type>
+              </setting>
+            </settings>
+          </category>
+        </categories>
+      </category>
+      <category name="Sleep Commands">
+        <description>Configure Sleep Parameters</description>
+        <settings>
+          <setting command="SM">
+            <name>Sleep Mode</name>
+            <description>In Normal mode the module is always awake. In Pin sleep the module sleeps when the SLEEP_RQ pin is asserted. Cyclic mode sleeps for SP time and wakes for ST time. Cyclic sleep pin wake is the same as cyclic sleep but SleepRq must be active to allow sleep, otherwise the module will stay awake.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Normal</item>
+              <item>Pin sleep</item>
+              <item>N/A</item>
+              <item>N/A</item>
+              <item>Cyclic Sleep</item>
+              <item>Cyclic Sleep Pin Wake</item>
+            </items>
+          </setting>
+          <setting command="SP">
+            <name>Sleep Time</name>
+            <description>The sleep time of the module. In cyclic sleep mode, node will sleep with CTS disabled for the sleep time interval, then wake for the wake time interval.</description>
+            <default_value>0x7530</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x83d600</range_max>
+                <range_min>0x1</range_min>
+              </range>
+            </ranges>
+            <units>* 10 ms</units>
+          </setting>
+          <setting command="ST">
+            <name>Wake Time</name>
+            <description>The wake time for cyclic sleep modes.</description>
+            <default_value>0xea60</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x36ee80</range_max>
+                <range_min>0xea60</range_min>
+              </range>
+            </ranges>
+            <units>* 1 ms</units>
+          </setting>
+          <setting command="PA">
+            <name>Requested Active Timer</name>
+            <description>The requested Active Timer for PSM.</description>
+            <default_value>0xa</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xffff</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>* 1 s</units>
+          </setting>
+          <setting command="PU">
+            <name>Requested Tracking Area Update Timer</name>
+            <description>The requested Active Timer for PSM.</description>
+            <default_value>0x8ca00</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xffffffff</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>* 1 s</units>
+          </setting>
+        </settings>
+      </category>
+      <category name="AT Command Options">
+        <description>Change AT Command Mode Behavior</description>
+        <settings>
+          <setting command="CC">
+            <name>Command Sequence Character</name>
+            <description>The character value used to enter command mode. The default value (0x2B) is the ASCII code for the plus ('+') character. It must be entered three times within the guard time to enter command mode.</description>
+            <default_value>0x2B</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0xFF</range_max>
+                <range_min>0x0</range_min>
+              </range>
+            </ranges>
+            <units>Recommended: 0x20-0x7F (ASCII)</units>
+          </setting>
+          <setting command="CT">
+            <name>Command Mode Timeout</name>
+            <description>The command mode timeout parameter. If no valid commands have been received within this time period, module returns to Idle Mode from AT Command Mode.</description>
+            <default_value>0x64</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x1770</range_max>
+                <range_min>0x2</range_min>
+              </range>
+            </ranges>
+            <units>* 100ms</units>
+          </setting>
+          <setting command="GT">
+            <name>Guard Times</name>
+            <description>The required period of silence before, after, and between the Command Mode Characters of the Command Mode Sequence (GT + CC + GT). The period of silence is used to prevent inadvertent entrance into AT Command Mode.</description>
+            <default_value>0x3e8</default_value>
+            <control_type>number</control_type>
+            <ranges>
+              <range>
+                <range_max>0x6d3</range_max>
+                <range_min>0x2</range_min>
+              </range>
+            </ranges>
+            <units>* 1ms</units>
+          </setting>
+        </settings>
+      </category>
+      <category name="MicroPython Options">
+        <description>Change MicroPython Behavior</description>
+        <settings>
+          <setting command="PS">
+            <name>Python Auto Start</name>
+            <description>Configure the module to automatically run compiled MicroPython bytecode stored in flash.</description>
+            <default_value>0x0</default_value>
+            <control_type>combo</control_type>
+            <items>
+              <item>Disabled</item>
+              <item>Enabled</item>
+            </items>
+          </setting>
+        </settings>
+      </category>
+      <category name="Firmware Version/Information">
+        <description>Access Firmware Version/Information</description>
+        <settings>
+          <setting command="VR">
+            <name>Firmware Version</name>
+            <description>Read the module firmware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="VL">
+            <name>Verbose Firmware Version</name>
+            <description>Read the verbose firmware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+            <format>ASCII</format>
+          </setting>
+          <setting command="HV">
+            <name>Hardware Version</name>
+            <description>Read the module hardware version number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="AI">
+            <name>Association Indication</name>
+            <description>Read the Association status code to monitor association progress.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="DI">
+            <name>Remote Manager Indicator</name>
+            <description>Monitor Remote Manager connectivity. 0=Connected, 1=Before connection to the Internet, 2=Remote Manager connection in progress, 3=Disconnecting from Remote Manager, 4=Not configured for Remote Manager</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CI">
+            <name>Protocol/Connection Indication</name>
+            <description>Read the Protocol/Connection status code to monitor IP connection (when ATIP = 0 or 1) or SMS send status (when ATIP = 2).</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="HS">
+            <name>Hardware Series</name>
+            <description>Read the module hardware series number.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+          <setting command="CK">
+            <name>Configuration CRC</name>
+            <description>The CRC of the current settings. The purpose of this command is to allow the detection of an unexpected configuration change on a device. After a firmware update this command may return a different value.</description>
+            <default_value>0x</default_value>
+            <control_type>none</control_type>
+          </setting>
+        </settings>
+      </category>
+    </categories>
+    <config_commands>
+      <config_command command="HARDWARE_VERSION">
+        <at_command>HV</at_command>
+        <byte_index>1</byte_index>
+        <bytes_number>1</bytes_number>
+        <bytes_returned>2</bytes_returned>
+      </config_command>
+      <config_command command="SOFTWARE_COMPATABLITY"/>
+    </config_commands>
+  </firmware>
+</firmwares>

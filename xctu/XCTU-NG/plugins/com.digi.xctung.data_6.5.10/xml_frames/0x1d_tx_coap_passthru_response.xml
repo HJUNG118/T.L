@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="CoAP Passthru Tx Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Thread</protocol>
+  </protocols>
+  <frame_type>0x1D</frame_type>
+  <parameters>
+    <parameter name="Token length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of Token field.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Token">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Used by client and server to match requests with responses.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="RESTful Response Code">
+      <control_type>1</control_type>
+      <bytes_length>2</bytes_length>
+      <description>RESTful status value:\n
+      - 0x02## - Okay\n
+      - 0x04## - Client request error\n
+      - 0x05## - Server error (client may retry)\n\n
+      Successful responses:\n
+      - 201 - XB/TX PUT\n
+      - 205 - XB/AT GET\n
+      - 204 - XB/AT PUT
+      </description>
+      <items>
+        <item>Success [0200]</item>
+        <item>Success: Created [0201]</item>
+        <item>Success: Accepted [0202]</item>
+        <item>Success: Non-Authoritative Information [0203]</item>
+        <item>Success: No Content [0204]</item>
+        <item>Success: Reset Content [0205]</item>
+        <item>Client Error: Bad request [0400]</item>
+        <item>Client Error: Unauthorized [0401]</item>
+        <item>Client Error: Bad option [0402]</item>
+        <item>Client Error: Forbidden [0403]</item>
+        <item>Client Error: Not found [0404]</item>
+        <item>Client Error: Method not allowed [0405]</item>
+        <item>Client Error: Not accepted [0406]</item>
+        <item>Client Error: Precondition failed [0412]</item>
+        <item>Client Error: Request entity too large [0413]</item>
+        <item>Client Error: Unsupported content format [0415]</item>
+        <item>Server Error [0500]</item>
+        <item>Server Error: Bad gateway [0502]</item>
+        <item>Server Error: Service unavailable [0503]</item>
+        <item>Server Error: Gateway timeout [0504]</item>
+        <item>Server Error: Proxying not supported [0505]</item>
+      </items>
+      <default_value>Success [0200]</default_value>
+    </parameter>
+    <parameter name="Options length">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Length of TLV options, zero or more.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_min>255</bytes_min>
+      <description>List of TLVs.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="Payload">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1200</bytes_max>
+      <description>Frame payload.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

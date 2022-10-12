@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Generic">
+  <protocols>
+    <protocol>All</protocol>
+  </protocols>
+  <frame_type>0xFF</frame_type>
+  <parameters>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <!--  Do not limit the size of the RF data -->
+      <!-- <bytes_max>256</bytes_max> -->
+      <description>Packet RF data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

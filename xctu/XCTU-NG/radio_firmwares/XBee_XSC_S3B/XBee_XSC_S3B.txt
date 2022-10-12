@@ -1,0 +1,298 @@
+XBee-PRO XSC S3B
+----------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the XSC firmware on the XBee-PRO XSC (S3B) radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-xsc)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-xsc#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=5298)
+
+### Compatible Hardware:
+
+* XBee-PRO S3B
+	* XBP9B-XC
+	* XBP9B-DM
+	* XBP9B-DP
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3014 - XBee-PRO XSC (S3B) 9600
+* 3114 - XBee-PRO XSC (S3B) 19200
+* 3214 - XBee-PRO XSC (S3B) 9600 920MHz
+* 3314 - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2014-Sep-17
+
+### New Features:
+
+* Improved the startup time if the configured baud rate is 9600 baud or above.
+
+### Bug Fixes:
+
+* Fixed bug where the CTS line was going low when [MD] was a non 0 value.
+ 
+* Updated parameter ranges in the MXI file.
+ 
+* Fixed a problem where bytes were sometimes dropped with ATHP being set to values other than 0, when streaming.
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported (yet)
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3011 - XBee-PRO XSC (S3B) 9600
+* 3111 - XBee-PRO XSC (S3B) 19200
+* 3211 - XBee-PRO XSC (S3B) 9600 920MHz
+* 3311 - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2013-Oct-10
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where the first packet received from an XSTream v42B5 device (which is reset after 
+  transmitting) would fail.
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported (yet)
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3010 - XBee-PRO XSC (S3B) 9600
+* 3110 - XBee-PRO XSC (S3B) 19200
+* 3210 - XBee-PRO XSC (S3B) 9600 920MHz
+* 3310 - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2013-Jul-31
+
+### New Features:
+
+* Pin 7 has been disabled
+
+### Bug Fixes:
+
+* Fixed a bug where when used in RS-485 CTS was de-asserting before data transmission completed.
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported (yet)
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 300F - XBee-PRO XSC (S3B) 9600
+* 310F - XBee-PRO XSC (S3B) 19200
+* 320F - XBee-PRO XSC (S3B) 9600 920MHz
+* 330F - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2013-Jun-11
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fix a bug where binary commands were being sent as data.
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported (yet)
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 300D - XBee-PRO XSC (S3B) 9600
+* 310D - XBee-PRO XSC (S3B) 19200
+* 320D - XBee-PRO XSC (S3B) 9600 920MHz
+* 330D - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2012-Aug-16
+
+### New Features:
+
+* This release was created to support an updated manufacturing procedure. This updated procedure 
+  allows the customer to switch between XSC code and 900HP code on the same hardware. From the 
+  customers' perspective there are no changes in behavior between version 3x0C and 3x0D except that 
+  the version number has changed.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not supported (yet)
+
+* A number of AT commands can be set to invalid values without issuing an error. The user should 
+  not attempt to set AT commands to values other than those specified in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 300C - XBee-PRO XSC (S3B) 9600
+* 310C - XBee-PRO XSC (S3B) 19200
+* 320C - XBee-PRO XSC (S3B) 9600 920MHz
+* 330C - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2012-Apr-20
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug with the ATAM command where the assigned MY was not formed in the way described in the 
+  product manual. The incorrect method often resulted in non-unique ATMY assignments.
+
+* Fixed bug where, after entering command mode by asserting a serial break during reset, the UART 
+  would not getting initialized to the values written in flash (it continued to use the default 
+  baud after exiting command mode)
+
+* Fixed bug where the parity setting was not the default (no parity) when entering command mode 
+  via a serial break on reset.
+
+* Fixed a bug where sending a packet at near the max RF payload size when 9-bit data (ATNB5) was 
+  enabled would fail.
+
+* Fixed a bug where 9-bit data could be corrupted after entering and exiting command mode. 
+  (Especially when entering command mode on power-up via a serial break.)
+
+* Fixed a bug where the command character sequence (+++) would be transmitted over-the-air if 
+  entered while the radio was sending a transmission.
+
+* Fixed some minor mistakes in the .mxi file. (This file is used in the X-CTU modem configuration 
+  tab)
+
+* Fixed a bug where receiving UART data which had parity or framing errors would cause invalid 
+  data to go over-the-air.
+
+* Fixed a bug where changes enabling RSSI PWM output with the ATRP command would not take effect 
+  until after an ATWR and reset.
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not currently supported
+
+* A number of AT commands can be set to invalid values without issuing an error.  The user should 
+  not attempt to set AT commands to values other than those specifed in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 3009 - XBee-PRO XSC (S3B) 9600
+* 3109 - XBee-PRO XSC (S3B) 19200
+* 3209 - XBee-PRO XSC (S3B) 9600 920MHz
+* 3309 - XBee-PRO XSC (S3B) 19200 920MHz
+
+### Release Date: 
+
+* 2012-Jan-17
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Serial Port Sleep Mode (ATSM2) is not currently supported
+
+* A number of AT commands can be set to invalid values without issuing an error.  The user should 
+  not attempt to set AT commands to values other than those specifed in the product manual or .mxi 
+  file.
+
+* Multi-Streaming connections are not supported with the following related commands: ATCB, ATCE, 
+  ATCF, ATCL, ATCM, ATDC, ATMD1, ATMD2
+
+* IO Line Passing is not supported with the related commands: ATBK, ATBO, ATCO, ATDR, ATIU, ATTO

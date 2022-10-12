@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Frame Error">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0xFE</frame_type>
+  <parameters>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Frame error status code.</description>
+      <items>
+        <item>Invalid frame type [02]</item>
+        <item>Invalid frame length [03]</item>
+        <item>Erroneous Checksum on last frame [04]</item>
+        <item>Payload of last API frame was too big to fit into a buffer [05]</item>
+        <item>String entry was too big on last API frame sent [06]</item>
+        <item>Wrong state to receive frame (e.g. a device response was sent out without first receiving a device request) [07]</item>
+        <item>Device request ID of device response didn't match the number in the request [08]</item>
+      </items>
+      <default_value>Invalid frame type [02]</default_value>
+    </parameter>
+  </parameters>
+</frame>

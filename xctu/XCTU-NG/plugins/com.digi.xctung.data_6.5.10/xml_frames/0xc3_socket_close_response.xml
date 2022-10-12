@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket Close Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xC3</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>A reference identifier used to match status responses.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>ID of the socket that has been closed.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>Status code.</description>
+      <items>
+        <item>Success [00]</item>
+        <item>Invalid parameters [01]</item>
+        <item>Failed to retrieve option value [02]</item>
+        <item>Connection already in progress [03]</item>
+        <item>Already connected/bound/listening [04]</item>
+        <item>Unknown error [05]</item>
+        <item>Bad socket ID [20]</item>
+        <item>Not registered to cell network [22]</item>
+        <item>Internal error [31]</item>
+        <item>Resource error: retry the operation later [32]</item>
+        <item>Invalid protocol [7B]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

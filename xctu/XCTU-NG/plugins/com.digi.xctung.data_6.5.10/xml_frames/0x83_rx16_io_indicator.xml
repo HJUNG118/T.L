@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="RX (Receive) Packet: 16-bit Address IO">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+  </protocols>
+  <frame_type>0x83</frame_type>
+  <parameters>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit network address of the sender device.\n\nSet to 'FF FE' (unknown 16-bit address) if the sender's 16-bit address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="RSSI">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Received Signal Strength Indicator. Hexadecimal equivalent of (-dBm) value. I.E. for a RX signal strength of -40 dBm, a 28 hexadecimal value (40 decimal) is returned.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield indicating the Rx indicator options.\n\nbit 0 - [reserved]\nbit 1 - Address broadcast\nbit 2 - PAN broadcast\nbits 3-7 - [reserved]</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>100</bytes_max>
+      <description>Up to 100 bytes of IO and ADC data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket New IPv4 Client">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xCC</frame_type>
+  <parameters>
+    <parameter name="Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The socket ID of the listener socket.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Client Socket ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The socket ID of the new connection.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Remote address">
+      <control_type>6</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>The connection's remote address.</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="Remote port">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>The connection's remote port.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

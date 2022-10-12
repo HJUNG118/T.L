@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Node Identification Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+  </protocols>
+  <frame_type>0x95</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the sender device.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the sender device, if known.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Receive options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>01 - Packet Acknowledged\n02 - Packet was a broadcast packet\n20 - Packet encrypted with APS encryption\n40 - Packet was sent from an end device (if known)\n\nOption values can be combined. For example, a 40 and a 01 will show as a 41.\nOther possible values: 21, 22, 41, 42, 60, 61, 62.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="16-bit remote address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the remote device, if known. Set to 'FF FE' if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="64-bit remote address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Indicates the 64-bit address of the remote module that transmitted the node identification frame.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="NI String">
+      <control_type>3</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>24</bytes_max>
+      <description>Node identifier string in the remote device.\nThe NI-String is terminated with a NULL (00) byte.</description>
+      <default_value>20 00</default_value>
+    </parameter>
+    <parameter name="Parent 16-bit address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Indicates the 16-bit address of the remote's parent or 'FF FE' if the remote has no parent.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Device type">
+      <control_type>1</control_type>
+      <description>Bitfield for the device type.</description>
+      <items>
+        <item>Coordinator [00]</item>
+        <item>Router [01]</item>
+        <item>End Device [02]</item>
+      </items>
+      <default_value>Coordinator [00]</default_value>
+    </parameter>
+    <parameter name="Source event">
+      <control_type>1</control_type>
+      <description>Bitfield indicating the source of the NI indicator event.</description>
+      <items>
+        <item>NI pushbutton event (see D0 cmd) [01]</item>
+        <item>Joining event occurred (see JN cmd) [02]</item>
+        <item>Power cycle event occurred (see JN cmd) [03]</item>
+      </items>
+      <default_value>NI pushbutton event (see D0 cmd) [01]</default_value>
+    </parameter>
+    <parameter name="Digi profile ID">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to Digi's application profile ID.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Digi Manufacturer ID">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to Digi's manufacturer ID.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Digi DD value">
+      <control_type>0</control_type>
+      <bytes_min>4</bytes_min>
+      <bytes_max>4</bytes_max>
+      <description>Reports the DD value of the responding device. Use the NO command to enable this field.</description>
+      <optional>true</optional>
+    </parameter>
+    <parameter name="RSSI">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Received signal strength indicator. Use the NO command to enable this field.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

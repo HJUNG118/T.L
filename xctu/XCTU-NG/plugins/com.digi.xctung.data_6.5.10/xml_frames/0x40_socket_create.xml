@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Socket Create">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0x40</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reference identifier used to match status responses. A response is required and will be sent regardless of the frame ID.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Protocol">
+      <control_type>1</control_type>
+      <description>Protocol used to create the socket.</description>
+      <items>
+        <item>UDP [00]</item>
+        <item>TCP [01]</item>
+        <item>SSL over TCP [04]</item>
+      </items>
+      <default_value>UDP [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

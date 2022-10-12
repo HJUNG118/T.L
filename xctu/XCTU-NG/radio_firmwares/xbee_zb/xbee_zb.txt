@@ -1,0 +1,810 @@
+XBee ZigBee
+-----------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the ZigBee firmware on the XBee S2 and XBee-Pro S2B 
+radio.
+
+### Compatible Hardware:
+
+* XBee S2
+	* XB24-ZB
+	* XB24-SE
+	* XB24-B
+* XBee-Pro S2
+	* XBP24-ZB
+	* XBP24-SE
+	* XBP24-B
+* XBee-Pro S2B
+	* XBP24BZ7
+	* XBP24BSE
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-zb-module#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=4549)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2CA7 - End Device - LTH
+
+### Release Date:
+
+* 2012-Sep-07
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Added new AT#C command used to calibrate the temperture sensor. Must be a signed INT data type 
+  for proper operation.
+
+### Bug Fixes:
+
+* Added Ram corruption fix when removing a node from the source route table. Which can lead 
+  to flash corruption.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 20A7 - ZigBee Coordinator AT
+* 21A7 - ZigBee Coordinator API
+* 22A7 - ZigBee Router AT
+* 23A7 - ZigBee Router API
+* 26A7 - ZigBee Router/End Device, Analog I/O Adapter
+* 27A7 - ZigBee Router/End Device, Digital I/O Adapter
+* 28A7 - ZigBee End Device AT
+* 29A7 - ZigBee End Device API
+* 2BA7 - ZigBee Router AT, Wall Router
+
+### Release Date:
+
+* 2011-Jan-12
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Removed Enable Join Notification from the ATDO options as it's only to be used in Smart Energy 
+  Applications.
+  Note: This option was only released in 2xA6 Beta firmware.
+
+### Bug Fixes:
+
+* Fixed S2B sleepy device problem to now only do single I2C temp sensor access to reduce code 
+  execution overhead by approx. 10ms.
+  
+* Fixed problem to send modem status error only if ND+NI API command was unsuccessful.
+
+* Fixed problem for the device to now send discovery self-response when ATNO=2 and doing the ND+NI 
+  command.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 20A6 - ZigBee Coordinator AT
+* 21A6 - ZigBee Coordinator API
+* 22A6 - ZigBee Router AT
+* 23A6 - ZigBee Router API
+* 26A6 - ZigBee Router/End Device, Analog I/O Adapter
+* 27A6 - ZigBee Router/End Device, Digital I/O Adapter
+* 28A6 - ZigBee End Device AT
+* 29A6 - ZigBee End Device API
+* 2BA6 - ZigBee Router AT, Wall Router
+
+### Release Date:
+
+* 2011-Dec-22
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Implemented new ATDO command with following options (Added bit 3 option):
+	* Bit0 - Enable Temperature Compensation on S2B
+	* Bit1 - Enable Join Notification Status message on Coordinator
+	* Bit2 - 0/1 = First or Best Response
+	* Bit3 - Disable NULL Transport key on Coordinator
+	
+* Made change where you can now enable RTS when sending fragmented messages. 
+
+### Bug Fixes:
+
+* Fixed DO option to respond to ATRE to restore default settings.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 20A5 - ZigBee Coordinator AT
+* 21A5 - ZigBee Coordinator API
+* 22A5 - ZigBee Router AT
+* 23A5 - ZigBee Router API
+* 26A5 - ZigBee Router/End Device, Analog I/O Adapter
+* 27A5 - ZigBee Router/End Device, Digital I/O Adapter
+* 28A5 - ZigBee End Device AT
+* 29A5 - ZigBee End Device API
+* 2BA5 - ZigBee Router AT, Wall Router
+
+### Release Date:
+
+* 2011-Dec-16
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Implemented new ATDO command with following options:
+	* Bit0 - Enable Temperature Compensation on S2B
+	* Bit1 - Enable Join Notification Status message on Coordinator
+	* Bit2 - 0/1 = First or Best Response
+	
+* Made change where you can now enable RTS when sending fragmented messages.
+
+* Made change to not send NULL Transport key to allow better interoperability with 3rd party 
+  devices.
+
+* Made change for end devices sending network discovery responses (ATND) to spread out over the 
+  ATNT time period to avoid excessive OTA collisions. 
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 20A3 - ZigBee Coordinator AT
+* 21A3 - ZigBee Coordinator API
+* 22A3 - ZigBee Router AT
+* 23A3 - ZigBee Router API
+* 26A3 - ZigBee Router/End Device, Analog I/O Adapter
+* 27A3 - ZigBee Router/End Device, Digital I/O Adapter
+* 28A3 - ZigBee End Device AT
+* 29A3 - ZigBee End Device API
+* 2BA3 - ZigBee Router AT, Wall Router
+
+### Release Date:
+
+* 2011-Oct-05
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Implemented new device type Wall Router 2Bxx, increases child table.
+
+* Implement AS command (API only) to include Router and End devices.
+
+### Bug Fixes:
+
+* Fixed fragmentation issue when APS message retries occur with the extended timeout option enabled.
+
+* Fixed network watchdog (ATNW) and Channel Verification (ATJV) issue where router would lockup 
+  with AI status of 0x2B (ASSOC_DISCOVERING_COORD).
+  
+* Fixed Tx status message (0x8B) to properly report the following:
+	* Route discovery occurred for network ACK failure.
+	* TX extended timeout occurred for transmitted packet.
+	* Route or Address discovery occurred for packet transmitted.
+	
+* Made change for sleepy device to send Modem status when leaving a network.
+
+* Made change to properly set DIO6 pin to use pullup or pulldown resistor.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 20A0 - ZigBee Coordinator AT
+* 21A0 - ZigBee Coordinator API
+* 22A0 - ZigBee Router AT
+* 23A0 - ZigBee Router API
+* 26A0 - ZigBee Router/End Device, Analog I/O Adapter
+* 27A0 - ZigBee Router/End Device, Digital I/O Adapter
+* 28A0 - ZigBee End Device AT
+* 29A0 - ZigBee End Device API
+
+### Release Date:
+
+* 2011-Jul-13
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Added new AT command to set PAN_ID_CONFLICT_REPORT_THRESHOLD, the new command is ATCR <Threshold 
+  value> with a range of 1 - 63.
+
+### Bug Fixes:
+
+* AT devices only, RO command not working causing OTA data to be transmitted in multiple packets.
+
+* When a device lost communication with its parent, it would a join instead of a rejoin network.
+
+* Sleepy devices not properly polling it's parent when the commissioning button is pressed.
+
+* S2B devices reporting lower than expected RSSI values.
+
+* Fixed issue where devices was doing join instead a rejoin when losing communication with its 
+  parent.
+  
+* Devices not reporting correct Tx retry count in the 0x8B Tx status packet.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 208C - ZigBee Coordinator AT
+* 218C - ZigBee Coordinator API
+* 228C - ZigBee Router AT
+* 238C - ZigBee Router API
+* 268C - ZigBee Router/End Device, Analog I/O Adapter
+* 278C - ZigBee Router/End Device, Digital I/O Adapter
+* 288C - ZigBee End Device AT
+* 298C - ZigBee End Device API
+
+### Release Date:
+
+* 2011-Apr-12
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Profiles provided for all adapters and targets.
+
+### Bug Fixes:
+
+* Fixed Tx latency issue when destination address for the coordinator is zero.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 208B - ZigBee Coordinator AT
+* 218B - ZigBee Coordinator API
+* 228B - ZigBee Router AT
+* 238B - ZigBee Router API
+* 268B - ZigBee Router/End Device, Analog I/O Adapter
+* 278B - ZigBee Router/End Device, Digital I/O Adapter
+* 288B - ZigBee End Device AT
+* 298B - ZigBee End Device API
+
+### Release Date:
+
+* 2011-Mar-08
+
+### ZigBee Stack:
+
+* EmberZNet 3.5.1 ZigBee-PRO stack
+
+### New Features:
+
+* Ember Stack 3.5.1
+
+### Bug Fixes:
+
+* The fragmentation handler has logic to assure TX buffers are being released before trying to 
+  re-use.
+  
+* Sleepy devices now sending the Network Leave Announce message.
+
+* Fixed Watchdog timeout when doing ATNR0/ATNR1 sequencing of the network.
+
+* Added buffer allocation checks for source routing and when doing over-the-air updates.
+
+* Fixed Buffer leak which manifested itself when data was being sourced by a router which was also 
+  forwarding a large amount of data. 
+  
+* Fixed a problem with accepting UART input when using CTS flow control due to a permanent negation 
+  of CTS. This problem was introduced by sending the device many oversized broadcast frames while 
+  it was very busy outputting data received OTA.
+  
+* Fixed an issue where the stack got into an unrecoverable EMBER_JOINED_NETWORK_NO_PARENT state.
+
+* Fixed End Device lock-up when polling for wake vs. sleep cycling.
+
+* A self-addressed message was failing to be processed if the device was not joined to a network.
+
+* The simulated commissioning push button command wasn't working the same way as the manual button 
+  press.
+  
+* Fragmentation was hanging sending devices if a NWK Ack was not received by the sender.
+
+* End Devices which were set to send sample data were not sending data sometimes if ND was used.
+
+* Time delay difference was seen between addressing coordinator as 0...0 and as eui64.
+
+* A sleeping End Device with no network available was staying awake forever after the first sleep 
+  cycle.
+
+* A TX_Req with >255 bytes of data now generates an API TX_Status message of 0x74
+
+* Reduced wakeup delay on S2B platform for sleeping devices from 36 msec to 13 msec.
+
+* AP Parameter range check now only allows 1 and 2.
+
+* AIO and DIO profiles are now using defaults which should decrease sleep current.
+
+* Removed "DISCOVER" emit from UART when Network Watchdog invoked.
+
+### Known Issues / Errata:
+
+* EM250 channel crosstalk problem - Data can be received +/- 12 channels from the operating channel 
+  if the data is received within a tight power level range (-20 to -35dBm). This typically  occurs 
+  when the modules are placed within a few feet of each other. Possible work around is to only use 
+  an SC of only 12 channels (i.e. 0x1FFE).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2070 - ZigBee Coordinator AT
+* 2170 - ZigBee Coordinator API
+* 2270 - ZigBee Router AT
+* 2370 - ZigBee Router API
+* 2670 - ZigBee Router/End Device, Analog I/O Adapter
+* 2770 - ZigBee Router/End Device, Digital I/O Adapter
+* 2870 - ZigBee End Device AT
+* 2970 - ZigBee End Device API
+
+### Release Date:
+
+* 2009-Nov-11
+
+### ZigBee Stack:
+
+* EmberZNet 3.4.1 ZigBee-PRO stack
+
+### New Features:
+
+* S2B support; the power amplifier has temperature compensation and an overvoltage check. Within 
+  15 seconds of the supply voltage exceeding 3.9V, the API version will emit a 0x08 modem status
+ (Overvoltage) message, and then the AT/API versions will do a watchdog reset.
+ 
+* If AO=3, then ZDO requests which are not supported by the stack will be passed out the UART.
+* An attempt to send an oversized packet (256+bytes) will result in a Tx Status message with a 
+  status code of 0x74.
+
+* End devices have two speed polling. 7.5 seconds is the slow rate, which switches to the fast rate 
+  to transact with its parent. When transactions are done, it switches back to the slow rate.
+  
+* A new receive option bit (0x40) indicates if the packet came from an end device.
+
+* If the extended timeout option is enabled, then use it because end devices need more time than 
+  routers to ack their packets.
+  
+* An option bit (0x01) was added to disable APS retries.
+
+* If an end device has not had its polls answered for 5 secs, it will leave and attempt to rejoin 
+  the network.
+  
+* New AT commands:
+	* S2B: TP command which returns the temperature compensation sensor reading in units of Celsius 
+	  degrees.
+	* PP command returns power dBm setting when PL4 is selected.
+	* PO command sets the slow polling rate on end devices.
+		* Range is 1-0x1770 in units of 10 msec (10 msec to 60 sec).
+		* Default is 0 which invokes a 100 msec delay.
+
+### Bug Fixes:
+
+* After a Mgmt_Leave_req is received, rejoining used to fail until a NR or NR0 occurred. Now 
+  rejoining happens automatically.
+  
+* SC command ranges were changed in the mxi files: [(XBee,1-FFFF), (PRO,1-3FFF), (S2B,1-7FFF)] SC 
+  defaults remain 0x1FFE
+  
+* IR command range was changed in the mxi files: (0, 0x32-FFFF)
+
+* LT command range was changed in the mxi files: (0x0A-FF)
+
+* Pan ID corruption problem was fixed.
+
+* A lack of free buffers is no longer a fatal transmission error.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2064 - ZigBee Coordinator AT
+* 2164 - ZigBee Coordinator API
+* 2264 - ZigBee Router AT
+* 2364 - ZigBee Router API
+* 2464 - ZigBee Router, 1-Wire Sensor
+* 2564 - ZigBee End Device, Power Harvester
+* 2664 - ZigBee Router/End Device, Analog I/O Adapter
+* 2764 - ZigBee Router/End Device, Digital I/O Adapter
+* 2864 - ZigBee End Device AT
+* 2964 - ZigBee End Device API
+
+### Release Date:
+
+* 2009-May-18
+
+### ZigBee Stack:
+
+* EmberZNet 3.3.1 ZigBee-PRO stack
+
+### New Features:
+
+* IO sampling supported on all targets (IS, IR, IC, etc).
+
+* DB command and RSSI PWM are updated when an APS acknowledgment is received.
+
+* Network watchdog feature allows routers to leave the network if they have no communication with 
+  the coordinator for a certain period of time. If a router does not receive an ACK or data from 
+  the coordinator within (3 * NW) time, the router will leave the network. The NW command (network 
+  watchdog timeout) is measured in minute units, up to 0x64FF (17.95 days).
+  
+* Received Device Announce ZDO frames are sent out the UART of API devices as API explicit receive 
+  indicator frames (0x91) if AO=1.
+  
+* API targets can send fragmented messages.
+
+* Router target can be set as an end device by setting SM > 0. Changing from router to end device, 
+  or vice-versa requires the device leave the network and join as the new device type.
+
+* New API frame (0xA3) indicates when a many-to-one route request is received.
+
+* Remote API commands return a failure status code in a remote command response frame if the remote 
+  command transmission fails (status = 0x04, REMOTE_COMMAND_TX_FAILED).
+  
+* Minimum LT time changed from 200ms to 100ms (0x0A).
+
+* Adaptive polling enhancement in end device firmware improves data throughput.
+
+* Support for new API transmit options bits:
+	* 0x20 enables APS encryption
+	* 0x40 enables the extended (end device) transmission timeout
+
+* New AT commands:
+	* NW:  Router network watchdog timeout. Default=0 (disabled)
+	* SB:  Number of UART stop bits. Default=0 (one stop bit)
+
+### Bug Fixes:
+
+* Broadcast radius field was not getting set correctly in broadcast transmissions.
+
+* Changed many-to-one broadcast type to LOW_RAM Concentrator. This ensures concentrator will have 
+  a route to send the ACK back to remote devices.
+	
+* Routers do not enable route discovery when sending data to a concentrator (a device with AR < 
+  0xFF).
+
+* Route discovery is disabled on devices with AR < 0xFF (concentrator devices). These devices must 
+  use source routing to send data to remote devices. ()Set AR to 0xFF (default) to enable route 
+  discovery.)
+
+* Devices no longer send an APS acknowledgment if they cannot send the data out the UART (i.e. in 
+  the case where RTS flow control causes the UART transmit buffer to fill).
+
+* DIO change detection events would only send samples of IO lines enabled in the IC bitmask. Now, 
+  DIO change events send samples of all enabled IO lines.
+
+* Sending a remote IS command could cause an occasional module reset.
+
+* Fixed rejoining bug (when NJ < 0xFF) where an end device could power cycle and leave the network 
+  if its parent could not be found. It would not be able to rejoin the network if joining was 
+  disabled.
+
+* DN command returned ERROR status even if a valid response was received.
+
+* DB command (RSSI) on XBee-PRO did not account for signal strength gain in LNA. It now reports 
+  the signal strength detected at the antenna.
+
+* NC command (number of children) could return invalid values due to stack bug. Fixed in this 
+  release.
+
+* Joining problem fixed where a trust center could not allow devices to join more than 1 hop away. 
+
+* CTS would not de-assert properly at the end of RS-485 transmissions.
+
+* If CTS flow control is enabled, CTS now de-asserts when initializing the UART.
+
+* Fixed short window where an RTS interrupt could be missed, potentially causing RTS flow control 
+  bug.
+
+* XBee-PRO end device could leave network regularly in 2x41 if SN set >3.
+
+* Sending data rapidly to many remotes could cause corruption in the sender's address table, 
+  causing a data packet to be sent to the wrong 64-bit address. This caused the remote device to 
+  change its 16-bit address. The transmit status frame ID value could also be incorrect.
+
+### Known Issues / Errata:
+
+* Sending a broadcast transmission that has too many payload bytes will not return a transmit 
+  status.
+
+* The offset field in the ZDO routing table discovery request does not work. Devices always return 
+  their first routing table entries, regardless of the routing table offset field in the request. 
+  This will be fixed in a later stack version.
+  
+* If a coordinator performs several over-the-air firmware updates, it may stop sending MAC layer 
+  acknowledgements. The firmware update process will complete correctly, but may become slower. 
+  To work around this, the application should reset the coordinator (FR command or power cycle) 
+  when the over-the-air firmware updates are complete.
+  
+* In networks where a device is sending or receiving many transmissions simultaneously, the device 
+  may experience a rare reset condition. Applications should limit the number of simultaneous 
+  transmissions to 1 to work around this issue.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2041 - ZigBee Coordinator AT
+* 2141 - ZigBee Coordinator API
+* 2241 - ZigBee Router AT
+* 2341 - ZigBee Router API
+* 2441 - ZigBee Router, 1-Wire Sensor
+* 2541 - ZigBee End Device, Power Harvester
+* 2641 - ZigBee Router/End Device, Analog I/O Adapter
+* 2741 - ZigBee Router/End Device, Digital I/O Adapter
+* 2841 - ZigBee End Device AT
+* 2941 - ZigBee End Device API
+
+### Release Date:
+
+* 2008-Sep-02
+
+### ZigBee Stack:
+
+* EmberZNet 3.2.0 ZigBee-PRO stack
+
+### New Features:
+
+* Added SI (sleep immediately) command to put cyclic sleep XBee to sleep immediately, instead of 
+  waiting for ST to expire.
+
+* Poll timeout implemented on parent router / coordinator. If an end device child does not poll 
+  within this timeout, it is removed from the child table. The timeout is (3 * SP * SN) tenths of a 
+  second (since SP is measured in tenths of a second).
+  
+* API targets support source routing. Two new API frames created to support source routing:
+	* 0x21 - Create Source Route
+	* 0xA2 - Source Route Record Indicator
+
+* End devices support IO sampling, network discovery command (ATND).
+
+* End devices can receive broadcast messages on stack profile 0 (ATZS).
+
+### Bug Fixes:
+
+* API devices could only transmit up to 72 bytes. Can now transmit more (see NP command).
+
+* Broadcast transmissions were not received relialbly by end devices when operating on stack 
+  profile 0 (stack fix).
+  
+* Fixed memory leak during over-the-air firmware updates.
+
+* Fixed API memory leak where corrupt API frames caused occasional buffer loss.
+
+* API end device, when disassociated from network, did not return correct frame ID in tx-status.
+
+* API end device issued tx-status messages with 16-bit address set to 0xFFFD instead of the real 
+  16-bit address.
+  
+* NR1 caused immediate router leaves. Now, routers that receive NR1 wait 6 seconds before leaving.
+
+* Changing SN did not change sleep time (SP*SN) immediately.
+
+* Fixed bug in NH (router unicast timeout).
+
+* Sending multiple API broadcasts with different APP ID values yielded tx-status messages with the 
+  same APP ID value (last APP ID).
+
+* API router with RTS enabled, de-asserted since powerup would not respond to network discovery.
+
+* Commissioning button 2-button press caused joining to be disabled after 1 minute, even on devices 
+  where NJ=0xFF.
+  
+* Fixed bug where transmitting a large block of data to a remote resulted in data loss on the
+  remote.
+  
+* Loopback cluster ID (0x0012) only supported within Digi Profile ID (0xC105).
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2021 - ZigBee Coordinator AT
+* 2121 - ZigBee Coordinator API
+* 2221 - ZigBee Router AT
+* 2321 - ZigBee Router API
+* 2421 - ZigBee Router, 1-Wire Sensor
+* 2521 - ZigBee End Device, Power Harvester
+* 2621 - ZigBee Router/End Device, Analog I/O Adapter
+* 2721 - ZigBee Router/End Device, Digital I/O Adapter
+* 2821 - ZigBee End Device AT
+* 2921 - ZigBee End Device API
+
+### Release Date:
+
+* 2008-Jun-13
+
+### ZigBee Stack:
+
+* EmberZNet 3.1.1
+
+### New Features:
+
+* Added the ID command to improve compatibility with other XBee variations. ATID can set / read the 
+  ZigBee extended PAN ID. This replaces the EI command in 2x20.
+
+### Bug Fixes:
+
+* The EI command (now ID) set the extended PAN ID in little endian byte order in 2x20.
+
+* Certain conditions would cause end devices and routers to stop attempting to join a network.
+
+* Sending multiple serial API transmit frames could cause frames to not be processed.
+
+* Fixed problems with ATNR0 command.
+	* Issuing ATNR0 reset the entire network.
+	* End devices did not support the NR1 command.
+	
+* Improved sleep current on XBee-PRO modules.
+
+* KY now sets the link key on all devices.
+
+* Added the NK command to set the network key on the coordinator.
+
+* SC defaults to enable 12 channels (0x1FFE) instead of 14.
+
+* JN default set to 0 to help prevent excess broadcasting.
+
+### Known Issues / Errata:
+
+* IO sampling not yet supported on end devices.
+
+* End devices cannot initiate a network discovery command (ATND).
+
+* End devices do not receive broadcast messages on stack profile 0 (ATZS).
+
+* Incompatible with 2x20 if EI is set (in 2x20) to a non-default value (EI > 0).
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 2020 - ZigBee Coordinator AT
+* 2120 - ZigBee Coordinator API
+* 2220 - ZigBee Router AT
+* 2320 - ZigBee Router API
+* 2420 - ZigBee Router, 1-Wire Sensor
+* 2520 - ZigBee End Device, Power Harvester
+* 2620 - ZigBee Router/End Device, Analog I/O Adapter
+* 2720 - ZigBee Router/End Device, Digital I/O Adapter
+* 2820 - ZigBee End Device AT
+* 2920 - ZigBee End Device API
+
+### Release Date:
+
+* 2008-Apr-08
+
+### ZigBee Stack:
+
+* EmberZNet 3.1.1
+
+### New Features:
+
+* Initial Release
+
+* Functionality similar to ZNet 2.5 firmware.
+
+* AT and API versions.
+
+* Remote configuration command support.
+
+* Over-the-air firmware updates supported.
+
+* Supports interoperability with other ZigBee products:
+	* API Data transmissions allow flexibility in specifying endpoints, cluster ID, and profile ID 
+	  values.
+	* API receive frame (0x91) indicates endpoints, cluster ID, and profile ID of each received RF 
+	  packet.
+	* The stack profile is configurable (ZS command).
+	* Many ZDO commands can be issued to devices on the network.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* The Ember ZigBee stack occasionally writes information to non-volatile memory. These writes may 
+  require performing a flash page erase which can block up to 20ms (worst case). The EM250 has a 
+  4-byte FIFO to collect incoming serial data. However, if serial UART interrupts are disabled for 
+  20ms, it is possible for incoming serial data to be dropped once the 4-byte FIFO files. ZB 
+  firmware de-asserts CTS about 40 microseconds before an erase operation begins. The application 
+  should observe CTS flow control as quickly as possible to prevent data loss.
+	* Note that PCs often make use of a FIFO buffer where serial data can be buffered prior to 
+	  transmission to the serial port. If FIFO buffers are used, PC applications will not be immediately 
+	  responsive to CTS and may experience rare data loss.

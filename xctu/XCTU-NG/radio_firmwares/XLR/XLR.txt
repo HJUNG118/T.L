@@ -1,0 +1,128 @@
+XLR PRO
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the firmware on the XLR PRO radio modem.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-modems-peripherals/wireless-range-extenders-peripherals/digi-xlr-pro)
+[Documentation](http://www.digi.com/products/wireless-modems-peripherals/wireless-range-extenders-peripherals/digi-xlr-pro#docs)
+[Support](http://www.digi.com/support/productdetail?pid=5603)
+
+### Compatible Hardware:
+
+* XLR PRO
+	* XL9
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1007 - XLR PRO (North America)
+* 1207 - XLR PRO (International)
+
+### Release Date:
+
+* 2015-November-30
+
+### New Features:
+
+* USB serial port support
+
+* Added ping command - ATPG
+
+* Firmware updates through the web UI auto filter to .ebin file type
+
+
+### Bug Fixes:
+
+* Fixed an issue where the XLR PRO RF would lockup during bridging mode
+
+### Known Issues / Errata:
+
+* With bridging enabled, DHCP does not renew if the XLR is moved to a different network.
+	* Workaround: When switching Ethernet cables, reset the device
+	
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1006 - XLR PRO
+
+### Release Date:
+
+* 2015-April-21
+
+### New Features:
+
+* Improved RF narrow band suppression
+
+### Bug Fixes:
+
+* Corrected default socket baud rate (ATIB)
+
+* Fix a bug where the webpage couldn't be closed if username/password was unknown
+
+* Updated how XLR PRO transmit options are displayed on the web page and Device Cloud
+
+* Fixed a bug where RS-485 would not function after a power cycle
+
+* Fixed a bug where IP bridging was losing data
+
+* Fixed a firmware update issue for the case where power is lost during a small window between
+  loading the firmware to GPM and loading the firmware to working flash.
+
+* Fixed a firmware update issue caused by watch dog resets when using XCTU-NG
+
+* Fixed a problem with entering command mode immediately after timing out of command mode.
+
+* Fixed a problem with entering bridging mode destination address through Web page without filling
+  in leading zeroes.
+
+* Fixed a problem with GPM reads being unreliable.
+
+* Updated the device cloud connector default to use devicecloud.digi.com.
+
+### Known Issues / Errata:
+
+* With bridging enabled, DHCP does not renew if the XLR is moved to a different network.
+	* Workaround: When switching Ethernet cables, reset the device
+	
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 1003 - XLR PRO
+
+### Release Date:
+
+* 2014-Sep-08
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* With bridging enabled, DHCP does not renew if XLR is moved to a different network.
+	* Workaround: When switching Ethernet cables, reset the device
+
+* It is possible to lock the XLR PRO serial port so that all input is ignored. This happens when a
+  firmware update is attempted with old XCTU as opposed to XCTU-NG
+  Workaround:
+	* Don't ever load XLR PRO firmware with old X-CTU.
+	* If old X-CTU is made by mistake, request tech support for a compatible version of firmware
+	  that can be loaded with old X-CTU. Then load proper version with XCTU-NG

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.digi.xctung.uicomponents;singleton:=true
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.ui,org.eclipse.jf
+ ace.text
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Import-Package: com.digi.xbee,com.digi.xctung.firmware.models,com.digi
+ .xctung.xbee,com.digi.xctung.xbee.utils,org.eclipse.swt,org.eclipse.s
+ wt.accessibility,org.eclipse.swt.events,org.eclipse.swt.graphics,org.
+ eclipse.swt.layout,org.eclipse.swt.widgets,org.eclipse.ui.forms.widge
+ ts
+Export-Package: com.digi.xctung.uicomponents,com.digi.xctung.uicompone
+ nts.colors,com.digi.xctung.uicomponents.customization,com.digi.xctung
+ .uicomponents.dialogs,com.digi.xctung.uicomponents.fonts,com.digi.xct
+ ung.uicomponents.images,com.digi.xctung.uicomponents.listeners,com.di
+ gi.xctung.uicomponents.preferences,com.digi.xctung.uicomponents.provi
+ ders,com.digi.xctung.uicomponents.widgets,com.digi.xctung.uicomponent
+ s.widgets.searchnodes
+Bundle-Name: %pluginName
+Bundle-Version: 6.5.10
+Bundle-Localization: plugin
+Bundle-Activator: com.digi.xctung.uicomponents.UIComponentsPlugin
+
+

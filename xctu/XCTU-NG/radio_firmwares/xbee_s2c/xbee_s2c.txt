@@ -1,0 +1,991 @@
+﻿![Digi logo](https://www.digi.com/digi/media/nav/logo-digi.png "Digi International Inc.")<br>
+**DIGI INTERNATIONAL**<br>
+9350 Excelsior Blvd, Suite 700<br>
+Hopkins, MN 55343, USA<br>
++1 (952) 912-3444 | +1 (877) 912-3444<br>
+[www.digi.com](https://www.digi.com)<br>
+
+XBee S2C Zigbee Release Notes
+=============================
+### XBee S2C Zigbee
+### Version 4061 - October 31, 2019
+
+---
+
+INTRODUCTION
+------------
+These release notes document changes made to the Zigbee and Zigbee Smart Energy firmware on the
+XBee S2C RF modules<br>
+
+* [Product Information](http://www.digi.com/products/xbee-rf-solutions/rf-modules/xbee-zigbee)
+* [Documentation](http://www.digi.com/products/xbee-rf-solutions/rf-modules/xbee-zigbee#productsupport-support)
+* [Support](http://www.digi.com/support/productdetail?pid=4838)
+
+<br>SUPPORTED PRODUCTS
+----------------------
+* XBee S2C
+    * XB24C
+    * XB24CSE
+* XBee-Pro S2C
+    * XBP24C
+    * XBP24CSE
+
+<br>KNOWN ISSUES
+----------------
+1. When Source Routing is enabled (**AR** !=0xFF):
+   To send a source routed transmission, the application should send a Create Source Route API frame
+   (0x21) to the XBee to create a source route in its internal source route table. After sending the
+   Create Source Route API frame, the application can send data transmission or remote command
+   request frames as needed to the same destination, or any destination in the source route. Once
+   data must be sent to a new destination (a destination not included in the last source route), the
+   application must first send a new Create Source Route API frame. If a Create Source Route API
+   frame does not precede a data frame, route discovery will be used. If route discovery fails,
+   transmit status errors may occur. The XBee can buffer one source route that includes up to 25
+   hops (excluding source and destination).
+
+2. If a 0x21 Create Source Route frame is sent, a watchdog reset may occur during data transmission
+   if the source route is longer than 21 hops and many-to-one route broadcasts are not being sent
+   (**AR** = 0xFF). Source routing must be used with many-to-one routing.
+
+3. If encryption is enabled and **KY** is set to a fixed value (non-zero) on routers which are
+   configured as aggregators, doubly APS encrypted source routed packets may occur during
+   association, which would fail to transmit beyond a sufficiently high hop count because the MAC
+   command frame can only hold 127 bytes.
+
+4. Energy Detect (**ED** command) does not currently accept a parameter value. If a parameter value
+   is provided, the radio will reset unexpectedly. *[XBZBS2C-738]*
+
+5. Upon startup, the output power level (**PL**) of the device will revert to the level set at when
+   the module first formed/joined the network. To avoid excessive battery drain, ensure the desired
+   **PL** parameter value is set before commissioning the node onto a network. *[XBZBS2C-780]*
+
+6. If **P3** and **P4** are not configured for UART operation (**P3** and **P4** are not set to 1),
+   the output state of these pins is not guaranteed and command mode will not be accessible through
+   a serial break. Additionally, CTS will erroneously indicate that the UART is clear to send.
+   *[XBZBS2C-619]*
+
+7. Issuing a self-addressed remote AT command (0x17 frametype) will output a duplicate 0x97 command
+   response frame that always indicates a 0x04 Tx Failure status. *[XBZBS2C-265]*
+
+8. Regardless of the configuration of DIO8 (**D8**), if pin sleep is enabled (**SM** = 1 or 5) then
+   DIO8 will be treated as a nSleep_Rq line and toggle sleep. *[XBZBS2C-577]*
+
+9. If RTS is enabled (**D6** = 1) and deasserted upon boot, network operation will be disrupted
+   until RTS is asserted. *[XBZBS2C-495]*
+
+10. The first wake period when using cyclic sleep will be 500ms longer than subsequent wake
+    periods. *[XBZBS2C-698]*
+
+11. A module operating in API mode with escapes (**AP**=2) will still accept an API frame that has
+    escaped characters that are not escaped. (e.g. 0x13) *[XBZBS2C-574]*
+
+
+<br>UPDATE CONSIDERATIONS
+-------------------------
+XCTU (XBee Configuration and Test Utility) is recommended for updating the firmware of your radio
+module to the latest firmware version:[www.digi.com/xctu](http://www.digi.com/xctu)<br>
+
+To invoke the bootloader for firmware updates through command mode, you should issue an 'AT%P 5441'
+which will enter bootloader and retain settings. If you do not include the 0x5441 parameter value,
+the radio will restore to default upon reset.
+
+If running firmware older than 4050:
+If your network hosts XBee S2C SMT PROs, and the network is operating on channel 26, you must
+move your network to another channel before updating firmware to 4050. Failure to do so will
+result in the following changes to the configuration of the XBee S2C SMT PROs after the update:
+    1. The configured setting of **SC** will be set to the 4050 default value of 0x7FFF.
+    2. If the device was joined and operating on channel 26 before the update, a coordinator will
+       form a new network on a valid channel (11-25), and a router/end device will seek to join a
+       network.
+
+<br>The following files are included in XBee S2C RF firmware releases:
+
+* Firmware
+    * EBL:  Firmware image for gateways and OEM serial updates
+    * EHX:  Encrypted firmware for Legacy X-CTU
+    * EHX2: Encrypted firmware for XCTU-NG
+    * MXI:  X-CTU configuration file
+
+
+<br>UPDATE BEST PRACTICES
+-------------------------
+Digi recommends the following best practices:
+
+1. Test the new release in a controlled environment with your application before you update production devices.
+2. Unless otherwise noted, apply updates in the following order:
+    1. Device firmware
+    2. Modem firmware
+    3. Configuration
+    4. Application
+
+Digi recommends Digi Remote Manager for automated device updates. For more information, go to
+[https://www.digi.com/products/iot-platform/digi-remote-manager](https://www.digi.com/products/iot-platform/digi-remote-manager).<br/>
+If you prefer manually updating one device at a time, follow these steps:
+
+<br>**Serial firmware updates:**<br>
+To retain device configuration, you must invoke the XBee bootloader by issuing an **%P** command
+with a parameter value of '0x5441'; this indicates to the XBee that network and configuration
+settings should be retained through the subsequent update.
+
+You can also invoke the bootloader [using hardware flow control lines](https://www.digi.com/resources/documentation/DigiDocs/90002002/default.htm#Concepts/c_xbee_bootloader.htm)
+which will not retain device configuration after the serial firmware update.
+
+<br>Interface with the bootloader at 115200 baud and transfer a /*.ebl firmware image as per the
+[user guide](https://www.digi.com/resources/documentation/DigiDocs/90002002/default.htm#Tasks/t_send_image.htm).
+
+<br>*An [XBee MultiProgrammer](https://www.digi.com/resources/documentation/digidocs/90001539/Default.htm#concepts/c_multiprogrammer.htm) is available for serial firmware updates in a production environment.*
+
+<br>*The [XBee Network Assistant](https://www.digi.com/resources/documentation/digidocs/90001539/Default.htm#concepts/c_nwk_assistant.htm) can be used to manage your network and optimize it's configuration prior to performing an OTA update.*
+
+
+<br>TECHNICAL SUPPORT
+---------------------
+Get the help you need via our Technical Support team and online resources. Digi offers multiple
+support levels and professional services to meet your needs. All Digi customers have access to
+product documentation. firmware, drivers, knowledge base and peer-to-peer support forums.
+
+Visit us at [https://www.digi.com/support](https://www.digi.com/support) to find out more.
+
+---
+
+CHANGE LOG - Zigbee
+===================
+4061 - Digi XBee S2C Zigbee (October 31, 2019)
+----------------------------------------------
+* This is a recommended release
+* Zigbee Stack: EmberZNet 5.6.1.0 Zigbee-PRO stack
+* SMT hardware revision T
+* SMT PRO hardware revision V
+* TH hardware revision M
+* TH PRO hardware revision H
+
+### ENHANCEMENTS
+1. Enhanced the Network Watchdog to optionally allow routers and end devices to follow the
+   coordinator if a PAN ID change occurs. *[XBZBS2C-721]*
+   * This behavior can be enabled by setting Joining Device Controls bit 5 (**DC** | 0x20).
+   * The Network Watchdog (**NW**) must be set to a non-zero value to activate this behavior.
+   * New a modem status (0x42) has been added to indicate that the Network Watchdog has
+   expired 3 times and scanning has commenced. This applies when Joining Device Controls bit
+   5 is set (**DC** | 0x20) or Device Option bit 7 is set (**DO** | 0x80).
+
+2. New modem statuses have been added to identify when a PAN ID conflict has occurred.
+   *[XBZBS2C-739]*
+   * 0x3F: Emitted by a coordinator that has updated its PAN ID due to a conflict
+   * 0x40: Emitted by a router that received a new PAN ID from the coordinator due to a conflict
+   * 0x42: Emitted when the network watchdog timeout has expired three times (**NW** > 0)
+
+3. Querying **KY** and **NK** behavior has changed *[XBZBS2C-722]*
+   * When queried, **KY** and **NK** will return zero if the value of the key is zero;
+   otherwise, for all other values it will give an OK response to indicate a key is present.
+
+4. **NK** no longer returns 'ERROR' if it is set on an End Device or Router. The functionality of
+   **NK** is still only applicable to the coordinator, but its entry is no longer gated by device
+   role. *[XBZBS2C-628]*
+
+### SECURITY FIXES
+1. Changed the **DO** default to set bit 3, this will disable the NULL transport key which can
+   allow a module with non-preconfigured link key (**KY** = 0) to join a network which is
+   configured with a preconfigured link key (**KY** set to non zero). *[XBZBS2C-713]*
+
+### BUG FIXES
+1. Added debounce code to resolve an issue where toggling DTR would sometimes not wake the module
+   from sleep. *[XBS1B-428]*
+
+2. Fixed an issue that caused a cyclically sleeping end device to leave the network and re-associate
+   upon waking if it had slept longer than 320 seconds. *[XBZBS2C-703]*
+
+---
+
+4060 - Digi XBee S2C Zigbee (September 29, 2017)
+------------------------------------------------
+* Zigbee Stack: EmberZNet 5.6.1.0 Zigbee-PRO stack
+* SMT hardware revision S
+* SMT PRO hardware revisions T-U
+* TH hardware revisions K-L
+* TH PRO hardware revision G
+
+### ENHANCEMENTS
+* Added token recovery when corruption is detected on reset.
+
+### BUG FIXES
+1. Fixed issue where malformed 0x21 Create Source Route API frames would cause a watchdog reset
+
+2. Radio now generates a TX Status API frame when sending multicast transmission to endpoint 0xE6
+
+3. When a module is configured for SPI, the CTS pin can now be configured as a digital output
+
+4. Fixed an issue where a zigbee sleeping End device would not re-associate to a power-cycled
+   coordinator
+
+5. Child poll timeout was 256 minutes. Now timeout correlates with sleep settings.
+
+6. Removed spurious TX status API Frame during Network Watchdog timer resetting
+
+7. Fixed issue where the leading Command Mode guard time was not being observed. Could cause
+   payloads with "+" character to be delayed in transmission.
+
+8. Fixed issue where the RSSI PWM line was not reinitialized properly after waking from sleep.
+   Symptoms were an unusually low RSSI PWM signal after waking in spite of received messages
+   until the device had its power reset.
+
+---
+
+405F - Digi XBee S2C Zigbee (October 26, 2016)
+----------------------------------------------
+* Zigbee Stack: EmberZNet 5.6.0.1 Zigbee-PRO stack
+* SMT hardware revision R
+* SMT PRO hardware revision S
+* TH hardware revisions H-J
+* TH PRO hardware revision F
+* Programmable hardware revisions H-J
+
+### BUG FIXES
+1. Resolved problem with excessive current draw on a through hole module when **D2** is configured
+   as an analog input and **D8** configured as DTR.
+
+2. Pull-down option on **D5** did not pull the pin down when **D5** was configured as disabled.
+
+3. Resolved problem with floating inputs on SMT module in SPI mode. Pins **D1**-**D4** and **P2**
+   were configured as inputs with pull-ups but they were left floating (**PR** and **PD** had no
+   effect.)
+
+4. Resolved a problem with serial break when in API mode; it will now send a RESET modem status.
+
+---
+
+405E - Digi XBee S2C Zigbee (October 7, 2016)
+---------------------------------------------
+* Zigbee Stack: EmberZNet 5.6.0.1 Zigbee-PRO stack
+* SMT hardware revisions P-Q
+* SMT PRO hardware revision R
+* TH hardware revision H
+* TH PRO hardware revision E
+* Programmable hardware revision F
+
+### ENHANCEMENTS
+1. **ZS** value is now preserved when an **RE** command occurs; **KY** also shares this behavior.
+
+2. To facilitate recovery from a wide area power outage on a large network, software now offsets
+   the next join attempt by a random time interval to reduce collisions. This reduces the time for
+   bringing the network back up and it also reduces the number of stranded devices that fail to
+   join.
+
+### SECURITY FIXES
+1. Resolved problem with **EE** = 1 and **EO** = 1 (network key passed in the clear) so that a
+   join network is successful. (Warning: this configuration is not recommended for deployed
+   networks.)
+
+### BUG FIXES
+1. Resolved problem with end device rejoining the network through an XBee S2B router. This problem
+   was encountered when the coordinator was set up for many-to-one routing (**AR** != 0) and then
+   sleep mode was enabled on the end device. In such a case, the end device would disassociate from
+   the XBee S2B router (as expected), but it would not reassociate.
+
+2. Resolved an issue with the Acknowledgement request bit not being set on a coordinator
+   realignment frame. This fix allows a 3rd party end device to rejoin an XBee S2C coordinator
+   after it has been powered off.
+
+3. Resolved issue with corrupted output on serial port after a long period of continuous receptions
+   of API frames.
+
+4. Resolved fragmentation issue with API packets larger than 84 bytes and baud rate of 38400bps or
+   higher. Only about 120 of 500 packets were getting through. With the fix all 500 packets get
+   through.
+
+5. Analog readings were about 21 mV too high. When ADC pin was conected to ground the reading came
+   out as 0x12 (which translates to 21 mV) rather than 0. This is now corrected so that the reading
+   is 0 when ADC is connected to ground. This fix also prevents a grounded input from reporting a
+   negative reading as 0x03FF.
+
+6. Resolved issue with changing the Zigbee Stack Profile (**ZS**). It should tear down and re-form
+   the network when it changes. But changing **ZS** didn't take effect and the network stayed up. A
+   side effect of fixing this problem is that all current parameters are written to persistent
+   storage when **ZS** changes. Therefore, the user should have the parameters set the way they are
+   desired before the **ZS*** change is applied. Also, **ZS** changes issued in command mode do not
+   take effect until command mode exits, even if an **AC** command is issued.
+
+7. Added logic to prevent configuration of OTA packet tracing (PTI Trace) on the TH module.
+   **D1** and **P9** can only be set to 6 on a surface mount module.
+
+8. Sleep time resolution is now implemented in milliseconds rather than quarter seconds.
+
+9. A lockup issue associated with Many-to-one routing was resolved.
+
+10. Changed default pullup setting for SPI lines to correct excessive sleep current at low
+    temperatures.
+
+11. Changing network parameters (**CE**, **KY**, **SC**, **ID**, **NK**, etc) causes a coordinator
+    or joined device to leave the network after five seconds. Also, subsequent changes will restart
+    the timer.
+
+12. Resolved an issue that could causing doubly APS encrypted source routed packets to occur during
+    device association.
+
+---
+
+4059 - Digi XBee S2C Zigbee (August 19, 2015)
+---------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+* SMT hardware revisions L-O
+* SMT PRO hardware revisions N-Q
+* TH hardware revisions C-F
+* TH PRO hardware revisions B-D
+* Programmable hardware revisions B-E
+
+### NEW FEATURES
+* **ED** Command - Energy Detect:
+  Returns a list (hex values in -dB) of energies in found in the 802.15.4 channels. Proper usage is
+  to repeat the **ED** command several times and note the minimum values per channel. Low values
+  indicate energy (in -dB), high values indicate relative quiet. Because some networks only
+  transmit on occasion, combine **ED** results with those from doing an **AS** command to determine
+  which channels are 'inhabited' for a given neighborhood.
+
+### ENHANCEMENTS
+1. Improvements to source routing:
+    * Source route table size increased to 40 entries
+    * Source route hop count increased from 11 to 25
+
+2. DIN, nDTR, nRTS (**P4**, **D8**, **D6**) now respond to **PR** and **PD** when configured as UART
+   pins (1).
+    * Default for **PR** changed to 0x1FBF.
+    * Default for **PD** changed to 0x1FFF; **D8** will remain a floating input when configured as
+      SLEEP_RQ (the default).
+
+### BUG FIXES
+1. Resolved an issue that prevented devices from responding to a network discovery (**ND**) when
+   source routing is enabled (**AR** != 0xFF).
+
+2. The MXI file descriptions for the **AO** and **MP** commands has been updated.
+
+3. Updated several I/O commands for the SMT variant:
+    * **D1** can now be set to 6 (PTI_Trace)
+    * **P5** can no longer be set to 2 or 3
+    * **P6** can no longer be set to 2 or 3
+    * **P7** can no longer be set to 2 or 3
+    * **P8** can no longer be set to 2 or 3
+    * **P9** can no longer be set to 2, 3, or 5
+
+4. Resolved issue where a partial I/O sample response frame triggered by **IR** could be sent out of
+   the SPI port
+
+5. Resolved an issue where a fragmented message was acknowledged to its sender
+   but dropped for lack of space in the serial Tx Buffer.
+
+6. Resolved delays in transmitting data from parent to end device if the end device lacked free
+   buffer space.
+
+7. Resolved issue where end devices that are pin sleeping would output duplicate received packets
+   when communicating via SPI.
+
+8. Resolved an issue that would cause duplicate I/O samples to be generated from a sleeping end
+   device.
+
+9. An issue that could cause radio lockup and packet loss during SPI communication is resolved.
+
+---
+
+4055 - Digi XBee S2C Zigbee (October 31, 2014)
+----------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+* SMT hardware revisions J-K
+* SMT PRO hardware revisions K-M
+
+### ENHANCEMENTS
+1. This release supports power setting compensation for a new hardware revision of the XBee PRO S2C
+   SMT. The updated hardware has a different power amplifier compared to previous revisions. As a
+   result, you cannot load firmware older than 4055 on this new hardware revision.
+    * The old S2C SMT PRO had a HV value of 0x21. The new S2C SMT has a HV value of 0x30.
+
+### BUG FIXES
+1. Transparent mode throughput was 15% of the rate observed with 4043. Throughput equal to that of
+   4043 has been restored.
+
+2. Fragmented message fragments could have their message type overwritten if a message of a
+   different message type were sent immediately afterwards. Rx message length was corrected for
+   fragmented ZDO messages.
+
+---
+
+4053 - Digi XBee S2C Zigbee (September 12, 2014)
+------------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+* SMT hardware revisions H-I
+* TH hardware revisions A-B
+* TH PRO hardware revision A
+* Programmable hardware revision A
+
+### NEW FEATURES
+1. Firmware supports the new S2C Throughhole/TH, otherwise known as the S2C DIP, as well as the S2C
+  SMT. **HS** command returns the Hardware Series number 0x0202.
+    * The MXI file function string now reads:
+        * ZIGBEE PRO for HV=0x21
+        * ZIGBEE Reg for HV=0x22
+        * ZIGBEE TH PRO for HV=0x2D
+        * ZIGBEE TH Reg for HV=0x2E
+
+2. An **RT** command was added for RTS timeout control:
+    * If a configuration command change occurs (or certain diagnostic messages, etc.) while RTS
+      flow control is enabled and RTS is deasserted, the XBee will hang (be unresponsive to remote
+      commands or serial commands) until RTS is asserted. If this hanging is unacceptable, enable
+      the RTS timeout, and the hang will end after the timeout elapses.
+    * The parameter range is 0x00-0xFF
+    * 0x00 is default (RTS timeout disabled)
+    * 0x01-0xFF is in time units of 100 milliseconds (100 ms to 25.5 ms)
+
+* Verbose Joining Mode is enabled with **DC**=0x10 and uses a new API frame, 0x98. See the User
+  Manual for a full description.
+
+* Join Verification (**JV**) is supported on End Devices. Enable this for an end device to
+  communicate with the Coordinator using APS encryption soon after association.
+    * For older versions (4043 and earlier), there are two ways to emulate this behavior:
+        1. Send a IEEE_addr_req to the coordinator before attempting to send APS encrypted messages
+           to the Coordinator:
+           [7E 00 19 11 01 FF FF FF FF FF FF FF FF 00 00 00 00 00 01 00 00 00 00 01 00 00 00 00 F3]
+        2. Send a message from the Coordinator to the End Device. Thereafter the End Device will be
+           able to send APS encrypted messages to the Coordinator.
+
+### ENHANCEMENTS
+1. **DC** and **DO** commands were moved to the networking section in the MXI file.
+
+2. The Loopback clusterID can send 84 byte payloads.
+
+3. **CR** command parameter range was changed from 1:63 to 0:63; a 0 setting yields an effective
+   setting of the default value (3).
+
+4. DN command now exits command mode after a successful response has been received.
+
+5. **CB** = 1 now broadcasts Node Identification frames to more than just the Coordinator.
+
+6. Command description have been added to the MXI file for **WH**, **PO**, **TO**, and **DC**.
+
+7. Command mode will persist until a pending AT command times out, and then will be extended for a
+   full command mode timeout interval.
+
+### SECURITY FIXES
+1. Routers can now join with **EE** enabled.
+    * On older firmware, polling for **AI**==0 to see when a join had succeeded would be interfere
+      with joining. A workaround for older firmware is to substitute waiting for the modem status
+      message [ 7E 00 02 8A 00 75 ] which shows association has succeeded.
+
+### BUG FIXES
+1. SPI Tx was locking up. Handling for SPI polling by the master was added - one can assert nATTN
+   and clock in a couple nonsense bytes like "0xFF 0xFF" to see if the XBee has data to Tx over the
+   SPI.
+
+3. Updated behavior of Cyclic Sleep with pin wake (**SM**=5). In the case where **SN**>1:
+    * ~SLEEP was pulsing during each Off (**SP**) cycle, when it should do so after every On (**SN*****SP**)
+      time interval cycle
+    * **SO**2 option was not implemented, now it is
+    * The ASSOC LED should pulse during the Off wake cycles
+    * The **WH** time should be observed during the Off wake cycles
+    * ON/nSLEEP should assert during an Off cycle if there is data
+    * IO Sampling should occur during the Off cycle
+
+4. **VL** command response's MfgStr returns 16 characters instead of 4.
+
+5. **FR** returns 0x00 modem status instead of 0x01.
+
+6. A coordinator now sends a Serial Loopback response immediately in response to a broadcast request.
+
+7. For End Devices configured with **SN**>1, power was not being applied to the Power Amplifier
+   during short wakes, which resulted in an unnecessary communication loss between end device and
+   parent.
+
+8. After the first use of the SPI interface, subsequent serial communications are to be exclusively
+   done in SPI until the next power reset. This was not being enforced correctly.
+
+9. Sending more than 64 bytes from coordinator to router with **EE**=1 was broken.
+    * With 0x20 Tx options (use APS encryption) enabled, a status of 0x74 (message too long) was
+      being returned for unicast packets with payloads of 64+ bytes.
+
+10. Setting **D9**=5 no longer disables the associate LED when **SM**=1
+
+11. Setting **D9**=4 or 5 no longer interferes with IO sampling
+
+12. DIO9 DIO functions fixed:
+    * **D9**=4, ON/nSLEEP is now low regardless of sleep state
+    * **D9**=5, ON/nSLEEP is now high regardless of sleep state
+
+13. Serial interrupt handlers have been redesigned to fix a problem where a Coordinator would hang in
+    response to CTS/RTS flow control.
+
+14. **DO**=0x80 now works if entered after association has completed.
+
+15. With **EE** enabled, the first transmission of a 255 byte payload is no longer truncated by 5
+    bytes.
+
+16. With RS-485 enabled, de-asserts are now managed as expected.
+
+---
+
+4043 - Digi XBee S2C Zigbee (October 30, 2013)
+----------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+* SMT hardware revision G
+* SMT PRO hardware revision J
+
+### ENHANCEMENTS
+1. Enabling **DO** bit 7 will modify the Network Watchdog (**NW**) to not leave network until the
+   coordinator is found by detecting different **CH** or I/O setting.
+
+2. Changed the SPI timeout for the SPI Clock rate to be set as low as 1Khz (previously 50Khz)
+
+### BUG FIXES
+1. Fixed OTA recovery issue where Bootloader ACK message was being truncated due to channel being
+   switched too early for the ACK message to be sent to the target node.
+
+2. Fixed a 16-bit address Tx packet issue where it did not send the 64-bit address to destination
+   device.
+
+---
+
+4041 - Digi XBee S2C Zigbee (May 30, 2013)
+------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+* SMT hardware revision F
+* SMT PRO hardware revisions H-I
+
+
+### NEW FEATURES
+
+1. Implemented binding and multicasting.
+    * Implemented new **&X** command to clear the binding and group tables.
+    * Implemented new Tx options for indirect addressing thru binding (0x04) and use multicast
+      (0x08)
+
+### ENHANCEMENTS
+1. Channel 26 on a S2C Regular has its Tx Power capped at 3 dBm regardless of **PL**/**PM** settings.
+
+2. TxOption 0x01 disables retries (and route repair). RxOption 0x01 indicates transmitter disabled
+   retries.
+
+3. **BD** range increased from 0-7 to 0-0x0A.
+
+4. Non-standard baud rates are permitted but not guaranteed.
+
+5. **NI**, **DN**, **ND** string parameters support upper and lower case.
+
+6. Self addressed fragmentable messages now return the self-addressed Tx Status code (0x23) instead
+   of simply success (0x00).
+
+### BUG FIXES
+1. **ND** with string parameter no longer exits command mode after first response.
+
+2. **ND** with string parameter now ignores any subsequent responses after first response.
+
+---
+
+4032 - Digi XBee S2C Zigbee (April 24, 2013)
+--------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+
+### NEW FEATURES
+1. Implemented Encrypted APS leave command,
+    * The status for Encrypted APS leave command will be AT command response (0x88) frame type.
+    * Tx packet format is as follows:
+        * Api Tx Explicit Frame type = 0x11
+        * Source End Point = 0xE6
+        * Destination End Point = 0xE6
+        * Cluster ID = 0x0023
+        * Profile ID = 0xC105
+        * Tx option = 0x20
+        * Payload = [Transaction sequence number: 1 byte] [EUI64: 8 bytes]
+
+### ENHANCEMENTS
+1. Implemented 5 sec break for restoring device default settings.
+    * The 5 sec break option is only enabled only if both DIN or DOUT are in GPIO_PERIPHERAL mode
+    (1) otherwise it is presumed that the UART is disabled and those pins are being used for other
+    functions.
+
+2. Added **DO** option to disable ACK for both sleep and router devices.
+
+### BUG FIXES
+1. Router/End devices will only send I/O sample data packet if joined to an valid network.
+
+2. Fixed Self-Address packet failure when sending fragmented packets.
+
+3. Router/End devices will only send I/O sample data packet if joined to an valid network.
+
+---
+
+4023 - Digi XBee S2C Zigbee (February 5, 2013)
+----------------------------------------------
+* Zigbee Stack: EmberZNet 4.2.0 Zigbee-PRO stack
+
+### NEW FEATURES
+1. Added HIGH_RAM_CONCENTRATOR option via **DO**, host must send **AR**=0 to update routes.
+
+### ENHANCEMENTS
+1. Added NO_ACK_IO_SAMPLING option via **DO** for sleepy devices. The default operation the sleepy
+   device will remain awake until getting APS ACK or APS ACK retry timeout.
+    * **DO**:
+        * Bit0 - Enable Temperature Compensation Updates on S2B
+        * Bit1 - Reserved for Smart Energy devices
+        * Bit2 - 0/1 = First or Best Response
+        * Bit3 - Disable NULL Transport Key (Coordinator Only)
+        * Bit4 - Disable Tx Packet Extended Timeout
+        * Bit5 - Disable ACK for End Device I/O Sampling     (New)
+        * Bit6 - Enable High Ram Concentrator                (New)
+
+2. Added the ability to do OTA recovery of a target which has reverted to default channel 13 due to
+   some kind of OTA interruption during a normal OTA update. Here's the sequence required once a
+   target has reverted to default channel 13:
+    1. Send AT**%U** <Target EUI>
+        * Sends broadcast message to target to start OTA sequence.
+    2. Do normal OTA sequence
+        * Send F/W update packets to local/remote OTA cluster
+    3. Send AT**%U** <0>
+        * Send terminate OTA recovery command when completed with OTA update.
+    * Note: If the coordinator is the source and updater send AT%U command as a local AT command,
+      otherwise send as a remote AT command.
+
+3. Updated MXI file with **NW** and **JV** description.
+
+4. The **AS** command now sends API zero length payload modem status message when **AS** command is
+   completed. For transparent mode you’ll get a <CR> after **AS** command is completed.
+
+### BUG FIXES
+1. Fixed sleepy device timeout issue when sleep period is set greater than 6 mins.
+
+2. Fixed **AS** network scan lockup issue when using **II** command.
+
+3. Fixed **NR** command not resetting radio properly.
+
+4. Fixed Watchdog resets and flash verify write failures due to:
+    * bad handling of rxbuffer overflows.
+    * bad command processing when bailouts occur.
+    * out of bounds write when processing a NI command response.
+
+5. Fixed I/O sampling issue where getting duplicate samples if **ST** is set very low and **SN**
+   set above 1.
+
+6. Fixed serial loopback issue where there's no loopback response after a device initially joins the
+   network.
+
+7. Fixed issue, if **P3** or **P4** are set to anything other than default, the module will lock up
+   upon receiving any remote AT command.
+
+8. Fixed issue to always remain in API non-escaped mode when using SPI.
+
+9. **JV**/**JN** response not being random between 2-8 seconds due to initial random number seed
+   being static.
+
+10. Fixed an issue when AT Coordinator sends to unknown address it would intermittently lockup when
+    trying to enter command mode.
+
+11. Fixed end device retry count being incorrect when initially sending packet to unknown address
+    after waking up.
+
+12. End device taking excessive time to send fragmented packets.
+
+13. Fixed serial Break issue where the parity not being set to default value when break detected.
+
+14. When sending a TX request to yourself, the status frame indicated that the packet was
+   successfully received (0x00) but should show that it is self addressed (0x23).
+
+---
+
+4020 - Digi XBee S2C Zigbee (October 26, 2012)
+----------------------------------------------
+* Zigbee Stack: EmberZNet 4.2.0 Zigbee-PRO stack
+
+### NEW FEATURES
+1. ATAS command is a previously-undocumented command to perform an "Active Scan" for networks by a
+  coordinator or router.
+    * The host receives multiple AT Response frames, with data in the following format:
+
+    typedef struct {
+        uint8_t      as_type;
+        uint8_t      channel;
+        uint16_t     pan_be;
+        uint8_t      extended_pan_be[8];
+        uint8_t      allow_join;
+        uint8_t      stack_profile;
+        uint8_t      lqi;
+        int8_t       rssi;
+    } xbee_atas_response_t;
+
+    * LQI (Link Quality Indicator) is unsigned, higher values are better. RSSI (Relative Signal
+      Strength Indicator) is signed and lower values are better.
+
+### ENHANCEMENTS
+1. Updated MXI file with **NW** and **JV** description.
+
+---
+
+401E - Digi XBee S2C Zigbee (April 6, 2012)
+-------------------------------------------
+* Zigbee Stack: EmberZNet 4.2.0 Zigbee-PRO stack
+* SMT hardware revision D
+* SMT PRO hardware revision E
+
+### NEW FEATURES
+
+1. Added new formatted **VL** command.
+
+2. CR command added to set PAN Id conflict report threshold.
+
+### ENHANCEMENTS
+1. Revised the **DO** command (bit3) to disallow the NULL Transport key from being sent from a
+   coordinator.
+
+2. Revised the **AS** command to work on all devices types: router, coordinator, and end device.
+
+3. Updated **PO** description to include routers as it can be configured as a sleepy device.
+
+4. Added function to clear TX Extended Timeout status.
+
+5. Made change to spread **ND** responses over the **NT** time period (same as 2x70) and to keep
+   sleepy device awake for the **NT** time period. Also added checks to assure Tx UART buffer has
+   room for entire response so no data will be dropped.
+
+6. New Association LED behavior has been implemented:
+    * If the device is Authenticating as either a client or server, the LED will blink at a 50 msec
+      rate.
+    * If the device is a Coordinator, and the network has not yet formed, the LED will be off;
+      otherwise if no one has authenticated yet, the LED will blink at a 500 msec rate.
+    * If the device is a Router/End Device, and is scanning/associating, the LED will blink at a
+      100 msec rate; otherwise if the device is unassociated, the LED will be off.
+    * Otherwise, if LT is zero, the LED will be on; and if LT is nonzero, the LED will blink at a
+      (LT*10) ms rate.
+
+7. New DO (Device Options) command has been added to control a bitmask of options:
+    * DO bit 0x01 enables the temperature compensation option. By default it is enabled. This
+      option appears in all SE and ZB builds. Disabling Temperature Compensation reduces wake time
+      overhead for sleeping end devices from 13 ms to 2 ms, but then transmit power may vary by as
+      much as 8 dBm as a function of temperature.
+    * DO bit 0x02 enables the join notification message option on the SE Coordinator. By default it
+      is disabled. This option appears in the SE Coordinator builds. The other 6 bits of DO are
+      held in reserve to support future boolean command options.
+    * DO bit 0x04 enables best response option during joining. By default it is disabled, which
+      selects the First Response option. First response will cause the node to join with the first
+      network to send a beacon response. A change from the prior release is that the node will
+      continue to dwell on the first response channel in an attempt to receive beacon responses
+      from all neighbors on that same network as reported in the first beacon response. Best
+      response will cause the node to search all channels in the SC mask before selecting a network
+      to join.
+
+8. AO=0x07 enables passthru of supported ZDO Requests
+
+9. AO=0x0B enables passthru of binding requests
+
+10. **SC** range was extended to include channel 26, SC default was left as 0x7FFF. However, if
+    Channel 26 (0x8000) is present in the **SC** mask, then transmit power for all channels is
+    capped at
+    3 dBm.
+
+### BUG FIXES
+1. Fixed network watchdog issue where router would lockup with AI status of 0x2B
+   (ASSOC_DISCOVERING_COORD).
+
+2. Fixed Tx status message (0x8B) to properly indicate route discovery was done when getting network
+   ACK failure.
+
+3. Fixed **RO** command which was causing OTA data to be transmitted in multiple
+   packets.
+
+4. Made change to emberStackStatusHandler, to allow rejoining a network even though it may get
+   status of EMBER_JOIN_FAILED, due to Ember stack notifying APP it did detect a network but it has
+   has different PANID.
+
+5. Made change to report proper route/address discoveries in TX status.
+
+6. Fixed problem for **ND**+**NI** commands to timeout properly and to handle **ND** self-response
+   when **NO**=2.
+
+7. Made change for sleepy device to report correct Modem status when leaving a network.
+
+8. Fixed fragmentation APS message retry issue, to set the correct timeout when the extended timeout
+   option is enabled.
+
+9. Fixed **DO** option to revert back to default values when ATRE is executed.
+
+10. Fixed **CE** issue for device to proper detect when it changes between router and coordinator.
+
+11. Fixed RAM corruption issue when source routing takes place when a device is trust center with
+    encryption enabled.
+
+12. Fixed **RE** issue where the device serial port will lockup due to **AP** changing from API to
+    command mode.
+
+13. Fixed flash **WR** issue, causing device to revert back to firmware defaults settings.
+
+14. Fixed associate LED issue, now is initially ON while its waiting to associate to the network.
+
+15. Fixed issue with exiting AT mode after changing to AP1 mode of operation.
+
+16. Fixed problem of API vs. AT mode where the device doesn't respond after sending API frame with
+    **AP**=0 command.
+
+17. Fixed problem of SPI not responding after the device wakes up.
+
+18. Fixed problem of excessive current being sinked by the DTR/SLEEP REQ line because of not being
+    able to switch off the pull-down resistor.
+
+---
+
+4016 - Digi XBee S2C Zigbee (August 19, 2010)
+---------------------------------------------
+* Zigbee Stack: EmberZNet 4.2 build 53 (GA, certified)
+
+### NEW FEATURES
+1. Initial release of S2C
+
+2. New features (which were not available on S2 and S2B platforms):
+
+    * Supports SPI slave mode as an alternative to the UART serial port, but usage of API mode is
+      required.
+    * Six software images (Coordinator AT, Coordinator API, Router AT, Router API, End device AT,
+      and End Device API) were combined into a single software image that supports everything
+      previously available in the six software images.
+    * Fragmentation is now available in both API and and transparent mode for unicasts. It
+      continues to be unavailable for broadcasts.
+    * **P3** (DOUT), **P4** (DIN), **D8** (SleepRq), and **D9** (On-Sleep) are now available for
+      I/O sampling.
+    * Both pull-up and pull-down resistors can now be applied to pins configured as digital inputs
+      (3).
+    * Since this software runs on the EM357, more flash (192K bytes) and RAM (12K bytes) are
+      available. The extra RAM allows increased allocation of critical resources as follows:
+        * Address table size: 20 entries
+        * Routing table size: 80 entries
+        * Route discovery table size: 16 entries
+        * Source routes: 40 entries
+        * Neighbor table size: 20 entries
+        * Child table size: 20 entries
+
+---
+
+CHANGE LOG - Smart Energy
+===================
+
+5132 - Digi XBee S2C Smart Energy (May 7, 2013)
+-----------------------------------------------
+* Zigbee Stack: EmberZNet 4.6.5.1 Zigbee-PRO stack
+
+### NEW FEATURES
+1. Implemented new **DC** command for additional device control, bitwise options are:
+    * Bit0 - Enable Joiner Global Link key.
+    * Bit1 - NWK Leave Request Not allowed.
+
+2. Implemented new PLKE Modem status:
+    * MODEM_PLKE_INITIATED       = 0x14,
+    * MODEM_PLKE_SUCCESS         = 0x15,
+    * MODEM_PLKE_TABLE_FULL      = 0X16,
+    * MODEM_PLKE_NOT_AUTHORIZED  = 0x17,
+    * MODEM_PLKE_INVALID_TC_REQ  = 0x18,
+    * MODEM_PLKE_TC_UPDATE_FAIL  = 0x19,
+    * MODEM_PLKE_BAD_EUI64       = 0x1A,
+    * MODEM_PLKE_LK_REJECTED     = 0x1B,
+    * MODEM_PLKE_UPDATE          = 0x1C,
+    * MODEM_PLKE_CLEAR_LK_TABLE  = 0x1D,
+
+3. Implemented the ability to clear a Partner Link Key entry when the Link Key table becomes full.
+   If the Link key table is full, a Tx transmit status of TX_STATUS_LK_TABLE_FULL (0x27) will be
+   generated.
+   When getting this status, the host can clear an entry to make room for a new device by doing the
+   following sequence:
+    * Use **KT** + <index> command to read device Link key table entries.
+    * Use **KD** + <index> to delete an device entry to make room for a new partner (PLKE) device.
+
+4. Device can now use short addressing when sending a packet, must set EUI64 to all 0xFF's and then
+   specific a valid 16 bit address of the destination device.
+
+5. Implemented **#S** command which returns a 16 bit CRC of the private key and the certificate
+   data.
+
+### ENHANCEMENTS
+1. Channel 26 on a S2C Regular has its Tx Power capped at 3 dBm regardless of PL/PM settings.
+
+2. Implemented new **DO** option to disable extended timeout for APS unicast message retries.
+
+### SECURITY FIXES
+1. Link key table now gets properly cleared when leaving network due to Management ZDO leave request.
+
+### BUG FIXES
+1. Fixed the **AS** command to provide properly formatted data when doing an active scan of the
+   network.
+
+---
+
+5122 - Digi XBee S2C Smart Energy (September 12, 2011)
+------------------------------------------------------
+* Zigbee Stack: EmberZNet 4.2.0 Zigbee-PRO stack
+
+### NEW FEATURES
+1. New features (which were not available on S2 and S2B platforms):
+    * The **IN** command was removed.
+    * **VL** command reports the datetimestamp of the build with a API frame cmdData string of:
+      mmm dd yyyy hh:mm:ss
+    * Module I/O commands were restored: D1, D2, D3, D4, D5, D6, D8, D9, RP, P0, P1, P2, P3, P4, PR,
+      PD, V+; D0, D7, DB were already part of SE.
+    * **SC** range was extended to include channel 26, SC default was left as 0x7FFF. However, if
+      Channel 26 (0x8000) is present in the **SC** mask, then transmit power for all channels is
+      capped at 3 dBm.
+    * **AO** = 0x07 enables passthru of supported ZDO Requests
+    * **AO** = 0x0B enables passthru of binding requests
+    * **EP** command was added show number of virtual page erasures in the SimEEPROM. When this
+      value reaches twice (there are 2 virtual pages) the erasures tolerated by the SimEEPROM, the device
+      should be replaced.
+    * NH limit was reduced from 30 to 11 to comply with the SE 1.x specification.
+    * New DO (Device Options) command has been added to control a bitmask of options:
+        * DO bit 0x01 enables the temperature compensation option. By default it is enabled. This
+          option appears in all SE and ZB builds. Disabling Temperature Compensation reduces wake time
+          overhead for sleeping end devices from 13 ms to 2 ms, but then transmit power may vary by as
+          much as 8 dBm as a function of temperature.
+        * DO bit 0x02 enables the join notification message option on the SE Coordinator. By default it
+          is disabled. This option appears in the SE Coordinator builds. The other 6 bits of DO are
+          held in reserve to support future boolean command options.
+        * DO bit 0x04 enables best response option during joining. By default it is disabled, which
+          selects the First Response option. First response will cause the node to join with the first
+          network to send a beacon response. A change from the prior release is that the node will
+          continue to dwell on the first response channel in an attempt to receive beacon responses
+          from all neighbors on that same network as reported in the first beacon response. Best
+          response will cause the node to search all channels in the SC mask before selecting a network
+          to join.
+    * ZU (the certificate public key) is now readable
+
+    * The value of KY will be retained even if a RE command is given.
+
+    * EO range is now 0..0xFF
+
+    * Factory Default Settings:
+        * SN default was 0x01, was extended to 0x20 to increase default polling time tolerance for
+          sleeping end devices
+        * CE default is now 0x00 (default to Router mode)
+        * EO default is now 0x08 (default to Router mode)
+        * KY default is now 0x00 (set random on first startup)
+        * NK default is now 0x00 (set random on first startup)
+
+    * TX Status messages where status is in error will now sometimes show a 16-bit address other
+      than 0xFFFE. Before, they only showed 0xFFFE.
+
+    * A router's link key table will be reset when it leaves a network.
+
+    * **DO**, **ZT**, **ZU**, **ZV** have been added to the mxi files.
+
+### ENHANCEMENTS
+1. **CR** command added to set PAN Id conflict report threshold.
+
+2. **KT** command added to dump a hashed link key table record with an index parameter.
+
+3. New Association LED behavior has been implemented:
+    * If the device is Authenticating as either a client or server, the LED will blink at a 50 msec
+      rate.
+    * If the device is a Coordinator, and the network has not yet formed, the LED will be off;
+      otherwise if no one has authenticated yet, the LED will blink at a 500 msec rate.
+    * If the device is a Router/End Device, and is scanning/associating, the LED will blink at a
+      100 msec rate; otherwise if the device is unassociated, the LED will be off.
+    * Otherwise, if LT is zero, the LED will be on; and if LT is nonzero, the LED will blink at a
+      (LT*10) ms rate.
+
+4. The **AS** command (active scan) was enabled for use with smart energy.
+
+### SECURITY FIXES
+1. **EE** command added as a read only command to mxi file.
+
+### BUG FIXES
+1. Some unsupported commands were removed from the mxi file as they are not implemented yet for SE.
+
+2. **ZU** command now returns serially installed public key if it exists, otherwise returns
+   manufacturing installed public key if it is initialized, otherwise returns 0x00.
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Raw NMEA Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Cellular</protocol>
+  </protocols>
+  <frame_type>0xBE</frame_type>
+  <parameters>
+    <parameter name="Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <description>Raw NMEA String.</description>
+    </parameter>
+  </parameters>
+</frame>

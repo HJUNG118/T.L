@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Send Data Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0xB8</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the frame ID of the corresponding put request.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Send data request status.</description>
+      <items>
+        <item>Success [00]</item>
+        <item>Bad request [01]</item>
+        <item>Response unavailable [02]</item>
+        <item>Device Cloud error [03]</item>
+        <item>Unknown error [40]</item>
+      </items>
+      <default_value>Success [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

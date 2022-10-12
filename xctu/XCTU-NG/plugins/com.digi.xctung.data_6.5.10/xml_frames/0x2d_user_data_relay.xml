@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="User Data Relay">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+  </protocols>
+  <frame_type>0x2D</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Set to a value that will be passed back in the Tx Status frame. 0 disables the Tx Status frame.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Dest. interface">
+      <control_type>1</control_type>
+      <description>Target interface for the data to be output on.</description>
+      <items>
+        <item>Serial Port [00]</item>
+        <item>Bluetooth [01]</item>
+        <item>Micropython [02]</item>
+      </items>
+      <default_value>Serial Port [00]</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>255</bytes_max>
+      <description>Data that is sent to the destination interface.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

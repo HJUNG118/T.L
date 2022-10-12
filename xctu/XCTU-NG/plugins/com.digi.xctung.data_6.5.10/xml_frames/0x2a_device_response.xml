@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Device Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0x2A</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the frame for the device response status. If 0, then no device response status will be received.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Device Request ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>This number should match the device request ID in the device request. Otherwise, an error will occur. (0 has no special meaning in this case)</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Reserved">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Reserved</description>
+      <default_value>00</default_value>
+      <enabled>false</enabled>
+    </parameter>
+    <parameter name="Data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>1400</bytes_max>
+      <description>The particular data for the device response is application dependent.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

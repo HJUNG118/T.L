@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Create Source Route">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0x21</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Set to the 64-bit address of the destination device. The following addresses are also supported:\n\n00 00 00 00 00 00 00 00 - Reserver 64-bit address for coordinator.\n\n00 00 00 00 00 00 FF FF - Broadcast address.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Set to the 16-bit address of the destination device, if known.\n\nSet to 'FF FE' if the address is unknown, or if sending a broadcast.\n\nOther reserved addresses:\nFF FC - broadcast to all routers\nFF FD - broadcast to all non-sleepy devices\nFF FF - broadcast to all devices including sleepy ED</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Route command options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Route command options</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Number of addresses">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The number of addresses in the source route (excluding source and destination).</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Addresses">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>16-bit network addresses of intermediate nodes in the route between source and destination.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

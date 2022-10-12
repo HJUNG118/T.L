@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Register Joining Device">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0x24</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Registrant's 64-bit (MAC/EUI64) device address.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="16-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Registrant's 16-bit device address.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Transmit options bitfield. (Unused bits must be set to 0)\n0x01 - Disable retries and route repair.\n0x20 - Enable APS encryption (if EE=1) Enabling APS encryption decreases the maximum number of RF payload bytes by 4 (below the value reported by NP).\n0x40 - Use the extended transmission timeout for this destination. Setting the extended timeout bit causes the stack to set the extended transmission timeout for the destination address.</description>
+      <default_value>00</default_value>
+      <applies_to>
+        <protocol>Zigbee</protocol>
+        <protocol>Smart Energy</protocol>
+      </applies_to>
+    </parameter>
+    <parameter name="Options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Register options bitfield. (Unused bits must be set to 0)\nBit0 = 0x0 - Register link key (KY parameter on joiner).\nBit0 = 0x1 - Register link key using Install Code (I? parameter on joiner).</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Key">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>16</bytes_max>
+      <description>Initial trust center link key of the device, up to 16 bytes.\n - If less than 16 bytes are supplied, the upper unspecified bytes will be zero padded.\n - If a zero-length key field is supplied, then the device is removed from the link key table.</description>
+      <default_value>01</default_value>
+      <applies_to>
+        <protocol>Zigbee</protocol>
+        <protocol>Smart Energy</protocol>
+      </applies_to>
+    </parameter>
+    <parameter name="Key">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>18</bytes_max>
+      <description>Initial trust center link key of the device, up to 16 bytes.\n - If a zero-length key field is supplied, then the device is removed from the link key table.\n - Install Codes include a 2-byte CRC.</description>
+      <default_value>01</default_value>
+    </parameter>
+  </parameters>
+</frame>

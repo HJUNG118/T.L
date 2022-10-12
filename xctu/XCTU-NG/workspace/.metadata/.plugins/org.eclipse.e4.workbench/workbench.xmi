@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_oAnpoCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.application" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAnpoScpEe20n7ldpKbEqA" bindingContexts="_oArUGycpEe20n7ldpKbEqA">
+  <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
+  <tags>ModelMigrationProcessor.001</tags>
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_oAnpoScpEe20n7ldpKbEqA" elementId="IDEWindow" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAnpoicpEe20n7ldpKbEqA" x="72" y="27" width="1024" height="768">
+    <persistedState key="coolBarVisible" value="true"/>
+    <persistedState key="perspectiveBarVisible" value="true"/>
+    <persistedState key="isRestored" value="true"/>
+    <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;show_in_time/>"/>
+    <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workingSets/>"/>
+    <persistedState key="aggregateWorkingSetId"/>
+    <tags>topLevel</tags>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_oAnpoicpEe20n7ldpKbEqA" elementId="com.digi.xctung.perspectivestack.0" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAo3wScpEe20n7ldpKbEqA">
+      <children xsi:type="advanced:Perspective" xmi:id="_oAnpoycpEe20n7ldpKbEqA" elementId="com.digi.xctung.perspectives.configurationPerspective.&lt;Configuration perspective>" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAnppCcpEe20n7ldpKbEqA" label="&lt;Configuration perspective>">
+        <tags>Vertical</tags>
+        <children xsi:type="basic:PartSashContainer" xmi:id="_oAnppCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.configurationSash.main" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAnppScpEe20n7ldpKbEqA">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_oAnppScpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.configurationSash" contributorURI="platform:/plugin/com.digi.xctung" containerData="100" selectedElement="_oAoQsicpEe20n7ldpKbEqA" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_oAoQsCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" containerData="40" selectedElement="_oAoQsScpEe20n7ldpKbEqA">
+              <tags>NoMove</tags>
+              <tags>NoClose</tags>
+              <children xsi:type="advanced:Placeholder" xmi:id="_oAoQsScpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.configuration.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" ref="_oApe4icpEe20n7ldpKbEqA">
+                <tags>NoClose</tags>
+              </children>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_oAoQsicpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration" contributorURI="platform:/plugin/com.digi.xctung" containerData="60" selectedElement="_oAoQsycpEe20n7ldpKbEqA">
+              <tags>NoMove</tags>
+              <tags>NoClose</tags>
+              <children xsi:type="advanced:Placeholder" xmi:id="_oAoQsycpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.configuration" contributorURI="platform:/plugin/com.digi.xctung" ref="_oApe2ScpEe20n7ldpKbEqA">
+                <tags>NoClose</tags>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_oAoQtCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" containerData="20">
+            <tags>NoMove</tags>
+            <children xsi:type="advanced:Placeholder" xmi:id="_oAo3wCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholder.configuration.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" ref="_oAqs8ScpEe20n7ldpKbEqA" closeable="true"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_oAo3wScpEe20n7ldpKbEqA" elementId="com.digi.xctung.perspectives.consolesPerspective.&lt;Consoles perspective>" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAo3wicpEe20n7ldpKbEqA" label="&lt;Consoles perspective>">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_oAo3wicpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainer.consoleSash.main" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="_oAo3wycpEe20n7ldpKbEqA">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_oAo3wycpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.consolesSash" contributorURI="platform:/plugin/com.digi.xctung" containerData="100" selectedElement="_oAo3xicpEe20n7ldpKbEqA" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_oAo3xCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.consoles.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" containerData="30" selectedElement="_oAo3xScpEe20n7ldpKbEqA">
+              <tags>NoMove</tags>
+              <tags>NoClose</tags>
+              <children xsi:type="advanced:Placeholder" xmi:id="_oAo3xScpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.consoles.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" ref="_oApe4icpEe20n7ldpKbEqA">
+                <tags>NoClose</tags>
+              </children>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_oAo3xicpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.consoles" contributorURI="platform:/plugin/com.digi.xctung" containerData="70" selectedElement="_9TKaMCcpEe20n7ldpKbEqA">
+              <tags>NoAutoCollapse</tags>
+              <tags>NoMove</tags>
+              <tags>NoClose</tags>
+              <tags>active</tags>
+              <children xsi:type="basic:Part" xmi:id="_6TY2YCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeconsole.0013A20041C5368C" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConsoleView" label="  - 0013A20041C5368C" iconURI="bundleentry://15.fwk1513608173/icons/obj24/console_connected.png">
+                <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view/>"/>
+                <tags>NoClose</tags>
+                <tags>NoMove</tags>
+                <tags>removeOnHide</tags>
+              </children>
+              <children xsi:type="basic:Part" xmi:id="_9TKaMCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeconsole.0013A200418F4D69" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConsoleView" label="  - 0013A200418F4D69" iconURI="bundleentry://15.fwk1513608173/icons/obj24/console_connected.png">
+                <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view/>"/>
+                <tags>NoClose</tags>
+                <tags>NoMove</tags>
+                <tags>removeOnHide</tags>
+                <tags>active</tags>
+                <tags>activeOnClose</tags>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_oAo3xycpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.console.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" containerData="20">
+            <tags>NoMove</tags>
+            <children xsi:type="advanced:Placeholder" xmi:id="_oAo3yCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholder.console.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" ref="_oAqs8ScpEe20n7ldpKbEqA" closeable="true"/>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_zUU7wBQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.perspectives.networkPerspective" contributorURI="platform:/plugin/com.digi.xctung.network.ui" label="Network Perspective">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_57cZsBQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.partsashcontainer.networkSash.main" contributorURI="platform:/plugin/com.digi.xctung.network.ui">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_57cZsRQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.partsashcontainer.networkSash" contributorURI="platform:/plugin/com.digi.xctung.network.ui" containerData="100" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_57cZshQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.partstack.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung.network.ui" containerData="30">
+              <tags>NoMove</tags>
+              <tags>NoClose</tags>
+              <children xsi:type="advanced:Placeholder" xmi:id="_57cZsxQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.placeholders.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung.network.ui" ref="_oApe4icpEe20n7ldpKbEqA">
+                <tags>NoClose</tags>
+              </children>
+            </children>
+            <children xsi:type="basic:PartStack" xmi:id="_57cZtBQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.partstack.networks" contributorURI="platform:/plugin/com.digi.xctung.network.ui" containerData="70">
+              <tags>NoAutoCollapse</tags>
+              <tags>NoClose</tags>
+              <tags>NoMove</tags>
+            </children>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_57cZtRQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.partstack.progressview" contributorURI="platform:/plugin/com.digi.xctung.network.ui" toBeRendered="false" containerData="20">
+            <tags>NoMove</tags>
+            <children xsi:type="advanced:Placeholder" xmi:id="_57cZthQHEeO2CqwODS2eSA" elementId="com.digi.xctung.network.placeholder.progressview" contributorURI="platform:/plugin/com.digi.xctung.network.ui" toBeRendered="false" ref="_oAqs8ScpEe20n7ldpKbEqA" closeable="true"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <sharedElements xsi:type="basic:Part" xmi:id="_oApe2ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeconfiguration" contributorURI="platform:/plugin/com.digi.xctung" containerData="" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConfigurationView" label="Radio Configuration [  - 0013A200418F4D69]" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/gear.png">
+      <toolbar xmi:id="_oApe2icpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbars.xbeeconfig" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false">
+        <children xsi:type="menu:ToolControl" xmi:id="_oApe2ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.xbeeConfiguration" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.configuration.ConfigurationBarToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_oApe3CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.searchToolControl" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.configuration.SearchToolItem"/>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_oApe3ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbarseparator.0" contributorURI="platform:/plugin/com.digi.xctung"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oApe3icpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.sectionsExpandAllToolItem" contributorURI="platform:/plugin/com.digi.xctung" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool16/expandall.gif" tooltip="Expand all sections" command="_oAr7ECcpEe20n7ldpKbEqA">
+          <parameters xmi:id="_oApe3ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameters.sectionsExpanded" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.sectionsExpandAllParameter" value="true"/>
+        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oApe4CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.sectionsCollapseAllToolItem" contributorURI="platform:/plugin/com.digi.xctung" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool16/collapseall.gif" tooltip="Collapse all sections" command="_oAr7ECcpEe20n7ldpKbEqA">
+          <parameters xmi:id="_oApe4ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameters.sectionsExpanded" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.sectionsExpandAllParameter" value="false"/>
+        </children>
+      </toolbar>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_oApe4icpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" containerData="" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeDevicesView" label="Radio Modules" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/devices.png">
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view/>"/>
+      <toolbar xmi:id="_oApe4ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbar.1" contributorURI="platform:/plugin/com.digi.xctung">
+        <children xsi:type="menu:ToolControl" xmi:id="_oApe5CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.2" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.SearchToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_oApe5ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.1" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.DevicesSortingToolControl"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqF4CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitem.1" contributorURI="platform:/plugin/com.digi.xctung" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool24/clear_devices.png" command="_oAr7HCcpEe20n7ldpKbEqA"/>
+      </toolbar>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_oAqs8CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeapiconsole" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConsoleView" label="XBee API console" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/console.png">
+      <variables>Multi</variables>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_oAqs8ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.ProgressView" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress">
+      <variables>NoMove</variables>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_oAqs8icpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.etheriosview" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Device Cloud" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/etherios.png">
+      <toolbar xmi:id="_oAqs8ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbar.0" contributorURI="platform:/plugin/com.digi.xctung"/>
+    </sharedElements>
+    <sharedElements xsi:type="basic:Part" xmi:id="_hF0sINE1EeeRG5Ebhwy5Qg" elementId="com.digi.xctung.part.network" contributorURI="platform:/plugin/com.digi.xctung.network.ui" contributionURI="bundleclass://com.digi.xctung.network.ui/com.digi.xctung.network.ui.views.NetworkView" label="Network" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/network.png"/>
+    <trimBars xmi:id="_oAqs9CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.main.toolbar" contributorURI="platform:/plugin/com.digi.xctung">
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqs9ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.addXBeeDeviceLeft" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl">
+        <tags>NoMove</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_oAqs9icpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbars.addDevices" contributorURI="platform:/plugin/com.digi.xctung">
+        <tags>NoMove</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqs9ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.addXBeeDeviceToolItem" contributorURI="platform:/plugin/com.digi.xctung" label="Add XBee device" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool48/add.png" tooltip="Add a radio module specifying the port settings" command="_oArUICcpEe20n7ldpKbEqA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqs-CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.discoverXBeeDevicesToolItem" contributorURI="platform:/plugin/com.digi.xctung" label="Discover XBee devices" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool48/search.png" tooltip="Discover radio modules connected to your machine" command="_oArUHycpEe20n7ldpKbEqA"/>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqs-ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.addXBeeDeviceRight" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl">
+        <tags>NoMove</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_p5RNUCcpEe20n7ldpKbEqA" elementId="additions" toBeRendered="false">
+        <tags>toolbarSeparator</tags>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_p5RNUScpEe20n7ldpKbEqA" elementId="additions" toBeRendered="false"/>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqs-ycpEe20n7ldpKbEqA" elementId="PerspectiveSpacer" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+        <tags>stretch</tags>
+        <tags>NoMove</tags>
+        <tags>SHOW_RESTORE_MENU</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_oAqs_CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbars.tools" contributorURI="platform:/plugin/com.digi.xctung">
+        <tags>NoMove</tags>
+        <children xsi:type="menu:ToolControl" xmi:id="_oAqs_ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.0" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.RoundedLeftToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_oAqs_icpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.toolsdropdown" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolsToolControl"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqs_ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitem.preferences" contributorURI="platform:/plugin/com.digi.xctung" label="Preferences" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool32/settings.png" tooltip="Preferences" command="_oAr7EycpEe20n7ldpKbEqA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqtACcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitem.feedback" contributorURI="platform:/plugin/com.digi.xctung" label="Provide Feedback" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool32/feedback.png" tooltip="Provide feedback" command="_oAr7GicpEe20n7ldpKbEqA"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_oAqtAScpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.helpdropdown" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.HelpToolControl"/>
+        <children xsi:type="menu:ToolControl" xmi:id="_oAqtAicpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrol.0" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.RoundedRightToolControl"/>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqtAycpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.leftSeparator" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl">
+        <tags>NoMove</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_oAqtBCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbars.perspectiveConfig" contributorURI="platform:/plugin/com.digi.xctung">
+        <tags>NoMove</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqtBScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.configurationPerspectiveToolItem" contributorURI="platform:/plugin/com.digi.xctung" label="Configuration working mode" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool48/config_perspective_selected.png" tooltip="Switch to Configuration working mode" selected="true" command="_oArUIicpEe20n7ldpKbEqA">
+          <parameters xmi:id="_oAqtBicpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameters.configurationPerspectiveParameter" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.perspectives.configurationPerspective"/>
+        </children>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqtBycpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolcontrols.middleSeparator1" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl">
+        <tags>NoMove</tags>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_oAqtCCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.toolbars.perspectiveConsoles" contributorURI="platform:/plugin/com.digi.xctung">
+        <tags>NoMove</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_oAqtCScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handledtoolitems.consolesPerspectiveToolItem" contributorURI="platform:/plugin/com.digi.xctung" label="Consoles working mode" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool48/console_perspective.png" tooltip="Switch to Consoles working mode" command="_oArUIicpEe20n7ldpKbEqA">
+          <parameters xmi:id="_oAqtCicpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameters.consolesPerspectiveParameter" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.perspectives.consolesPerspective"/>
+        </children>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_9u8A0BQEEeO2CqwODS2eSA" elementId="com.digi.xctung.network.toolcontrols.middleSeparator2" contributorURI="platform:/plugin/com.digi.xctung.network.ui" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl"/>
+      <children xsi:type="menu:ToolBar" xmi:id="_z_HFgBQEEeO2CqwODS2eSA" elementId="com.digi.xctung.network.toolbars.perspectiveNetwork" contributorURI="platform:/plugin/com.digi.xctung.network.ui">
+        <tags>after=com.digi.xctung.toolbars.perspectiveConsoles</tags>
+        <tags>NoMove</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_BjBWcBQFEeO2CqwODS2eSA" elementId="com.digi.xctung.network.handledtoolitems.networkPerspectiveToolItem" contributorURI="platform:/plugin/com.digi.xctung.network.ui" label="Network Perspective" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool48/network_perspective.png" tooltip="Switch to Network working mode" command="_oArUIicpEe20n7ldpKbEqA">
+          <parameters xmi:id="_tfhnYBQOEeO2CqwODS2eSA" elementId="com.digi.xctung.network.parameters.networkPerspectiveParameter" contributorURI="platform:/plugin/com.digi.xctung.network.ui" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.network.perspectives.networkPerspective"/>
+        </children>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_zd5wsO24EeS2d6KqkmO1xA" elementId="com.digi.xctung.network.toolcontrols.rightSeparator" contributorURI="platform:/plugin/com.digi.xctung.network.ui" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ToolbarSeparatorToolControl"/>
+    </trimBars>
+    <trimBars xmi:id="_oAqtCycpEe20n7ldpKbEqA" elementId="com.digi.xctung.trimbar.bottom" contributorURI="platform:/plugin/com.digi.xctung" visible="false" side="Bottom">
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqtDCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.StatusLine" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+        <tags>stretch</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_oAqtDScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ProgressBar" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+        <tags>NoMove</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_p5UQoCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.HeapStatus" toBeRendered="false" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.StandardTrim">
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
+    <trimBars xmi:id="_p5U3sCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.trim.vertical1" side="Left"/>
+    <trimBars xmi:id="_p5WF0CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.trim.vertical2" side="Right"/>
+  </children>
+  <handlers xmi:id="_oAqtDicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.exitHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.handlers.ExitHandler" command="_oArUHicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtDycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.discoverXBeeDevicesHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.XBeeDiscoveryHandler" command="_oArUHycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtECcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.switchPerspectiveHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.SwitchPerspectiveHandler" command="_oArUIicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtEScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.addXBeeDeviceHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.AddXBeeDeviceHandler" command="_oArUICcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtEicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.sectionsExpandAllHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ExpandAllSectionsHandler" command="_oAr7ECcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtEycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.recoveryToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolRecoveryHandler" command="_oAr7FScpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtFCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.framesGeneratorToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolFramesGeneratorHandler" command="_oAr7FicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtFScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.framesInterpreterToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolFramesInterpreterHandler" command="_oAr7FycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtFicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.consoleSessionToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolConsoleSessionHandler" command="_oAr7GCcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtFycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.rangeTestToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolRangeTestHandler" command="_oAr7GScpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtGCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.firmwareExplorerToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolFirmwareExplorerHandler" command="_oAr7HScpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtGScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.serialConsoleToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolSerialConsoleHandler" command="_oAr7HicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtGicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.spectrumAnalyzerToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolSpectrumAnalyzerHandler" command="_oAr7HycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtGycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.throughputToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolThroughputHandler" command="_oAr7ICcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtHCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.microPythonConsoleToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolMicroPythonTerminalHandler" command="_oAr7IScpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtHScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.fileSystemManagerToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolFileSystemManagerHandler" command="_oAr7IicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtHicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.profileEditorToolHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ToolProfileEditorHandler" command="_oAr7IycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtHycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.giveFeedbackHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.GiveFeedbackHandler" command="_oAr7GicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtICcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.dummyHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.DummyHandler" command="_oAr7FCcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtIScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.clearDevicesHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ClearAllDevicesHandler" command="_oAr7HCcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtIicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.aboutXCTUHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.AboutXCTUHandler" command="_oAr7GycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oAqtIycpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.helpContentsHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.HelpContentsHandler" command="_oAr7EicpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oArUACcpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.changeLogHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.ChangeLogHandler" command="_oAr7JCcpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oArUAScpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.preferences" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.PreferencesHandler" command="_oAr7EycpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_oArUAicpEe20n7ldpKbEqA" elementId="com.digi.xctung.handlers.usageSurveyHandler" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.handlers.UsageSurveyHandler" command="_oAr7JScpEe20n7ldpKbEqA"/>
+  <handlers xmi:id="_PTMwIBYmEeOchPVtYBmpQw" elementId="com.digi.xctung.network.handlers.snapshot" contributorURI="platform:/plugin/com.digi.xctung.network.ui" contributionURI="bundleclass://com.digi.xctung.network.ui/com.digi.xctung.network.ui.handlers.SnapshotHandler" command="_KWXpwBYmEeOchPVtYBmpQw"/>
+  <handlers xmi:id="_iHoMYI_HEeKPuYB21vrBeQ" elementId="com.digi.xctung.p2.update.handlers.update" contributorURI="platform:/plugin/com.digi.xctung.p2.update" contributionURI="bundleclass://com.digi.xctung.p2.update/com.digi.xctung.p2.update.handlers.P2UpdateHandler" command="_ev_-sI_GEeKPuYB21vrBeQ"/>
+  <handlers xmi:id="_6sU5EKkUEeKi9fZhZbiYYg" elementId="com.digi.xctung.p2.update.handlers.fwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" contributionURI="bundleclass://com.digi.xctung.p2.update/com.digi.xctung.p2.update.handlers.FwInstallHandler" command="_uCg44KkUEeKi9fZhZbiYYg"/>
+  <handlers xmi:id="_TdXZYF6CEeiDMO328EtuDw" elementId="com.digi.xctung.p2.update.handlers.legacyfwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" contributionURI="bundleclass://com.digi.xctung.p2.update/com.digi.xctung.p2.update.handlers.LegacyFwInstallHandler" command="_PAHK8F6CEeiDMO328EtuDw"/>
+  <bindingTables xmi:id="_oArUAycpEe20n7ldpKbEqA" elementId="com.digi.xctung.bindingtable" contributorURI="platform:/plugin/com.digi.xctung" bindingContext="_oArUGycpEe20n7ldpKbEqA">
+    <bindings xmi:id="_oArUBCcpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.addDevice" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+A" command="_oArUICcpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUBScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.discoverDevices" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+D" command="_oArUHycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUBicpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.prferences" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+P" command="_oAr7EycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUBycpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.feedback" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+F" command="_oAr7GicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUCCcpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.quit" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+Q" command="_oArUHicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUCScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolFramesGenerator" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+G" command="_oAr7FicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUCicpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolFramesInterpreter" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+I" command="_oAr7FycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUCycpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolRecovery" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+X" command="_oAr7FScpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUDCcpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolLoadSession" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+L" command="_oAr7GCcpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUDScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolRangeTest" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+R" command="_oAr7GScpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUDicpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolFirmwareExplorer" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+F" command="_oAr7HScpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUDycpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolSerialConsole" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+S" command="_oAr7HicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUECcpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolSpectrumAnalyzer" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+A" command="_oAr7HycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUEScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolThroughput" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+T" command="_oAr7ICcpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUEicpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.toolProfileEditor" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+SHIFT+P" command="_oAr7IycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUEycpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.modeConfiguration" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+X" command="_oArUIicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+      <parameters xmi:id="_oArUFCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameter.2" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.perspectives.configurationPerspective"/>
+    </bindings>
+    <bindings xmi:id="_oArUFScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.modeConsoles" contributorURI="platform:/plugin/com.digi.xctung" keySequence="ALT+C" command="_oArUIicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+      <parameters xmi:id="_oArUFicpEe20n7ldpKbEqA" elementId="com.digi.xctung.parameter.3" contributorURI="platform:/plugin/com.digi.xctung" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.perspectives.consolesPerspective"/>
+    </bindings>
+    <bindings xmi:id="_oArUFycpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.helpContents" contributorURI="platform:/plugin/com.digi.xctung" keySequence="F1" command="_oAr7EicpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUGCcpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.changeLog" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+O" command="_oAr7JCcpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oArUGScpEe20n7ldpKbEqA" elementId="com.digi.xctu.bindings.about" contributorURI="platform:/plugin/com.digi.xctung" keySequence="CTRL+SHIFT+?" command="_oAr7GycpEe20n7ldpKbEqA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_oCggBicpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+L" command="_oBl6DScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCnNsCcpEe20n7ldpKbEqA" keySequence="CTRL+F10" command="_oBkr5ycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCob0ScpEe20n7ldpKbEqA" keySequence="CTRL+X" command="_oBkE1ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCob0icpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+Z" command="_oBnvQycpEe20n7ldpKbEqA">
+      <tags>platform:gtk</tags>
+    </bindings>
+    <bindings xmi:id="_oCpC4ScpEe20n7ldpKbEqA" keySequence="CTRL+V" command="_oBkE1ycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp9CcpEe20n7ldpKbEqA" keySequence="CTRL+C" command="_oBhBmScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp9ScpEe20n7ldpKbEqA" keySequence="ALT+PAGE_UP" command="_oBnvVCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp-ScpEe20n7ldpKbEqA" keySequence="ALT+PAGE_DOWN" command="_oBnIKCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRCicpEe20n7ldpKbEqA" keySequence="SHIFT+INSERT" command="_oBkE1ycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4GicpEe20n7ldpKbEqA" keySequence="CTRL+Z" command="_oBjdwCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfIicpEe20n7ldpKbEqA" keySequence="CTRL+INSERT" command="_oBhBmScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCtUUCcpEe20n7ldpKbEqA" keySequence="ALT+SHIFT+F3" command="_oBkE6ycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCt7YScpEe20n7ldpKbEqA" keySequence="CTRL+1" command="_oBnvYicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuieScpEe20n7ldpKbEqA" keySequence="SHIFT+DEL" command="_oBkE1ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJgScpEe20n7ldpKbEqA" keySequence="CTRL+A" command="_oBmhJScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJhScpEe20n7ldpKbEqA" keySequence="CTRL+SPACE" command="_oBi2sicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJiScpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+SPACE" command="_oBhBnScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="__D8XUApkEeeNB58WfzYpvA" elementId="com.digi.xctu.bindings.modeNetwork" contributorURI="platform:/plugin/com.digi.xctung.network.ui" keySequence="ALT+V" command="_oArUIicpEe20n7ldpKbEqA">
+      <parameters xmi:id="_GnuR0AplEeeNB58WfzYpvA" elementId="com.digi.xctung.network.parameter.1" contributorURI="platform:/plugin/com.digi.xctung.network.ui" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.network.perspectives.networkPerspective"/>
+    </bindings>
+    <bindings xmi:id="_sYMpgHdFEeWILYglBIodIg" elementId="com.digi.xctu.bindings.firmwareLibraryUpdates" contributorURI="platform:/plugin/com.digi.xctung.p2.update" keySequence="CTRL+SHIFT+R" command="_uCg44KkUEeKi9fZhZbiYYg"/>
+    <bindings xmi:id="_om9MgHdFEeWILYglBIodIg" elementId="com.digi.xctu.bindings.applicationUpdates" contributorURI="platform:/plugin/com.digi.xctung.p2.update" keySequence="CTRL+SHIFT+U" command="_ev_-sI_GEeKPuYB21vrBeQ"/>
+    <bindings xmi:id="_xWflQF6CEeiDMO328EtuDw" elementId="com.digi.xctu.bindings.installLegacyFirmware" contributorURI="platform:/plugin/com.digi.xctung.p2.update" keySequence="CTRL+SHIFT+L" command="_PAHK8F6CEeiDMO328EtuDw"/>
+  </bindingTables>
+  <bindingTables xmi:id="_oCX9ICcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.textEditorScope" bindingContext="_oBtOwicpEe20n7ldpKbEqA">
+    <bindings xmi:id="_oCcOkCcpEe20n7ldpKbEqA" keySequence="CTRL+ARROW_DOWN" command="_oBnvZScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCggACcpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+K" command="_oBmhFicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCggBCcpEe20n7ldpKbEqA" keySequence="CTRL+-" command="_oBl6DycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCggCCcpEe20n7ldpKbEqA" keySequence="SHIFT+CR" command="_oBl6HScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChHEScpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+X" command="_oBhBpCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuIicpEe20n7ldpKbEqA" keySequence="CTRL+NUMPAD_MULTIPLY" command="_oBnvSCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuJScpEe20n7ldpKbEqA" keySequence="CTRL+NUMPAD_ADD" command="_oBnIIScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuKCcpEe20n7ldpKbEqA" keySequence="INSERT" command="_oBkE7ycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuKycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+NUMPAD_DIVIDE" command="_oBkr4ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCl_kCcpEe20n7ldpKbEqA" keySequence="CTRL+NUMPAD_SUBTRACT" command="_oBkE6CcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCn0wCcpEe20n7ldpKbEqA" keySequence="CTRL+F10" command="_oBkE5ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCn0wScpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+CR" command="_oBkE6ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCn0wycpEe20n7ldpKbEqA" keySequence="CTRL+K" command="_oBmhKScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCn0xCcpEe20n7ldpKbEqA" keySequence="CTRL++" command="_oBl6FicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCob0CcpEe20n7ldpKbEqA" keySequence="CTRL+L" command="_oBi2wycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpC5icpEe20n7ldpKbEqA" keySequence="CTRL+J" command="_oBkr7ScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp8CcpEe20n7ldpKbEqA" keySequence="HOME" command="_oBl6HicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp9icpEe20n7ldpKbEqA" keySequence="CTRL+ARROW_LEFT" command="_oBhBjScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp-icpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+ARROW_LEFT" command="_oBmhECcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRACcpEe20n7ldpKbEqA" keySequence="CTRL+D" command="_oBl6BicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRAScpEe20n7ldpKbEqA" keySequence="CTRL+ARROW_RIGHT" command="_oBnvRCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRAycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+ARROW_RIGHT" command="_oBnvMycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRCCcpEe20n7ldpKbEqA" keySequence="SHIFT+END" command="_oBl6GicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRCycpEe20n7ldpKbEqA" keySequence="CTRL+END" command="_oBnvNScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRDCcpEe20n7ldpKbEqA" keySequence="CTRL+BS" command="_oBhBjCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4ECcpEe20n7ldpKbEqA" keySequence="ALT+CTRL+J" command="_oBnvXCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4EScpEe20n7ldpKbEqA" keySequence="CTRL+HOME" command="_oBkE1icpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4EicpEe20n7ldpKbEqA" keySequence="SHIFT+HOME" command="_oBl6AycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4FScpEe20n7ldpKbEqA" keySequence="F2" command="_oBhBgycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfJCcpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+NUMPAD_MULTIPLY" command="_oBnvWicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfJScpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+INSERT" command="_oBnIKycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfJicpEe20n7ldpKbEqA" keySequence="ALT+/" command="_oBmhEicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCtUUScpEe20n7ldpKbEqA" keySequence="END" command="_oBkr7icpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCtUUicpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+Y" command="_oBl6DicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCtUUycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+J" command="_oBnvPScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCtUVCcpEe20n7ldpKbEqA" keySequence="CTRL+NUMPAD_DIVIDE" command="_oBmhHicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCt7YycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+Q" command="_oBnvTScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuicCcpEe20n7ldpKbEqA" keySequence="ALT+SHIFT+Y" command="_oBhBhScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuidScpEe20n7ldpKbEqA" keySequence="ALT+ARROW_UP" command="_oBnvUycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuidicpEe20n7ldpKbEqA" keySequence="CTRL+DEL" command="_oBi2xScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuieCcpEe20n7ldpKbEqA" keySequence="CTRL+=" command="_oBl6FicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJgicpEe20n7ldpKbEqA" keySequence="CTRL+ARROW_UP" command="_oBmhGycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJgycpEe20n7ldpKbEqA" keySequence="ALT+CTRL+ARROW_UP" command="_oBnvOCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJhicpEe20n7ldpKbEqA" keySequence="ALT+ARROW_DOWN" command="_oBnIMCcpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJhycpEe20n7ldpKbEqA" keySequence="ALT+CTRL+ARROW_DOWN" command="_oBnIKicpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJiCcpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+DEL" command="_oBi2tycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJiicpEe20n7ldpKbEqA" keySequence="ALT+SHIFT+A" command="_oBi2xicpEe20n7ldpKbEqA"/>
+  </bindingTables>
+  <bindingTables xmi:id="_oCc1oCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.window" bindingContext="_oArUHCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_oCggCScpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.TerminalContext" bindingContext="_oBtOxScpEe20n7ldpKbEqA">
+    <bindings xmi:id="_oCggCicpEe20n7ldpKbEqA" keySequence="ALT+L" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChHEycpEe20n7ldpKbEqA" keySequence="ALT+S" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuJCcpEe20n7ldpKbEqA" keySequence="ALT+V" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuLScpEe20n7ldpKbEqA" keySequence="ALT+P" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oChuLicpEe20n7ldpKbEqA" keySequence="ALT+R" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oClYgicpEe20n7ldpKbEqA" keySequence="ALT+Y" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpC5CcpEe20n7ldpKbEqA" keySequence="ALT+T" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp8ScpEe20n7ldpKbEqA" keySequence="ALT+D" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp8ycpEe20n7ldpKbEqA" keySequence="ALT+E" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp-CcpEe20n7ldpKbEqA" keySequence="ALT+F" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRBCcpEe20n7ldpKbEqA" keySequence="ALT+G" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRBicpEe20n7ldpKbEqA" keySequence="ALT+H" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCq4FycpEe20n7ldpKbEqA" keySequence="ALT+N" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfICcpEe20n7ldpKbEqA" keySequence="ALT+W" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuicScpEe20n7ldpKbEqA" keySequence="ALT+A" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJgCcpEe20n7ldpKbEqA" keySequence="ALT+C" command="_oBi2sScpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCvJhCcpEe20n7ldpKbEqA" keySequence="ALT+B" command="_oBi2sScpEe20n7ldpKbEqA"/>
+  </bindingTables>
+  <bindingTables xmi:id="_oCpC4icpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.EditContext" bindingContext="_oBtOwScpEe20n7ldpKbEqA">
+    <bindings xmi:id="_oCpC4ycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+V" command="_oBl6BycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCpp9ycpEe20n7ldpKbEqA" keySequence="CTRL+SHIFT+C" command="_oBhBhycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCqRCScpEe20n7ldpKbEqA" keySequence="SHIFT+INSERT" command="_oBl6BycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCrfIScpEe20n7ldpKbEqA" keySequence="CTRL+INSERT" command="_oBhBhycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCt7ZCcpEe20n7ldpKbEqA" keySequence="ALT+ARROW_RIGHT" command="_oBmhFycpEe20n7ldpKbEqA"/>
+    <bindings xmi:id="_oCuidCcpEe20n7ldpKbEqA" keySequence="ALT+ARROW_UP" command="_oBhBiycpEe20n7ldpKbEqA"/>
+  </bindingTables>
+  <bindingTables xmi:id="_p5jhMScpEe20n7ldpKbEqA" bindingContext="_p5jhMCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kIQScpEe20n7ldpKbEqA" bindingContext="_p5kIQCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kIQycpEe20n7ldpKbEqA" bindingContext="_p5kIQicpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kIRScpEe20n7ldpKbEqA" bindingContext="_p5kIRCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kIRycpEe20n7ldpKbEqA" bindingContext="_p5kIRicpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kvUScpEe20n7ldpKbEqA" bindingContext="_p5kvUCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kvUycpEe20n7ldpKbEqA" bindingContext="_p5kvUicpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kvVScpEe20n7ldpKbEqA" bindingContext="_p5kvVCcpEe20n7ldpKbEqA"/>
+  <bindingTables xmi:id="_p5kvVycpEe20n7ldpKbEqA" bindingContext="_p5kvVicpEe20n7ldpKbEqA"/>
+  <rootContext xmi:id="_oArUGycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/com.digi.xctung" name="In Dialogs and Windows" description="Either a dialog or a window is open">
+    <children xmi:id="_oArUHCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/com.digi.xctung" name="In Windows" description="A window is open">
+      <children xmi:id="_oBtOwScpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.EditContext" name="Terminal Control in Focus" description="Show modified keyboard shortcuts in context menu"/>
+      <children xmi:id="_oBtOwicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.textEditorScope" name="Editing Text" description="Editing Text Context"/>
+      <children xmi:id="_oBtOxCcpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" name="In Terminal View" description="Show modified keyboard shortcuts in context menu"/>
+      <children xmi:id="_oBtOxScpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.TerminalContext" name="Terminal Typing Connected" description="Override ALT+x menu access keys while typing into the Terminal"/>
+    </children>
+    <children xmi:id="_oArUHScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.dialog" contributorURI="platform:/plugin/com.digi.xctung" name="In Dialogs" description="A dialog is open"/>
+  </rootContext>
+  <rootContext xmi:id="_oBtOwCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.workbenchMenu" name="Workbench Menu" description="When no Workbench windows are active"/>
+  <rootContext xmi:id="_oBtOwycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.contexts.actionSet" name="Action Set" description="Parent context for action sets"/>
+  <rootContext xmi:id="_p5jhMCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.actionSet.annotationNavigation" name="Auto::org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+  <rootContext xmi:id="_p5kIQCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.actionSet.navigation" name="Auto::org.eclipse.ui.edit.text.actionSet.navigation"/>
+  <rootContext xmi:id="_p5kIQicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo" name="Auto::org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+  <rootContext xmi:id="_p5kIRCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.NavigateActionSet" name="Auto::org.eclipse.ui.NavigateActionSet"/>
+  <rootContext xmi:id="_p5kIRicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.actionSet.keyBindings" name="Auto::org.eclipse.ui.actionSet.keyBindings"/>
+  <rootContext xmi:id="_p5kvUCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.WorkingSetModificationActionSet" name="Auto::org.eclipse.ui.WorkingSetModificationActionSet"/>
+  <rootContext xmi:id="_p5kvUicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.WorkingSetActionSet" name="Auto::org.eclipse.ui.WorkingSetActionSet"/>
+  <rootContext xmi:id="_p5kvVCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.actionSet.openFiles" name="Auto::org.eclipse.ui.actionSet.openFiles"/>
+  <rootContext xmi:id="_p5kvVicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.actionSet.presentation" name="Auto::org.eclipse.ui.edit.text.actionSet.presentation"/>
+  <descriptors xmi:id="_pqcHICcpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.compatibility.editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor">
+    <tags>Editor</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqgYkCcpEe20n7ldpKbEqA" elementId="org.eclipse.gef.ui.palette_view" label="Palette" iconURI="platform:/plugin/org.eclipse.gef/icons/palette_view.gif" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.gef.ui.views.palette.PaletteView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.gef"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqo7cCcpEe20n7ldpKbEqA" elementId="org.eclipse.help.ui.HelpView" label="Help" iconURI="platform:/plugin/org.eclipse.help.ui/icons/view16/help_view.gif" tooltip="" category="Help" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.help.ui.internal.views.HelpView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.help.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:Help</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqqJkCcpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.TerminalsView" label="Terminal" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Terminal" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.tm.terminal.view.ui.view.TerminalsView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.tm.terminal.view.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:Terminal</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqqwoCcpEe20n7ldpKbEqA" elementId="org.eclipse.tcf.te.ui.terminals.TerminalsView" label="Terminals (Old)" iconURI="platform:/plugin/org.eclipse.tm.terminal.view.ui/icons/eview16/terminal_view.gif" tooltip="" allowMultiple="true" category="Other" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.tm.terminal.view.ui.view.OldTerminalsViewHandler"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.tm.terminal.view.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:Other</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqrXsCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.internal.introview" label="Welcome" iconURI="platform:/plugin/org.eclipse.ui/icons/full/eview16/defaultview_misc.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.ViewIntroAdapterPart"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqsl0CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.browser.view" label="Internal Web Browser" iconURI="platform:/plugin/org.eclipse.ui.browser/icons/obj16/internal_browser.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.browser.WebBrowserView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.browser"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqtM4CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.ProgressView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.progress.ProgressView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqtz8CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.ResourceNavigator" label="Navigator" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/filenav_nav.png" tooltip="" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.navigator.ResourceNavigator"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqvCECcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.BookmarkView" label="Bookmarks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/bkmrk_nav.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.BookmarksView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqwQMCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.TaskList" label="Tasks" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/tasks_tsk.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.TasksView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqw3QCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.ProblemView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.ProblemsView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <descriptors xmi:id="_pqxeUCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.AllMarkersView" label="Markers" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" tooltip="" allowMultiple="true" category="General" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.views.markers.AllMarkersView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+    <tags>View</tags>
+    <tags>categoryTag:General</tags>
+  </descriptors>
+  <menuContributions xmi:id="_ultZkGaUEeW9uZIvOPjPhg" elementId="com.digi.xctung.network.menucontribution" contributorURI="platform:/plugin/com.digi.xctung.network.ui" positionInParent="after=com.digi.xctung.handledmenuitem.viewConsoles" parentId="com.digi.xctung.menu.viewMenu">
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_0q09sGaUEeW9uZIvOPjPhg" elementId="com.digi.xctung.network.handledmenuitem.viewNetwork" contributorURI="platform:/plugin/com.digi.xctung.network.ui" label="Network Working Mode" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/network.png" type="Radio" command="_oArUIicpEe20n7ldpKbEqA">
+      <parameters xmi:id="_9e3mMGaUEeW9uZIvOPjPhg" elementId="com.digi.xctung.network.parameter.0" contributorURI="platform:/plugin/com.digi.xctung.network.ui" name="com.digi.xctung.commandParameters.perspectiveIDParameter" value="com.digi.xctung.network.perspectives.networkPerspective"/>
+    </children>
+  </menuContributions>
+  <menuContributions xmi:id="_5lvjAI_PEeKPuYB21vrBeQ" elementId="com.digi.xctung.p2.update.menucontribution" contributorURI="platform:/plugin/com.digi.xctung.p2.update" positionInParent="before=com.digi.xctung.handledmenuitems.feedback" parentId="com.digi.xctung.menu.helpMenu">
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_7wEskI_PEeKPuYB21vrBeQ" elementId="com.digi.xctung.p2.update.handledmenuitem.update" contributorURI="platform:/plugin/com.digi.xctung.p2.update" label="Check for XCTU Updates" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool24/updates_application.png" mnemonics="U" command="_ev_-sI_GEeKPuYB21vrBeQ"/>
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_UqqqYKkVEeKi9fZhZbiYYg" elementId="com.digi.xctung.p2.update.handledmenuitem.fwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" label="Update the Radio Firmware Library" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool24/updates_firmware.png" mnemonics="F" command="_uCg44KkUEeKi9fZhZbiYYg"/>
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_4x7RgF6BEeiDMO328EtuDw" elementId="com.digi.xctung.p2.update.handledmenuitem.legacyfwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" label="Install Legacy Radio Firmware" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/etool24/updates_legacy_firmware.png" mnemonics="L" command="_PAHK8F6CEeiDMO328EtuDw"/>
+    <children xsi:type="menu:MenuSeparator" xmi:id="_Dq7N0I_REeKPuYB21vrBeQ" elementId="com.digi.xctung.p2.update.menu.separator" contributorURI="platform:/plugin/com.digi.xctung.p2.update"/>
+  </menuContributions>
+  <snippets xsi:type="advanced:Perspective" xmi:id="_p5gd4CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.perspectives.configurationPerspective.&lt;Configuration perspective>" contributorURI="platform:/plugin/com.digi.xctung" label="&lt;Configuration perspective>">
+    <tags>Vertical</tags>
+    <children xsi:type="basic:PartSashContainer" xmi:id="_p5gd4ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.configurationSash.main" contributorURI="platform:/plugin/com.digi.xctung">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_p5gd4icpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.configurationSash" contributorURI="platform:/plugin/com.digi.xctung" containerData="100" horizontal="true">
+        <children xsi:type="basic:PartStack" xmi:id="_p5gd4ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" containerData="40" selectedElement="_p5gd5CcpEe20n7ldpKbEqA">
+          <tags>NoMove</tags>
+          <tags>NoClose</tags>
+          <children xsi:type="advanced:Placeholder" xmi:id="_p5gd5CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.configuration.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung">
+            <tags>NoClose</tags>
+          </children>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_p5gd5ScpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration" contributorURI="platform:/plugin/com.digi.xctung" containerData="60">
+          <tags>NoMove</tags>
+          <tags>NoClose</tags>
+          <children xsi:type="advanced:Placeholder" xmi:id="_p5gd5icpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.configuration" contributorURI="platform:/plugin/com.digi.xctung">
+            <tags>NoClose</tags>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="basic:PartStack" xmi:id="_p5gd5ycpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.configuration.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" containerData="20">
+        <tags>NoMove</tags>
+        <children xsi:type="advanced:Placeholder" xmi:id="_p5gd6CcpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholder.configuration.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" closeable="true"/>
+      </children>
+    </children>
+  </snippets>
+  <snippets xsi:type="advanced:Perspective" xmi:id="__lbXwCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.perspectives.consolesPerspective.&lt;Consoles perspective>" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="__lbXwScpEe20n7ldpKbEqA" label="&lt;Consoles perspective>">
+    <children xsi:type="basic:PartSashContainer" xmi:id="__lbXwScpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainer.consoleSash.main" contributorURI="platform:/plugin/com.digi.xctung" selectedElement="__lbXwicpEe20n7ldpKbEqA">
+      <children xsi:type="basic:PartSashContainer" xmi:id="__lbXwicpEe20n7ldpKbEqA" elementId="com.digi.xctung.partsashcontainers.consolesSash" contributorURI="platform:/plugin/com.digi.xctung" containerData="100" selectedElement="__lbXwycpEe20n7ldpKbEqA" horizontal="true">
+        <children xsi:type="basic:PartStack" xmi:id="__lbXwycpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.consoles.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung" containerData="30" selectedElement="__lbXxCcpEe20n7ldpKbEqA">
+          <tags>NoMove</tags>
+          <tags>NoClose</tags>
+          <tags>active</tags>
+          <children xsi:type="advanced:Placeholder" xmi:id="__lbXxCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholders.consoles.xbeedevices" contributorURI="platform:/plugin/com.digi.xctung">
+            <tags>NoClose</tags>
+          </children>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="__lbXxScpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.consoles" contributorURI="platform:/plugin/com.digi.xctung" containerData="70" selectedElement="__lbXxicpEe20n7ldpKbEqA">
+          <tags>NoAutoCollapse</tags>
+          <tags>NoMove</tags>
+          <tags>NoClose</tags>
+          <children xsi:type="basic:Part" xmi:id="__lbXxicpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeconsole.0013A20041C5368C" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConsoleView" label="  - 0013A20041C5368C" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/console.png">
+            <tags>NoClose</tags>
+            <tags>NoMove</tags>
+            <tags>removeOnHide</tags>
+          </children>
+          <children xsi:type="basic:Part" xmi:id="__lbXxycpEe20n7ldpKbEqA" elementId="com.digi.xctung.part.xbeeconsole.0013A200418F4D69" contributionURI="bundleclass://com.digi.xctung/com.digi.xctung.ui.views.XBeeConsoleView" label="  - 0013A200418F4D69" iconURI="platform:/plugin/com.digi.xctung.uicomponents/icons/obj24/console.png">
+            <tags>NoClose</tags>
+            <tags>NoMove</tags>
+            <tags>removeOnHide</tags>
+          </children>
+        </children>
+      </children>
+      <children xsi:type="basic:PartStack" xmi:id="__lbXyCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.partstack.console.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" containerData="20">
+        <tags>NoMove</tags>
+        <children xsi:type="advanced:Placeholder" xmi:id="__lbXyScpEe20n7ldpKbEqA" elementId="com.digi.xctung.placeholder.console.progressview" contributorURI="platform:/plugin/com.digi.xctung" toBeRendered="false" closeable="true"/>
+      </children>
+    </children>
+  </snippets>
+  <commands xmi:id="_oArUHicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.exitCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Exit" description=""/>
+  <commands xmi:id="_oArUHycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.discoverDevicesCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Discover Radio Modules" category="_oAr7MCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oArUICcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.addDeviceCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Add Radio Module" category="_oAr7MCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oArUIScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.aboutAction" contributorURI="platform:/plugin/com.digi.xctung" commandName="About"/>
+  <commands xmi:id="_oArUIicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.switchPerspectiveCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Switch Perspective">
+    <parameters xmi:id="_oArUIycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commandParameters.perspectiveIDParameter" contributorURI="platform:/plugin/com.digi.xctung" name="perspectiveID"/>
+  </commands>
+  <commands xmi:id="_oAr7ECcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.sectionsExpandAll" contributorURI="platform:/plugin/com.digi.xctung" commandName="Expand All Sections">
+    <parameters xmi:id="_oAr7EScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commandParameters.sectionsExpandAllParameter" contributorURI="platform:/plugin/com.digi.xctung" name="expanded" typeId=""/>
+  </commands>
+  <commands xmi:id="_oAr7EicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.helpContents" contributorURI="platform:/plugin/com.digi.xctung" commandName="Help Contents"/>
+  <commands xmi:id="_oAr7EycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.preferences" contributorURI="platform:/plugin/com.digi.xctung" commandName="Preferences"/>
+  <commands xmi:id="_oAr7FCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.dummyCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Not implemented"/>
+  <commands xmi:id="_oAr7FScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.recoveryTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Recovery Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7FicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.framesGeneratorTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Frames Generator Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7FycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.framesInterpreterTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Frames Interpreter Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7GCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.consoleSessionTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Load Console Session Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7GScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.rangeTestTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Range Test Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7GicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.giveFeedback" contributorURI="platform:/plugin/com.digi.xctung" commandName="Provide Feedback"/>
+  <commands xmi:id="_oAr7GycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.aboutXCTU" contributorURI="platform:/plugin/com.digi.xctung" commandName="About XCTU"/>
+  <commands xmi:id="_oAr7HCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.clearDevicesCommand" contributorURI="platform:/plugin/com.digi.xctung" commandName="Clear radio module list"/>
+  <commands xmi:id="_oAr7HScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.firmwareExplorerTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Firmware Explorer Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7HicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.serialConsoleTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Serial Console Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7HycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.spectrumAnalyzerTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Spectrum Analyzer Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7ICcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.throughputTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Throughput Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7IScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.microPythonTerminalTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="MicroPython Terminal Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7IicpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.fileSystemManagerTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="File System Manager Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7IycpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.profileEditorTool" contributorURI="platform:/plugin/com.digi.xctung" commandName="Profile Editor Tool" category="_oAr7MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oAr7JCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.changeLog" contributorURI="platform:/plugin/com.digi.xctung" commandName="Change Log"/>
+  <commands xmi:id="_oAr7JScpEe20n7ldpKbEqA" elementId="com.digi.xctung.commands.usageSurvey" contributorURI="platform:/plugin/com.digi.xctung" commandName="Usage survey"/>
+  <commands xmi:id="_oBhBgCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.pinEditor" commandName="Pin Editor" description="Pin the current editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBgScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.nextTab" commandName="Next Tab" description="Switch to the next tab" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBgicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.quickAccess" commandName="Quick Access" description="Quickly access UI elements" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBgycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.showInformation" commandName="Show Tooltip Description" description="Displays information for the current caret location in a focused hover" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBhCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBhScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleWordWrap" commandName="Toggle Word Wrap" description="Toggle word wrap in the current text editor" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBhicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.pageUp" commandName="Page Up" description="Go up one page" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBhycpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.copy" commandName="Copy" category="_oBd-MicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBiCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.columnPrevious" commandName="Previous Column" description="Go to the previous column" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBiScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.copyBuildIdCommand" commandName="Copy Build Id To Clipboard" description="Copies the build id to the clipboard." category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBiicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.textEnd" commandName="Select Text End" description="Select to the end of the text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBiycpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.maximize" commandName="Maximize Active View or Editor" category="_oBd-MicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBjCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.deletePreviousWord" commandName="Delete Previous Word" description="Delete the previous word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBjScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.wordPrevious" commandName="Previous Word" description="Go to the previous word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBjicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.properties" commandName="Properties" description="Display the properties of the selected item" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBjycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.preferences" commandName="Preferences" description="Open the preferences dialog" category="_oBd-OycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBhBkCcpEe20n7ldpKbEqA" elementId="preferencePageId" name="Preference Page"/>
+  </commands>
+  <commands xmi:id="_oBhBkScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.showRulerAnnotationInformation" commandName="Show Ruler Annotation Tooltip" description="Displays annotation information for the caret line in a focused hover" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBkicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.delimiter.unix" commandName="Convert Line Delimiters to Unix (LF, \n, 0A, &#xb6;)" description="Converts the line delimiters to Unix (LF, \n, 0A, &#xb6;)" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBkycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.browser.openBrowser" commandName="Open Browser" description="Opens the default web browser." category="_oBd-OycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBhBlCcpEe20n7ldpKbEqA" elementId="url" name="URL"/>
+    <parameters xmi:id="_oBhBlScpEe20n7ldpKbEqA" elementId="browserId" name="Browser Id"/>
+    <parameters xmi:id="_oBhBlicpEe20n7ldpKbEqA" elementId="name" name="Browser Name"/>
+    <parameters xmi:id="_oBhBlycpEe20n7ldpKbEqA" elementId="tooltip" name="Browser Tooltip"/>
+  </commands>
+  <commands xmi:id="_oBhBmCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.activeContextInfo" commandName="Show activeContext Info" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBmScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.copy" commandName="Copy" description="Copy the selection to the clipboard" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBmicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.nextView" commandName="Next View" description="Switch to the next view" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBmycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.textStart" commandName="Select Text Start" description="Select to the beginning of the text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBnCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.revertToSaved" commandName="Revert to Saved" description="Revert to the last saved state" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBnScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.contentAssist.contextInformation" commandName="Context Information" description="Show Context Information" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBnicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.saveAs" commandName="Save As" description="Save the current contents to another location" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBnycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.addToWorkingSet" commandName="Add to Working Set" description="Adds the selected object to a working set." category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBoCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.previousPerspective" commandName="Previous Perspective" description="Switch to the previous perspective" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBoScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.splitEditor" commandName="Toggle Split Editor" description="Split or join the currently active editor." category="_oBd-OycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBhBoicpEe20n7ldpKbEqA" elementId="Splitter.isHorizontal" name="Orientation" optional="false"/>
+  </commands>
+  <commands xmi:id="_oBhBoycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.showChangeRulerInformation" commandName="Show Quick Diff Ruler Tooltip" description="Displays quick diff or revision information for the caret line in a focused hover" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBpCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.upperCase" commandName="To Upper Case" description="Changes the selection to upper case" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBpScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.collapseAll" commandName="Collapse All" description="Collapse the current tree" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBpicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.goInto" commandName="Go Into" description="Navigate into the selected item" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBpycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.maximizePart" commandName="Maximize Active View or Editor" description="Toggles maximize/restore state of active view or editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBqCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.lockToolBar" commandName="Lock the Toolbars" description="Lock the Toolbars" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBqScpEe20n7ldpKbEqA" elementId="org.eclipse.gef.ui.palette_view" commandName="Palette" category="_oBd-MCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBqicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.windowEnd" commandName="Select Window End" description="Select to the end of the window" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBhBqycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.newEditor" commandName="New Editor" description="Open another editor on the active editor's input" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2sCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.minimizePart" commandName="Minimize Active View or Editor" description="Minimizes the active view or editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2sScpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.command1" commandName="Terminal view insert" category="_oBd-MicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2sicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.contentAssist.proposals" commandName="Content Assist" description="Content Assist" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2sycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.up" commandName="Up" description="Navigate up one level" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2tCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.activateEditor" commandName="Activate Editor" description="Activate the editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2tScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.showSystemMenu" commandName="Show System Menu" description="Show the system menu" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2ticpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.removeFromWorkingSet" commandName="Remove From Working Set" description="Removes the selected object from a working set." category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2tycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.delete.line.to.end" commandName="Delete to End of Line" description="Delete to the end of a line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2uCcpEe20n7ldpKbEqA" elementId="org.eclipse.help.ui.ignoreMissingPlaceholders" commandName="Do not warn of missing documentation" description="Sets the help preferences to no longer report a warning about the current set of missing documents." category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2uScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.savePerspective" commandName="Save Perspective As" description="Save the current perspective" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2uicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.deleteCompleted" commandName="Delete Completed Tasks" description="Delete the tasks marked as completed" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2uycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.move" commandName="Move..." description="Move the selected item" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2vCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.revisions.author.toggle" commandName="Toggle Revision Author Display" description="Toggles the display of the revision author" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2vScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.windowEnd" commandName="Window End" description="Go to the end of the window" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2vicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.perspectives.showPerspective" commandName="Show Perspective" description="Show a particular perspective" category="_oBd-NicpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBi2vycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.perspectives.showPerspective.perspectiveId" name="Parameter"/>
+    <parameters xmi:id="_oBi2wCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.perspectives.showPerspective.newWindow" name="In New Window"/>
+  </commands>
+  <commands xmi:id="_oBi2wScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.linkWithEditor" commandName="Toggle Link with Editor" description="Toggles linking of a view's selection with the active editor's selection" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2wicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.openEditorDropDown" commandName="Quick Switch Editor" description="Open the editor drop down list" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2wycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.line" commandName="Go to Line" description="Go to a specified line of text" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2xCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.quickdiff.revert" commandName="Revert Lines" description="Revert the current selection, block or deleted lines" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2xScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.deleteNextWord" commandName="Delete Next Word" description="Delete the next word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2xicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleBlockSelectionMode" commandName="Toggle Block Selection" description="Toggle block / column selection in the current text editor" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2xycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.goToResource" commandName="Go to" description="Go to a particular resource in the active view" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2yCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.resetPerspective" commandName="Reset Perspective" description="Reset the current perspective to its default state" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBi2yScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.lineUp" commandName="Select Line Up" description="Extend the selection to the previous line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBjdwCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.undo" commandName="Undo" description="Undo the last operation" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBjdwScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.buildLast" commandName="Repeat Working Set Build" description="Repeat the last working set build" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBjdwicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.buildProject" commandName="Build Project" description="Build the selected project" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE0CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.cut.line.to.end" commandName="Cut to End of Line" description="Cut to the end of a line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE0ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.newQuickMenu" commandName="New menu" description="Open the New menu" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE0icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.openProject" commandName="Open Project" description="Open a project" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE0ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.openWorkspace" commandName="Switch Workspace" description="Open the workspace selection dialog" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE1CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.closeAll" commandName="Close All" description="Close all editors" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE1ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.cut" commandName="Cut" description="Cut the selection to the clipboard" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE1icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.textStart" commandName="Text Start" description="Go to the beginning of the text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE1ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.paste" commandName="Paste" description="Paste from the clipboard" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE2CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.part.nextPage" commandName="Next Page" description="Switch to the next page" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE2ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.previous" commandName="Previous" description="Navigate to the previous item" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE2icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.properties" commandName="Properties" description="Display the properties of the selected item's project " category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE2ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.rename" commandName="Rename" description="Rename the selected item" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE3CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.clear.mark" commandName="Clear Mark" description="Clear the mark" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE3ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.buildAll" commandName="Build All" description="Build all projects" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE3icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.columnPrevious" commandName="Select Previous Column" description="Select the previous column" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE3ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly" commandName="Show Selected Element Only" description="Show Selected Element Only" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE4CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.cut.line.to.beginning" commandName="Cut to Beginning of Line" description="Cut to the beginning of a line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE4ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.export" commandName="Export" description="Export" category="_oBd-OScpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBkE4icpEe20n7ldpKbEqA" elementId="exportWizardId" name="Export Wizard"/>
+  </commands>
+  <commands xmi:id="_oBkE4ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.revisions.rendering.cycle" commandName="Cycle Revision Coloring Mode" description="Cycles through the available coloring modes for revisions" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE5CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.print" commandName="Print" description="Print" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE5ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.showRulerContextMenu" commandName="Show Ruler Context Menu" description="Show the context menu for the ruler" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE5icpEe20n7ldpKbEqA" elementId="org.eclipse.help.ui.closeTray" commandName="Close User Assistance Tray" description="Close the user assistance tray containing context help information and cheat sheets." category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE5ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.copyConfigCommand" commandName="Copy Configuration Data To Clipboard" description="Copies the configuration data (system properties, installed bundles, etc) to the clipboard." category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE6CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.collapse" commandName="Collapse" description="Collapses the folded region at the current selection" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE6ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.smartEnterInverse" commandName="Insert Line Above Current Line" description="Adds a new line above the current line" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE6icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.forwardHistory" commandName="Forward History" description="Move forward in the editor navigation history" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE6ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.spy" commandName="Show Contributing Plug-in" description="Shows contribution information for the currently selected element" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE7CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.helpSearch" commandName="Help Search" description="Open the help search" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE7ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.restartWorkbench" commandName="Restart" description="Restart the workbench" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE7icpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.importer.openDirectory" commandName="Open Projects from File System..." category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE7ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleOverwrite" commandName="Toggle Overwrite" description="Toggle overwrite mode" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkE8CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.lineDown" commandName="Line Down" description="Go down one line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr4CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.rebuildAll" commandName="Rebuild All" description="Rebuild all projects" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr4ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.collapse_all" commandName="Collapse All" description="Collapses all folded regions" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr4icpEe20n7ldpKbEqA" elementId="org.eclipse.gef.zoom_in" commandName="Zoom In" description="Zoom In" category="_oBd-OCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr4ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition" commandName="Last Edit Location" description="Last edit location" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr5CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.open.hyperlink" commandName="Open Hyperlink" description="Opens the hyperlink at the caret location or opens a chooser if more than one hyperlink is available" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr5ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.openLocalFile" commandName="Open File..." description="Open a file" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr5icpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.command.launchToolbar" commandName="Open Local Terminal on Selection" category="_oBd-OicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr5ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.showViewMenu" commandName="Show View Menu" description="Show the view menu" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr6CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.configureFilters" commandName="Configure Contents..." description="Configure the filters to apply to the markers view" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr6ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.shiftRight" commandName="Shift Right" description="Shift a block of text to the right" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr6icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.backwardHistory" commandName="Backward History" description="Move backward in the editor navigation history" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr6ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.previousTab" commandName="Previous Tab" description="Switch to the previous tab" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr7CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.removeTrailingWhitespace" commandName="Remove Trailing Whitespace" description="Removes the trailing whitespace of each line" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr7ScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.findIncremental" commandName="Incremental Find" description="Incremental find" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr7icpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.lineEnd" commandName="Line End" description="Go to the end of the line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr7ycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.refresh" commandName="Refresh" description="Refresh the selected items" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBkr8CcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.swap.mark" commandName="Swap Mark" description="Swap the mark with the cursor position" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6ACcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.closeAllPerspectives" commandName="Close All Perspectives" description="Close all open perspectives" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6AScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.deletePrevious" commandName="Delete Previous" description="Delete the previous character" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6AicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.shiftLeft" commandName="Shift Left" description="Shift a block of text to the left" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6AycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.lineStart" commandName="Select Line Start" description="Select to the beginning of the line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6BCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.lineNumberToggle" commandName="Show Line Numbers" description="Toggle display of line numbers" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6BScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.columnNext" commandName="Select Next Column" description="Select the next column" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6BicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.delete.line" commandName="Delete Line" description="Delete a line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6BycpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.paste" commandName="Paste" category="_oBd-MicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6CCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.expandAll" commandName="Expand All" description="Expand the current tree" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6CScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.showInSystemExplorer" commandName="Show In (System Explorer)" description="Show in system's explorer (file manager)" category="_oBd-NycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBl6CicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.showInSystemExplorer.path" name="Resource System Path Parameter"/>
+  </commands>
+  <commands xmi:id="_oBl6CycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.saveAll" commandName="Save All" description="Save all current contents" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6DCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.lineDown" commandName="Select Line Down" description="Extend the selection to the next line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6DScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.showKeyAssist" commandName="Show Key Assist" description="Show the key assist dialog" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6DicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.lowerCase" commandName="To Lower Case" description="Changes the selection to lower case" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6DycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.zoomOut" commandName="Zoom Out" description="Zoom out text, decrease default font size for text editors" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6ECcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.closeOthers" commandName="Close Others" description="Close all editors except the one that is active" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6EScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.save" commandName="Save" description="Save the current contents" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6EicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.quickdiff.revertLine" commandName="Revert Line" description="Revert the current line" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6EycpEe20n7ldpKbEqA" elementId="org.eclipse.gef.zoom_out" commandName="Zoom Out" description="Zoom Out" category="_oBd-OCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6FCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.previousEditor" commandName="Previous Editor" description="Switch to the previous editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6FScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.findReplace" commandName="Find and Replace" description="Find and replace text" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6FicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.zoomIn" commandName="Zoom In" description="Zoom in text, increase default font size for text editors" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6FycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.OpenMarkersView" commandName="Open Another" description="Open another view" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6GCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.tipsAndTricksAction" commandName="Tips and Tricks" description="Open the tips and tricks help page" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6GScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.fullscreenmode" commandName="Toggle Full Screen" description="Toggles the window between full screen and normal" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6GicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.lineEnd" commandName="Select Line End" description="Select to the end of the line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6GycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.nextEditor" commandName="Next Editor" description="Switch to the next editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6HCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.closeUnrelatedProjects" commandName="Close Unrelated Projects" description="Close unrelated projects" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6HScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.smartEnter" commandName="Insert Line Below Current Line" description="Adds a new line below the current line" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBl6HicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.lineStart" commandName="Line Start" description="Go to the start of the line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhECcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.wordPrevious" commandName="Select Previous Word" description="Select the previous word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhEScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.helpContents" commandName="Help Contents" description="Open the help contents" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhEicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.hippieCompletion" commandName="Word Completion" description="Context insensitive completion" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhEycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.delete" commandName="Delete" description="Delete the selection" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhFCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.delete.line.to.beginning" commandName="Delete to Beginning of Line" description="Delete to the beginning of a line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhFScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.configureColumns" commandName="Configure Columns..." description="Configure the columns in the markers view" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhFicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.findPrevious" commandName="Find Previous" description="Find previous item" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhFycpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.quickaccess" commandName="Quick Access" category="_oBd-MicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhGCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.exit" commandName="Exit" description="Exit the application" category="_oBd-OScpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBmhGScpEe20n7ldpKbEqA" elementId="mayPrompt" name="may prompt"/>
+  </commands>
+  <commands xmi:id="_oBmhGicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.addBookmark" commandName="Add Bookmark" description="Add a bookmark" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhGycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.scroll.lineUp" commandName="Scroll Line Up" description="Scroll up one line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhHCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.previousView" commandName="Previous View" description="Switch to the previous view" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhHScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.set.mark" commandName="Set Mark" description="Set the mark" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhHicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.toggle" commandName="Toggle Folding" description="Toggles folding in the current editor" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhHycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleShowWhitespaceCharacters" commandName="Show Whitespace Characters" description="Shows whitespace characters in current text editor" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhICcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.revert" commandName="Revert" description="Revert to the last saved state" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhIScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.showView" commandName="Show View" description="Shows a particular view" category="_oBd-MCcpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBmhIicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.showView.viewId" name="View"/>
+    <parameters xmi:id="_oBmhIycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.showView.secondaryId" name="Secondary Id"/>
+    <parameters xmi:id="_oBmhJCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.views.showView.makeFast" name="As FastView"/>
+  </commands>
+  <commands xmi:id="_oBmhJScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.selectAll" commandName="Select All" description="Select all" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhJicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.showResourceByPath" commandName="Show Resource in Navigator" description="Show a resource in the Navigator given its path" category="_oBd-NycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBmhJycpEe20n7ldpKbEqA" elementId="resourcePath" name="Resource Path" typeId="org.eclipse.ui.ide.resourcePath" optional="false"/>
+  </commands>
+  <commands xmi:id="_oBmhKCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.delimiter.windows" commandName="Convert Line Delimiters to Windows (CRLF, \r\n, 0D0A, &#xa4;&#xb6;)" description="Converts the line delimiters to Windows (CRLF, \r\n, 0D0A, &#xa4;&#xb6;)" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhKScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.findNext" commandName="Find Next" description="Find next item" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBmhKicpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.command.disconnect" commandName="Disconnect Terminal" category="_oBd-OicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIICcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.hidetrimbars" commandName="Toggle visibility of the window toolbars" description="Toggle the visibility of the toolbars of the current window" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIIScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.expand" commandName="Expand" description="Expands the folded region at the current selection" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIIicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.rebuildProject" commandName="Rebuild Project" description="Rebuild the selected projects" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIIycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.buildAutomatically" commandName="Build Automatically" description="Toggle the workspace build automatically function" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIJCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.import" commandName="Import" description="Import" category="_oBd-OScpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnIJScpEe20n7ldpKbEqA" elementId="importWizardId" name="Import Wizard"/>
+  </commands>
+  <commands xmi:id="_oBnIJicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.switchToEditor" commandName="Switch to Editor" description="Switch to an editor" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIJycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.dynamicHelp" commandName="Show Contextual Help" description="Open the contextual help" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIKCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.nextSubTab" commandName="Next Sub-Tab" description="Switch to the next sub-tab" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIKScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.addTask" commandName="Add Task..." description="Add a task" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIKicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.copyLineDown" commandName="Copy Lines" description="Duplicates the selected lines and moves the selection to the copy" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIKycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.toggleInsertMode" commandName="Toggle Insert Mode" description="Toggle insert mode" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnILCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.closePart" commandName="Close Part" description="Close the active workbench part" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnILScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.editors.revisions.id.toggle" commandName="Toggle Revision Id Display" description="Toggles the display of the revision id" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnILicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.cleanAction" commandName="Build Clean" description="Discard old built state" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnILycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.installationDialog" commandName="Installation Information" description="Open the installation dialog" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnIMCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.moveLineDown" commandName="Move Lines Down" description="Moves the selected lines down" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvMCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.lineUp" commandName="Line Up" description="Go up one line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvMScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.windowStart" commandName="Window Start" description="Go to the start of the window" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvMicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.back" commandName="Back" description="Navigate back" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvMycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.wordNext" commandName="Select Next Word" description="Select the next word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvNCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.pageDown" commandName="Page Down" description="Go down one page" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvNScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.textEnd" commandName="Text End" description="Go to the end of the text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvNicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.part.previousPage" commandName="Previous Page" description="Switch to the previous page" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvNycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.showInQuickMenu" commandName="Show In..." description="Open the Show In menu" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvOCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.copyLineUp" commandName="Duplicate Lines" description="Duplicates the selected lines and leaves the selection unchanged" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvOScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.next" commandName="Next" description="Navigate to the next item" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvOicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.closePerspective" commandName="Close Perspective" description="Close the current perspective" category="_oBd-OycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvOycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.closePerspective.perspectiveId" name="Perspective Id"/>
+  </commands>
+  <commands xmi:id="_oBnvPCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.project.closeProject" commandName="Close Project" description="Close the selected project" category="_oBd-MScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvPScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.findIncrementalReverse" commandName="Incremental Find Reverse" description="Incremental find reverse" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvPicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.browser.openBundleResource" commandName="Open Resource in Browser" description="Opens a bundle resource in the default web browser." category="_oBd-OycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvPycpEe20n7ldpKbEqA" elementId="plugin" name="Plugin"/>
+    <parameters xmi:id="_oBnvQCcpEe20n7ldpKbEqA" elementId="path" name="Path"/>
+  </commands>
+  <commands xmi:id="_oBnvQScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.columnNext" commandName="Next Column" description="Go to the next column" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvQicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.closeAllSaved" commandName="Close All Saved" description="Close all saved editors" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvQycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.redo" commandName="Redo" description="Redo the last operation" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvRCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.goto.wordNext" commandName="Next Word" description="Go to the next word" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvRScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.cut.line" commandName="Cut Line" description="Cut a line of text, or multiple lines when invoked again without interruption" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvRicpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.command.launch" commandName="Open Terminal on Selection" category="_oBd-OicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvRycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.selectWorkingSets" commandName="Select Working Sets" description="Select the working sets that are applicable for this window." category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvSCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.expand_all" commandName="Expand All" description="Expands all folded regions" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvSScpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.command.newview" commandName="New Terminal View" category="_oBd-OicpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvSicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.newWizard" commandName="New" description="Open the New item wizard" category="_oBd-OScpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvSycpEe20n7ldpKbEqA" elementId="newWizardId" name="New Wizard"/>
+  </commands>
+  <commands xmi:id="_oBnvTCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.newWindow" commandName="New Window" description="Open another window" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvTScpEe20n7ldpKbEqA" elementId="org.eclipse.quickdiff.toggle" commandName="Quick Diff Toggle" description="Toggles quick diff information display on the line number ruler" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvTicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.deleteNext" commandName="Delete Next" description="Delete the next character" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvTycpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.importer.configureProject" commandName="Configure and Detect Nested Projects..." category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvUCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.file.close" commandName="Close" description="Close the active editor" category="_oBd-OScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvUScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.customizePerspective" commandName="Customize Perspective" description="Customize the current perspective" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvUicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.quickStartAction" commandName="Welcome" description="Show help for beginning users" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvUycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.moveLineUp" commandName="Move Lines Up" description="Moves the selected lines up" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvVCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.previousSubTab" commandName="Previous Sub-Tab" description="Switch to the previous sub-tab" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvVScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.hideShowEditors" commandName="Toggle Shared Area Visibility" description="Toggles the visibility of the shared area" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvVicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.showIn" commandName="Show In" category="_oBd-NycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvVycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.showIn.targetId" name="Show In Target Id" optional="false"/>
+  </commands>
+  <commands xmi:id="_oBnvWCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.help.displayHelp" commandName="Display Help" description="Display a Help topic" category="_oBd-PScpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvWScpEe20n7ldpKbEqA" elementId="href" name="Help topic href"/>
+  </commands>
+  <commands xmi:id="_oBnvWicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.folding.restore" commandName="Reset Structure" description="Resets the folding structure" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvWycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.pageDown" commandName="Select Page Down" description="Select to the bottom of the page" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvXCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.join.lines" commandName="Join Lines" description="Join lines of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvXScpEe20n7ldpKbEqA" elementId="org.eclipse.help.ui.indexcommand" commandName="Index" description="Show Keyword Index" category="_oBd-PScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvXicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.showContextMenu" commandName="Show Context Menu" description="Show the context menu" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvXycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.markCompleted" commandName="Mark Completed" description="Mark the selected tasks as completed" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvYCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.recenter" commandName="Recenter" description="Scroll cursor line to center, top and bottom" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvYScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.forward" commandName="Forward" description="Navigate forward" category="_oBd-NycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvYicpEe20n7ldpKbEqA" elementId="org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals" commandName="Quick Fix" description="Suggest possible fixes for a problem" category="_oBd-MycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvYycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.select.windowStart" commandName="Select Window Start" description="Select to the start of the window" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvZCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.window.nextPerspective" commandName="Next Perspective" description="Switch to the next perspective" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvZScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.edit.text.scroll.lineDown" commandName="Scroll Line Down" description="Scroll down one line of text" category="_oBd-NScpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvZicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ToggleCoolbarAction" commandName="Toggle Main Toolbar Visibility" description="Toggles the visibility of the window toolbar" category="_oBd-OycpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_oBnvZycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.navigate.openResource" commandName="Open Resource" description="Open an editor on a particular resource" category="_oBd-NycpEe20n7ldpKbEqA">
+    <parameters xmi:id="_oBnvaCcpEe20n7ldpKbEqA" elementId="filePath" name="File Path" typeId="org.eclipse.ui.ide.resourcePath"/>
+  </commands>
+  <commands xmi:id="_KWXpwBYmEeOchPVtYBmpQw" elementId="com.digi.xctung.network.commands.snapshot" contributorURI="platform:/plugin/com.digi.xctung.network.ui" commandName="Take a snapshot"/>
+  <commands xmi:id="_ev_-sI_GEeKPuYB21vrBeQ" elementId="com.digi.xctung.p2.update.commands.update" contributorURI="platform:/plugin/com.digi.xctung.p2.update" commandName="Check for XCTU Updates"/>
+  <commands xmi:id="_uCg44KkUEeKi9fZhZbiYYg" elementId="com.digi.xctung.p2.update.commands.fwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" commandName="Update the Radio Firmware Library"/>
+  <commands xmi:id="_PAHK8F6CEeiDMO328EtuDw" elementId="com.digi.xctung.p2.update.commands.legacyfwinstall" contributorURI="platform:/plugin/com.digi.xctung.p2.update" commandName="Install legacy radio firmware"/>
+  <commands xmi:id="_pyvHgCcpEe20n7ldpKbEqA" elementId="AUTOGEN:::org.eclipse.ui.texteditor.ruler.actions/org.eclipse.ui.texteditor.BookmarkRulerAction" commandName="Text Editor Bookmark Ruler Action" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <commands xmi:id="_pyvHgScpEe20n7ldpKbEqA" elementId="AUTOGEN:::org.eclipse.ui.texteditor.ruler.actions/org.eclipse.ui.texteditor.SelectRulerAction" commandName="Text Editor Ruler Single-Click" category="_oBd-PCcpEe20n7ldpKbEqA"/>
+  <addons xmi:id="_oAr7JicpEe20n7ldpKbEqA" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_oAr7JycpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_oAr7KCcpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_oAr7KScpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_oAr7KicpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_oAr7KycpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_oAr7LCcpEe20n7ldpKbEqA" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_oAr7LScpEe20n7ldpKbEqA" elementId="com.digi.xctung.addons.firmware" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung.firmware/com.digi.xctung.firmware.FirmwareAddon"/>
+  <addons xmi:id="_oAr7LicpEe20n7ldpKbEqA" elementId="com.digi.xctung.addons.xbee" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung.xbee/com.digi.xctung.xbee.XBeeAddon"/>
+  <addons xmi:id="_oAr7LycpEe20n7ldpKbEqA" elementId="com.digi.xctung.addons.ftp" contributorURI="platform:/plugin/com.digi.xctung" contributionURI="bundleclass://com.digi.xctung.ftp/com.digi.xctung.ftp.FTPAddon"/>
+  <addons xmi:id="_oA59gCcpEe20n7ldpKbEqA" elementId="CleanupAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.cleanupaddon.CleanupAddon"/>
+  <addons xmi:id="_oA8ZwCcpEe20n7ldpKbEqA" elementId="MinMaxAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon">
+    <persistedState key="com.digi.xctung.perspectives.configurationPerspective.&lt;Configuration perspective>" value=""/>
+    <persistedState key="com.digi.xctung.perspectives.consolesPerspective.&lt;Consoles perspective>" value=""/>
+  </addons>
+  <addons xmi:id="_oA9A0CcpEe20n7ldpKbEqA" elementId="DnDAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.dndaddon.DnDAddon"/>
+  <addons xmi:id="_oA-O8CcpEe20n7ldpKbEqA" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
+  <categories xmi:id="_oAr7MCcpEe20n7ldpKbEqA" elementId="com.digi.xctung.categories.configurationCategory" contributorURI="platform:/plugin/com.digi.xctung" name="Configuration Category"/>
+  <categories xmi:id="_oAr7MScpEe20n7ldpKbEqA" elementId="com.digi.xctung.categories.toolsCategory" contributorURI="platform:/plugin/com.digi.xctung" name="Tools Category"/>
+  <categories xmi:id="_oBd-MCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.views" name="Views" description="Commands for opening views"/>
+  <categories xmi:id="_oBd-MScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.project" name="Project"/>
+  <categories xmi:id="_oBd-MicpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.category1" name="Terminal view commands" description="Terminal view commands"/>
+  <categories xmi:id="_oBd-MycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.edit" name="Edit"/>
+  <categories xmi:id="_oBd-NCcpEe20n7ldpKbEqA" elementId="org.eclipse.ui.ide.markerContents" name="Contents" description="The category for menu contents"/>
+  <categories xmi:id="_oBd-NScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.textEditor" name="Text Editing" description="Text Editing Commands"/>
+  <categories xmi:id="_oBd-NicpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.perspectives" name="Perspectives" description="Commands for opening perspectives"/>
+  <categories xmi:id="_oBd-NycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.navigate" name="Navigate"/>
+  <categories xmi:id="_oBd-OCcpEe20n7ldpKbEqA" elementId="org.eclipse.gef.category.view" name="View" description="View"/>
+  <categories xmi:id="_oBd-OScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.file" name="File"/>
+  <categories xmi:id="_oBd-OicpEe20n7ldpKbEqA" elementId="org.eclipse.tm.terminal.view.ui.commands.category" name="Terminal Commands"/>
+  <categories xmi:id="_oBd-OycpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.window" name="Window"/>
+  <categories xmi:id="_oBd-PCcpEe20n7ldpKbEqA" elementId="org.eclipse.core.commands.categories.autogenerated" name="Uncategorized" description="Commands that were either auto-generated or have no category"/>
+  <categories xmi:id="_oBd-PScpEe20n7ldpKbEqA" elementId="org.eclipse.ui.category.help" name="Help"/>
+</application:Application>

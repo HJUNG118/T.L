@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/description=
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/enabled=true
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/isSystem=true
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/name=download cache
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/provider=
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/suffix=artifacts.xml
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/type=org.eclipse.equinox.p2.artifact.repository.simpleRepository
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/uri=file\:/home/hj/xctu/XCTU-NG/p2/org.eclipse.equinox.p2.core/cache/
+repositories/file\:_home_hj_xctu_XCTU-NG_p2_org.eclipse.equinox.p2.core_cache/version=1.0.0
+repositories/https\:__ftp1.digi.com_support_XCTU-NG_java_18_repository/count=3
+repositories/https\:__ftp1.digi.com_support_XCTU-NG_java_18_repository/enabled=true
+repositories/https\:__ftp1.digi.com_support_XCTU-NG_java_18_repository/nickname=XCTU
+repositories/https\:__ftp1.digi.com_support_XCTU-NG_java_18_repository/uri=https\://ftp1.digi.com/support/XCTU-NG/java_18/repository/

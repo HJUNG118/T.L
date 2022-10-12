@@ -1,0 +1,127 @@
+XBee DigiMesh 2.4 GHz
+=====================
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2019, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the DigiMesh 2.4 firmware on the XBee S2C RF modules
+
+### Links:
+
+[Product Information](https://www.digi.com/products/embedded-systems/rf-modules/2-4-ghz-modules/xbee-digimesh-2-4)<br/>
+[Documentation](https://www.digi.com/support/productdetail?pid=5627&type=documentation)<br/>
+[Support](https://www.digi.com/support/productdetail?pid=5627)
+
+### Compatible Hardware:
+
+* XBee S2C TH
+* XBee S2C SMT
+* XBee-PRO S2C TH
+* XBee-PRO S2C SMT
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Current Known Issues / Errata:
+
+* 733 - Some non-standard baud rates (e.g. 86330, 126315) occasionally miss a byte of
+  incoming data or receive a corrupted byte.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 9002 - XBee DigiMesh 2.4 GHz
+
+### Release Date:
+
+* 2019-May-22
+
+### New Features:
+
+Enhanced Security: 256-bit AES encryption with counter mode is now available on S2C DigiMesh
+* **KY** range has been increased from 32 characters to 64 characters to account for the larger
+  256-bit link key
+* The **C8** AT Command has been added to select the compatibility mode. Setting bit 2 of **C8**
+  reduces the security mode of the XBee3 to 128-bit AES; this is over-the-air compatible with
+  legacy 2.4 GHz DigiMesh devices and is the default configuration for S2C DigiMesh.
+* 128-bit compatibility mode is enabled (**C8** = 4), only the last 32 ASCII chars (128 least
+  significant bits) of the 256-bit **KY** parameter will be used.
+<br>e.g. If **KY** = 11112222333344445555666677778888<u>ZZZZYYYYXXXXWWWWVVVVUUUUTTTTSSSS</u>,
+the underlined portion would be the 128-bit link key
+* Using 256-bit encryption reduces the maximum available payload size, refer to the user guide for
+  specifics. Total throughput is reduced by approximately 10% when using 256-bit encryption compared
+  to 128-bit encryption.
+
+Examples:
+* If **EE** = 1 and **C8** = 0, then **KY** is a 256-bit Link key and will only communicate with
+  other S2C and XBee3 DigiMesh devices with the same **C8** and **KY** values.
+* If **EE** = 1 and **C8** = 4, then **KY** is a 128-bit Link key that is compatible with S1, S2C,
+  and XB3 DigiMesh using with the same 128-bit **KY** value.
+
+### Bug Fixes:
+
+* 749 - Resolved an issue that would cause DigiMesh modules to hang in the presence of large
+  quantities of I/O sample data.
+
+* 529 - Resolved an issue where transmitting messages to an address that did not start with Digi's
+  OUI (0013A2xx) would block all transmissions, causing the radio to become unresponsive. These
+  invalid packets are now discarded rather than queued.
+
+* 725 - Resolved an issue that would cause a corrupted remote AT command response if an indirect
+  messaging coordinator attempts to send a remote AT command to an end device that doesn't exist.
+
+* 762 - Resolved an issue on the surface mount variant where asserting nSSEL with SPI pins disabled
+  would cause the UART to be unresponsive.
+
+* 734 - Resolved an issue on the thru-hole variant where holding DOUT low was preventing the
+  application from running instead of entering SPI mode.
+
+* 723 - Resolved an issue that would cause higher than expected current draw if an external resistor
+  was connected to certain I/O lines.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version (Adapter builds not included):
+
+* 9000 - XBee DigiMesh 2.4 GHz
+
+### Release Date:
+
+* 2016-Aug-15 (Initial release on XBee S2C hardware platform)
+
+### Enhancements compared with legacy DM2.4 on XBee S1:
+
+* Much lower sleep current (Less than 1 uA vs 10 uA on XBee S1)
+* Lower current consumption for RX (31 mA vs 50 mA on XBee S1)
+* Lower current consumption for TX on PRO (120 mA vs. 250 mA on XBee S1)
+* Same current consumption for TX on non-PRO (45 mA), but greater output power
+  (8 dBm)
+* Higher throughput capacity (83kbps on XBee S2C compared with 60kbps on XBee S1)
+* Addition of SMT form factor
+* Addition of OTA Firmware updates
+* Addition of SPI support
+* Uart can handle a baud rate of up to 250 kbps compared with 111 kbps on XBee
+  S1
+* Asynchronous sleep support includes indirect messaging
+* DigiPoint is supported for optimal point to point connections where network
+  layer is bypassed.
+* I/O line passing is supported.
+
+### Limitations due to switching to from XBee S1 hardware to XBee S2C hardware
+
+* Synchronous sleep is no longer available.
+* ADC is supported but the XBee S2C hardware only supports 4 ADC lines compared
+  with 6 on the XBee S1 hardware.
+* Space parity on the UART is not supported by the XBee S2C hardware.
+
+### Bug Fixes:
+
+* N/A (new firmware)
+
+- - - - - - - - - - - - - - - - - - - -

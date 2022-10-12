@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="User Data Relay Output">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Cellular</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+  </protocols>
+  <frame_type>0xAD</frame_type>
+  <parameters>
+    <parameter name="Source interface">
+      <control_type>1</control_type>
+      <description>Source interface the data comes from.</description>
+      <items>
+        <item>Serial Port [00]</item>
+        <item>Bluetooth [01]</item>
+        <item>Micropython [02]</item>
+      </items>
+      <default_value>Serial Port [00]</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>255</bytes_max>
+      <description>Data that comes from the source interface.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

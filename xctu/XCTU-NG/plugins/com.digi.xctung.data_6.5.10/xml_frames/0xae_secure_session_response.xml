@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Secure Session Response">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>DigiMesh</protocol>
+  </protocols>
+  <frame_type>0xae</frame_type>
+  <parameters>
+    <parameter name="Response type">
+      <control_type>1</control_type>
+      <description>Response type.</description>
+      <items>
+        <item>Login response [00]</item>
+        <item>Logout response [01]</item>
+      </items>
+      <default_value>Login response [00]</default_value>
+    </parameter>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>The 64-bit address of the responding device.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Status">
+      <control_type>1</control_type>
+      <description>The status of the AT Command.</description>
+      <items>
+        <item>SRP operation was successful [00]</item>
+        <item>Invalid Password - SRP verification failed due to mismatched M1 and M2 values [01]</item>
+        <item>Session request was rejected as there are too many active sessions on the server already [02]</item>
+        <item>Session options or timeout are invalid [03]</item>
+        <item>The requested session does not exist (legacy) [04]</item>
+        <item>Timed out waiting for the other node to respond [05]</item>
+        <item>Could not allocate memory needed for authentication [06]</item>
+        <item>A request to terminate a session in progress has been made [07]</item>
+        <item>There is no password set on the server [08]</item>
+        <item>There was no initial response from the server [09]</item>
+        <item>Data within the frame is not valid or formatted incorrectly [0A]</item>
+        <item>Server received a packet that was intended for a client or vice versa [80]</item>
+        <item>Received an SRP packet we were not expecting [81]</item>
+        <item>Offset for a split value (A/B) came out of order [82]</item>
+        <item>Unrecognized or invalid SRP frame type [83]</item>
+        <item>Authentication protocol version is not supported [84]</item>
+        <item>The requested session does not exist [85]</item>
+        <item>An undefined error occurred [FF]</item>
+      </items>
+      <default_value>SRP operation was successful [00]</default_value>
+    </parameter>
+  </parameters>
+</frame>

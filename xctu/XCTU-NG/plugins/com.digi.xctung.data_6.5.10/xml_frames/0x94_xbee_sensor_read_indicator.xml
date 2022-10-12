@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="XBee Sensor Read Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0x94</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the sender device.\n\nSet to 'FF FF FF FF FF FF FF FF' (unknown 64-bit address) if the sender's 64-bit address is unknown.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the sender device, if known.\n\nSet to 'FF FE' if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Receive options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>01 - Packet Acknowledged\n02 - Packet was a broadcast packet\n20 - Packet encrypted with APS encryption\n40 - Packet was sent from an end device (if known)\n\nOption values can be combined. For example, a 40 and a 01 will show as a 41.\nOther possible values: 21, 22, 41, 42, 60, 61, 62.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="1-Wire sensors">
+      <control_type>1</control_type>
+      <description>Bitfield of sensors that were read.</description>
+      <items>
+        <item>A/D Sensor Read [01]</item>
+        <item>Temperature Sensor Read [02]</item>
+        <item>Water present (module CD pin low ) [03]</item>
+      </items>
+      <default_value>A/D Sensor Read [01]</default_value>
+    </parameter>
+    <parameter name="A/D values">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Indicates a two-byte value for each of four A/D sensors (A,B,C,D).\n\nSet to 'FF FF FF FF FF FF FF FF' if no A/Ds are found.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="Temperature read">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Indicates the two-byte value read from a digital thermometer if present. Set to 'FF FF' if not found.</description>
+      <default_value>FF FF</default_value>
+    </parameter>
+  </parameters>
+</frame>

@@ -1,0 +1,1047 @@
+XBee Digimesh 2.4
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2015, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the DigiMesh firmware on the XBee S1 and XBee-Pro S1.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-digimesh-2-4)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-digimesh-2-4#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=3524)
+
+### Compatible Hardware:
+
+* XBee S1
+	* XB24
+	* XB24-DM
+* XBee-Pro S1
+	* XBP24
+	* XBP24-DM
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8073 - XBee DigiMesh 2.4
+* 8173 - XBee DigiMesh 2.4, RS232 Adapter
+* 8373 - XBee DigiMesh 2.4, RS485 Adapter
+* 8473 - XBee DigiMesh 2.4, USB Adapter 
+* 8673 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8773 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8873 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2015-Mar-30
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed issue with serial port locking up in API mode 2 when transmitting a steady stream 
+  of data without hardware flow control and when moving transmitting and receiving radio 
+  in and out of range of each other.
+
+* Fixed issue with synchronous sleep in the presence of unicast and broadcast data in a large 
+  network of near 100 nodes. The nodes got out of synch, stopped accepting input on the 
+  serial port, and stopped responding to OTA queries.
+
+* Fixed problem with ND command directed to the local module. Response was also received
+  erroneoulsy from remote module.
+
+* Fixed timing issues on +++ sequence so that an OK response would occur with enough time 
+  before and after the +++ sequence, regardless of when the +++ occurs.
+
+* Corrected defaults in MXI file for RS485 and Wall router builds
+
+
+### Known Issues / Errata:
+
+* When streaming broadcast messages, occasionally receiving radios will output a packet out its 
+  UART multiple times.
+
+* On rare occasions, WR command intermittently fails to get a response. Thereafter communication is lost with
+  remote module.
+ * Workaround: Only issue WR commands locally.
+
+* Remote ED command fails occasionally because the response can get blocked by the energy scan.
+ * Workaround: If the Remote ED command fails, just try again. A response usually occurs.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8070 - XBee DigiMesh 2.4
+* 8170 - XBee DigiMesh 2.4, RS232 Adapter
+* 8370 - XBee DigiMesh 2.4, RS485 Adapter
+* 8470 - XBee DigiMesh 2.4, USB Adapter 
+* 8670 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8770 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8870 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2014-Mar-05
+
+### New Features:
+
+* Added the ATDM command which allows certain DigiMesh features to be disabled.
+
+* Added the ATN? command which allows the maximum timeout for a Network Discovery command to be 
+  queried.
+
+### Bug Fixes:
+
+* Fixed bug where corrupt RF data could indefinitely propagate.
+
+* Fixed bug where repeatedly transmitting and power-cycling or resetting a module could cause 
+  receiving radios to erroneously drop packets.
+
+* Fixed bug where CTS would erroneously assert too early on power-up (before the radio was ready to 
+  receive serial data)
+
+* Fixed bug where the Route Information API frame was being output with extra invalid data at the 
+  end of the frame.
+	
+* Fixed bug where the Energy Detect command (ATED) would occasionally cause the module to reset.
+
+* Fixed bug where the Energy Detect command (ATED) would change the radios operating channel.
+
+### Known Issues / Errata:
+
+* When streaming broadcast messages, occasionally receiving radios will output a packet out its 
+  UART multiple times.
+
+* The ATED command does not work in API mode or via remote AT commands.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8067 - XBee DigiMesh 2.4
+* 8167 - XBee DigiMesh 2.4, RS232 Adapter
+* 8367 - XBee DigiMesh 2.4, RS485 Adapter
+* 8467 - XBee DigiMesh 2.4, USB Adapter 
+* 8667 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8767 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8867 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2013-Dec-11
+
+### New Features:
+
+* A software reset can be initiated by asserting a serial break for more than 5 seconds.
+
+* Added code to greatly reduce the probability of packet corruption that can occur when using 
+  radios in close proximity to each other.
+
+### Bug Fixes:
+
+* Fixed bug where broadcasting with multiple nodes could cause a third node to lock up. When locked 
+  up the module can not receive, but can enter command mode and transmit. After transmitting, the 
+  locked up module will recover.
+
+* Fixed bug where the D8 command could not be set to 1.
+
+* Fixed bug where the default for the .mxi file did not match the firmware default.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8065 - XBee DigiMesh 2.4
+* 8165 - XBee DigiMesh 2.4, RS232 Adapter
+* 8365 - XBee DigiMesh 2.4, RS485 Adapter
+* 8465 - XBee DigiMesh 2.4, USB Adapter 
+* 8665 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8765 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8865 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2013-May-08
+
+### New Features:
+
+* Added the ability to enable a clear channel assessment (CCA) feature with the ATCA command.
+
+* Added Test Link functionality for RF link reliability testing.
+
+* Added the ability to enable a Trace Route or NACK on transmitted packets.
+
+* Added a Find Neighbor (ATFN) command.
+
+* Added a command (ATAG) for building and repairing routes to a node and for replacing aggregator 
+  nodes.
+
+### Bug Fixes:
+
+* Querying ATOS for large sleep periods was resulting in the wrong value. This has been fixed.
+
+* Certain payloads of encrypted packets were not getting sent correctly. This has been fixed.
+
+* Fixed bug where a remote WR command would immediately apply changes to CH when not desired.
+
+* Fixed bug where changes to the IF parameter would apply a value other than that set.
+
+* Removed the BD8 option from the .mxi file because the error margin at that baud rate is 
+  unacceptable.
+
+* Fixed bug where some radios would not receive data after powerup until after the receiving 
+  radio had transmitted data.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8064 - XBee DigiMesh 2.4
+* 8164 - XBee DigiMesh 2.4, RS232 Adapter
+* 8364 - XBee DigiMesh 2.4, RS485 Adapter
+* 8464 - XBee DigiMesh 2.4, USB Adapter 
+* 8664 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8764 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8864 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2012-May-02
+
+### New Features:
+
+* Added the ATAG command. (Aggregator Addressing Update)
+
+* Added the trace route command on unicasts.
+
+* Added NACK functionality on unicasts.
+
+* Added the ATFN command. (Find neighbor)
+
+* Added the test link cluster ID.
+
+* Added a number of diagnostic commands.  
+  (See the Diagnostic sections available in the X-CTU Modem Configuration tab)
+
+### Bug Fixes:
+
+* Querying ATOS for large sleep periods was resulting in the wrong value.
+
+* Certain payloads of encrypted packets were not getting sent correctly.
+
+* Fixed bug where a remote WR command would immediately apply changes to CH when not desired.
+
+* Fixed bug where changes to the IF parameter would apply a value other than that set.
+
+* Removed the BD8 option because the error margin at that baud rate is unacceptable.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8062 - XBee DigiMesh 2.4
+* 8162 - XBee DigiMesh 2.4, RS232 Adapter
+* 8362 - XBee DigiMesh 2.4, RS485 Adapter
+* 8462 - XBee DigiMesh 2.4, USB Adapter 
+* 8662 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8762 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8862 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2011-Jan-06
+
+### New Features:
+
+* Added asynchronous sleep modes.
+
+* Improved timing for synchronous sleep networks (less wake time is necessary) 
+
+### Bug Fixes:
+
+* Improved accuracy of analog to digital conversions.
+
+* Increased the time that a node will wait to receive a network discovery response to account for 
+  the time it takes for the request to propagate.
+
+* Fixed a bug where the pullup resistor would not get properly set on the DIN line.
+
+* Fixed a bug where the default for the D2 command on the RS232 adapter build was wrong. This 
+  caused higher than necessary sleep currents.
+
+* Fixed bug where the CB command would not wake up an end device like a real button press would.
+
+* Fixed a bug which would cause reduced receiver sensitivity on some modules.
+
+* Fixed bug where no status was returned for a failed RMT AT CMD Request transmission.
+
+* Fixed a sleeping router bug which would cause a module to continue being a sleep coordinator even 
+  after it had received a sync from a senior node. 
+
+### Known Issues / Errata:
+
+* None
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8052 - XBee DigiMesh 2.4
+* 8152 - XBee DigiMesh 2.4, RS232 Adapter
+* 8352 - XBee DigiMesh 2.4, RS485 Adapter
+* 8452 - XBee DigiMesh 2.4, USB Adapter 
+* 8652 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8752 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8852 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2010-Jul-22
+
+### New Features:
+
+* Wall Router release (8852) has the light and temp sensor enabled on D1 and D2 inputs. The wall 
+  router was designed for the ember modules which use an internal 1.6V VREF the DM24 module uses an 
+  external VREF (which is hooked up to 3.3V). This means that the DM24 will have about 1/2 the 
+  resolution of the ZB wall router. Furthermore the values returned will be off by a factor of 2.
+
+### Bug Fixes:
+
+* Fixed bug where the assoc. LED would blink even when ATD5 was not equal to 1.
+
+### Known Issues / Errata:
+
+* DigiMesh2.4 f/w has 3dBm worse receiver sensitivity when compared to 802.15.4 f/w. The reason for 
+  this is unknown.
+
+* DigiMesh2.4 f/w only receives about 99.95% of packets (PHY level, no retries or retransmissions) 
+  when doing a wired test.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8051 - XBee DigiMesh 2.4
+* 8151 - XBee DigiMesh 2.4, RS232 Adapter
+* 8351 - XBee DigiMesh 2.4, RS485 Adapter
+* 8451 - XBee DigiMesh 2.4, USB Adapter 
+* 8651 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8751 - XBee DigiMesh 2.4, Digital I/O Adapter
+* 8851 - XBee DigiMesh 2.4, Wall Router
+
+### Release Date: 
+
+* 2010-Jul-15
+
+### New Features:
+
+* Added the wall router build
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* DigiMesh2.4 f/w has 3dBm worse receiver sensitivity when compared to 802.15.4 f/w. The reason for 
+  this is unknown.
+
+* DigiMesh2.4 f/w only receives about 99.95% of packets (PHY level, no retries or retransmissions) 
+  when doing a wired test.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8050 - XBee DigiMesh 2.4
+* 8150 - XBee DigiMesh 2.4, RS232 Adapter
+* 8350 - XBee DigiMesh 2.4, RS485 Adapter
+* 8450 - XBee DigiMesh 2.4, USB Adapter 
+* 8650 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8750 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 20xx-Xxx-xx
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Made sleep status API messages more reliable. Now a wake and sleep status message will be output 
+  for every wake cycle.
+
+* Fixed bug related to sleep status messages that would cause a module to lock-up or perform in an 
+  erratic fashion if the sleep status message code was unable to get a buffer.
+
+### Known Issues / Errata:
+
+* DigiMesh2.4 f/w has 3dBm worse receiver sensitivity when compared to 802.15.4 f/w. The reason for 
+  this is unknown.
+
+* DigiMesh2.4 f/w only receives about 99.95% of packets (PHY level, no retries or retransmissions) 
+  when doing a wired test.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 804F - XBee DigiMesh 2.4
+* 814F - XBee DigiMesh 2.4, RS232 Adapter
+* 834F - XBee DigiMesh 2.4, RS485 Adapter
+* 844F - XBee DigiMesh 2.4, USB Adapter 
+* 864F - XBee DigiMesh 2.4, Analog I/O Adapter
+* 874F - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Apr-21
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where PRO modules were not properly biasing the RF receive balun. This was causing a 10 
+  to 15 dBm reduction in RX sensitivity.
+
+### Known Issues / Errata:
+
+* DigiMesh2.4 f/w has 3dBm worse receiver sensitivity when compared to 802.15.4 f/w. The reason for 
+  this is unknown.
+
+* DigiMesh2.4 f/w only receives about 99.95% of packets (PHY level, no retries or retransmissions) 
+  when doing a wired test.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 804E - XBee DigiMesh 2.4
+* 814E - XBee DigiMesh 2.4, RS232 Adapter
+* 834E - XBee DigiMesh 2.4, RS485 Adapter
+* 844E - XBee DigiMesh 2.4, USB Adapter 
+* 864E - XBee DigiMesh 2.4, Analog I/O Adapter
+* 874E - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2010-Feb-23
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where nodes would occasionally lockup. This was caused by incompletely purging a buffer 
+  from the MAC.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 804D - XBee DigiMesh 2.4
+* 814D - XBee DigiMesh 2.4, RS232 Adapter
+* 834D - XBee DigiMesh 2.4, RS485 Adapter
+* 844D - XBee DigiMesh 2.4, USB Adapter 
+* 864D - XBee DigiMesh 2.4, Analog I/O Adapter
+* 874D - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Dec-17
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where the first analog sample taken in a set would be inaccurate. This was caused 
+  because the switch between the VREF and VDDA was not given ample time to settle before a sample 
+  was taken.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 804C - XBee DigiMesh 2.4
+* 814C - XBee DigiMesh 2.4, RS232 Adapter
+* 834C - XBee DigiMesh 2.4, RS485 Adapter
+* 844C - XBee DigiMesh 2.4, USB Adapter 
+* 864C - XBee DigiMesh 2.4, Analog I/O Adapter
+* 874C - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Sep-23
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bugs with the default for the ATPR command on the RS232, RS485, AIO, and DIO adapter builds.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 804B - XBee DigiMesh 2.4
+* 814B - XBee DigiMesh 2.4, RS232 Adapter
+* 834B - XBee DigiMesh 2.4, RS485 Adapter
+* 844B - XBee DigiMesh 2.4, USB Adapter 
+* 864B - XBee DigiMesh 2.4, Analog I/O Adapter
+* 874B - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Aug-31
+
+### New Features:
+
+* Added targets for the RS232, RS485, and USB adapter builds.
+
+* Added .mxi files for the above builds
+
+### Bug Fixes:
+
+* Fixed bug in the wake host code.
+
+* Fixed potential bug discovered on another platform which hasn't ever manifested itself, but 
+potentially could have. Every once in a while a network ack will arrive before a MAC ack. If this 
+rare event happens multiple times the module can lock up.
+
+* Fixed bug where changing NH,NN,MT, or RN wouldn't always cause ST to be adjusted.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8049 - XBee DigiMesh 2.4
+* 8649 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8749 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Jul-16
+
+### New Features:
+
+* Improved accuracy of some of the sleeping router calculations.
+
+* Added a 16-bit CRC to the sync messages. This CRC uses a different polynomial than the 
+  transceiver CRC to increase robustness.
+
+* Added a recovery mode for mains powered nodes in a sleeping router network which are reset. A 
+  coordinator will now repeatedly send a sync message when it first powers on. When it hears the 
+  sync echoed by a neighbor then it commences its normal cycle. Changes to how the nomination 
+  process was implemented allows an existing network to detect and override a newly powered on 
+  coordinator.
+
+* Added a sleep option which disables the coordinator from repeatedly sending a sync message during 
+  deployment.
+
+* Revised the sync structure (breaking compatibility with previous versions) to better support 
+  future compatibility and encryption.
+
+* Sleeping Router polls are now sent in the transmit state rather than in the holdoff state to make 
+  use of the randomization provided by the holdoff state.
+
+* Added a new sleep status bit indicating when the node is in deployment mode.
+
+### Bug Fixes:
+
+* Fixed bug where a broadcast sent shortly after a unicast could cause packet tracking to not work 
+  on the broadcast resulting in duplicate copies of the same packet output. 
+
+* Fixed bug which caused Node Discoveries in a sleeping router network to be unreliable.
+
+* Fixed bug where transmissions would not work until a XCVR level reception had first taken place.
+
+* Fixed some bugs which caused synch messages to be less reliable.
+
+* Fixed bug which caused the DN or ND+NI responses to be delayed.
+
+* Fixed bug which caused the ND responses to poorly utilize the available response time.
+
+* Fixed bug which caused multiple route discoveries to be initiated even when a route discovery to 
+  the same destination is already in progress.
+
+* Fixed bug which caused a reset to occur after a 9second serial break rather than a 5 second one.
+
+* Fixed the entry for the AO command in the .mxi file.
+
+* Fixed a bug where changes to the SP/ST on a non-sleep coordinator would not take effect.
+
+* Added a fix to a transceiver bug mentioned in the XCVR manual errata which caused errors based on 
+  the chip ID
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8048 - XBee DigiMesh 2.4
+* 8648 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8748 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Jun-03
+
+### New Features:
+
+* To increase the chances of a node receiving a sync, the originator will listen for a sync after 
+  sending the first one. If a sync doesn't happen, send another one.
+
+* Always allow all MT + 1 broadcasts, without a timeout. However, unicasts will count an RX 
+  detected in progress the same as an RR retry.
+
+* Inserted a random number of delay slots between broadcast retransmissions to improve broadcast 
+  reliability.
+
+* Added the NP command to the code and MXI file
+
+### Bug Fixes:
+
+* Improved the distribution of ND responses by randomizing responses based on the value of NT (with 
+  resolution to 1-tenth of a second) rather than based on the number of microseconds in the delay. 
+  This helps significantly if multiple nodes were reset at the same time prior to the ND command.
+
+* Fixed an issue with turning off the receiver during a receive in progress condition, which was 
+  preventing later transmissions from occurring until a new reception was received. This was a 
+  particular problem when a receive was in progress when it became time for sleep.
+
+* Fixed NN time slots so that they are based on broadcast time rather than unicast time.
+
+* Reduced loop time for rebroadcasts.
+
+* Recalculated the software overhead time for MAC delay slots based on measured time from the point 
+  that it is determined that a frame will be sent until the transmission is started. That duration 
+  is measured with a maximum size packet.
+
+* Fixed TX status on a broadcast so that it no longer reports route discoveries
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8047 - XBee DigiMesh 2.4
+* 8647 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8747 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Apr-30
+
+### New Features:
+
+* Added a new sleep option bit. When this bit is enabled the election process does NOT take into 
+  consideration the node type (SM7 or SM8).
+
+### Bug Fixes:
+
+* Fixed intermittent issue with program loads.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8046 - XBee DigiMesh 2.4
+* 8646 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8746 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Apr-27
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed bug where changes to ST or SP on an unsynchronized node would not take effect.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8045 - XBee DigiMesh 2.4
+* 8645 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8745 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Apr-09
+
+### New Features:
+
+* Added ability to disable route discoveries through the API. This is done by setting option bit 
+  1 (0x02).
+
+* Fixed TX_STATUS to give the correct retry count after a route discovery failure.
+
+### Bug Fixes:
+
+* Fixed issue with occasional watchdog resets with ND commands.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8044 - XBee DigiMesh 2.4
+* 8644 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8744 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Mar-30
+
+### New Features:
+
+* Added the MS command (cycles without synch)
+* Added the ATSS (Sleep Status) command.
+
+### Bug Fixes:
+
+* An infinite loop that included a watchdog refresh caused the software to stop operating. The 
+  error was caused by a deadlock on a semaphore that could only happen on a PRO module, actively 
+  doing analog sampling. The problem occurred when an attempt to get an I/O sample occurred during 
+  the time that the ATD was being used for adjusting power levels during a transmission.
+
+* Resolved discrepancy on RSSI reads between PRO and non-PRO modules. Added code to compensate for 
+  the perceived extra signal strength caused by the LNA gain.
+
+* Removed RSSI updates on packets before they are fully accepted by the MAC.
+
+* Removed command responses to ND commands after the timeout so that node discoveries now behave 
+  like the ZB software.
+
+* The ATOW command was returning the value of the active SP rather than ST.
+
+* Fixed API packets with no payload data. Now these frames are silently discarded rather than being 
+  sent OTA.
+
+* Fixed upper and lower limits on GT command to match those limits on 802.15.4 and ZB software.
+
+* Ensure that an API DN command gives exactly one response, whether or not a remote node responds. 
+  Previously, a DN command that got a response sent two responses to the UART, and a DN command 
+  that got no responses from a remote device would not send any command responses to UART.
+
+* Fixed the entry of strings in command mode so that they are case sensitive. Previously, strings 
+  entered in command mode were forced to upper case, while strings entered in API mode were case 
+  sensitive. This inconsistency could prevent string matching when switching between API and 
+  transparent modes.
+
+* Fixed issue with pending commands failing after a remote IS command with a frame ID of 0 was 
+  executed.
+
+* Fixed issue with displaying garbage after an NI string that was entered with 20 characters in 
+  transparent command mode.
+
+* The device type field of the ND response was returning the wrong values (the value for router and 
+  coordinator were reversed).
+
+* Fixed issue with corruption of ND responses on the first inquiry after reset.
+
+* Fixed an issue with not generating a TX_STATUS message for API messages targeted for the local 
+  radio.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8040 - XBee DigiMesh 2.4
+* 8640 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8740 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2009-Feb-26
+
+### New Features:
+
+* Added the AO option to the MXI files.
+
+* Added a new sleep option to allow the user to disable the automatic drift early wakeup.
+
+* Added the ATOW and ATOS commands which allow the user to query the operational sleep and wake 
+  times.
+
+* Changed the default of the sleep options to 2 (non-sleep coordinator)
+
+* Removed CCA logic and CA command, which was of marginal value and the removal of which saved code 
+  space 
+
+* 2 button commissioning button press: causes the node to nominate itself immediately. 
+
+* IF command: Allows IO samples to be spread out over multiple wake cycles. 
+
+* WH command: Wake host command.
+
+* WH will now cause the module to wake up early. 
+
+* CK command: returns a hash of the CommandConfig.
+
+* Renamed TA command to EA command
+
+* Added CE command
+
+* Limit duration of CT command to ten minutes to avoid timer overflow
+
+* Changed SM4 command to SM8 to distinguish from cyclic sleep in non-DigiMesh products
+
+* Added Encryption support
+
+* Added ATCA and ATRN commands.
+
+### Bug Fixes:
+
+* Fixed an API problem with limiting frame sizes to 62 bytes and 55 bytes for TX_REQ and explicit 
+  TX_REQ, respectively. Now all frames <= 73 bytes are transmitted successfully, regardless of 
+  whether or not it is an explicit TX_REQ.
+
+* Fixed issue with reporting the wrong version number
+
+* SM7 nodes where drifting too much during sleep, this has been fixed.
+
+* Made it so an ND response will report the value of CE.
+
+* The pullups on the CTS and DOUT lines were not working.
+
+* Fixed a lockup issue caused by not dealing with an out of lock condition during CCA operations.
+
+* Fixed a bug with the API DN command. The command was not returning the 16/64 bit addresses.
+
+* A module with RTS flow control enabled, RTS line deasserted, and characters in its output queue 
+  would not go to sleep. This has been fixed. 
+  
+* Fixed a bug with the DB command in api mode.
+
+* Corrected command length for ND and DN commands
+
+* Fixed certain OTA commands sent by XCTU that precede the parameter with leading zeroes and cause 
+  an error response.
+
+* Fixed UART RX operation at 115.2kbps so that receiver overflows no longer occur. Interrupts times 
+  were cut way back and operations were added in main loop to do operations that used to occur at 
+  interrupt level.
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8030 - XBee DigiMesh 2.4
+* 8630 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8730 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Nov-17
+
+### New Features:
+
+* SM7 Sleep Mode (Sleep Support Node)
+
+* Wake via commissioning button.
+
+* Changed Assoc. LED behavior.
+
+* Changed ON_SLEEP behavior.
+
+* Made it so only one unsolicited ND response can be queued at a time for the commissioning button.
+
+* Added the ATSQ command: query the total number of missed synchs.
+
+* Changes to an overriding synch take effect quicker.
+
+### Bug Fixes:
+
+* The calculation of the minimum wake time had a bug in it. This has been fixed.
+
+* Before, a node which had missed an overriding synch could change the network back to the old 
+  settings, this has been fixed.
+
+* Doing more than 1 Remote IS command would cause the module to lock up. This has been fixed.
+
+### Known Issues / Errata:
+
+* Errors occur when streaming large amounts of data at 115K baud
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8620 - XBee DigiMesh 2.4, Analog I/O Adapter
+* 8720 - XBee DigiMesh 2.4, Digital I/O Adapter
+
+### Release Date: 
+
+* 2008-Sep-02
+
+### New Features:
+
+* The following commands are now feature complete: D0-D9, P0-P3, M0, M1, PR.
+
+* The following commands have been added: IR, IC, IS, CB, LT.
+
+* The commissioning button is now supported.
+
+* The 1wire, AIO, and DIO targets have been created.
+
+### Bug Fixes:
+
+* A remote ATWR wouldn't work, it has been fixed.
+
+### Known Issues / Errata:
+
+* There are problems with packets colliding with the synch message on sleeping router 
+  configurations.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8003 - XBee DigiMesh 2.4
+
+### Release Date: 
+
+* 2008-Aug-22
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Fixed an issue with transmitting at too low of power immediately after reset due to not waiting 
+  long enough to read the ATD signal for power output after enabling it
+
+### Known Issues / Errata:
+
+* None
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8002 - XBee DigiMesh 2.4
+
+### Release Date: 
+
+* 2008-Aug-14
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* An API module would output a TxStatus packet when it received an OTA command. This has been fixed.
+
+* Changed the OTA frame format of a ND response. DD is now the last element in the packet. DD is 
+  now output correctly. Parent address field was added.
+
+* Eliminated the closing frame on an API ND.
+
+* ATFR now waits 100mSec before resetting to better interact with XCTU.
+
+### Known Issues / Errata:
+
+* When sending oversize packets across a multi-hop path in both directions, a watchdog reset will 
+  occasionally occur.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8001 - XBee DigiMesh 2.4
+
+### Release Date: 
+
+* 2008-Aug-05
+
+### New Features:
+
+* Initial release.
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* When sending oversize packets across a multi-hop path in both directions, a watchdog reset will 
+  occasionally occur.

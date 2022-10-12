@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Metaframe Rx">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA6</frame_type>
+  <parameters>
+    <parameter name="Network Identifier">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the network stack this frame has been received from.\n\n0x00 for network 1, 0x01 for network 2.</description>
+      <default_value>00</default_value>
+    </parameter>
+    <parameter name="Embedded Frame">
+      <control_type>4</control_type>
+      <description>Select and configure the frame embedded within this Metaframe.</description>
+    </parameter>
+  </parameters>
+</frame>

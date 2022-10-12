@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Receive Packet">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>DigiMesh</protocol>
+    <protocol>Point-to-multipoint</protocol>
+    <protocol>ZNet 2.5</protocol>
+    <protocol>Smart Energy</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>802.15.4</protocol>
+  </protocols>
+  <frame_type>0x90</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the sender device.\n\nSet to 'FF FF FF FF FF FF FF FF' (unknown 64-bit address) if the sender's 64-bit address is unknown.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the sender device, if known.\n\nSet to 'FF FE' if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Receive options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Bitfield indicating Rx options.\n\n
+      
+      - Bit 0: Packet was Acknowledged [0x01]\n
+      - Bit 1: Packet was sent as a broadcast [0x02]\n
+      - Bit 2: 802.15.4: Packet was broadcast across all PANs [0x04]\n
+      - Bit 4: Packet was sent across a secure session [0x10]\n
+      - Bit 5: Zigbee: Packet encrypted with APS encryption [0x20]\n
+      - Bit 6: Packet was sent from an end device [0x40]
+      </description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Received data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <!--  Do not limit the size of the RF data -->
+      <!-- <bytes_max>256</bytes_max> -->
+      <description>Received RF data.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

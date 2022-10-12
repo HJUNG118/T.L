@@ -1,0 +1,192 @@
+XBee-PRO 900HP
+--------------
+
+Customer Release Notes
+----------------------
+
+Copyright (C) 2017, Digi International
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Overview:
+
+These release notes document changes made to the 10k and 200k firmware on the XBee-PRO 900HP radio.
+
+### Links:
+
+[Product Information](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-868lp)  
+[Documentation](http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/zigbee-mesh-module/xbee-868lp#docs)  
+[Support](http://www.digi.com/support/productdetail?pid=5508)
+
+### Compatible Hardware:
+
+* XBee-PRO S3B
+	* XBP9B-DM
+	* XBP9B-DP
+	* XBP9B-XC (Rev. H or higher)
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8075 - XBee-Pro 900HP 200K
+* 1075 - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2017-Aug-15
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* ATNI in the MXI had 0 in the range which is invalid. NI must be at least 1 char.
+* ATED was ignoring the paramter value. 
+* Synchronously sleeping nodes with poor RF connections were locking up. 
+
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8074 - XBee-Pro 900HP 200K
+* 1074 - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2015-Apr-23
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Synchronized sleep nodes locking up
+* Module holds on to data when RO is 0
+* Command mode cannot be entered near end of command mode timeout
+* Timing window when switching baud rate causes no response at times.
+* GPM read command sometimes fails
+* DIO12 not staying high when set to a option 5 (Digital output high)
+* Fixed watch dog reset that occurs occasionally when transmitting max size 
+  packets (256) using the 10K data rate
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8071 - XBee-Pro 900HP 200K
+* 1071 - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2014-Jun-11
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Updated the MXI file so that the CM parameter will appear in XCTU-NG
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8070 - XBee-Pro 900HP 200K
+* 1070 - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2014-Mar-14
+
+### New Features:
+
+* None
+
+### Bug Fixes:
+
+* Some DigiMesh features were erroneously enabled on the 10k build.
+
+* ATST was changing on power cycle.
+
+* Fixed a problem with voltage and temperature reading. This could potentially affect RF 
+  performance as well as the AT%V and ATTP commands.
+
+* Fixed an encryption bug, where under heavy load the incorrect key was used.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 806A - XBee-Pro 900HP 200K
+* 106A - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2014-Jan-07
+
+### New Features:
+
+* Added the ATN? command which returns the timeout for the Network Discovery (ND) and Discover Node 
+  (DN) commands.
+
+### Bug Fixes:
+
+* Fixed an issue with the Associate LED which was off during a 30 second wakeup initiated by a 
+  single commissioning button press.
+
+* Fixed an issue that caused the node to lock up when directed broadcasts were forwarded.
+
+### Known Issues / Errata:
+
+* No SPI data should be transmitted or received while an ATWR is in progress. Data could be lost.
+
+- - - - - - - - - - - - - - - - - - - -
+
+### Release Version:
+
+* 8067 - XBee-Pro 900HP 200K
+* 1067 - XBee-Pro 900HP 10K
+
+### Release Date: 
+
+* 2012-Jul-24
+
+### New Features:
+
+* Initial release
+
+### Bug Fixes:
+
+* None
+
+### Known Issues / Errata:
+
+* Networking: The Aggregate Addressing (AG) command does not work properly.
+
+* SPI/UART: Outgoing SPI on SPI module locks up when sending it an AT command immediately followed 
+  by a WR command. Users who wish to send an ATWR command using the SPI interface should avoid 
+  sending data to the SPI for 500ms before and after the ATWR command.
+
+* SPI/UART: Sending a large number of broadcasts in rapid succession to a SPI module can cause a 
+  module operating in SPI mode to stop transmitting and receiving.

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Remote AT Command Response (Wi-Fi)">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Wi-Fi</protocol>
+  </protocols>
+  <frame_type>0x87</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>This is the same value passed in to the request.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>6</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>IPv4 address of the destination device.\nThe lenght of this parameter is 8 bytes, being the IP address aligned to low 32 - bits of the field.</description>
+      <default_value>0.0.0.0</default_value>
+    </parameter>
+    <parameter name="AT command">
+      <control_type>2</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>Two ASCII characters that identify the AT command.</description>
+    </parameter>
+    <parameter name="Command status">
+      <control_type>1</control_type>
+      <description>The status of the AT Command.</description>
+      <items>
+        <item>OK [00]</item>
+        <item>ERROR [01]</item>
+        <item>Invalid Command [02]</item>
+        <item>Invalid Parameter [03]</item>
+        <item>Tx Failure [04]</item>
+      </items>
+      <default_value>OK [00]</default_value>
+    </parameter>
+    <parameter name="Command data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>Register data in binary format. If the register was set in the AT Command, then this field is not returned.</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>

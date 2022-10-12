@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Route Record Indicator">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>Zigbee</protocol>
+    <protocol>Zigbee 3.0</protocol>
+    <protocol>Smart Energy</protocol>
+  </protocols>
+  <frame_type>0xA1</frame_type>
+  <parameters>
+    <parameter name="64-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>64-bit address of the device that initiated the route record.\n\nSet to 'FF FF FF FF FF FF FF FF' (unknown 64-bit address) if the sender's 64-bit address is unknown.</description>
+      <default_value>FF FF FF FF FF FF FF FF</default_value>
+    </parameter>
+    <parameter name="16-bit source address">
+      <control_type>0</control_type>
+      <bytes_min>2</bytes_min>
+      <bytes_max>2</bytes_max>
+      <description>16-bit address of the device that initiated the route record.\n\nSet to 'FF FE' if the address is unknown.</description>
+      <default_value>FF FE</default_value>
+    </parameter>
+    <parameter name="Receive options">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>01 - Packet Acknowledged\n02 - Packet was a broadcast packet\n20 - Packet encrypted with APS encryption\n40 - Packet was sent from an end device (if known)\n\nOption values can be combined. For example, a 40 and a 01 will show as a 41.\nOther possible values: 21, 22, 41, 42, 60, 61, 62.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Number of addresses">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>The number of addresses in the source route (excluding source nad destination).</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="Addresses">
+      <control_type>0</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>16-bit network addresses of intermediate nodes in the route between source and destination.</description>
+      <default_value>00 00</default_value>
+    </parameter>
+  </parameters>
+</frame>

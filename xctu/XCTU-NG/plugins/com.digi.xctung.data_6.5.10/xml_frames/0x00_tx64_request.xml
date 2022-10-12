@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frame name="Tx (Transmit) Request: 64-bit address">
+  <protocols>
+    <protocol>All</protocol>
+    <protocol>802.15.4</protocol>
+    <protocol>Wi-Fi</protocol>
+    <protocol>XTend (DigiMesh)</protocol>
+    <protocol>XLR</protocol>
+    <protocol>XLR Module</protocol>
+  </protocols>
+  <frame_type>0x00</frame_type>
+  <parameters>
+    <parameter name="Frame ID">
+      <control_type>0</control_type>
+      <bytes_min>1</bytes_min>
+      <bytes_max>1</bytes_max>
+      <description>Identifies the UART data frame for the host to match with a subsequent response. If zero, no response is requested.</description>
+      <default_value>01</default_value>
+    </parameter>
+    <parameter name="64-bit dest. address">
+      <control_type>0</control_type>
+      <bytes_min>8</bytes_min>
+      <bytes_max>8</bytes_max>
+      <description>Set to the 64-bit address of the destination device. Use '00 00 00 00 00 00 FF FF' to sent a broadcast packet.</description>
+      <default_value>00 00 00 00 00 00 00 00</default_value>
+    </parameter>
+    <parameter name="Options">
+      <control_type>1</control_type>
+      <description>Bitfield to enable various command options..</description>
+      <items>
+        <item>None [00]</item>
+        <item>Disable ACK [01]</item>
+        <item>Send with broadcast PAN ID [04]</item>
+        <item>Invoke Traceroute (XTend 8030 only) [08]</item>
+      </items>
+      <default_value>None [00]</default_value>
+    </parameter>
+    <parameter name="RF data">
+      <control_type>2</control_type>
+      <bytes_min>0</bytes_min>
+      <bytes_max>256</bytes_max>
+      <description>Packet payload (up to 256 bytes).</description>
+      <optional>true</optional>
+    </parameter>
+  </parameters>
+</frame>
