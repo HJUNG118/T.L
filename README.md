@@ -1,9 +1,10 @@
-# thrust logging system
+# Thrust logging system
 <div align="center">
   <p align="center">
    <i>Arduino sensors and modules such as sd card, xbee wireless communication, joystick, variable resistor, and keypad are used.</i>
   </p>
 </div>
+
 ## Bluethooth
 * bluethooth module use
   * bt_master
