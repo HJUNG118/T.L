@@ -5,9 +5,9 @@
   </p>
 </div>
 
-| **Language** | C, C++ |
-| **Arduino** | Mega2560 |
-| **Module** | Zigbee, sd_card, rtc, joystick, bluetooth, dotmatrix, variable register |
+| Language | C, C++ |
+| Arduino | Mega2560 |
+| Module | Zigbee, sd_card, rtc, joystick, bluetooth, dotmatrix, variable register |
 
 ## Bluethooth
 * bluethooth module use
