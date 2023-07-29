@@ -4,10 +4,10 @@
    <i>It's a thrust logging system made using modules and sensors such as sd card, xbee, joystick, and keypad.</i>
   </p>
 </div>
-| 분류                      | 기술    
-| **Language**             | C, C++
-| **Arduino**              | Mega2560
-| **Module**               | Zigbee, sd_card, rtc, joystick, bluetooth, dotmatrix
+| 분류                      | 기술                                                   | 
+| **Language**             | C, C++                                                |
+| **Arduino**              | Mega2560                                              |
+| **Module**               | Zigbee, sd_card, rtc, joystick, bluetooth, dotmatrix  |
 
 ## Bluethooth
 * bluethooth module use
